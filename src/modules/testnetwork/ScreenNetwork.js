@@ -75,8 +75,15 @@ var ScreenNetwork = cc.Layer.extend({
         }.bind(this));
 
 
-
+        var btnGetUserResource = gv.commonButton(64, 64, 0, 0,"User Res");
+        //btnDown.setRotation(90);
+        this._gameNode.addChild(btnGetUserResource);
+        btnGetUserResource.addClickEventListener(function()
+        {
+            testnetwork.connector.sendGetUserResRq();
+        }.bind(this));
     },
+
     onSelectBack:function(sender)
     {
         fr.view(ScreenMenu);

@@ -9,6 +9,10 @@ gv.CMD.USER_LOGIN = 1;
 gv.CMD.USER_INFO = 1001;
 gv.CMD.MOVE = 2001;
 
+
+gv.CMD.USER_RESOURCE = 3002;
+
+
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
 
@@ -55,8 +59,9 @@ CmdSendLogin = fr.OutPacket.extend(
             this.initData(100);
             this.setCmdId(gv.CMD.USER_LOGIN);
         },
-        pack:function(user){
+        pack:function(_id, user){
             this.packHeader();
+            this.putInt(_id);
             this.putString(user);
             this.updateSize();
         }
@@ -74,6 +79,21 @@ CmdSendMove = fr.OutPacket.extend(
         pack:function(direction){
             this.packHeader();
             this.putShort(direction);
+            this.updateSize();
+        }
+    }
+)
+
+CmdSendUserResource = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.USER_RESOURCE);
+        },
+        pack:function(){
+            this.packHeader();
             this.updateSize();
         }
     }
@@ -115,8 +135,8 @@ testnetwork.packetMap[gv.CMD.USER_INFO] = fr.InPacket.extend(
             this._super();
         },
         readData:function(){
-            this.token = this.getInt();
-            this.name = this.getString();
+            //this.token = this.getInt();
+            //this.name = this.getString();
             this.x = this.getInt();
             this.y = this.getInt();
         }
@@ -132,6 +152,44 @@ testnetwork.packetMap[gv.CMD.MOVE] = fr.InPacket.extend(
         readData:function(){
             this.x = this.getInt();
             this.y = this.getInt();
+        }
+    }
+);
+
+testnetwork.packetMap[gv.CMD.USER_RESOURCE] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            //this.token = this.getInt();
+            //this.name = this.getString();
+            //this.x = this.getInt();
+            //this.y = this.getInt();
+
+            //currentByteBuffer.putInt(id);
+            ////currentByteBuffer.put ... username;
+            //currentByteBuffer.putInt(levelPoint);
+            //currentByteBuffer.putInt(exp);
+            //currentByteBuffer.putInt(trophy);
+            //currentByteBuffer.putInt(gold);
+            //currentByteBuffer.putInt(elixir);
+            //currentByteBuffer.putInt(darkElixir);
+            //currentByteBuffer.putInt(shieldTime);
+            //currentByteBuffer.putInt(coin);
+
+            this._id = this.getInt();
+            this.levelPoint = this.getInt();
+            this.usrExp = this.getInt();
+            this.trophy = this.getInt();
+            this.gold = this.getInt();
+            this.elixir = this.getInt();
+            this.darkElixir = this.getInt();
+            this.shieldTime = this.getInt();
+            this.coin = this.getInt();
+
+
         }
     }
 );

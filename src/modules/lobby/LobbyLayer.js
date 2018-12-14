@@ -6,6 +6,17 @@ var LobbyLayer = cc.Layer.extend({
     _beginPos:0,
     isMouseDown:false,
 
+    text_max_gold: null,
+    text_gold: null,
+    text_eli: null,
+    text_darkE: null,
+    text_gCoin: null,
+
+    gold:10,
+    eli:20,
+    darkE:30,
+    gCoin:40,
+
     ctor:function() {
         this._super();
         this.loadGui();
@@ -28,6 +39,18 @@ var LobbyLayer = cc.Layer.extend({
 
         var resourceComp = ccs.load('gui/ResourceComp.json').node;
         resourceComp.setPosition(cc.p(size.width * 1, size.height * 1));
+
+        text_max_gold = resourceComp.getChildByName('text_max_gold');
+        text_max_gold.setString('ahihi');
+        text_gold = resourceComp.getChildByName('text_gold');
+        text_gold.setString(this.gold.toString());
+        text_elixir = resourceComp.getChildByName('text_elixir');
+        text_elixir.setString(this.eli.toString());
+        text_darkE = resourceComp.getChildByName('text_darkElixir');
+        text_darkE.setString(this.darkE.toString());
+        text_gCoin = resourceComp.getChildByName('text_gcoin');
+        text_gCoin.setString(this.gCoin.toString());
+
         this.addChild(resourceComp);
 
         var chatComp = ccs.load('gui/ChatComp.json').node;
@@ -43,9 +66,27 @@ var LobbyLayer = cc.Layer.extend({
         this.addChild(shopComp);
 
 
+        var btnLoad = gv.commonButton(100, 64, size.width * 0.7, size.height * 0.7, "Load");
+        this.addChild(btnLoad);
+        btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
+
+        var btnHLoad = gv.commonButton(100, 64, size.width * 0.8, size.height * 0.8, "HLoad");
+        this.addChild(btnHLoad);
+        btnHLoad.addClickEventListener(this.reloadGui(this.gold, this.eli, this.darkE, this.gCoin));
 
         //var lobbyLayer = ccs.load('gui/LobbyLayer.json');
         //this.addChild(lobbyLayer.node);
+
+    },
+
+
+
+    reloadGui:function(gold, eli, darkE, gCoin)
+    {
+        text_gold.setString(gold.toString());
+        text_elixir.setString(eli.toString());
+        text_darkE.setString(darkE.toString());
+        text_gCoin.setString(gCoin.toString());
 
     },
 
@@ -53,6 +94,10 @@ var LobbyLayer = cc.Layer.extend({
         this._super();
     },
 
+    onSelectLoad:function(sender)
+    {
+        testnetwork.connector.sendGetUserResRq();
+    },
 
 
 });

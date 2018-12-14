@@ -6,6 +6,8 @@ var ScreenGame = cc.Layer.extend({
     _beginPos:0,
     isMouseDown:false,
 
+    layerMap: null,
+    layerLobby: null,
 
     ctor:function() {
         this._super();
@@ -35,14 +37,14 @@ var ScreenGame = cc.Layer.extend({
         node = new cc.Node();
         this.addChild(node);
         //scene = new cc.Scene();
-        var layerMap = new MapLayer();
+        this.layerMap = new MapLayer();
         //scene.addChild(layerMap, 1);
-        var layerLobby = new LobbyLayer();
+        this.layerLobby = new LobbyLayer();
         //scene.addChild(layerLobby, 2);
         //return scene;
 
-        node.addChild(layerMap);
-        node.addChild(layerLobby);
+        node.addChild(this.layerMap);
+        node.addChild(this.layerLobby);
         //var background = cc.Sprite("res/gui/HelloWorld.png");
         //background.setPosition(cc.p(size.width * 0.5, size.height * 0.5));
         //this.addChild(background);

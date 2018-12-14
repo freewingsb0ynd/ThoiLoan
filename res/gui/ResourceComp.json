@@ -193,16 +193,15 @@
           {
             "FontSize": 14,
             "IsCustomSize": true,
-            "LabelText": "Tối đa: 999999",
+            "LabelText": "Tối đa: ",
             "PlaceHolderText": "Text Field",
             "MaxLengthText": 10,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 0.0,
+              "X": -155.0,
               "Y": -12.5
             },
             "Scale": {
@@ -220,11 +219,12 @@
               "Y": 0.0
             },
             "LeftMargin": -155.0,
+            "RightMargin": 100.0,
             "BottomMargin": -25.0,
             "Tag": 63,
             "ActionTag": 15007413,
             "Size": {
-              "X": 155.0,
+              "X": 55.0,
               "Y": 25.0
             },
             "Name": "text_max_gold",
@@ -274,47 +274,6 @@
             },
             "Name": "bg_gold_bar",
             "ctype": "SpriteObjectData"
-          },
-          {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "Tối đa: 999999",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 0.0,
-              "Y": -67.5
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -155.0,
-            "TopMargin": 55.0,
-            "BottomMargin": -80.0,
-            "Tag": 67,
-            "ActionTag": 140949630,
-            "Size": {
-              "X": 155.0,
-              "Y": 25.0
-            },
-            "Name": "TextField_1_0",
-            "ctype": "TextFieldObjectData"
           },
           {
             "FileData": {
@@ -409,17 +368,16 @@
           {
             "FontSize": 14,
             "IsCustomSize": true,
-            "LabelText": "Tối đa: 999999",
+            "LabelText": "darkE_num",
             "PlaceHolderText": "Text Field",
             "MaxLengthText": 10,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 0.0,
-              "Y": -122.5
+              "X": -100.0,
+              "Y": -122.4999
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -435,13 +393,13 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -155.0,
-            "TopMargin": 110.0,
-            "BottomMargin": -135.0,
+            "LeftMargin": -100.0,
+            "TopMargin": 109.9999,
+            "BottomMargin": -134.9999,
             "Tag": 70,
             "ActionTag": -963526135,
             "Size": {
-              "X": 155.0,
+              "X": 100.0,
               "Y": 25.0
             },
             "Name": "text_max_darkElixir",
@@ -672,16 +630,15 @@
           {
             "FontSize": 14,
             "IsCustomSize": true,
-            "LabelText": "Tối đa: 999999",
+            "LabelText": "elix_num",
             "PlaceHolderText": "Text Field",
             "MaxLengthText": 10,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 0.0,
+              "X": -100.0,
               "Y": -67.5
             },
             "Scale": {
@@ -698,16 +655,16 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -155.0,
+            "LeftMargin": -100.0,
             "TopMargin": 55.0,
             "BottomMargin": -80.0,
             "Tag": 149,
             "ActionTag": -420644518,
             "Size": {
-              "X": 155.0,
+              "X": 100.0,
               "Y": 25.0
             },
-            "Name": "text_max_elixir",
+            "Name": "text_max_elixir_num",
             "ctype": "TextFieldObjectData"
           },
           {
@@ -834,6 +791,127 @@
               "Y": 23.0
             },
             "Name": "text_gcoin",
+            "ctype": "TextFieldObjectData"
+          },
+          {
+            "FontSize": 14,
+            "IsCustomSize": true,
+            "LabelText": "Tối đa: ",
+            "PlaceHolderText": "Text Field",
+            "MaxLengthText": 10,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -155.0,
+              "Y": -67.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -155.0,
+            "RightMargin": 100.0,
+            "TopMargin": 55.0,
+            "BottomMargin": -80.0,
+            "Tag": 544,
+            "ActionTag": 1345951810,
+            "Size": {
+              "X": 55.0,
+              "Y": 25.0
+            },
+            "Name": "text_max_elixir",
+            "ctype": "TextFieldObjectData"
+          },
+          {
+            "FontSize": 14,
+            "IsCustomSize": true,
+            "LabelText": "gold_num",
+            "PlaceHolderText": "Text Field",
+            "MaxLengthText": 10,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -100.0,
+              "Y": -12.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -100.0,
+            "BottomMargin": -25.0,
+            "Tag": 545,
+            "ActionTag": 851209511,
+            "Size": {
+              "X": 100.0,
+              "Y": 25.0
+            },
+            "Name": "text_max_gold_num",
+            "ctype": "TextFieldObjectData"
+          },
+          {
+            "FontSize": 14,
+            "IsCustomSize": true,
+            "LabelText": "Tối đa: ",
+            "PlaceHolderText": "Text Field",
+            "MaxLengthText": 10,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -155.0,
+              "Y": -122.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -155.0,
+            "RightMargin": 100.0,
+            "TopMargin": 110.0,
+            "BottomMargin": -135.0,
+            "Tag": 546,
+            "ActionTag": 1992026720,
+            "Size": {
+              "X": 55.0,
+              "Y": 25.0
+            },
+            "Name": "text_max_elixir_0",
             "ctype": "TextFieldObjectData"
           }
         ],
