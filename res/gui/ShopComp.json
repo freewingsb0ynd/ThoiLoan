@@ -1,6 +1,6 @@
 {
   "ID": "922d8a55-559e-4ca8-bbff-4efdf1be9bfb",
-  "Version": "2.1",
+  "Version": "2.1.0.0",
   "Name": "ShopComp",
   "Content": {
     "Content": {
@@ -21,16 +21,6 @@
               "R": 65,
               "G": 65,
               "B": 70
-            },
-            "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
-              "Plist": ""
-            },
-            "PressedFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Press.png",
-              "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
@@ -96,16 +86,6 @@
               "G": 65,
               "B": 70
             },
-            "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
-              "Plist": ""
-            },
-            "PressedFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Press.png",
-              "Plist": ""
-            },
             "NormalFileData": {
               "Type": "Normal",
               "Path": "Art/GUIs/Main_Gui/kho.png",
@@ -168,16 +148,6 @@
               "R": 65,
               "G": 65,
               "B": 70
-            },
-            "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
-              "Plist": ""
-            },
-            "PressedFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Press.png",
-              "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
@@ -245,9 +215,7 @@
       "UsedResources": [
         "Art/GUIs/Main_Gui/kho.png",
         "Art/GUIs/Main_Gui/setting.png",
-        "Art/GUIs/Main_Gui/shop.png",
-        "Default/Button_Disable.png",
-        "Default/Button_Press.png"
+        "Art/GUIs/Main_Gui/shop.png"
       ],
       "ctype": "GameFileData"
     }

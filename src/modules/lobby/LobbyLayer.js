@@ -9,8 +9,7 @@ var LobbyLayer = cc.Layer.extend({
     ctor:function() {
         this._super();
         this.loadGui();
-
-        this.initGame();
+        //this.initGame();
     },
 
 
@@ -18,11 +17,6 @@ var LobbyLayer = cc.Layer.extend({
     {
         this.removeAllChildren();
         var size = cc.winSize;
-
-        var btnBack = gv.commonButton(100, 64, size.width * 0.5, size.height * 0.5,"Back");
-        this.addChild(btnBack);
-        btnBack.addClickEventListener(this.onSelectBack.bind(this));
-
         //
         var profileComp = ccs.load('gui/ProfileComp.json').node;
         profileComp.setPosition(cc.p(size.width * 0, size.height * 1));
@@ -59,37 +53,6 @@ var LobbyLayer = cc.Layer.extend({
         this._super();
     },
 
-    initGame:function(){
-        var size = cc.winSize;
-
-        //var background = cc.Sprite("res/gui/HelloWorld.png");
-        //background.setPosition(cc.p(size.width * 0.5, size.height * 0.5));
-        //this.addChild(background);
-
-        //var lobbyLayer = ccs.load('gui/LobbyLayer.json');
-        //this.addChild(lobbyLayer.lay);
-
-        //var sceneRes = ccs.load("gui/MainScene.json");
-        //this.addChild(sceneRes.node);
-        //sceneRes.node.runAction(sceneRes.action);
-        //sceneRes.action.gotoFrameAndPlay(0, true);
-    },
 
 
-
-
-    onSelectBack:function(sender)
-    {
-        fr.view(ScreenMenu);
-    },
-    onSelectVietnamese:function(sender)
-    {
-        fr.Localization.getInstance().setCurrentLanguage('vi');
-        this.loadGui();
-    },
-    onSelectEnglish:function(sender)
-    {
-        fr.Localization.getInstance().setCurrentLanguage('en');
-        this.loadGui();
-    }
 });

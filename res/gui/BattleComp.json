@@ -1,6 +1,6 @@
 {
   "ID": "a9f1e1d0-5f88-4314-8475-3ed15012d1d9",
-  "Version": "2.1",
+  "Version": "2.1.0.0",
   "Name": "BattleComp",
   "Content": {
     "Content": {
@@ -21,16 +21,6 @@
               "R": 65,
               "G": 65,
               "B": 70
-            },
-            "DisabledFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Disable.png",
-              "Plist": ""
-            },
-            "PressedFileData": {
-              "Type": "Default",
-              "Path": "Default/Button_Press.png",
-              "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
@@ -93,9 +83,7 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "Art/GUIs/Main_Gui/attack.png",
-        "Default/Button_Disable.png",
-        "Default/Button_Press.png"
+        "Art/GUIs/Main_Gui/attack.png"
       ],
       "ctype": "GameFileData"
     }

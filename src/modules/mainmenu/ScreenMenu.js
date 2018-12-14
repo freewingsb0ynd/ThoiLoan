@@ -47,7 +47,7 @@ var ScreenMenu = cc.Layer.extend({
     },
     onSelectLobby:function(sender)
     {
-        fr.view(LobbyLayer);
+        fr.view(ScreenGame);
     },
 
 });
