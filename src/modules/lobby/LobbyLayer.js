@@ -12,10 +12,7 @@ var LobbyLayer = cc.Layer.extend({
     text_darkE: null,
     text_gCoin: null,
 
-    gold:10,
-    eli:20,
-    darkE:30,
-    gCoin:40,
+
 
     ctor:function() {
         this._super();
@@ -29,39 +26,43 @@ var LobbyLayer = cc.Layer.extend({
         this.removeAllChildren();
         var size = cc.winSize;
         //
-        var profileComp = ccs.load('gui/ProfileComp.json').node;
-        profileComp.setPosition(cc.p(size.width * 0, size.height * 1));
+
+        var profileComp = new Component(res.lobby.comp_profile, new Anchor(0,1));
+        //var profileComp = new Component(res.lobby.comp_profile);
+        //var profileComp = ccs.load(res.lobby.comp_profile).node;
+        profileComp.setPosition(cc.p(size.width * profileComp.perspectivePosition._x, size.height * profileComp.perspectivePosition._y));
+        //profileComp.setPosition(cc.p(size.width * 0, size.height * 1));
         this.addChild(profileComp);
 
-        var infoComp = ccs.load('gui/InfoComp.json').node;
+        var infoComp = ccs.load(res.lobby.comp_info).node;
         infoComp.setPosition(cc.p(size.width * 0.5, size.height * 1));
         this.addChild(infoComp);
 
-        var resourceComp = ccs.load('gui/ResourceComp.json').node;
+        var resourceComp = ccs.load(res.lobby.comp_resource).node;
         resourceComp.setPosition(cc.p(size.width * 1, size.height * 1));
 
         text_max_gold = resourceComp.getChildByName('text_max_gold');
         text_max_gold.setString('ahihi');
         text_gold = resourceComp.getChildByName('text_gold');
-        text_gold.setString(this.gold.toString());
+        text_gold.setString(UserData.getInstance().gold.toString());
         text_elixir = resourceComp.getChildByName('text_elixir');
-        text_elixir.setString(this.eli.toString());
+        text_elixir.setString(UserData.getInstance().elixir.toString());
         text_darkE = resourceComp.getChildByName('text_darkElixir');
-        text_darkE.setString(this.darkE.toString());
+        text_darkE.setString(UserData.getInstance().darkElixir.toString());
         text_gCoin = resourceComp.getChildByName('text_gcoin');
-        text_gCoin.setString(this.gCoin.toString());
+        text_gCoin.setString(UserData.getInstance().gCoin.toString());
 
         this.addChild(resourceComp);
 
-        var chatComp = ccs.load('gui/ChatComp.json').node;
+        var chatComp = ccs.load(res.lobby.comp_chat).node;
         chatComp.setPosition(cc.p(size.width * 0, size.height * 0.5));
         this.addChild(chatComp);
 
-        var battleComp = ccs.load('gui/BattleComp.json').node;
+        var battleComp = ccs.load(res.lobby.comp_battle).node;
         battleComp.setPosition(cc.p(size.width * 0, size.height * 0));
         this.addChild(battleComp);
 
-        var shopComp = ccs.load('gui/ShopComp.json').node;
+        var shopComp = ccs.load(res.lobby.comp_shop).node;
         shopComp.setPosition(cc.p(size.width * 1, size.height * 0));
         this.addChild(shopComp);
 
