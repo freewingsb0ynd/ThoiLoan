@@ -11,7 +11,7 @@ var ScreenGame = cc.Layer.extend({
 
     ctor:function() {
         this._super();
-        this.loadGui();
+        //this.loadGui();
         this.initGame();
     },
 
@@ -34,7 +34,7 @@ var ScreenGame = cc.Layer.extend({
     initGame:function(){
         //this.addChild(LobbyLayer);
         //fr.view(MapLayer);
-        node = new cc.Node();
+        var node = new cc.Node();
         this.addChild(node);
         //scene = new cc.Scene();
         this.layerMap = new MapLayer();
@@ -61,7 +61,7 @@ var ScreenGame = cc.Layer.extend({
     onSelectBack:function(sender)
     {
         fr.view(ScreenMenu);
-    },
+    }
 
 });
 //
