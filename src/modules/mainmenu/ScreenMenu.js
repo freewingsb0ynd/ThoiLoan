@@ -7,6 +7,7 @@ var ScreenMenu = cc.Layer.extend({
     _beginPos:0,
     isMouseDown:false,
 
+
     ctor:function() {
         this._super();
         var size = cc.director.getVisibleSize();
@@ -25,7 +26,13 @@ var ScreenMenu = cc.Layer.extend({
         this.addChild(btnDragonbones);
         btnDragonbones.addClickEventListener(this.onSelectDragonbones.bind(this));
 
-        var btnLobby = gv.commonButton(200, 64, cc.winSize.width/2, size.height/3 ,"Lobby");
+        this.tfID = ccui.TextField();
+        this.tfID.setPosition(size.width/4, size.height/3);
+        this.tfID.setPlaceHolder("Your ID...")
+        this.addChild(this.tfID);
+        //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
+
+        var btnLobby = gv.commonButton(200, 64, size.width/2, size.height/3 ,"Lobby");
         this.addChild(btnLobby);
         btnLobby.addClickEventListener(this.onSelectLobby.bind(this));
 
@@ -47,6 +54,10 @@ var ScreenMenu = cc.Layer.extend({
     },
     onSelectLobby:function(sender)
     {
+        testnetwork.connector._id = Number(this.tfID.getString());
+        testnetwork.connector._userName = "fresher " + this.tfID.getString();
+        //testnetwork.connector._id = 1111;
+        gv.gameClient.connect();
         fr.view(ScreenGame);
     },
 

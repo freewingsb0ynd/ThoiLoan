@@ -11,7 +11,7 @@ var ScreenGame = cc.Layer.extend({
 
     ctor:function() {
         this._super();
-        //this.loadGui();
+        this.loadGui();
         this.initGame();
     },
 
@@ -21,7 +21,7 @@ var ScreenGame = cc.Layer.extend({
         //this.removeAllChildren();
         var size = cc.winSize;
 
-        var btnBack = gv.commonButton(100, 64, size.width * 0.5, size.height * 0.5,"Back");
+        var btnBack = gv.commonButton(100, 64, size.width * 0.9, size.height * 0.4,"Back");
         this.addChild(btnBack);
         btnBack.addClickEventListener(this.onSelectBack.bind(this));
 

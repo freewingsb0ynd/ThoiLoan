@@ -66,13 +66,11 @@ var LobbyLayer = cc.Layer.extend({
         this.addChild(shopComp);
 
 
-        var btnLoad = gv.commonButton(100, 64, size.width * 0.7, size.height * 0.7, "Load");
+        var btnLoad = gv.commonButton(100, 64, size.width * 0.9, size.height * 0.6, "Load");
         this.addChild(btnLoad);
         btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
 
-        var btnHLoad = gv.commonButton(100, 64, size.width * 0.8, size.height * 0.8, "HLoad");
-        this.addChild(btnHLoad);
-        btnHLoad.addClickEventListener(this.reloadGui(this.gold, this.eli, this.darkE, this.gCoin));
+
 
         //var lobbyLayer = ccs.load('gui/LobbyLayer.json');
         //this.addChild(lobbyLayer.node);

@@ -24,8 +24,8 @@ testnetwork.Connector = cc.Class.extend({
                 this.sendLoginRequest();
                 break;
             case gv.CMD.USER_LOGIN:
-                this.sendGetUserInfo();
-                fr.getCurrentScreen().onFinishLogin();
+                //this.sendGetUserInfo();
+                //fr.getCurrentScreen().onFinishLogin();
                 break;
             case gv.CMD.USER_INFO:
                 fr.getCurrentScreen().onUserInfo(packet.name, packet.x, packet.y);
