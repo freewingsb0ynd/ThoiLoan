@@ -45,8 +45,8 @@ testnetwork.Connector = cc.Class.extend({
                 cc.log("darkE: " + packet.darkElixir.toString());
                 cc.log("shield: " + packet.shieldTime.toString());
                 cc.log("gCoin: " + packet.coin.toString());
-
-                fr.getCurrentScreen().layerLobby.reloadGui(packet.gold, packet.elixir, packet.darkElixir, packet.coin);
+                UserData.getInstance().updateData(packet);
+                fr.getCurrentScreen().layerLobby.reloadGui();
                 //fr.getCurrentScreen().updateMove(packet.x, packet.y);
                 break;
         }

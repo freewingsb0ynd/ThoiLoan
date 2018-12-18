@@ -190,6 +190,7 @@ testnetwork.packetMap[gv.CMD.USER_RESOURCE] = fr.InPacket.extend(
             this.coin = this.getInt();
 
 
+
         }
     }
 );

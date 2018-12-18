@@ -43,9 +43,17 @@
         "src/modules/testnetwork/network/Packet.js",
         "src/modules/testnetwork/ScreenNetwork.js",
         "src/modules/user/UserData.js",
+        "src/modules/lobby/components/Component.js",
+        "src/modules/lobby/components/ProfileComponent.js",
+        "src/modules/lobby/components/ResourceComponent.js",
+        "src/modules/lobby/components/BattleComponent.js",
+        "src/modules/lobby/components/InfoComponent.js",
+        "src/modules/lobby/components/ShopComponent.js",
+
+
         "src/modules/lobby/Anchor.js",
         "src/modules/lobby/Resource.js",
-        "src/modules/lobby/Component.js",
+
         "src/modules/lobby/ScreenGame.js",
         "src/modules/lobby/LobbyLayer.js",
         "src/modules/lobby/MapLayer.js"

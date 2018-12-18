@@ -2,6 +2,10 @@
  * Created by CPU11635_LOCAL on 12/17/2018.
  */
 var UserData = cc.Class.extend({
+    userName: null,
+    usrExp: null,
+    level: null,
+    trophy: null,
 
     gold:null,
     elixir:null,
@@ -19,6 +23,10 @@ var UserData = cc.Class.extend({
     },
 
     loadInitData: function(){
+        this.userName = "Fresher " + testnetwork.connector._id;
+
+        this.trophy = 8888;
+
         this.gold = 100;
         this.elixir = 200;
         this.darkElixir = 250;
@@ -32,6 +40,19 @@ var UserData = cc.Class.extend({
 
 
 
+    updateData: function(usrResPacket){
+
+        this.level = usrResPacket.levelPoint;
+        this.trophy = usrResPacket.trophy;
+        this.usrExp = usrResPacket.usrExp;
+
+        this.gold = usrResPacket.gold;
+        this.elixir = usrResPacket.elixir;
+        this.darkElixir = usrResPacket.darkElixir;
+        this.gCoin = usrResPacket.coin;
+        this.shieldTime = usrResPacket.shieldTime;
+
+    }
 
 
 });
