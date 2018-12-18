@@ -4,13 +4,6 @@
 
 var ResourceComponent = Component.extend({
 
-    _text_max_gold: null,
-    _text_gold: null,
-    _text_eli: null,
-    _text_darkE: null,
-    _text_gCoin: null,
-    
-
     ctor:function() {
         this._super(res.lobby.comp_resource, new Anchor(1,1));
 
@@ -25,7 +18,7 @@ var ResourceComponent = Component.extend({
 
         this._text_darkE = this._jsonRes.getChildByName('text_darkElixir');
 
-        this._text_gCoin = this._jsonRes.getChildByName('text_gCoin');
+        this._text_gCoin = this._jsonRes.getChildByName('text_gcoin');
 
         
     },

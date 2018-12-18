@@ -6,10 +6,6 @@ var LobbyLayer = cc.Layer.extend({
     _beginPos:0,
     isMouseDown:false,
 
-
-
-    profileComp:null,
-
     ctor:function() {
         this._super();
         this.loadGui();
@@ -20,48 +16,31 @@ var LobbyLayer = cc.Layer.extend({
     loadGui:function()
     {
         this.removeAllChildren();
-        var size = cc.winSize;
+
         //
 
-        //var profileComp = new Component(res.lobby.comp_profile, new Anchor(0,1));
-
-        //var profileComp = new Component(res.lobby.comp_profile);
-        //var profileComp = ccs.load(res.lobby.comp_profile).node;
-        //profileComp.setPosition(cc.p(size.width * profileComp.perspectivePosition._x, size.height * profileComp.perspectivePosition._y));
-        //profileComp.setPosition(cc.p(size.width * 0, size.height * 1));
         this.profileComp = new ProfileComponent();
         this.addChild(this.profileComp);
 
         this.resourceComp = new ResourceComponent();
         this.addChild(this.resourceComp);
 
-        //var resourceComp = ccs.load(res.lobby.comp_resource).node;
-        //resourceComp.setPosition(cc.p(size.width * 1, size.height * 1));
+        this.infoComp = new InfoComponent();
+        this.addChild(this.infoComp);
 
-        var infoComp = ccs.load(res.lobby.comp_info).node;
-        infoComp.setPosition(cc.p(size.width * 0.5, size.height * 1));
-        this.addChild(infoComp);
+        this.chatComp = new ChatComponent();
+        this.addChild(this.chatComp);
 
-        var chatComp = ccs.load(res.lobby.comp_chat).node;
-        chatComp.setPosition(cc.p(size.width * 0, size.height * 0.5));
-        this.addChild(chatComp);
+        this.battleComp = new BattleComponent();
+        this.addChild(this.battleComp);
 
-        var battleComp = ccs.load(res.lobby.comp_battle).node;
-        battleComp.setPosition(cc.p(size.width * 0, size.height * 0));
-        this.addChild(battleComp);
-
-        var shopComp = ccs.load(res.lobby.comp_shop).node;
-        shopComp.setPosition(cc.p(size.width * 1, size.height * 0));
-        this.addChild(shopComp);
+        this.shopComp = new ShopComponent();
+        this.addChild(this.shopComp);
 
 
-        var btnLoad = gv.commonButton(100, 64, size.width * 0.9, size.height * 0.6, "Load");
+        var btnLoad = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.6, "Load");
         this.addChild(btnLoad);
         btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
-
-
-        //var lobbyLayer = ccs.load('gui/LobbyLayer.json');
-        //this.addChild(lobbyLayer.node);
 
     },
 

@@ -3,10 +3,6 @@
  */
 
 var ProfileComponent = Component.extend({
-    _userName: null,
-    _exp: null,
-    _level: null,
-    _trophy: 100,
 
     ctor:function() {
         this._super(res.lobby.comp_profile, new Anchor(0,1));

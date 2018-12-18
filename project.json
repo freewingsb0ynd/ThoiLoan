@@ -48,6 +48,7 @@
         "src/modules/lobby/components/ResourceComponent.js",
         "src/modules/lobby/components/BattleComponent.js",
         "src/modules/lobby/components/InfoComponent.js",
+        "src/modules/lobby/components/ChatComponent.js",
         "src/modules/lobby/components/ShopComponent.js",
 
 
