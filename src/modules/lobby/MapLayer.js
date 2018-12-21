@@ -32,6 +32,15 @@ var MapLayer = cc.Layer.extend({
         });
       //  isometricMap.setPosition(cc.p(size.width * 0.1, size.height * 0.1));
         this.addChild(isometricMap);
+
+        var btnLoadMap = gv.commonButton(140, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.2, "LoadMap");
+        this.addChild(btnLoadMap);
+        btnLoadMap.addClickEventListener(this.onSelectLoadMap.bind(this));
+    },
+
+    onSelectLoadMap:function(sender)
+    {
+        testnetwork.connector.sendGetUserMap();
     },
 
     loadBoundary: function()

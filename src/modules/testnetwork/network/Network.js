@@ -36,7 +36,7 @@ testnetwork.Connector = cc.Class.extend({
                 break;
 
             case gv.CMD.USER_RESOURCE:
-                cc.log("id: " + packet._id.toString());
+                /*cc.log("id: " + packet._id.toString());
                 cc.log("levelPoint: " + packet.levelPoint.toString());
                 cc.log("exp: " + packet.usrExp.toString());
                 cc.log("trophy: " + packet.trophy.toString());
@@ -44,11 +44,24 @@ testnetwork.Connector = cc.Class.extend({
                 cc.log("elix: " + packet.elixir.toString());
                 cc.log("darkE: " + packet.darkElixir.toString());
                 cc.log("shield: " + packet.shieldTime.toString());
-                cc.log("gCoin: " + packet.coin.toString());
+                cc.log("gCoin: " + packet.coin.toString());*/
                 UserData.getInstance().updateData(packet);
                 fr.getCurrentScreen().layerLobby.reloadGui();
                 //fr.getCurrentScreen().updateMove(packet.x, packet.y);
                 break;
+
+            // process User_Map data
+            case gv.CMD.USER_MAP:
+                cc.log("User id: " + packet.User_id.toString());
+                cc.log("Objects Number: " + packet.Objects_Number.toString());
+                cc.log("Object id: " + packet.object[1]._id.toString());
+                cc.log("Type: " + packet.object[1].type.toString());
+
+
+                UserData.getInstance().updateData(packet);
+               // fr.getCurrentScreen().layerMap().reloadGui();
+                break;
+
         }
     },
     sendGetUserInfo:function()
@@ -74,6 +87,13 @@ testnetwork.Connector = cc.Class.extend({
     sendGetUserResRq:function(){
         cc.log("Get Usr Res" + 3002);
         var pk = this.gameClient.getOutPacket(CmdSendUserResource);
+        pk.pack();
+        this.gameClient.sendPacket(pk);
+    },
+
+    sendGetUserMap:function(){
+        cc.log("Get Usr Map" + 3001);
+        var pk = this.gameClient.getOutPacket(CmdSendUserMap);
         pk.pack();
         this.gameClient.sendPacket(pk);
     }
