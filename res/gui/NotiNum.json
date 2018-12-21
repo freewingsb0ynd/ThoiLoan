@@ -1,0 +1,121 @@
+{
+  "ID": "c88b2b4b-dd6d-40e0-9311-92d35288305f",
+  "Version": "2.1.0.0",
+  "Name": "NotiNum",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 242,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Chat/warning_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -15.0,
+            "RightMargin": -15.0,
+            "TopMargin": -15.0,
+            "BottomMargin": -15.0,
+            "Tag": 243,
+            "ActionTag": -218686372,
+            "Size": {
+              "X": 30.0,
+              "Y": 30.0
+            },
+            "Name": "warning_bg_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "1",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/fista_16_non.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -1.1545,
+              "Y": 3.925
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -4.1545,
+            "RightMargin": -1.8455,
+            "TopMargin": -12.425,
+            "BottomMargin": -4.575,
+            "Tag": 244,
+            "ActionTag": 1998488850,
+            "Size": {
+              "X": 6.0,
+              "Y": 17.0
+            },
+            "Name": "text_noti_num",
+            "ctype": "TextBMFontObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Fonts/fista_16_non.fnt",
+        "Art/Fonts/fista_16_non.png",
+        "Art/GUIs/Chat/warning_bg.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

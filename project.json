@@ -50,15 +50,16 @@
         "src/modules/lobby/components/InfoComponent.js",
         "src/modules/lobby/components/ChatComponent.js",
         "src/modules/lobby/components/ShopComponent.js",
+        "src/modules/lobby/components/ConstructionComponent.js",
+
 
 
         "src/modules/lobby/Anchor.js",
         "src/modules/lobby/Resource.js",
-
         "src/modules/lobby/ScreenGame.js",
         "src/modules/lobby/LobbyLayer.js",
-        "src/modules/lobby/MapLayer.js"
+        "src/modules/lobby/MapLayer.js",
 
-
+        "src/modules/shop/ShopGui.js"
     ]
 }

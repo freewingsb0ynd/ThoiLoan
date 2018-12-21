@@ -452,19 +452,18 @@
             "ctype": "ButtonObjectData"
           },
           {
-            "FontSize": 20,
-            "IsCustomSize": true,
-            "LabelText": "Fresher X name",
-            "PlaceHolderText": "Username",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
+            "LabelText": "Demo name",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
             "AnchorPoint": {
-              "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 145.017,
-              "Y": -28.8087
+              "X": 70.0,
+              "Y": -30.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -480,68 +479,26 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 70.017,
-            "RightMargin": -220.017,
-            "TopMargin": 17.3087,
-            "BottomMargin": -40.3087,
-            "Tag": 455,
-            "ActionTag": 1606368031,
+            "LeftMargin": 70.0,
+            "RightMargin": -191.0,
+            "TopMargin": 17.5,
+            "BottomMargin": -42.5,
+            "Tag": 116,
+            "ActionTag": 1923965835,
             "Size": {
-              "X": 150.0,
-              "Y": 23.0
+              "X": 121.0,
+              "Y": 25.0
             },
             "Name": "text_username",
-            "ctype": "TextFieldObjectData"
+            "ctype": "TextBMFontObjectData"
           },
           {
-            "FontSize": 18,
-            "IsCustomSize": true,
-            "LabelText": "99",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
+            "LabelText": "890",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
             },
-            "Position": {
-              "X": 162.5954,
-              "Y": -63.0287
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 150.0954,
-            "RightMargin": -175.0954,
-            "TopMargin": 51.5287,
-            "BottomMargin": -74.5287,
-            "Tag": 456,
-            "ActionTag": 1772536761,
-            "Size": {
-              "X": 25.0,
-              "Y": 23.0
-            },
-            "Name": "text_level",
-            "ctype": "TextFieldObjectData"
-          },
-          {
-            "FontSize": 18,
-            "IsCustomSize": true,
-            "LabelText": "19999",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
             "AnchorPoint": {
               "ScaleY": 0.5
             },
@@ -564,25 +521,25 @@
               "Y": 0.0
             },
             "LeftMargin": 80.0,
-            "RightMargin": -140.0,
-            "TopMargin": 48.5,
-            "BottomMargin": -71.5,
-            "Tag": 457,
-            "ActionTag": 502905219,
+            "RightMargin": -129.0,
+            "TopMargin": 47.5,
+            "BottomMargin": -72.5,
+            "Tag": 117,
+            "ActionTag": 666528963,
             "Size": {
-              "X": 60.0,
-              "Y": 23.0
+              "X": 49.0,
+              "Y": 25.0
             },
-            "Name": "text_exp_progress",
-            "ctype": "TextFieldObjectData"
+            "Name": "text_expProgress",
+            "ctype": "TextBMFontObjectData"
           },
           {
-            "FontSize": 18,
-            "IsCustomSize": true,
-            "LabelText": "9999",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
+            "LabelText": "2345",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
             "AnchorPoint": {
               "ScaleY": 0.5
             },
@@ -605,17 +562,59 @@
               "Y": 0.0
             },
             "LeftMargin": 80.0,
-            "RightMargin": -140.0,
-            "TopMargin": 88.5,
-            "BottomMargin": -111.5,
-            "Tag": 458,
-            "ActionTag": 1592378983,
+            "RightMargin": -137.0,
+            "TopMargin": 87.5,
+            "BottomMargin": -112.5,
+            "Tag": 118,
+            "ActionTag": 142339861,
             "Size": {
-              "X": 60.0,
-              "Y": 23.0
+              "X": 57.0,
+              "Y": 25.0
             },
             "Name": "text_trophy",
-            "ctype": "TextFieldObjectData"
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "123",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 160.0,
+              "Y": -60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 142.0,
+            "RightMargin": -178.0,
+            "TopMargin": 50.5,
+            "BottomMargin": -69.5,
+            "Tag": 119,
+            "ActionTag": -1162699758,
+            "Size": {
+              "X": 36.0,
+              "Y": 19.0
+            },
+            "Name": "text_level",
+            "ctype": "TextBMFontObjectData"
           }
         ],
         "Size": {
@@ -626,6 +625,10 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
+        "Art/Fonts/soji_16.fnt",
+        "Art/Fonts/soji_16.png",
         "Art/GUIs/Action_Building_Icon/event_button.png",
         "Art/GUIs/Main_Gui/bg_exp.png",
         "Art/GUIs/Main_Gui/exp_bar.png",

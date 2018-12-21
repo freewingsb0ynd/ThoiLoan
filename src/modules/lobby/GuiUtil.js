@@ -1,14 +1,19 @@
 /**
  * Created by CPU11635_LOCAL on 12/12/2018.
  */
-var GuiUtil = {
+var GuiUtil = cc.Class.extend({
 
-    getInstance: function() {
+    ctor:function() {
+        //this.loadInitData();
+        //this.initGame();
+    },
+
+
+});
+
+GuiUtil.getInstance = function() {
     if(this.instance == null) {
-        this.instance = new UserData();
+        this.instance = new GuiUtil();
     }
     return this.instance;
-    }
-
-
 }

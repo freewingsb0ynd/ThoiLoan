@@ -18,7 +18,7 @@ var ResourceComponent = Component.extend({
 
         this._text_darkE = this._jsonRes.getChildByName('text_darkElixir');
 
-        this._text_gCoin = this._jsonRes.getChildByName('text_gcoin');
+        this._text_gCoin = this._jsonRes.getChildByName('text_gCoin');
 
         
     },

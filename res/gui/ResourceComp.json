@@ -191,46 +191,6 @@
             "ctype": "SpriteObjectData"
           },
           {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "Tối đa: ",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -155.0,
-              "Y": -12.5
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -155.0,
-            "RightMargin": 100.0,
-            "BottomMargin": -25.0,
-            "Tag": 63,
-            "ActionTag": 15007413,
-            "Size": {
-              "X": 55.0,
-              "Y": 25.0
-            },
-            "Name": "text_max_gold",
-            "ctype": "TextFieldObjectData"
-          },
-          {
             "FileData": {
               "Type": "Normal",
               "Path": "Art/GUIs/Main_Gui/bg_bar_2.png",
@@ -366,46 +326,6 @@
             "ctype": "SpriteObjectData"
           },
           {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "darkE_num",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -100.0,
-              "Y": -122.4999
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -100.0,
-            "TopMargin": 109.9999,
-            "BottomMargin": -134.9999,
-            "Tag": 70,
-            "ActionTag": -963526135,
-            "Size": {
-              "X": 100.0,
-              "Y": 25.0
-            },
-            "Name": "text_max_darkElixir",
-            "ctype": "TextFieldObjectData"
-          },
-          {
             "FileData": {
               "Type": "Normal",
               "Path": "Art/GUIs/Main_Gui/bg_bar_3.png",
@@ -469,7 +389,7 @@
               "Y": -37.0
             },
             "Scale": {
-              "ScaleX": 0.3,
+              "ScaleX": 0.9177,
               "ScaleY": 1.0
             },
             "CColor": {},
@@ -514,7 +434,7 @@
               "Y": -92.0
             },
             "Scale": {
-              "ScaleX": 0.5,
+              "ScaleX": 0.8352,
               "ScaleY": 1.0
             },
             "CColor": {},
@@ -559,7 +479,7 @@
               "Y": -147.0
             },
             "Scale": {
-              "ScaleX": 0.8,
+              "ScaleX": 0.8678,
               "ScaleY": 1.0
             },
             "CColor": {},
@@ -586,60 +506,18 @@
             "ctype": "SpriteObjectData"
           },
           {
-            "FontSize": 20,
-            "IsCustomSize": true,
-            "LabelText": "500000",
-            "PlaceHolderText": "",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.5
+            "LabelText": "Tối đa: 5.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
             },
-            "Position": {
-              "X": -40.0,
-              "Y": -37.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.7645
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -110.0,
-            "RightMargin": 40.0,
-            "TopMargin": 25.5,
-            "BottomMargin": -48.5,
-            "Tag": 148,
-            "ActionTag": -1605575488,
-            "Size": {
-              "X": 70.0,
-              "Y": 23.0
-            },
-            "Name": "text_gold",
-            "ctype": "TextFieldObjectData"
-          },
-          {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "elix_num",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
             "AnchorPoint": {
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -100.0,
-              "Y": -67.5
+              "X": -160.0,
+              "Y": -124.9997
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -655,157 +533,33 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -100.0,
-            "TopMargin": 55.0,
-            "BottomMargin": -80.0,
-            "Tag": 149,
-            "ActionTag": -420644518,
+            "LeftMargin": -160.0,
+            "RightMargin": 51.0,
+            "TopMargin": 115.4997,
+            "BottomMargin": -134.4997,
+            "Tag": 49,
+            "ActionTag": -558018764,
             "Size": {
-              "X": 100.0,
-              "Y": 25.0
+              "X": 109.0,
+              "Y": 19.0
             },
-            "Name": "text_max_elixir_num",
-            "ctype": "TextFieldObjectData"
+            "Name": "text_max_darkElixir",
+            "ctype": "TextBMFontObjectData"
           },
           {
-            "FontSize": 20,
-            "IsCustomSize": true,
-            "LabelText": "500000",
-            "PlaceHolderText": "",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
+            "LabelText": "500",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
             "AnchorPoint": {
               "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -40.0,
-              "Y": -92.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.7645
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -110.0,
-            "RightMargin": 40.0,
-            "TopMargin": 80.5,
-            "BottomMargin": -103.5,
-            "Tag": 150,
-            "ActionTag": 231336640,
-            "Size": {
-              "X": 70.0,
-              "Y": 23.0
-            },
-            "Name": "text_elixir",
-            "ctype": "TextFieldObjectData"
-          },
-          {
-            "FontSize": 20,
-            "IsCustomSize": true,
-            "LabelText": "500000",
-            "PlaceHolderText": "",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -40.0,
-              "Y": -147.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.7645
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -110.0,
-            "RightMargin": 40.0,
-            "TopMargin": 135.5,
-            "BottomMargin": -158.5,
-            "Tag": 151,
-            "ActionTag": 880539906,
-            "Size": {
-              "X": 70.0,
-              "Y": 23.0
-            },
-            "Name": "text_darkElixir",
-            "ctype": "TextFieldObjectData"
-          },
-          {
-            "FontSize": 20,
-            "IsCustomSize": true,
-            "LabelText": "50000",
-            "PlaceHolderText": "",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -40.0,
-              "Y": -202.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.7645
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -100.0,
-            "RightMargin": 40.0,
-            "TopMargin": 190.5,
-            "BottomMargin": -213.5,
-            "Tag": 152,
-            "ActionTag": -238938901,
-            "Size": {
-              "X": 60.0,
-              "Y": 23.0
-            },
-            "Name": "text_gcoin",
-            "ctype": "TextFieldObjectData"
-          },
-          {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "Tối đa: ",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -155.0,
-              "Y": -67.5
+              "X": -35.0,
+              "Y": -202.0658
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -821,32 +575,73 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -155.0,
-            "RightMargin": 100.0,
-            "TopMargin": 55.0,
-            "BottomMargin": -80.0,
-            "Tag": 544,
-            "ActionTag": 1345951810,
+            "LeftMargin": -77.0,
+            "RightMargin": 35.0,
+            "TopMargin": 192.5658,
+            "BottomMargin": -211.5658,
+            "Tag": 50,
+            "ActionTag": 1998145352,
             "Size": {
-              "X": 55.0,
-              "Y": 25.0
+              "X": 42.0,
+              "Y": 19.0
+            },
+            "Name": "text_gCoin",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "Tối đa: 5.000.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -160.0,
+              "Y": -70.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -160.0,
+            "RightMargin": 14.0,
+            "TopMargin": 60.5,
+            "BottomMargin": -79.5,
+            "Tag": 51,
+            "ActionTag": 309194322,
+            "Size": {
+              "X": 146.0,
+              "Y": 19.0
             },
             "Name": "text_max_elixir",
-            "ctype": "TextFieldObjectData"
+            "ctype": "TextBMFontObjectData"
           },
           {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "gold_num",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
+            "LabelText": "Tối đa: 5.000.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
             "AnchorPoint": {
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -100.0,
-              "Y": -12.5
+              "X": -160.0,
+              "Y": -15.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -862,30 +657,33 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -100.0,
-            "BottomMargin": -25.0,
-            "Tag": 545,
-            "ActionTag": 851209511,
+            "LeftMargin": -160.0,
+            "RightMargin": 14.0,
+            "TopMargin": 5.5,
+            "BottomMargin": -24.5,
+            "Tag": 52,
+            "ActionTag": 1728513834,
             "Size": {
-              "X": 100.0,
-              "Y": 25.0
+              "X": 146.0,
+              "Y": 19.0
             },
-            "Name": "text_max_gold_num",
-            "ctype": "TextFieldObjectData"
+            "Name": "text_max_gold",
+            "ctype": "TextBMFontObjectData"
           },
           {
-            "FontSize": 14,
-            "IsCustomSize": true,
-            "LabelText": "Tối đa: ",
-            "PlaceHolderText": "Text Field",
-            "MaxLengthText": 10,
-            "TouchEnable": true,
+            "LabelText": "50.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
             "AnchorPoint": {
+              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -155.0,
-              "Y": -122.5
+              "X": -35.0,
+              "Y": -36.5
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -901,18 +699,102 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -155.0,
-            "RightMargin": 100.0,
-            "TopMargin": 110.0,
-            "BottomMargin": -135.0,
-            "Tag": 546,
-            "ActionTag": 1992026720,
+            "LeftMargin": -103.0,
+            "RightMargin": 35.0,
+            "TopMargin": 27.0,
+            "BottomMargin": -46.0,
+            "Tag": 53,
+            "ActionTag": 731093878,
             "Size": {
-              "X": 55.0,
-              "Y": 25.0
+              "X": 68.0,
+              "Y": 19.0
             },
-            "Name": "text_max_elixir_0",
-            "ctype": "TextFieldObjectData"
+            "Name": "text_gold",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "50.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -35.0,
+              "Y": -91.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -103.0,
+            "RightMargin": 35.0,
+            "TopMargin": 82.0,
+            "BottomMargin": -101.0,
+            "Tag": 54,
+            "ActionTag": 1533517691,
+            "Size": {
+              "X": 68.0,
+              "Y": 19.0
+            },
+            "Name": "text_elixir",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "5.000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -35.0,
+              "Y": -146.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -92.0,
+            "RightMargin": 35.0,
+            "TopMargin": 137.0,
+            "BottomMargin": -156.0,
+            "Tag": 55,
+            "ActionTag": -1680171850,
+            "Size": {
+              "X": 57.0,
+              "Y": 19.0
+            },
+            "Name": "text_darkElixir",
+            "ctype": "TextBMFontObjectData"
           }
         ],
         "Size": {
@@ -923,6 +805,8 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
         "Art/GUIs/Main_Gui/bg_bar_2.png",
         "Art/GUIs/Main_Gui/bg_bar_3.png",
         "Art/GUIs/Main_Gui/darkElixir_bar.png",

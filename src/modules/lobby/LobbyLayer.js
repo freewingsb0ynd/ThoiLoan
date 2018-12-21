@@ -62,5 +62,28 @@ var LobbyLayer = cc.Layer.extend({
         testnetwork.connector.sendGetUserResRq();
     },
 
+    onSelectShop:function(sender)
+    {
+
+        this.shop = new ShopGui();
+
+        //scaleSX = cc.winSize.x / this.shop.getContentSize();
+        //scaleSY = cc.winSize.y / this.shop._getHeight();
+
+        //cc.log(scaleSX);
+        this.shop.attr({
+            x: cc.winSize.width * 0.5,
+            y: cc.winSize.height * 0.5,
+            //scaleX: scaleSX,
+            //scaleY: scaleSY,
+        })
+        this.addChild(this.shop);
+    },
+
+    onSelectShopBack:function(sender)
+    {
+        this.shop.setVisible(false);
+    },
+
 
 });

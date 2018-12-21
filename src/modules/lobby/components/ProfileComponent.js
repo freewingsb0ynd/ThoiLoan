@@ -12,7 +12,7 @@ var ProfileComponent = Component.extend({
 
     initGui:function(){
         this._userName = this._jsonRes.getChildByName('text_username');
-        this._exp = this._jsonRes.getChildByName('text_exp_progress');
+        this._exp = this._jsonRes.getChildByName('text_expProgress');
         this._level = this._jsonRes.getChildByName('text_level');
         this._trophy = this._jsonRes.getChildByName('text_trophy');
 
