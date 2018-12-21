@@ -242,7 +242,7 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 this.object[i].type = this.getInt();
 
                 // khong thu hoach, khong type 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
-                if (this.object[i].type == gv.CMD.ARMY_CAM || this.object[i].type == gv.CMD.BUILDER_HUT  || this.object[i].type == gv.CMD.CLAN_CASTLE || this.object[i].type == gv.CMD.LABORATORY || this.object[i].type == gv.CMD.TOWN_HALL) {
+                if (this.object[i].type == gv.CMD.ARMY_CAMP || this.object[i].type == gv.CMD.BUILDER_HUT  || this.object[i].type == gv.CMD.CLAN_CASTLE || this.object[i].type == gv.CMD.LABORATORY || this.object[i].type == gv.CMD.TOWN_HALL) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();

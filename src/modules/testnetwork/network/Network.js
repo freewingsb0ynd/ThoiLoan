@@ -54,9 +54,12 @@ testnetwork.Connector = cc.Class.extend({
             case gv.CMD.USER_MAP:
                 cc.log("User id: " + packet.User_id.toString());
                 cc.log("Objects Number: " + packet.Objects_Number.toString());
-                cc.log("Object id: " + packet.object[1]._id.toString());
-                cc.log("Type: " + packet.object[1].type.toString());
 
+                for (i = 1; i <= 60; i++) {
+                    cc.log("Object id: " + packet.object[i]._id.toString());
+                    cc.log("Type: " + packet.object[i].type.toString());
+
+                }
 
                 UserData.getInstance().updateData(packet);
                // fr.getCurrentScreen().layerMap().reloadGui();
