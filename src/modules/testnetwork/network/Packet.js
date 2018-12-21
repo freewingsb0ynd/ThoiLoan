@@ -11,7 +11,18 @@ gv.CMD.MOVE = 2001;
 
 
 gv.CMD.USER_RESOURCE = 3002;
+gv.CMD.USER_MAP = 3001;
 
+gv.CMD.ARMY_CAMP = 1;
+gv.CMD.BARRACK  = 2;
+gv.CMD.BUILDER_HUT  = 3;
+gv.CMD.CLAN_CASTLE  = 4;
+gv.CMD.DEFENSE  = 5;
+gv.CMD.LABORATORY  = 6;
+gv.CMD.OBSTACLE  = 7;
+gv.CMD.RESOURCE  = 8;
+gv.CMD.STORAGE  = 9;
+gv.CMD.TOWN_HALL  = 10;
 
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
@@ -94,6 +105,24 @@ CmdSendUserResource = fr.OutPacket.extend(
         },
         pack:function(){
             this.packHeader();
+
+            this.updateSize();
+        }
+    }
+)
+
+// Sent request for user map
+CmdSendUserMap = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.USER_MAP);
+        },
+        pack:function(){
+            this.packHeader();
+
             this.updateSize();
         }
     }
@@ -191,6 +220,68 @@ testnetwork.packetMap[gv.CMD.USER_RESOURCE] = fr.InPacket.extend(
 
 
 
+        }
+    }
+);
+
+testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
+    {
+        ctor: function () {
+            this._super();
+        },
+        readData: function () {
+            this.User_id = this.getInt();
+            this.Objects_Number = this.getInt();
+
+           this.object = new Array(1000);
+
+            var i;
+            for (i = 1; i <= this.Objects_Number; i++) {
+                this.object[i] = new Object();
+                this.object[i]._id = this.getInt();
+                this.object[i].type = this.getInt();
+
+                // khong thu hoach, khong type 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
+                if (this.object[i].type == gv.CMD.ARMY_CAM || this.object[i].type == gv.CMD.BUILDER_HUT  || this.object[i].type == gv.CMD.CLAN_CASTLE || this.object[i].type == gv.CMD.LABORATORY || this.object[i].type == gv.CMD.TOWN_HALL) {
+                    this.object[i].currentLevel = this.getInt();
+                    this.object[i].nextLevel = this.getInt();
+                    this.object[i].upgradeTime = this.getInt();
+                    this.object[i].PosX = this.getInt();
+                    this.object[i].PosY = this.getInt();
+                };
+
+                // khong thu hoach, co type 8
+                if (this.object[i].type == gv.CMD.BARRACK || this.object[i].type == gv.CMD.DEFENSE || this.object[i].type == gv.CMD.STORAGE) {
+                    this.object[i].currentLevel = this.getInt();
+                    this.object[i].nextLevel = this.getInt();
+                    this.object[i].upgradeTime = this.getInt();
+                    this.object[i].type2 = this.getInt();
+                    this.object[i].PosX = this.getInt();
+                    this.object[i].PosY = this.getInt();
+                };
+
+                // co thu hoach, co type: 9
+                if (this.object[i].type == gv.CMD.RESOURCE) {
+                    this.object[i].currentLevel = this.getInt();
+                    this.object[i].nextLevel = this.getInt();
+                    this.object[i].upgradeTime = this.getInt();
+                    this.object[i].type2 = this.getInt();
+                    this.object[i].harvestTime = this.getInt();
+                    this.object[i].PosX = this.getInt();
+                    this.object[i].PosY = this.getInt();
+                };
+
+                // vat can
+                if (this.object[i].type == gv.CMD.OBSTACLE) {
+                    this.object[i].removeTime = this.getInt();
+                    this.object[i].type2 = this.getInt();
+                    this.object[i].PosX = this.getInt();
+                    this.object[i].PosY = this.getInt();
+                };
+
+
+
+            }
         }
     }
 );

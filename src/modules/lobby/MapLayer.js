@@ -10,6 +10,7 @@ var MapLayer = cc.Layer.extend({
         this._super();
         this.loadBase();
         this.loadBoundary();
+        this.addBuilding();
     },
 
 
@@ -31,6 +32,15 @@ var MapLayer = cc.Layer.extend({
         });
       //  isometricMap.setPosition(cc.p(size.width * 0.1, size.height * 0.1));
         this.addChild(isometricMap);
+
+        var btnLoadMap = gv.commonButton(140, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.2, "LoadMap");
+        this.addChild(btnLoadMap);
+        btnLoadMap.addClickEventListener(this.onSelectLoadMap.bind(this));
+    },
+
+    onSelectLoadMap:function(sender)
+    {
+        testnetwork.connector.sendGetUserMap();
     },
 
     loadBoundary: function()
@@ -82,9 +92,20 @@ var MapLayer = cc.Layer.extend({
         //boundary[1].attr({"anchorX": 0...});
         //boundary[2].attr({"anchorX": 0...});
         //boundary[3].attr({"anchorX": 0...});
+    },
 
+    addBuilding: function() {
+        var building1 = new cc.Sprite("res/gui/Art/Buildings/barrack/BAR_1_12/idle/image0000.png");
 
+        building1.attr({
+            anchorX: 0,
+            anchorY: 0,
+            x: 200,
+            y: 200,
+            scale: 0.4
+        });
 
+        this.addChild(building1);
     }
 
 });
