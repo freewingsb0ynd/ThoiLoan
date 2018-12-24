@@ -63,9 +63,22 @@ testnetwork.Connector = cc.Class.extend({
                 }
 
                 UserData.getInstance().updateData(packet);
-               // fr.getCurrentScreen().layerMap().reloadGui();
+                // fr.getCurrentScreen().layerMap().reloadGui();
                 break;
 
+
+            case gv.CMD.CHEAT:
+
+                cc.log("typeCheat: " + packet.typeCheat);
+                cc.log("amountAfterCheated: " + packet.amountAfterCheated);
+
+                UserData.getInstance().updateCheat(packet);
+
+
+
+                fr.getCurrentScreen().layerLobby.reloadGui();
+                //fr.getCurrentScreen().updateMove(packet.x, packet.y);
+                break;
         }
     },
     sendGetUserInfo:function()
@@ -100,7 +113,16 @@ testnetwork.Connector = cc.Class.extend({
         var pk = this.gameClient.getOutPacket(CmdSendUserMap);
         pk.pack();
         this.gameClient.sendPacket(pk);
-    }
+    },
+
+
+    sendCheatRq:function(typeCheat, amountCheat){
+        cc.log("Sent Cheat Rq: " + typeCheat + " " + amountCheat);
+        var pk = this.gameClient.getOutPacket(CmdSendCheat);
+        pk.pack(typeCheat, amountCheat);
+        this.gameClient.sendPacket(pk);
+    },
+
 });
 
 

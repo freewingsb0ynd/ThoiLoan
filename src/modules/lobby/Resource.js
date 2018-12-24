@@ -18,3 +18,12 @@ res.lobby.comp_construction=  'gui/ConstructionComp.json';
 //SHOP
 res.shop = {};
 res.shop.main_shop = 'gui/Shop.json';
+res.shop.bg_shop = 'bg_shop';
+res.shop.btn_exit = 'Button_1';
+
+//CHEAT
+res.cheat = {};
+res.cheat.gold = 1;
+res.cheat.elixir = 2;
+res.cheat.darkElixir = 3;
+res.cheat.gCoin = 4;

@@ -13,6 +13,7 @@ gv.CMD.MOVE = 2001;
 gv.CMD.USER_RESOURCE = 3002;
 gv.CMD.USER_MAP = 3001;
 
+gv.CMD.CHEAT = 5001;
 
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
@@ -113,6 +114,23 @@ CmdSendUserMap = fr.OutPacket.extend(
         pack:function(){
             this.packHeader();
 
+            this.updateSize();
+        }
+    }
+)
+
+CmdSendCheat = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.CHEAT);
+        },
+        pack:function(typeCheat, amountCheat){
+            this.packHeader();
+            this.putInt(typeCheat);
+            this.putInt(amountCheat);
             this.updateSize();
         }
     }
@@ -272,6 +290,20 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 this.object[i].setImage();
 
             }
+        }
+    }
+);
+
+testnetwork.packetMap[gv.CMD.CHEAT] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.typeCheat = this.getInt();
+            this.amountAfterCheated = this.getInt();
+
         }
     }
 );

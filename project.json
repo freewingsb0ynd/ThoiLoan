@@ -61,6 +61,7 @@
         "src/modules/lobby/ScreenGame.js",
         "src/modules/lobby/LobbyLayer.js",
         "src/modules/lobby/MapLayer.js",
+        "src/modules/lobby/CheatPanel.js",
 
         "src/modules/shop/ShopGui.js"
     ]

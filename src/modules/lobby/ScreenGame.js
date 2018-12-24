@@ -43,18 +43,13 @@ var ScreenGame = cc.Layer.extend({
         //scene.addChild(layerLobby, 2);
         //return scene;
 
+        this.layerCheat = new CheatLayer();
+
         node.addChild(this.layerMap);
         node.addChild(this.layerLobby);
-        //var background = cc.Sprite("res/gui/HelloWorld.png");
-        //background.setPosition(cc.p(size.width * 0.5, size.height * 0.5));
-        //this.addChild(background);
+        node.addChild(this.layerCheat);
 
-        //var lobbyLayer = ccs.load('gui/LobbyLayer.json');
-        //this.addChild(lobbyLayer.lay);
-        //var sceneRes = ccs.load("gui/MainScene.json");
-        //this.addChild(sceneRes.node);
-        //sceneRes.node.runAction(sceneRes.action);
-        //sceneRes.action.gotoFrameAndPlay(0, true);
+
     },
 
 

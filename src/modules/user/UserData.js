@@ -52,6 +52,28 @@ var UserData = cc.Class.extend({
         this.gCoin = usrResPacket.coin;
         this.shieldTime = usrResPacket.shieldTime;
 
+    },
+
+
+    updateCheat: function(cheatPacket){
+
+        switch (cheatPacket.typeCheat){
+            case res.cheat.gold:
+                this.gold = cheatPacket.amountAfterCheated;
+                cc.log("Gold updated: " + this.gold);
+                break;
+            case res.cheat.elixir:
+                this.elixir = cheatPacket.amountAfterCheated;
+                break;
+            case res.cheat.darkElixir:
+                this.darkElixir = cheatPacket.amountAfterCheated;
+                break;
+            case res.cheat.gCoin:
+                this.gCoin = cheatPacket.amountAfterCheated;
+                break;
+        }
+
+
     }
 
 

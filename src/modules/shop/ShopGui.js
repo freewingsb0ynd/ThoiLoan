@@ -16,7 +16,7 @@ var ShopGui = cc.Node.extend({
         this.mainShop = ccs.load(res.shop.main_shop).node;
         //var scaleShop = cc.winSize.x/ this.mainShop.x;
 
-        this.bgShop = this.mainShop.getChildByName('bg_shop');
+        this.bgShop = this.mainShop.getChildByName(res.shop.bg_shop);
 
         //cc.log(cc.winSize.x);
 
@@ -27,7 +27,7 @@ var ShopGui = cc.Node.extend({
         });
         this.addChild(this.mainShop);
 
-        this.exitBtn = this.mainShop.getChildByName('Button_1');
+        this.exitBtn = this.mainShop.getChildByName(res.shop.btn_exit);
 
         this.exitBtn.addClickEventListener(this.onSelectExit.bind(this))
     },
