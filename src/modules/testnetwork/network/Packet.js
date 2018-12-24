@@ -13,16 +13,6 @@ gv.CMD.MOVE = 2001;
 gv.CMD.USER_RESOURCE = 3002;
 gv.CMD.USER_MAP = 3001;
 
-gv.CMD.ARMY_CAMP = 1;
-gv.CMD.BARRACK  = 2;
-gv.CMD.BUILDER_HUT  = 3;
-gv.CMD.CLAN_CASTLE  = 4;
-gv.CMD.DEFENSE  = 5;
-gv.CMD.LABORATORY  = 6;
-gv.CMD.OBSTACLE  = 7;
-gv.CMD.RESOURCE  = 8;
-gv.CMD.STORAGE  = 9;
-gv.CMD.TOWN_HALL  = 10;
 
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
@@ -237,12 +227,12 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
 
             var i;
             for (i = 1; i <= this.Objects_Number; i++) {
-                this.object[i] = new Object();
-                this.object[i]._id = this.getInt();
+                this.object[i] = new BaseObject();
+                this.object[i].id = this.getInt();
                 this.object[i].type = this.getInt();
 
                 // khong thu hoach, khong type 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
-                if (this.object[i].type == gv.CMD.ARMY_CAMP || this.object[i].type == gv.CMD.BUILDER_HUT  || this.object[i].type == gv.CMD.CLAN_CASTLE || this.object[i].type == gv.CMD.LABORATORY || this.object[i].type == gv.CMD.TOWN_HALL) {
+                if (this.object[i].type == gv.BUILDING.ARMY_CAMP || this.object[i].type == gv.BUILDING.BUILDER_HUT  || this.object[i].type == gv.BUILDING.CLAN_CASTLE || this.object[i].type == gv.BUILDING.LABORATORY || this.object[i].type == gv.BUILDING.TOWN_HALL) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
@@ -251,7 +241,7 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 };
 
                 // khong thu hoach, co type 8
-                if (this.object[i].type == gv.CMD.BARRACK || this.object[i].type == gv.CMD.DEFENSE || this.object[i].type == gv.CMD.STORAGE) {
+                if (this.object[i].type == gv.BUILDING.BARRACK || this.object[i].type == gv.BUILDING.DEFENSE || this.object[i].type == gv.BUILDING.STORAGE) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
@@ -261,7 +251,7 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 };
 
                 // co thu hoach, co type: 9
-                if (this.object[i].type == gv.CMD.RESOURCE) {
+                if (this.object[i].type == gv.BUILDING.RESOURCE) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
@@ -272,14 +262,14 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 };
 
                 // vat can
-                if (this.object[i].type == gv.CMD.OBSTACLE) {
+                if (this.object[i].type == gv.BUILDING.OBSTACLE) {
                     this.object[i].removeTime = this.getInt();
                     this.object[i].type2 = this.getInt();
                     this.object[i].PosX = this.getInt();
                     this.object[i].PosY = this.getInt();
                 };
 
-
+                this.object[i].setImage();
 
             }
         }
