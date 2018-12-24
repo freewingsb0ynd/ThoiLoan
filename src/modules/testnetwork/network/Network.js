@@ -79,6 +79,28 @@ testnetwork.Connector = cc.Class.extend({
                 fr.getCurrentScreen().layerLobby.reloadGui();
                 //fr.getCurrentScreen().updateMove(packet.x, packet.y);
                 break;
+
+            case gv.CMD.ADD_BUILDING:
+
+                cc.log("status: " + packet.status);
+                cc.log("id building: " + packet.idBuilding);
+
+
+                fr.getCurrentScreen().layerCheat.addBuildingResponse(packet.status, packet.idBuilding);
+                //fr.getCurrentScreen().updateMove(packet.x, packet.y);
+                break;
+
+            case gv.CMD.UPGRADE:
+                fr.getCurrentScreen().layerCheat.upgradeResponse(packet.status);
+                break;
+            case gv.CMD.STOP_UPGRADING:
+                fr.getCurrentScreen().layerCheat.cancelBuildResponse(packet.status);
+                break;
+            case gv.CMD.UPGRADE_NOW:
+                fr.getCurrentScreen().layerCheat.finishNowResponse(packet.status);
+                break;
+
+
         }
     },
     sendGetUserInfo:function()
@@ -122,6 +144,36 @@ testnetwork.Connector = cc.Class.extend({
         pk.pack(typeCheat, amountCheat);
         this.gameClient.sendPacket(pk);
     },
+
+    sendBuildRq:function(posX, posY, type1, type2){
+        //cc.log("Sent Build Rq: " + typeCheat + " " + amountCheat);
+        var pk = this.gameClient.getOutPacket(CmdSendBuild);
+        pk.pack(posX, posY, type1, type2);
+        this.gameClient.sendPacket(pk);
+    },
+
+    sendUpgradeRq:function(idBuilding){
+
+        var pk = this.gameClient.getOutPacket(CmdSendUpgrade);
+        pk.pack(idBuilding);
+        this.gameClient.sendPacket(pk);
+    },
+
+    sendCancelBuildRq:function(idBuilding){
+
+        var pk = this.gameClient.getOutPacket(CmdSendCancelBuild);
+        pk.pack(idBuilding);
+        this.gameClient.sendPacket(pk);
+    },
+
+    sendFinishBuildRq:function(idBuilding){
+
+        var pk = this.gameClient.getOutPacket(CmdSendFinishBuild);
+        pk.pack(idBuilding);
+        this.gameClient.sendPacket(pk);
+    },
+
+
 
 });
 

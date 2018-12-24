@@ -1,7 +1,8 @@
 /**
  * Created by hoangelato on 12/17/2018.
  */
-    res = res||{};
+
+res = res||{};
 
 //FONT
 res.font
@@ -21,9 +22,11 @@ res.shop.main_shop = 'gui/Shop.json';
 res.shop.bg_shop = 'bg_shop';
 res.shop.btn_exit = 'Button_1';
 
+
+var game = game || {};
 //CHEAT
-res.cheat = {};
-res.cheat.gold = 1;
-res.cheat.elixir = 2;
-res.cheat.darkElixir = 3;
-res.cheat.gCoin = 4;
+game.cheat = {};
+game.cheat.gold = 1;
+game.cheat.elixir = 2;
+game.cheat.darkElixir = 3;
+game.cheat.gCoin = 4;

@@ -46,8 +46,10 @@ var ScreenGame = cc.Layer.extend({
         this.layerCheat = new CheatLayer();
 
         node.addChild(this.layerMap);
-        node.addChild(this.layerLobby);
+
         node.addChild(this.layerCheat);
+        node.addChild(this.layerLobby);
+
 
 
     },

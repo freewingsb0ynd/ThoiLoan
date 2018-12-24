@@ -58,17 +58,17 @@ var UserData = cc.Class.extend({
     updateCheat: function(cheatPacket){
 
         switch (cheatPacket.typeCheat){
-            case res.cheat.gold:
+            case game.cheat.gold:
                 this.gold = cheatPacket.amountAfterCheated;
                 cc.log("Gold updated: " + this.gold);
                 break;
-            case res.cheat.elixir:
+            case game.cheat.elixir:
                 this.elixir = cheatPacket.amountAfterCheated;
                 break;
-            case res.cheat.darkElixir:
+            case game.cheat.darkElixir:
                 this.darkElixir = cheatPacket.amountAfterCheated;
                 break;
-            case res.cheat.gCoin:
+            case game.cheat.gCoin:
                 this.gCoin = cheatPacket.amountAfterCheated;
                 break;
         }

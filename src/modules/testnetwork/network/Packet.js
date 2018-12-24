@@ -14,6 +14,10 @@ gv.CMD.USER_RESOURCE = 3002;
 gv.CMD.USER_MAP = 3001;
 
 gv.CMD.CHEAT = 5001;
+gv.CMD.ADD_BUILDING = 4001;
+gv.CMD.STOP_UPGRADING = 4003;
+gv.CMD.UPGRADE = 4004;
+gv.CMD.UPGRADE_NOW = 4005;
 
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
@@ -135,6 +139,75 @@ CmdSendCheat = fr.OutPacket.extend(
         }
     }
 )
+
+CmdSendBuild = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.ADD_BUILDING);
+        },
+        pack:function(posX, posY, type1, type2){
+            this.packHeader();
+            this.putInt(posX);
+            this.putInt(posY);
+            this.putInt(type1);
+            this.putInt(type2);
+            this.updateSize();
+        }
+    }
+)
+
+CmdSendUpgrade = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.UPGRADE);
+        },
+        pack:function(idBuilding){
+            this.packHeader();
+            this.putInt(idBuilding);
+            this.updateSize();
+        }
+    }
+)
+
+CmdSendCancelBuild = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.STOP_UPGRADING);
+        },
+        pack:function(idBuilding){
+            this.packHeader();
+            this.putInt(idBuilding);
+            this.updateSize();
+        }
+    }
+)
+
+CmdSendFinishBuild = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.UPGRADE_NOW);
+        },
+        pack:function(idBuilding){
+            this.packHeader();
+            this.putInt(idBuilding);
+
+            this.updateSize();
+        }
+    }
+)
+
 
 /**
  * InPacket
@@ -308,6 +381,53 @@ testnetwork.packetMap[gv.CMD.CHEAT] = fr.InPacket.extend(
     }
 );
 
+testnetwork.packetMap[gv.CMD.ADD_BUILDING] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.status = this.getInt();
+            if (this.status == 0) this.idBuilding = this.getInt();
 
+        }
+    }
+);
+
+testnetwork.packetMap[gv.CMD.UPGRADE] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.status = this.getInt();
+        }
+    }
+);
+
+testnetwork.packetMap[gv.CMD.STOP_UPGRADING] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.status = this.getInt();
+        }
+    }
+);
+testnetwork.packetMap[gv.CMD.UPGRADE_NOW] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.status = this.getInt();
+        }
+    }
+);
 
 
