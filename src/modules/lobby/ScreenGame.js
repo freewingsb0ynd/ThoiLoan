@@ -21,7 +21,7 @@ var ScreenGame = cc.Layer.extend({
         //this.removeAllChildren();
         var size = cc.winSize;
 
-        var btnBack = gv.commonButton(100, 64, size.width * 0.9, size.height * 0.4,"Back");
+        var btnBack = gv.commonButton(100, 64, size.width * 0.85, size.height * 0.07,"Back");
         this.addChild(btnBack);
         btnBack.addClickEventListener(this.onSelectBack.bind(this));
 

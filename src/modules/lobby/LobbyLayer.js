@@ -1,6 +1,7 @@
 /**
  * Created by CPU11635_LOCAL on 12/12/2018.
  */
+
 var LobbyLayer = cc.Layer.extend({
     _itemMenu:null,
     _beginPos:0,
@@ -38,7 +39,7 @@ var LobbyLayer = cc.Layer.extend({
         this.addChild(this.shopComp);
 
 
-        var btnLoad = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.6, "Load");
+        var btnLoad = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.35, "Load");
         this.addChild(btnLoad);
         btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
 
@@ -50,6 +51,7 @@ var LobbyLayer = cc.Layer.extend({
     {
         this.profileComp.updateGui();
         this.resourceComp.updateGui();
+        this.infoComp.updateGui();
 
     },
 

@@ -68,6 +68,9 @@
         "src/modules/lobby/MapLayer.js",
         "src/modules/lobby/CheatPanel.js",
 
-        "src/modules/shop/ShopGui.js"
+        "src/modules/shop/ShopGui.js",
+        "src/modules/shop/ShopMain.js",
+        "src/modules/shop/ShopTab.js"
+
     ]
 }

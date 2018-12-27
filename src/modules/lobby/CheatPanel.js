@@ -87,11 +87,9 @@ var CheatLayer = cc.Layer.extend({
         this.addChild(btnFinishNow);
         btnFinishNow.addClickEventListener(this.onSelectFinish.bind(this));
 
-
-
-
-
-
+        var btnCheat = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.5, "Cheat");
+        this.addChild(btnCheat);
+        //btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
 
 
     },

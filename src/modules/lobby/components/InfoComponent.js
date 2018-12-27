@@ -23,6 +23,14 @@ var InfoComponent = Component.extend({
     },
 
     updateGui:function(){
+        var totalBuilders = UserMap.getInstance().getTotalBuilder();
+        var workingBuilders = UserMap.getInstance().getWorkingBuilder();
+        var freeBuilders = totalBuilders - workingBuilders;
+
+
+        this._textBuilder.setString(freeBuilders+'/'+totalBuilders);
+
+
         //this._textBuilder.setString(UserData.getInstance().userName);
         //this._textShieldTime.setString(UserData.getInstance().usrExp+"");
         //this._textArmy.setString(UserData.getInstance().level+"");
