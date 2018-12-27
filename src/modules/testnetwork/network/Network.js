@@ -55,7 +55,7 @@ testnetwork.Connector = cc.Class.extend({
                 cc.log("User id: " + packet.User_id.toString());
                 cc.log("Objects Number: " + packet.Objects_Number.toString());
 
-                for (i = 1; i <= 9; i++) {
+                for (var i = 1; i <= packet.object.length; i++) {
                     cc.log("Object id: " + packet.object[i].id.toString());
                     cc.log("Type: " + packet.object[i].type.toString());
                     cc.log("Image Link: " + packet.object[i].Imagelink.toString());
