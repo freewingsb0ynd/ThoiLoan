@@ -203,6 +203,47 @@
             },
             "Name": "button_settings",
             "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "NotiNum.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -91.7665,
+              "Y": 91.8155
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -91.7665,
+            "RightMargin": 91.7665,
+            "TopMargin": -91.8155,
+            "BottomMargin": 91.8155,
+            "Tag": 612,
+            "ActionTag": -553255869,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "notiNum_node",
+            "ctype": "ProjectNodeObjectData"
           }
         ],
         "Size": {
@@ -215,7 +256,8 @@
       "UsedResources": [
         "Art/GUIs/Main_Gui/kho.png",
         "Art/GUIs/Main_Gui/setting.png",
-        "Art/GUIs/Main_Gui/shop.png"
+        "Art/GUIs/Main_Gui/shop.png",
+        "NotiNum.json"
       ],
       "ctype": "GameFileData"
     }

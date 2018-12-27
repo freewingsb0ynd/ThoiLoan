@@ -1,0 +1,281 @@
+{
+  "ID": "52031a26-336e-4ba5-bf66-370471f4b573",
+  "Version": "2.1.0.0",
+  "Name": "ShopMain",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 157,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabDecorate.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": -100.0,
+            "BottomMargin": 100.0,
+            "Tag": 478,
+            "ActionTag": -1095841712,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "decorTab_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabShield.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 260.0,
+              "Y": -115.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 260.0,
+            "RightMargin": -260.0,
+            "TopMargin": 115.0,
+            "BottomMargin": -115.0,
+            "Tag": 489,
+            "ActionTag": -1298078065,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "shieldTab_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabDefense.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0015,
+              "Y": -115.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 0.0015,
+            "RightMargin": -0.0015,
+            "TopMargin": 115.0,
+            "BottomMargin": -115.0,
+            "Tag": 500,
+            "ActionTag": 436317053,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "defenseTab_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabResource.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "TopMargin": -100.0,
+            "BottomMargin": 100.0,
+            "Tag": 511,
+            "ActionTag": 1437989358,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "resourceTab_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabArmy.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -260.0,
+              "Y": -115.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -260.0,
+            "RightMargin": 260.0,
+            "TopMargin": 115.0,
+            "BottomMargin": -115.0,
+            "Tag": 522,
+            "ActionTag": -527694937,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "armyTab_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "TabChest.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -260.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -260.0,
+            "RightMargin": 260.0,
+            "TopMargin": -100.0,
+            "BottomMargin": 100.0,
+            "Tag": 533,
+            "ActionTag": 90315131,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "chestTab_node",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "TabArmy.json",
+        "TabChest.json",
+        "TabDecorate.json",
+        "TabDefense.json",
+        "TabResource.json",
+        "TabShield.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

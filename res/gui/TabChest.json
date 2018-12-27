@@ -76,7 +76,7 @@
               "X": 241.0,
               "Y": 186.0
             },
-            "Name": "Button_1",
+            "Name": "chestTab_btn",
             "ctype": "ButtonObjectData"
           },
           {
@@ -294,7 +294,7 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "Name": "FileNode_1",
+            "Name": "notiNum_node",
             "ctype": "ProjectNodeObjectData"
           }
         ],

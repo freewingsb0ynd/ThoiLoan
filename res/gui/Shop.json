@@ -30,11 +30,11 @@
             },
             "Position": {
               "X": 0.0,
-              "Y": 0.0
+              "Y": 0.0002
             },
             "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
+              "ScaleX": 1.15,
+              "ScaleY": 1.15
             },
             "CColor": {},
             "IconVisible": false,
@@ -48,8 +48,8 @@
             },
             "LeftMargin": -369.5,
             "RightMargin": -369.5,
-            "TopMargin": -238.0,
-            "BottomMargin": -238.0,
+            "TopMargin": -238.0002,
+            "BottomMargin": -237.9998,
             "Tag": 394,
             "ActionTag": -1134107526,
             "Size": {
@@ -94,8 +94,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 323.4655,
-              "Y": 210.4718
+              "X": 380.0,
+              "Y": 240.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -111,10 +111,10 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 299.9655,
-            "RightMargin": -346.9655,
-            "TopMargin": -233.9718,
-            "BottomMargin": 186.9718,
+            "LeftMargin": 356.5,
+            "RightMargin": -403.5,
+            "TopMargin": -263.5,
+            "BottomMargin": 216.5,
             "Tag": 156,
             "ActionTag": 978806660,
             "Size": {
@@ -123,248 +123,6 @@
             },
             "Name": "Button_1",
             "ctype": "ButtonObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabArmy.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": -230.0,
-              "Y": -110.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -230.0,
-            "RightMargin": 230.0,
-            "TopMargin": 110.0,
-            "BottomMargin": -110.0,
-            "Tag": 260,
-            "ActionTag": -1597878802,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_3",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabShield.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 230.0,
-              "Y": -110.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 230.0,
-            "RightMargin": -230.0,
-            "TopMargin": 110.0,
-            "BottomMargin": -110.0,
-            "Tag": 309,
-            "ActionTag": 36613842,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_4",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabDefense.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 0.0,
-              "Y": -110.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "TopMargin": 110.0,
-            "BottomMargin": -110.0,
-            "Tag": 330,
-            "ActionTag": 175273948,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_5",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabResource.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 0.0,
-              "Y": 90.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "TopMargin": -90.0,
-            "BottomMargin": 90.0,
-            "Tag": 341,
-            "ActionTag": 7666759,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_6",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabDecorate.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 230.0,
-              "Y": 90.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 230.0,
-            "RightMargin": -230.0,
-            "TopMargin": -90.0,
-            "BottomMargin": 90.0,
-            "Tag": 352,
-            "ActionTag": -984240585,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_7",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "TabChest.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": -230.0,
-              "Y": 90.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -230.0,
-            "RightMargin": 230.0,
-            "TopMargin": -90.0,
-            "BottomMargin": 90.0,
-            "Tag": 363,
-            "ActionTag": -819084388,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_8",
-            "ctype": "ProjectNodeObjectData"
           },
           {
             "LabelText": "CỬA HÀNG",
@@ -379,7 +137,7 @@
             },
             "Position": {
               "X": 0.0,
-              "Y": 205.0
+              "Y": 240.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -397,16 +155,91 @@
             },
             "LeftMargin": -74.0,
             "RightMargin": -74.0,
-            "TopMargin": -224.0,
-            "BottomMargin": 186.0,
+            "TopMargin": -259.0,
+            "BottomMargin": 221.0,
             "Tag": 395,
             "ActionTag": 413298469,
             "Size": {
               "X": 148.0,
               "Y": 38.0
             },
-            "Name": "text_shop",
+            "Name": "titleShop_text",
             "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ShopMain.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 571,
+            "ActionTag": -1782117816,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "shopMain_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ShopTab.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 2385,
+            "ActionTag": -206671408,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "VisibleForFrame": false,
+            "Name": "shopTab_node",
+            "ctype": "ProjectNodeObjectData"
           }
         ],
         "Size": {
@@ -421,12 +254,8 @@
         "Art/Fonts/soji_24.png",
         "Art/GUIs/research troop/nen 1.png",
         "Art/GUIs/shop_gui/close.png",
-        "TabArmy.json",
-        "TabChest.json",
-        "TabDecorate.json",
-        "TabDefense.json",
-        "TabResource.json",
-        "TabShield.json"
+        "ShopMain.json",
+        "ShopTab.json"
       ],
       "ctype": "GameFileData"
     }

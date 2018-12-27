@@ -1,7 +1,7 @@
 {
-  "ID": "1f11ff6e-2d32-4b1d-8cf3-62ec22b1ba47",
+  "ID": "9a27049f-a835-4766-af1a-166f82c5e449",
   "Version": "2.1.0.0",
-  "Name": "TabDefense",
+  "Name": "ShopItem",
   "Content": {
     "Content": {
       "Animation": {
@@ -12,7 +12,7 @@
       },
       "AnimationList": [],
       "ObjectData": {
-        "Tag": 158,
+        "Tag": 744,
         "Children": [
           {
             "FontSize": 14,
@@ -22,16 +22,21 @@
               "G": 65,
               "B": 70
             },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/slot.png",
+              "Plist": ""
+            },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "Art/GUIs/shop_gui/slot_catalogy.png",
+              "Path": "Art/GUIs/shop_gui/slot.png",
               "Plist": ""
             },
             "Scale9Enable": true,
             "Scale9OriginX": 15,
             "Scale9OriginY": 11,
-            "Scale9Width": 211,
-            "Scale9Height": 164,
+            "Scale9Width": 196,
+            "Scale9Height": 303,
             "OutlineColor": {
               "G": 0,
               "B": 0
@@ -66,23 +71,23 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -120.5,
-            "RightMargin": -120.5,
-            "TopMargin": -93.0,
-            "BottomMargin": -93.0,
-            "Tag": 197,
-            "ActionTag": 1473314016,
+            "LeftMargin": -113.0,
+            "RightMargin": -113.0,
+            "TopMargin": -162.5,
+            "BottomMargin": -162.5,
+            "Tag": 746,
+            "ActionTag": -1321460640,
             "Size": {
-              "X": 241.0,
-              "Y": 186.0
+              "X": 226.0,
+              "Y": 325.0
             },
-            "Name": "defenseTab_btn",
+            "Name": "item_btn",
             "ctype": "ButtonObjectData"
           },
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "Art/GUIs/shop_gui/catalogy_bg.png",
+              "Path": "Art/GUIs/shop_gui/item_background.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -111,23 +116,23 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -120.5,
-            "RightMargin": -120.5,
-            "TopMargin": -93.0,
-            "BottomMargin": -93.0,
-            "Tag": 162,
-            "ActionTag": 651292831,
+            "LeftMargin": -117.5,
+            "RightMargin": -117.5,
+            "TopMargin": -162.5,
+            "BottomMargin": -162.5,
+            "Tag": 748,
+            "ActionTag": 779738387,
             "Size": {
-              "X": 241.0,
-              "Y": 186.0
+              "X": 235.0,
+              "Y": 325.0
             },
-            "Name": "catalogy_bg_3",
+            "Name": "item_background_3",
             "ctype": "SpriteObjectData"
           },
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "Art/GUIs/shop_gui/type_defense.png",
+              "Path": "Art/GUIs/icons/shop_res/elixir_10.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -156,69 +161,24 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -120.5,
-            "RightMargin": -120.5,
-            "TopMargin": -93.0,
-            "BottomMargin": -93.0,
-            "Tag": 163,
-            "ActionTag": 1846223080,
+            "LeftMargin": -117.5,
+            "RightMargin": -117.5,
+            "TopMargin": -162.5,
+            "BottomMargin": -162.5,
+            "Tag": 755,
+            "ActionTag": -350148690,
             "Size": {
-              "X": 241.0,
-              "Y": 186.0
+              "X": 235.0,
+              "Y": 325.0
             },
-            "Name": "sprite_item",
+            "Name": "shopItem_spr",
             "ctype": "SpriteObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "Art/GUIs/shop_gui/title_background.png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 1,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 0.0,
-              "Y": -80.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -113.0,
-            "RightMargin": -113.0,
-            "TopMargin": 53.5,
-            "BottomMargin": -106.5,
-            "Tag": 198,
-            "ActionTag": 2095886932,
-            "Size": {
-              "X": 226.0,
-              "Y": 53.0
-            },
-            "Name": "title_background_5",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "LabelText": "PHÒNG THỦ",
+            "LabelText": "888",
             "LabelBMFontFile_CNB": {
               "Type": "Normal",
-              "Path": "Art/Fonts/soji_16.fnt",
+              "Path": "Art/Fonts/soji_20.fnt",
               "Plist": ""
             },
             "AnchorPoint": {
@@ -226,8 +186,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -0.0003,
-              "Y": -80.0
+              "X": 25.0,
+              "Y": -125.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -243,39 +203,43 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -56.0003,
-            "RightMargin": -55.9997,
-            "TopMargin": 67.5,
-            "BottomMargin": -92.5,
-            "Tag": 199,
-            "ActionTag": -1957670609,
+            "LeftMargin": -2.5,
+            "RightMargin": -52.5,
+            "TopMargin": 109.0,
+            "BottomMargin": -141.0,
+            "Tag": 751,
+            "ActionTag": -328595587,
             "Size": {
-              "X": 112.0,
-              "Y": 25.0
+              "X": 55.0,
+              "Y": 32.0
             },
-            "Name": "name_tag",
+            "Name": "itemPrice_lbl",
             "ctype": "TextBMFontObjectData"
           },
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "NotiNum.json",
+              "Path": "Art/GUIs/Main_Gui/g_icon.png",
               "Plist": ""
             },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
             "Position": {
-              "X": 105.0,
-              "Y": 80.0
+              "X": 70.0,
+              "Y": -125.0
             },
             "Scale": {
               "ScaleX": 1.0,
               "ScaleY": 1.0
             },
             "CColor": {},
-            "IconVisible": true,
+            "IconVisible": false,
             "PrePosition": {
               "X": 0.0,
               "Y": 0.0
@@ -284,18 +248,18 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 105.0,
-            "RightMargin": -105.0,
-            "TopMargin": -80.0,
-            "BottomMargin": 80.0,
-            "Tag": 283,
-            "ActionTag": -195949632,
+            "LeftMargin": 56.5,
+            "RightMargin": -83.5,
+            "TopMargin": 111.0,
+            "BottomMargin": -139.0,
+            "Tag": 753,
+            "ActionTag": -1952669162,
             "Size": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 27.0,
+              "Y": 28.0
             },
-            "Name": "notiNum_node",
-            "ctype": "ProjectNodeObjectData"
+            "Name": "g_icon_6",
+            "ctype": "SpriteObjectData"
           }
         ],
         "Size": {
@@ -306,13 +270,12 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "Art/Fonts/soji_16.fnt",
-        "Art/Fonts/soji_16.png",
-        "Art/GUIs/shop_gui/catalogy_bg.png",
-        "Art/GUIs/shop_gui/slot_catalogy.png",
-        "Art/GUIs/shop_gui/title_background.png",
-        "Art/GUIs/shop_gui/type_defense.png",
-        "NotiNum.json"
+        "Art/Fonts/soji_20.fnt",
+        "Art/Fonts/soji_20.png",
+        "Art/GUIs/icons/shop_res/elixir_10.png",
+        "Art/GUIs/Main_Gui/g_icon.png",
+        "Art/GUIs/shop_gui/item_background.png",
+        "Art/GUIs/shop_gui/slot.png"
       ],
       "ctype": "GameFileData"
     }

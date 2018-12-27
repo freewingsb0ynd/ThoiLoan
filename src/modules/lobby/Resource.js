@@ -18,9 +18,11 @@ res.lobby.comp_construction=  'gui/ConstructionComp.json';
 
 //SHOP
 res.shop = {};
-res.shop.main_shop = 'gui/Shop.json';
+res.shop.gui_shop = 'gui/Shop.json';
 res.shop.bg_shop = 'bg_shop';
 res.shop.btn_exit = 'Button_1';
+res.shop.shop_main = 'shopMain_node';
+res.shop.shop_tab = 'shopTab_node';
 
 
 var game = game || {};

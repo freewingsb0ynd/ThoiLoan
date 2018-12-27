@@ -1,0 +1,720 @@
+{
+  "ID": "5003747b-924f-49cf-b138-75234cf3d2cc",
+  "Version": "2.1.0.0",
+  "Name": "ShopTab",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 743,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ShopScrollView.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -390.0,
+              "Y": 20.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -390.0,
+            "RightMargin": 390.0,
+            "TopMargin": -20.0,
+            "BottomMargin": 20.0,
+            "Tag": 1893,
+            "ActionTag": -1796387240,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "shop_scrview",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/res_info.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -397.0,
+            "RightMargin": -397.0,
+            "TopMargin": 176.5,
+            "BottomMargin": -243.5,
+            "Tag": 2119,
+            "ActionTag": 1275321301,
+            "Size": {
+              "X": 794.0,
+              "Y": 67.0
+            },
+            "Name": "resBar_bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/res_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 285.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 215.0,
+            "RightMargin": -355.0,
+            "TopMargin": 192.0,
+            "BottomMargin": -228.0,
+            "Tag": 2508,
+            "ActionTag": 1420006250,
+            "Size": {
+              "X": 140.0,
+              "Y": 36.0
+            },
+            "Name": "resBar_gCoin",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/g_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 345.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 331.5,
+            "RightMargin": -358.5,
+            "TopMargin": 196.0,
+            "BottomMargin": -224.0,
+            "Tag": 2509,
+            "ActionTag": 1216900831,
+            "Size": {
+              "X": 27.0,
+              "Y": 28.0
+            },
+            "Name": "gCoin_ic",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/res_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -285.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -355.0,
+            "RightMargin": 215.0,
+            "TopMargin": 192.0,
+            "BottomMargin": -228.0,
+            "Tag": 2510,
+            "ActionTag": -2089609105,
+            "Size": {
+              "X": 140.0,
+              "Y": 36.0
+            },
+            "Name": "resBar_gold",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/res_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -95.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -165.0,
+            "RightMargin": 25.0,
+            "TopMargin": 192.0,
+            "BottomMargin": -228.0,
+            "Tag": 2511,
+            "ActionTag": -937030549,
+            "Size": {
+              "X": 140.0,
+              "Y": 36.0
+            },
+            "Name": "resBar_elixir",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/res_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 95.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 25.0,
+            "RightMargin": -165.0,
+            "TopMargin": 192.0,
+            "BottomMargin": -228.0,
+            "Tag": 2512,
+            "ActionTag": 1339636822,
+            "Size": {
+              "X": 140.0,
+              "Y": 36.0
+            },
+            "Name": "resBar_darkElixir",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/darkElixir_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 155.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 142.5,
+            "RightMargin": -167.5,
+            "TopMargin": 194.0,
+            "BottomMargin": -226.0,
+            "Tag": 2513,
+            "ActionTag": -1659285575,
+            "Size": {
+              "X": 25.0,
+              "Y": 32.0
+            },
+            "Name": "darkElixir_ic",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/elixir_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -35.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -48.5,
+            "RightMargin": 21.5,
+            "TopMargin": 194.0,
+            "BottomMargin": -226.0,
+            "Tag": 2514,
+            "ActionTag": -352220669,
+            "Size": {
+              "X": 27.0,
+              "Y": 32.0
+            },
+            "Name": "elixir_ic",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/gold_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -225.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -239.0,
+            "RightMargin": 211.0,
+            "TopMargin": 195.5,
+            "BottomMargin": -224.5,
+            "Tag": 2515,
+            "ActionTag": 2106225204,
+            "Size": {
+              "X": 28.0,
+              "Y": 29.0
+            },
+            "Name": "gold_ic",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "1600000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -290.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -343.5,
+            "RightMargin": 236.5,
+            "TopMargin": 197.5,
+            "BottomMargin": -222.5,
+            "Tag": 2516,
+            "ActionTag": 1602211216,
+            "Size": {
+              "X": 107.0,
+              "Y": 25.0
+            },
+            "Name": "gold_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "1600000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 280.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 226.5,
+            "RightMargin": -333.5,
+            "TopMargin": 197.5,
+            "BottomMargin": -222.5,
+            "Tag": 2517,
+            "ActionTag": -1415858497,
+            "Size": {
+              "X": 107.0,
+              "Y": 25.0
+            },
+            "Name": "gCoin_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "1600000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 90.0,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 36.5,
+            "RightMargin": -143.5,
+            "TopMargin": 197.5,
+            "BottomMargin": -222.5,
+            "Tag": 2518,
+            "ActionTag": -1513284603,
+            "Size": {
+              "X": 107.0,
+              "Y": 25.0
+            },
+            "Name": "darkElixir_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "1600000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -99.1363,
+              "Y": -210.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -152.6363,
+            "RightMargin": 45.6363,
+            "TopMargin": 197.5,
+            "BottomMargin": -222.5,
+            "Tag": 2519,
+            "ActionTag": -1455220982,
+            "Size": {
+              "X": 107.0,
+              "Y": 25.0
+            },
+            "Name": "elixir_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/back.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 44,
+            "Scale9Height": 25,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -360.0,
+              "Y": 240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -397.0,
+            "RightMargin": 323.0,
+            "TopMargin": -263.5,
+            "BottomMargin": 216.5,
+            "Tag": 3205,
+            "ActionTag": -122020147,
+            "Size": {
+              "X": 74.0,
+              "Y": 47.0
+            },
+            "Name": "tabBack_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Fonts/soji_16.fnt",
+        "Art/Fonts/soji_16.png",
+        "Art/GUIs/Main_Gui/darkElixir_icon.png",
+        "Art/GUIs/Main_Gui/elixir_icon.png",
+        "Art/GUIs/Main_Gui/g_icon.png",
+        "Art/GUIs/Main_Gui/gold_icon.png",
+        "Art/GUIs/shop_gui/back.png",
+        "Art/GUIs/shop_gui/res_bar.png",
+        "Art/GUIs/shop_gui/res_info.png",
+        "ShopScrollView.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}
