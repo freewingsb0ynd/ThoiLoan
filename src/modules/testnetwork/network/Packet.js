@@ -18,6 +18,9 @@ gv.CMD.ADD_BUILDING = 4001;
 gv.CMD.STOP_UPGRADING = 4003;
 gv.CMD.UPGRADE = 4004;
 gv.CMD.UPGRADE_NOW = 4005;
+gv.CMD.MOVE_BUILDING = 4002;
+
+
 
 testnetwork = testnetwork||{};
 testnetwork.packetMap = {};
@@ -105,6 +108,7 @@ CmdSendUserResource = fr.OutPacket.extend(
         }
     }
 )
+
 
 // Sent request for user map
 CmdSendUserMap = fr.OutPacket.extend(
@@ -208,6 +212,23 @@ CmdSendFinishBuild = fr.OutPacket.extend(
     }
 )
 
+CmdSendMoveCons = fr.OutPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+            this.initData(100);
+            this.setCmdId(gv.CMD.MOVE_BUILDING);
+        },
+        pack:function(idBuilding, posX, posY){
+            this.packHeader();
+            this.putInt(idBuilding);
+            this.putInt(posX);
+            this.putInt(posY);
+            this.updateSize();
+        }
+    }
+)
 
 /**
  * InPacket
@@ -418,6 +439,7 @@ testnetwork.packetMap[gv.CMD.STOP_UPGRADING] = fr.InPacket.extend(
         }
     }
 );
+
 testnetwork.packetMap[gv.CMD.UPGRADE_NOW] = fr.InPacket.extend(
     {
         ctor:function()
@@ -429,5 +451,18 @@ testnetwork.packetMap[gv.CMD.UPGRADE_NOW] = fr.InPacket.extend(
         }
     }
 );
+
+testnetwork.packetMap[gv.CMD.MOVE_BUILDING] = fr.InPacket.extend(
+    {
+        ctor:function()
+        {
+            this._super();
+        },
+        readData:function(){
+            this.status = this.getInt();
+        }
+    }
+);
+
 
 

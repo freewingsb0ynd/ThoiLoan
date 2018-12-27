@@ -58,7 +58,12 @@ var ScreenGame = cc.Layer.extend({
     onSelectBack:function(sender)
     {
         fr.view(ScreenMenu);
-    }
+    },
+
+    onConnectFail:function()
+    {
+        this.layerCheat.logConnectionFail();
+    },
 
 });
 //

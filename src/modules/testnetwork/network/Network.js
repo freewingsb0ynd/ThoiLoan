@@ -93,13 +93,18 @@ testnetwork.Connector = cc.Class.extend({
             case gv.CMD.UPGRADE:
                 fr.getCurrentScreen().layerCheat.upgradeResponse(packet.status);
                 break;
+
             case gv.CMD.STOP_UPGRADING:
                 fr.getCurrentScreen().layerCheat.cancelBuildResponse(packet.status);
                 break;
+
             case gv.CMD.UPGRADE_NOW:
                 fr.getCurrentScreen().layerCheat.finishNowResponse(packet.status);
                 break;
 
+            case gv.CMD.MOVE_BUILDING:
+                fr.getCurrentScreen().layerCheat.moveConstructionResponse(packet.status);
+                break;
 
         }
     },
@@ -131,7 +136,7 @@ testnetwork.Connector = cc.Class.extend({
     },
 
     sendGetUserMap:function(){
-        cc.log("Get Usr Map" + 3001);
+        cc.log("Get Usr Map: " + 3001);
         var pk = this.gameClient.getOutPacket(CmdSendUserMap);
         pk.pack();
         this.gameClient.sendPacket(pk);
@@ -173,6 +178,12 @@ testnetwork.Connector = cc.Class.extend({
         this.gameClient.sendPacket(pk);
     },
 
+    sendMoveConsRq:function(idBuilding, posX, posY){
+
+        var pk = this.gameClient.getOutPacket(CmdSendMoveCons);
+        pk.pack(idBuilding, posX, posY);
+        this.gameClient.sendPacket(pk);
+    },
 
 
 });

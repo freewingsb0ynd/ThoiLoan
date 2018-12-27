@@ -61,6 +61,11 @@ var CheatLayer = cc.Layer.extend({
 
         btnBuild.addClickEventListener(this.onSelectBuild.bind(this));
 
+        var btnMoveConstruction = gv.commonButton(80, 32, size.width * 0.5, size.height * 0.3 ,"Move");
+        this.addChild(btnMoveConstruction);
+
+        btnMoveConstruction.addClickEventListener(this.onSelectMove.bind(this));
+
 
         this.tfArgIDBuild = ccui.TextField();
 
@@ -106,7 +111,6 @@ var CheatLayer = cc.Layer.extend({
 
     onSelectBuild: function(sender){
 
-
         var args = this.tfArgBuild.getString().split(',');
         cc.log(args[0] + ", " + args[1] + ", " + args[2] + ", " + args[3]);
 
@@ -125,10 +129,21 @@ var CheatLayer = cc.Layer.extend({
     },
 
     onSelectFinish: function(sender){
-        cc.log();
+        //cc.log();
         testnetwork.connector.sendFinishBuildRq(Number(this.tfArgIDBuild.getString()));
 
     },
+
+    onSelectMove: function(sender){
+        //cc.log();
+        var args = this.tfArgBuild.getString().split(',');
+        //cc.log(args[0] + ", " + args[1] + ", " + args[2] + ", " + args[3]);
+
+        testnetwork.connector.sendMoveConsRq(args[0],args[1],args[2]);
+
+
+    },
+
 
     addBuildingResponse: function(status, idBuilding){
         //cc.log("ddddd")
@@ -137,40 +152,115 @@ var CheatLayer = cc.Layer.extend({
                 this.lblLog.setString("Xay thanh cong, id: " + idBuilding);
                 break;
             case 1:
-                this.lblLog.setString("Khong du tai nguyen");
+                this.lblLog.setString("Xay khong thanh cong, loi: Khong du tai nguyen");
                 break;
             case 2:
-                this.lblLog.setString("Khong con tho xay ranh");
+                this.lblLog.setString("Xay khong thanh cong, loi: Khong con tho xay ranh");
                 break;
             case 3:
-                this.lblLog.setString("Vi tri khong thoa man");
+                this.lblLog.setString("Xay khong thanh cong, loi: Vi tri khong thoa man");
                 break;
             case 4:
-                this.lblLog.setString("Vi pham gioi han nha chinh");
+                this.lblLog.setString("Xay khong thanh cong, loi: Vi pham gioi han nha chinh");
                 break;
             case 5:
-                this.lblLog.setString("Sai loai cong trinh ");
+                this.lblLog.setString("Xay khong thanh cong, loi: Sai loai cong trinh ");
                 break;
             case 6:
-                this.lblLog.setString("Unknown");
+                this.lblLog.setString("Xay khong thanh cong, loi: Unknown");
                 break;
         }
     },
 
     finishNowResponse: function(status){
-        if(status == 0) this.lblLog.setString("Xay nhanh thanh cong");
+        switch (status) {
+            case 0:
+                this.lblLog.setString("Xay nhanh thanh cong");
+                break;
+            case 1:
+                this.lblLog.setString("Xay nhanh khong thanh cong, loi: Sai ID");
+                break;
+            case 2:
+                this.lblLog.setString("Xay nhanh khong thanh cong, loi: Dang khong xay");
+                break;
+            case 3:
+                this.lblLog.setString("Xay nhanh khong thanh cong, loi: Unknown");
+                break;
+
+        }
     },
 
 
     cancelBuildResponse: function(status){
-        if(status == 0) this.lblLog.setString("Huy xay/ nang cap thanh cong");
+        switch (status) {
+            case 0:
+                this.lblLog.setString("Huy xay/ nang cap thanh cong");
+                break;
+            case 1:
+                this.lblLog.setString("Huy xay khong thanh cong, loi: Sai ID");
+                break;
+            case 2:
+                this.lblLog.setString("Huy xay khong thanh cong, loi: Dang khong xay");
+                break;
+            case 3:
+                this.lblLog.setString("Huy xay khong thanh cong, loi: Unknown");
+                break;
+
+        }
     },
 
     upgradeResponse: function(status){
         if(status == 0) this.lblLog.setString("Nang cap thanh cong");
+        switch (status){
+            case 0:
+                this.lblLog.setString("Nang cap thanh cong");
+                break;
+            case 1:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Sai ID");
+                break;
+            case 2:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Da dang nang cap");
+                break;
+            case 3:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Da max cap");
+                break;
+            case 4:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Khong du tai nguyen");
+                break;
+            case 5:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Khong co tho xay ranh");
+                break;
+            case 6:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Cap nha chinh khong cho phep");
+                break;
+            case 7:
+                this.lblLog.setString("Nang cap khong thanh cong, loi: Unknown");
+                break;
+
+        }
     },
 
+    moveConstructionResponse: function(status){
+        switch (status) {
+            case 0:
+                this.lblLog.setString("Di chuyen nha thanh cong");
+                break;
+            case 1:
+                this.lblLog.setString("Di chuyen khong thanh cong, loi: Sai ID");
+                break;
+            case 2:
+                this.lblLog.setString("Di chuyen khong thanh cong, loi: Sai vi tri");
+                break;
+            case 3:
+                this.lblLog.setString("Di chuyen khong thanh cong, loi: Unknown");
+                break;
 
+        }
+    },
+
+    logConnectionFail: function(){
+        this.lblLog.setString("Connect failed");
+    }
 
 
 })

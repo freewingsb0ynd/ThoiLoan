@@ -86,4 +86,5 @@ var LobbyLayer = cc.Layer.extend({
     },
 
 
+
 });
