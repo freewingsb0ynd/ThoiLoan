@@ -55,7 +55,7 @@ var UserMap = cc.Class.extend({
     },
     getCapacity : function(type2){
         capacity  = 0 ;
-        typeConvert = this.hashType(gv.BUILDING.RESOURCE,type2);
+        typeConvert = this.hashType(gv.BUILDING.STORAGE,type2);
         listIds = this.mapTypeToIds.get(typeConvert);
         if(listIds!=null){
             for (var i = 0; i < listIds.length; i++) {

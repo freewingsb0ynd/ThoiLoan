@@ -15,7 +15,10 @@ var Building2Type = Building.extend({
         if(this.type1!=gv.BUILDING.STORAGE){
             return 0;
         }   else    {
-            return 1;
+            if(this.upgradingLevel == 1){
+                return 0;
+            }
+            return TL.STORAGE["STO_"+this.type2][this.currentLevel]["capacity"];
         }
     }
 })

@@ -53,3 +53,8 @@ TL.TOWNHALL = {}
 cc.loader.loadJson("res/Config json/TownHall.json",function(error, data){
     TL.TOWNHALL = data;
 });
+
+TL.STORAGE = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.STORAGE = data;
+});
