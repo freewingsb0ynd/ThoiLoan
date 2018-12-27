@@ -338,22 +338,24 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
            this.object = new Array(1000);
 
             var i;
+            UserMap.getInstance().prepareGetMap();
             for (i = 1; i <= this.Objects_Number; i++) {
                 this.object[i] = new BaseObject();
                 this.object[i].id = this.getInt();
-                this.object[i].type = this.getInt();
+                this.object[i].type1 = this.getInt();
 
-                // khong thu hoach, khong type 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
-                if (this.object[i].type == gv.BUILDING.ARMY_CAMP || this.object[i].type == gv.BUILDING.BUILDER_HUT  || this.object[i].type == gv.BUILDING.CLAN_CASTLE || this.object[i].type == gv.BUILDING.LABORATORY || this.object[i].type == gv.BUILDING.TOWN_HALL) {
+                // khong thu hoach, khong type1 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
+                if (this.object[i].type1 == gv.BUILDING.ARMY_CAMP || this.object[i].type1 == gv.BUILDING.BUILDER_HUT  || this.object[i].type1 == gv.BUILDING.CLAN_CASTLE || this.object[i].type1 == gv.BUILDING.LABORATORY || this.object[i].type1 == gv.BUILDING.TOWN_HALL) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
                     this.object[i].PosX = this.getInt();
                     this.object[i].PosY = this.getInt();
+
                 };
 
-                // khong thu hoach, co type 8
-                if (this.object[i].type == gv.BUILDING.BARRACK || this.object[i].type == gv.BUILDING.DEFENSE || this.object[i].type == gv.BUILDING.STORAGE) {
+                // khong thu hoach, co type1 8
+                if (this.object[i].type1 == gv.BUILDING.BARRACK || this.object[i].type1 == gv.BUILDING.DEFENSE || this.object[i].type1 == gv.BUILDING.STORAGE) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
@@ -362,8 +364,8 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                     this.object[i].PosY = this.getInt();
                 };
 
-                // co thu hoach, co type: 9
-                if (this.object[i].type == gv.BUILDING.RESOURCE) {
+                // co thu hoach, co type1: 9
+                if (this.object[i].type1 == gv.BUILDING.RESOURCE) {
                     this.object[i].currentLevel = this.getInt();
                     this.object[i].nextLevel = this.getInt();
                     this.object[i].upgradeTime = this.getInt();
@@ -374,7 +376,7 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                 };
 
                 // vat can
-                if (this.object[i].type == gv.BUILDING.OBSTACLE) {
+                if (this.object[i].type1 == gv.BUILDING.OBSTACLE) {
                     this.object[i].removeTime = this.getInt();
                     this.object[i].type2 = this.getInt();
                     this.object[i].PosX = this.getInt();
@@ -383,6 +385,31 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
 
                 this.object[i].setImage();
 
+                // trungnq
+                if(this.object[i].type1 == gv.BUILDING.OBSTACLE){
+                    area = new Obstacle(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].removeTime, this.object[i].type2);
+                    UserMap.getInstance().addObject(area);
+                }
+                if(this.object[i].type1 == gv.BUILDING.BARRACK){
+                    area = new Barrack(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2);
+                    UserMap.getInstance().addObject(area);
+                }
+                if(this.object[i].type1 == gv.BUILDING.RESOURCE){
+                    area = new Resource(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2, this.object[i].harvestTime);
+                    UserMap.getInstance().addObject(area);
+                }
+                if(this.object[i].type1 == gv.BUILDING.DEFENSE || this.object[i].type1 == gv.BUILDING.STORAGE){
+                    area = new Building2Type(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2);
+                    UserMap.getInstance().addObject(area);
+                }
+                if(this.object[i].type1 == gv.BUILDING.LABORATORY){
+                    area = new Laboratory(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime);
+                    UserMap.getInstance().addObject(area);
+                }
+                if(this.object[i].type1 == gv.BUILDING.ARMY_CAMP || this.object[i].type1 == gv.BUILDING.BUILDER_HUT  || this.object[i].type1 == gv.BUILDING.CLAN_CASTLE || this.object[i].type1 == gv.BUILDING.TOWN_HALL){
+                    area = new Building(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime);
+                    UserMap.getInstance().addObject(area);
+                }
             }
         }
     }

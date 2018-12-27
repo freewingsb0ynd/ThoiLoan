@@ -21,7 +21,7 @@
  */
 
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name jsb.AssetsManager
  * jsb.AssetsManager is the native AssetsManager for your game resources or scripts.
  * please refer to this document to know how to use it: http://www.cocos2d-x.org/docs/manual/framework/html5/v3/assets-manager/en
@@ -30,7 +30,7 @@
 jsb.AssetsManager = cc.AssetsManager;
 delete cc.AssetsManager;
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name jsb.EventListenerAssetsManager
  * jsb.EventListenerAssetsManager is the native event listener for AssetsManager.
  * please refer to this document to know how to use it: http://www.cocos2d-x.org/docs/manual/framework/html5/v3/assets-manager/en
@@ -39,7 +39,7 @@ delete cc.AssetsManager;
 jsb.EventListenerAssetsManager = cc.EventListenerAssetsManager;
 delete cc.EventListenerAssetsManager;
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name jsb.EventAssetsManager
  * jsb.EventAssetsManager is the native event for AssetsManager.
  * please refer to this document to know how to use it: http://www.cocos2d-x.org/docs/manual/framework/html5/v3/assets-manager/en
@@ -76,66 +76,66 @@ cc.TABLEVIEW_FILL_BOTTOMUP = 1;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.KEYBOARD_RETURNTYPE_DEFAULT = 0;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.KEYBOARD_RETURNTYPE_DONE = 1;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.KEYBOARD_RETURNTYPE_SEND = 2;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.KEYBOARD_RETURNTYPE_SEARCH = 3;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.KEYBOARD_RETURNTYPE_GO = 4;
 
 /**
- * The EditBox::InputMode defines the type of text that the user is allowed * to enter.
+ * The EditBox::InputMode defines the type1 of text that the user is allowed * to enter.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_ANY = 0;
 
 /**
  * The user is allowed to enter an e-mail address.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_EMAILADDR = 1;
 
 /**
  * The user is allowed to enter an integer value.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_NUMERIC = 2;
 
 /**
  * The user is allowed to enter a phone number.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_PHONENUMBER = 3;
 
 /**
  * The user is allowed to enter a URL.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_URL = 4;
 
@@ -143,14 +143,14 @@ cc.EDITBOX_INPUT_MODE_URL = 4;
  * The user is allowed to enter a real number value.
  * This extends kEditBoxInputModeNumeric by allowing a decimal point.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_DECIMAL = 5;
 
 /**
  * The user is allowed to enter any text, except for line breaks.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_MODE_SINGLELINE = 6;
 
@@ -158,7 +158,7 @@ cc.EDITBOX_INPUT_MODE_SINGLELINE = 6;
  * Indicates that the text entered is confidential data that should be
  * obscured whenever possible. This implies EDIT_BOX_INPUT_FLAG_SENSITIVE.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_FLAG_PASSWORD = 0;
 
@@ -168,7 +168,7 @@ cc.EDITBOX_INPUT_FLAG_PASSWORD = 0;
  * in predictive, auto-completing, or other accelerated input schemes.
  * A credit card number is an example of sensitive data.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_FLAG_SENSITIVE = 1;
 
@@ -176,7 +176,7 @@ cc.EDITBOX_INPUT_FLAG_SENSITIVE = 1;
  * This flag is a hint to the implementation that during text editing,
  * the initial letter of each word should be capitalized.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_WORD = 2;
 
@@ -184,14 +184,14 @@ cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_WORD = 2;
  * This flag is a hint to the implementation that during text editing,
  * the initial letter of each sentence should be capitalized.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_SENTENCE = 3;
 
 /**
  * Capitalize all characters automatically.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.EDITBOX_INPUT_FLAG_INITIAL_CAPS_ALL_CHARACTERS = 4;
 

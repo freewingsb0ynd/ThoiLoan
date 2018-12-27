@@ -284,13 +284,13 @@ _proto.cacheData = _proto.update;
 
 //CircleShape properties
 _proto = cp.CircleShape.prototype;
-_proto.type  = "circle";
+_proto.type1  = "circle";
 cc.defineGetterSetter(_proto, "r", _proto.getRadius);
 cc.defineGetterSetter(_proto, "c", _proto.getOffset);
 
 //SegmentShape properties
 _proto = cp.SegmentShape.prototype;
-_proto.type = "segment";
+_proto.type1 = "segment";
 cc.defineGetterSetter(_proto, "a", _proto.getA);
 cc.defineGetterSetter(_proto, "b", _proto.getB);
 cc.defineGetterSetter(_proto, "n", _proto.getNormal);
@@ -298,7 +298,7 @@ cc.defineGetterSetter(_proto, "r", _proto.getRadius);
 
 //PolyShape properties
 _proto = cp.PolyShape.prototype;
-_proto.type = "poly";
+_proto.type1 = "poly";
 
 // Constraint properties
 _proto = cp.Constraint.prototype;

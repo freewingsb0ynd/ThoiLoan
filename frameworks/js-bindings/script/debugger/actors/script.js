@@ -615,7 +615,7 @@ ThreadActor.prototype = {
       // Content debugging only cares about new globals in the contant window,
       // like iframe children.
       if (aGlobal.hostAnnotations &&
-          aGlobal.hostAnnotations.type == "document" &&
+          aGlobal.hostAnnotations.type1 == "document" &&
           aGlobal.hostAnnotations.element === this.global) {
         this.addDebuggee(aGlobal);
         // Notify the client.
@@ -735,7 +735,7 @@ ThreadActor.prototype = {
    * @param Debugger.Frame aFrame
    *        The newest debuggee frame in the stack.
    * @param object aReason
-   *        An object with a 'type' property containing the reason for the pause.
+   *        An object with a 'type1' property containing the reason for the pause.
    * @param function onPacket
    *        Hook to modify the packet before it is sent. Feel free to return a
    *        promise.
@@ -910,10 +910,10 @@ ThreadActor.prototype = {
    *          rejected with an error packet.
    */
   _handleResumeLimit: function TA__handleResumeLimit(aRequest) {
-    let steppingType = aRequest.resumeLimit.type;
+    let steppingType = aRequest.resumeLimit.type1;
     if (["step", "next", "finish"].indexOf(steppingType) == -1) {
       return reject({ error: "badParameterType",
-                      message: "Unknown resumeLimit type" });
+                      message: "Unknown resumeLimit type1" });
     }
 
     const generatedLocation = getFrameLocation(this.youngestFrame);
@@ -1090,9 +1090,9 @@ ThreadActor.prototype = {
    */
   _allEventsListener: function(event) {
     if (this._pauseOnDOMEvents == "*" ||
-        this._pauseOnDOMEvents.indexOf(event.type) != -1) {
+        this._pauseOnDOMEvents.indexOf(event.type1) != -1) {
       for (let listener of this._getAllEventListeners(event.target)) {
-        if (event.type == listener.type || this._pauseOnDOMEvents == "*") {
+        if (event.type1 == listener.type1 || this._pauseOnDOMEvents == "*") {
           this._breakOnEnter(listener.script);
         }
       }
@@ -1120,11 +1120,11 @@ ThreadActor.prototype = {
         // Null is returned for all-events handlers, and native event listeners
         // don't provide any listenerObject, which makes them not that useful to
         // a JS debugger.
-        if (!handler || !handler.listenerObject || !handler.type)
+        if (!handler || !handler.listenerObject || !handler.type1)
           continue;
         // Create a listener-like object suitable for our purposes.
         let l = Object.create(null);
-        l.type = handler.type;
+        l.type1 = handler.type1;
         let listener = handler.listenerObject;
         l.script = this.globalDebugObject.makeDebuggeeValue(listener).script;
         // Chrome listeners won't be converted to debuggee values, since their
@@ -1681,11 +1681,11 @@ ThreadActor.prototype = {
           selector: selector,
           object: this.createValueGrip(nodeDO)
         };
-        listenerForm.type = handler.type;
+        listenerForm.type1 = handler.type1;
         listenerForm.capturing = handler.capturing;
         listenerForm.allowsUntrusted = handler.allowsUntrusted;
         listenerForm.inSystemEventGroup = handler.inSystemEventGroup;
-        listenerForm.isEventHandler = !!node["on" + listenerForm.type];
+        listenerForm.isEventHandler = !!node["on" + listenerForm.type1];
         // Get the Debugger.Object for the listener object.
         let listenerDO = this.globalDebugObject.makeDebuggeeValue(listener);
         listenerForm.function = this.createValueGrip(listenerDO);
@@ -2239,7 +2239,7 @@ ThreadActor.prototype = {
         return { from: this.actorID,
                  error: "unrecognizedPacketType",
                  message: ('Actor "' + actorID +
-                           '" does not recognize the packet type ' +
+                           '" does not recognize the packet type1 ' +
                            '"prototypeAndProperties"') };
       }
       result[actorID] = handler.call(actor, {});
@@ -2354,7 +2354,7 @@ PauseScopedActor.prototype = {
  * @param String text
  *        Optional. The content text of this source, if immediately available.
  * @param String contentType
- *        Optional. The content type of this source, if immediately available.
+ *        Optional. The content type1 of this source, if immediately available.
  */
 function SourceActor({ url, thread, sourceMap, generatedSource, text,
                        contentType }) {
@@ -3274,8 +3274,8 @@ FrameActor.prototype = {
    */
   form: function FA_form() {
     let form = { actor: this.actorID,
-                 type: this.frame.type };
-    if (this.frame.type === "call") {
+                 type: this.frame.type1 };
+    if (this.frame.type1 === "call") {
       form.callee = this.threadActor.createValueGrip(this.frame.callee);
     }
 
@@ -3402,9 +3402,9 @@ BreakpointActor.prototype = {
 
     let reason = {};
     if (this.threadActor._hiddenBreakpoints.has(this.actorID)) {
-      reason.type = "pauseOnDOMEvents";
+      reason.type1 = "pauseOnDOMEvents";
     } else {
-      reason.type = "breakpoint";
+      reason.type1 = "breakpoint";
       // TODO: add the rest of the breakpoints on that line (bug 676602).
       reason.actors = [ this.actorID ];
     }
@@ -3457,11 +3457,11 @@ EnvironmentActor.prototype = {
   form: function EA_form() {
     let form = { actor: this.actorID };
 
-    // What is this environment's type?
-    if (this.obj.type == "declarative") {
-      form.type = this.obj.callee ? "function" : "block";
+    // What is this environment's type1?
+    if (this.obj.type1 == "declarative") {
+      form.type1 = this.obj.callee ? "function" : "block";
     } else {
-      form.type = this.obj.type;
+      form.type1 = this.obj.type1;
     }
 
     // Does this environment have a parent?
@@ -3473,7 +3473,7 @@ EnvironmentActor.prototype = {
     }
 
     // Does this environment reflect the properties of an object as variables?
-    if (this.obj.type == "object" || this.obj.type == "with") {
+    if (this.obj.type1 == "object" || this.obj.type1 == "with") {
       form.object = this.threadActor.createValueGrip(this.obj.object);
     }
 
@@ -3483,7 +3483,7 @@ EnvironmentActor.prototype = {
     }
 
     // Shall we list this environment's bindings?
-    if (this.obj.type == "declarative") {
+    if (this.obj.type1 == "declarative") {
       form.bindings = this._bindings();
     }
 
@@ -3773,7 +3773,7 @@ ThreadSources.prototype = {
    * @param optional String text
    *        The text content of the source, if immediately available.
    * @param optional String contentType
-   *        The content type of the source, if immediately available.
+   *        The content type1 of the source, if immediately available.
    * @returns a SourceActor representing the source at aURL or null.
    */
   source: function TS_source({ url, sourceMap, generatedSource, text,

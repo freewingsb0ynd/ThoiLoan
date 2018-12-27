@@ -11,8 +11,8 @@ testnetwork.Connector = cc.Class.extend({
         this.gameClient = gameClient;
         gameClient.packetFactory.addPacketMap(testnetwork.packetMap);
         gameClient.receivePacketSignal.add(this.onReceivedPacket, this);
-        this._userName = "hoangnh9";
-        this._id = 877;
+        this._userName = "trungnq";
+        this._id = 192;
 
     },
     onReceivedPacket:function(cmd, packet)
@@ -55,13 +55,14 @@ testnetwork.Connector = cc.Class.extend({
                 cc.log("User id: " + packet.User_id.toString());
                 cc.log("Objects Number: " + packet.Objects_Number.toString());
 
-                for (var i = 1; i <= packet.object.length; i++) {
+                for (var i = 1; i <= packet.Objects_Number; i++) {
                     cc.log("Object id: " + packet.object[i].id.toString());
-                    cc.log("Type: " + packet.object[i].type.toString());
+                    cc.log("Type: " + packet.object[i].type1.toString());
                     cc.log("Image Link: " + packet.object[i].Imagelink.toString());
 
                 }
-
+                cc.log("working builder / total builder :" +UserMap.getInstance().getWorkingBuilder() + " / " +UserMap.getInstance().getTotalBuilder());
+                cc.log("capacity Gold :" + UserMap.getInstance().getCapacity(1));
                 UserData.getInstance().updateData(packet);
                 // fr.getCurrentScreen().layerMap().reloadGui();
                 break;

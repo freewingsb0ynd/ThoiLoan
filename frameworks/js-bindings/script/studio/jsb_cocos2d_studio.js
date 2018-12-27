@@ -30,14 +30,14 @@ var ccs = ccs || {};
 
 ccs.Class = ccs.Class || cc.Class || {};
 
-// Movement event type
+// Movement event type1
 ccs.MovementEventType = {
     start: 0,
     complete: 1,
     loopComplete: 2
 };
 
-// Inner action type
+// Inner action type1
 ccs.InnerActionType = {
     LoopAction: 0,
     NoLoopAction: 1,

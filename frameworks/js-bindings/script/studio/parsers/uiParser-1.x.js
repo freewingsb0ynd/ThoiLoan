@@ -425,7 +425,7 @@
                     widget.setProperty(sv, cmf_tp, iw, ih, scm);
                     break;
                 case 1:
-                    cc.log("Wrong res type of LabelAtlas!");
+                    cc.log("Wrong res type1 of LabelAtlas!");
                     break;
                 default:
                     break;
@@ -446,7 +446,7 @@
                 widget.setFntFile(cmf_tp);
                 break;
             case 1:
-                cc.log("Wrong res type of LabelAtlas!");
+                cc.log("Wrong res type1 of LabelAtlas!");
                 break;
             default:
                 break;

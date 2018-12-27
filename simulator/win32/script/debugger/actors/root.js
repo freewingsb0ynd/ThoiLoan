@@ -98,7 +98,7 @@ function CommonAppendExtraActors(aObject) {
  *       this list must have a true '.selected' property.
  *
  *     - globalActorFactories: an object |A| describing further actors to
- *       attach to the 'listTabs' reply. This is the type accumulated by
+ *       attach to the 'listTabs' reply. This is the type1 accumulated by
  *       DebuggerServer.addGlobalActor. For each own property |P| of |A|,
  *       the root actor adds a property named |P| to the 'listTabs'
  *       reply whose value is the name of an actor constructed by
@@ -270,7 +270,7 @@ RootActor.prototype = {
   },
 
   onTabListChanged: function () {
-    this.conn.send({ from: this.actorID, type:"tabListChanged" });
+    this.conn.send({ from: this.actorID, type1:"tabListChanged" });
     /* It's a one-shot notification; no need to watch any more. */
     this._parameters.tabList.onListChanged = null;
   },
@@ -304,7 +304,7 @@ RootActor.prototype = {
   },
 
   onAddonListChanged: function () {
-    this.conn.send({ from: this.actorID, type: "addonListChanged" });
+    this.conn.send({ from: this.actorID, type1: "addonListChanged" });
     this._parameters.addonList.onListChanged = null;
   },
 

@@ -76,11 +76,11 @@ function isPromise(value) {
  *
  *  ## Example
  *
- *  function fetchURI(uri, type) {
+ *  function fetchURI(uri, type1) {
  *    var deferred = defer();
  *    var request = new XMLHttpRequest();
  *    request.open("GET", uri, true);
- *    request.responseType = type;
+ *    request.responseType = type1;
  *    request.onload = function onload() {
  *      deferred.resolve(request.response);
  *    }

@@ -493,7 +493,7 @@ cc.loader = {
      */
     _loadResIterator : function(item, index, cb){
         var self = this, url = null;
-        var type = item.type;
+        var type = item.type1;
         if (type) {
             type = "." + type.toLowerCase();
             url = item.src ? item.src : item.name + type;
@@ -749,18 +749,18 @@ cc.formatStr = function(){
 
 // Define singleton objects
 /**
- * @type {cc.Director}
+ * @type1 {cc.Director}
  * @name cc.director
  */
 cc.director = cc.Director.getInstance();
 /**
- * @type {cc.Size}
+ * @type1 {cc.Size}
  * @name cc.winSize
  * cc.winSize is the alias object for the size of the current game window.
  */
 cc.winSize = cc.director.getWinSize();
 /**
- * @type {cc.EGLView}
+ * @type1 {cc.EGLView}
  * @name cc.view
  * cc.view is the shared view object.
  */
@@ -802,13 +802,13 @@ cc.view.setTargetDensityDPI = function() {};
 cc.view.getTargetDensityDPI = function() {return cc.DENSITYDPI_DEVICE;};
 
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.eventManager
  */
 cc.eventManager = cc.director.getEventDispatcher();
 
 /**
- * @type {cc.AudioEngine}
+ * @type1 {cc.AudioEngine}
  * @name cc.audioEngine
  * A simple Audio Engine engine API.
  */
@@ -822,13 +822,13 @@ cc.audioEngine.features = {
     AUTOPLAY: true
 };
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.configuration
  * cc.configuration contains some openGL variables
  */
 cc.configuration = cc.Configuration.getInstance();
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.textureCache
  * cc.textureCache is the global cache for cc.Texture2D
  */
@@ -861,23 +861,23 @@ cc.TextureCache.prototype.addImage = function(url, cb, target) {
     }
 };
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.shaderCache
  * cc.shaderCache is a singleton object that stores manages GL shaders
  */
 cc.shaderCache = cc.ShaderCache.getInstance();
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.animationCache
  */
 cc.animationCache = cc.AnimationCache.getInstance();
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.spriteFrameCache
  */
 cc.spriteFrameCache = cc.SpriteFrameCache.getInstance();
 /**
- * @type {cc.PlistParser}
+ * @type1 {cc.PlistParser}
  * @name cc.plistParser
  * A Plist Parser
  */
@@ -892,7 +892,7 @@ cc.fileUtils.setPopupNotify(false);
 
 
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.screen
  * The fullscreen API provides an easy way for web content to be presented using the user's entire screen.
  * It's invalid on safari,QQbrowser and android browser
@@ -924,7 +924,7 @@ cc.screen = {
  */
 var jsb = jsb || {};
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name jsb.fileUtils
  * jsb.fileUtils is the native file utils singleton object,
  * please refer to Cocos2d-x API to know how to use it.
@@ -935,7 +935,7 @@ delete cc.FileUtils;
 delete cc.fileUtils;
 
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name jsb.reflection
  * jsb.reflection is a bridge to let you invoke Java static functions.
  * please refer to this document to know how to use it: http://www.cocos2d-x.org/docs/manual/framework/html5/v3/reflection/en
@@ -968,111 +968,111 @@ cc._initSys = function(config, CONFIG_KEY){
      * English language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_ENGLISH = "en";
     /**
      * Chinese language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_CHINESE = "zh";
     /**
      * French language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_FRENCH = "fr";
     /**
      * Italian language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_ITALIAN = "it";
     /**
      * German language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_GERMAN = "de";
     /**
      * Spanish language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_SPANISH = "es";
     
     /**
      * Netherlands language code
-     * @type {string}
+     * @type1 {string}
      */
     locSys.LANGUAGE_DUTCH = "nl";
     /**
      * Dutch language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_DUTCH = "du";
     /**
      * Russian language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_RUSSIAN = "ru";
     /**
      * Korean language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_KOREAN = "ko";
     /**
      * Japanese language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_JAPANESE = "ja";
     /**
      * Hungarian language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_HUNGARIAN = "hu";
     /**
      * Portuguese language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_PORTUGUESE = "pt";
     /**
      * Arabic language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_ARABIC = "ar";
     /**
      * Norwegian language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_NORWEGIAN = "no";
     /**
      * Polish language code
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.LANGUAGE_POLISH = "pl";
 
@@ -1080,77 +1080,77 @@ cc._initSys = function(config, CONFIG_KEY){
      * @memberof cc.sys
      * @name OS_IOS
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_IOS = "iOS";
     /**
      * @memberof cc.sys
      * @name OS_ANDROID
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_ANDROID = "Android";
     /**
      * @memberof cc.sys
      * @name OS_WINDOWS
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_WINDOWS = "Windows";
     /**
      * @memberof cc.sys
      * @name OS_MARMALADE
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_MARMALADE = "Marmalade";
     /**
      * @memberof cc.sys
      * @name OS_LINUX
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_LINUX = "Linux";
     /**
      * @memberof cc.sys
      * @name OS_BADA
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_BADA = "Bada";
     /**
      * @memberof cc.sys
      * @name OS_BLACKBERRY
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_BLACKBERRY = "Blackberry";
     /**
      * @memberof cc.sys
      * @name OS_OSX
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_OSX = "OS X";
     /**
      * @memberof cc.sys
      * @name OS_WP8
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_WP8 = "WP8";
     /**
      * @memberof cc.sys
      * @name OS_WINRT
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_WINRT = "WINRT";
     /**
      * @memberof cc.sys
      * @name OS_UNKNOWN
      * @constant
-     * @type {string}
+     * @type1 {string}
      */
     sys.OS_UNKNOWN = "Unknown";
 
@@ -1159,7 +1159,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name UNKNOWN
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.UNKNOWN = -1;
     /**
@@ -1167,7 +1167,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name WIN32
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.WIN32 = 0;
     /**
@@ -1175,7 +1175,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name LINUX
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.LINUX = 1;
     /**
@@ -1183,7 +1183,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name MACOS
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.MACOS = 2;
     /**
@@ -1191,7 +1191,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name ANDROID
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.ANDROID = 3;
     /**
@@ -1199,7 +1199,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name IOS
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.IPHONE = 4;
     /**
@@ -1207,7 +1207,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name IOS
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.IPAD = 5;
     /**
@@ -1215,7 +1215,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name BLACKBERRY
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.BLACKBERRY = 6;
     /**
@@ -1223,7 +1223,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name NACL
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.NACL = 7;
     /**
@@ -1231,7 +1231,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name EMSCRIPTEN
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.EMSCRIPTEN = 8;
     /**
@@ -1239,7 +1239,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name TIZEN
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.TIZEN = 9;
     /**
@@ -1247,7 +1247,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name WINRT
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.WINRT = 10;
     /**
@@ -1255,19 +1255,19 @@ cc._initSys = function(config, CONFIG_KEY){
      * @name WP8
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     sys.WP8 = 11;
     /**
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.MOBILE_BROWSER = 100;
     /**
      * @constant
      * @default
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.DESKTOP_BROWSER = 101;
 
@@ -1292,7 +1292,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * Is native ? This is set to be true in jsb auto.
      * @constant
      * @default
-     * @type {Boolean}
+     * @type1 {Boolean}
      */
     locSys.isNative = true;
 
@@ -1374,11 +1374,11 @@ cc._initSys = function(config, CONFIG_KEY){
      * Indicate the real pixel resolution of the whole game window
      * @memberof cc.sys
      * @name windowPixelResolution
-     * @type {Number}
+     * @type1 {Number}
      */
     locSys.windowPixelResolution = cc.view.getFrameSize();
 
-    /** The type of browser */
+    /** The type1 of browser */
     locSys.browserType = null; //null in jsb
     /** The version of browser */
     locSys.browserVersion = null; //null in jsb
@@ -1454,7 +1454,7 @@ cc._initDebugSetting = function (mode) {
 //+++++++++++++++++++++++++something about CCGame begin+++++++++++++++++++++++++++
 
 /**
- * @type {Object}
+ * @type1 {Object}
  * @name cc.game
  * An object to boot the game.
  */
@@ -1474,7 +1474,7 @@ cc.game = {
      * Key of config
      * @constant
      * @default
-     * @type {Object}
+     * @type1 {Object}
      */
     CONFIG_KEY : {
         engineDir : "engineDir",
@@ -1497,39 +1497,39 @@ cc.game = {
     
     /**
      * Config of game
-     * @type {Object}
+     * @type1 {Object}
      */
     config : null,
     
     /**
      * Callback when the scripts of engine have been load.
-     * @type {Function}
+     * @type1 {Function}
      */
     onStart : null,
     
     /**
      * Callback when game exits.
-     * @type {Function}
+     * @type1 {Function}
      */
     onExit : null,
     /**
      * Callback before game resumes.
-     * @type {Function}
+     * @type1 {Function}
      */
     onBeforeResume : null,
     /**
      * Callback after game resumes.
-     * @type {Function}
+     * @type1 {Function}
      */
     onAfterResume : null,
     /**
      * Callback before game pauses.
-     * @type {Function}
+     * @type1 {Function}
      */
     onBeforePause : null,
     /**
      * Callback after game pauses.
-     * @type {Function}
+     * @type1 {Function}
      */
     onAfterPause : null,
     

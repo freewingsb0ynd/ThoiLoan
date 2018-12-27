@@ -21,7 +21,7 @@
  */
 
 /**
- * @type {Object} Format and manage armature configuration and armature animation
+ * @type1 {Object} Format and manage armature configuration and armature animation
  * @name ccs.armatureDataManager
  */
 ccs.armatureDataManager = null;
@@ -33,7 +33,7 @@ ccs.ArmatureDataManager.prototype.clear = function() {
 };
 
 /**
- * @type {Object} Base singleton object for ccs.ActionManager
+ * @type1 {Object} Base singleton object for ccs.ActionManager
  * @name ccs.actionManager
  */
 ccs.actionManager = ccs.ActionManager.getInstance();

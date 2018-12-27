@@ -53,9 +53,14 @@
         "src/modules/lobby/components/ChatComponent.js",
         "src/modules/lobby/components/ShopComponent.js",
         "src/modules/lobby/components/ConstructionComponent.js",
-
-
-
+        "src/modules/areamanager/Area.js",
+        "src/modules/areamanager/Obstacle.js",
+        "src/modules/areamanager/building/Building.js",
+        "src/modules/areamanager/building/Building2Type.js",
+        "src/modules/areamanager/building/Barrack.js",
+        "src/modules/areamanager/building/Laboratory.js",
+        "src/modules/areamanager/building/Resource.js",
+        "src/modules/user/UserMap.js",
         "src/modules/lobby/Anchor.js",
         "src/modules/lobby/Resource.js",
         "src/modules/lobby/ScreenGame.js",

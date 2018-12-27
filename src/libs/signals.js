@@ -31,14 +31,14 @@
 
         /**
          * Handler function bound to the signal.
-         * @type Function
+         * @type1 Function
          * @private
          */
         this._listener = listener;
 
         /**
          * If binding should be executed just once.
-         * @type boolean
+         * @type1 boolean
          * @private
          */
         this._isOnce = isOnce;
@@ -47,20 +47,20 @@
          * Context on which listener will be executed (object that should represent the `this` variable inside listener function).
          * @memberOf SignalBinding.prototype
          * @name context
-         * @type Object|undefined|null
+         * @type1 Object|undefined|null
          */
         this.context = listenerContext;
 
         /**
          * Reference to Signal object that listener is currently bound to.
-         * @type Signal
+         * @type1 Signal
          * @private
          */
         this._signal = signal;
 
         /**
          * Listener priority
-         * @type Number
+         * @type1 Number
          * @private
          */
         this._priority = priority || 0;
@@ -70,13 +70,13 @@
 
         /**
          * If binding is active and should be executed.
-         * @type boolean
+         * @type1 boolean
          */
         active : true,
 
         /**
          * Default parameters passed to listener during `Signal.dispatch` and `SignalBinding.execute`. (curried parameters)
-         * @type Array|null
+         * @type1 Array|null
          */
         params : null,
 
@@ -175,7 +175,7 @@
      */
     function Signal() {
         /**
-         * @type Array.<SignalBinding>
+         * @type1 Array.<SignalBinding>
          * @private
          */
         this._bindings = [];
@@ -192,7 +192,7 @@
 
         /**
          * Signals Version Number
-         * @type String
+         * @type1 String
          * @const
          */
         VERSION : '1.0.0',
@@ -201,12 +201,12 @@
          * If Signal should keep record of previously dispatched parameters and
          * automatically execute listener during `add()`/`addOnce()` if Signal was
          * already dispatched before.
-         * @type boolean
+         * @type1 boolean
          */
         memorize : false,
 
         /**
-         * @type boolean
+         * @type1 boolean
          * @private
          */
         _shouldPropagate : true,
@@ -214,7 +214,7 @@
         /**
          * If Signal is active and should broadcast events.
          * <p><strong>IMPORTANT:</strong> Setting this property during a dispatch will only affect the next dispatch, if you want to stop the propagation of a signal use `halt()` instead.</p>
-         * @type boolean
+         * @type1 boolean
          */
         active : true,
 

@@ -832,41 +832,41 @@ gl.ZERO	= 0x0;
 //------------Shader Name---------------
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_TEXTURECOLOR = "ShaderPositionTextureColor";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_TEXTURECOLORALPHATEST = "ShaderPositionTextureColorAlphaTest";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_COLOR = "ShaderPositionColor";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_TEXTURE = "ShaderPositionTexture";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_TEXTURE_UCOLOR = "ShaderPositionTexture_uColor";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_TEXTUREA8COLOR = "ShaderPositionTextureA8Color";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_UCOLOR = "ShaderPosition_uColor";
 /**
  * @constant
- * @type {String}
+ * @type1 {String}
  */
 cc.SHADER_POSITION_LENGTHTEXTURECOLOR = "ShaderPositionLengthTextureColor";

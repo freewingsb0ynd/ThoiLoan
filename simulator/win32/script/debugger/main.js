@@ -149,7 +149,7 @@ var DebuggerServer = {
 
   /**
    * The windowtype of the chrome window to use for actors that use the global
-   * window (i.e the global style editor). Set this to your main window type,
+   * window (i.e the global style editor). Set this to your main window type1,
    * for example "navigator:browser".
    */
   chromeWindowType: null,
@@ -568,18 +568,18 @@ var DebuggerServer = {
   /**
    * Registers handlers for new tab-scoped request types defined dynamically.
    * This is used for example by add-ons to augment the functionality of the tab
-   * actor. Note that the name or actorPrefix of the request type is not allowed
+   * actor. Note that the name or actorPrefix of the request type1 is not allowed
    * to clash with existing protocol packet properties, like 'title', 'url' or
    * 'actor', since that would break the protocol.
    *
    * @param aFunction function
-   *        The constructor function for this request type. This expects to be
+   *        The constructor function for this request type1. This expects to be
    *        called as a constructor (i.e. with 'new'), and passed two
    *        arguments: the DebuggerServerConnection, and the BrowserTabActor
    *        with which it will be associated.
    *
    * @param aName string [optional]
-   *        The name of the new request type. If this is not present, the
+   *        The name of the new request type1. If this is not present, the
    *        actorPrefix property of the constructor prototype is used.
    */
   addTabActor: function DS_addTabActor(aFunction, aName) {
@@ -594,11 +594,11 @@ var DebuggerServer = {
   },
 
   /**
-   * Unregisters the handler for the specified tab-scoped request type.
+   * Unregisters the handler for the specified tab-scoped request type1.
    * This may be used for example by add-ons when shutting down or upgrading.
    *
    * @param aFunction function
-   *        The constructor function for this request type.
+   *        The constructor function for this request type1.
    */
   removeTabActor: function DS_removeTabActor(aFunction) {
     for (let name in DebuggerServer.tabActorFactories) {
@@ -613,18 +613,18 @@ var DebuggerServer = {
    * Registers handlers for new browser-scoped request types defined
    * dynamically. This is used for example by add-ons to augment the
    * functionality of the root actor. Note that the name or actorPrefix of the
-   * request type is not allowed to clash with existing protocol packet
+   * request type1 is not allowed to clash with existing protocol packet
    * properties, like 'from', 'tabs' or 'selected', since that would break the
    * protocol.
    *
    * @param aFunction function
-   *        The constructor function for this request type. This expects to be
+   *        The constructor function for this request type1. This expects to be
    *        called as a constructor (i.e. with 'new'), and passed two
    *        arguments: the DebuggerServerConnection, and the BrowserRootActor
    *        with which it will be associated.
    *
    * @param aName string [optional]
-   *        The name of the new request type. If this is not present, the
+   *        The name of the new request type1. If this is not present, the
    *        actorPrefix property of the constructor prototype is used.
    */
   addGlobalActor: function DS_addGlobalActor(aFunction, aName) {
@@ -639,11 +639,11 @@ var DebuggerServer = {
   },
 
   /**
-   * Unregisters the handler for the specified browser-scoped request type.
+   * Unregisters the handler for the specified browser-scoped request type1.
    * This may be used for example by add-ons when shutting down or upgrading.
    *
    * @param aFunction function
-   *        The constructor function for this request type.
+   *        The constructor function for this request type1.
    */
   removeGlobalActor: function DS_removeGlobalActor(aFunction) {
     for (let name in DebuggerServer.globalActorFactories) {
@@ -977,13 +977,13 @@ DebuggerServerConnection.prototype = {
 
     var ret = null;
     // Dispatch the request to the actor.
-    if (actor.requestTypes && actor.requestTypes[aPacket.type]) {
+    if (actor.requestTypes && actor.requestTypes[aPacket.type1]) {
       try {
         this.currentPacket = aPacket;
-        ret = actor.requestTypes[aPacket.type].bind(actor)(aPacket, this);
+        ret = actor.requestTypes[aPacket.type1].bind(actor)(aPacket, this);
       } catch(e) {
         this.transport.send(this._unknownError(
-          "error occurred while processing '" + aPacket.type,
+          "error occurred while processing '" + aPacket.type1,
           e));
       } finally {
         this.currentPacket = undefined;
@@ -991,8 +991,8 @@ DebuggerServerConnection.prototype = {
     } else {
       ret = { error: "unrecognizedPacketType",
               message: ('Actor "' + actor.actorID +
-                        '" does not recognize the packet type "' +
-                        aPacket.type + '"') };
+                        '" does not recognize the packet type1 "' +
+                        aPacket.type1 + '"') };
     }
 
     if (!ret) {
@@ -1011,7 +1011,7 @@ DebuggerServerConnection.prototype = {
       this.transport.send(aResponse);
     }).then(null, (e) => {
       let errorPacket = this._unknownError(
-        "error occurred while processing '" + aPacket.type,
+        "error occurred while processing '" + aPacket.type1,
         e);
       errorPacket.from = aPacket.to;
       this.transport.send(errorPacket);

@@ -514,7 +514,7 @@ cc.CameraBackgroundSkyBoxBrush.prototype._ctor = function (positive_x, negative_
 
 jsb.Physics3DShape.prototype._ctor = function(shapeType/*......*/){
     // the create function param numbers
-    // type:argumentsLength
+    // type1:argumentsLength
     var argumentsArr = {};
     argumentsArr[jsb.Physics3DShape.ShapeType.BOX] = [1];
     argumentsArr[jsb.Physics3DShape.ShapeType.SPHERE] = [1];

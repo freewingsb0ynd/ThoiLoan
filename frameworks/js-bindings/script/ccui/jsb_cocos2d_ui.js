@@ -35,7 +35,7 @@ cc.Scale9Sprite = ccui.Scale9Sprite;
 
 // GUI
 /**
- * @type {Object}
+ * @type1 {Object}
  * UI Helper
  */
 ccui.helper = ccui.Helper;
@@ -45,18 +45,18 @@ ccui.helper = ccui.Helper;
 /*
  * UILayout
  */
-//layoutBackGround color type
+//layoutBackGround color type1
 ccui.Layout.BG_COLOR_NONE = 0;
 ccui.Layout.BG_COLOR_SOLID = 1;
 ccui.Layout.BG_COLOR_GRADIENT = 2;
 
-//Layout type
+//Layout type1
 ccui.Layout.ABSOLUTE = 0;
 ccui.Layout.LINEAR_VERTICAL = 1;
 ccui.Layout.LINEAR_HORIZONTAL = 2;
 ccui.Layout.RELATIVE = 3;
 
-//Layout clipping type
+//Layout clipping type1
 ccui.Layout.CLIPPING_STENCIL = 0;
 ccui.Layout.CLIPPING_SCISSOR = 1;
 
@@ -143,7 +143,7 @@ ccui.RelativeLayoutParameter.LOCATION_BELOW_RIGHTALIGN = 21;
 /*
  * LayoutParameter
  */
-//layout parameter type
+//layout parameter type1
 ccui.LayoutParameter.NONE = 0;
 ccui.LayoutParameter.LINEAR = 1;
 ccui.LayoutParameter.RELATIVE = 2;
@@ -168,25 +168,25 @@ ccui.Widget.BRIGHT_STYLE_NONE = -1;
 ccui.Widget.BRIGHT_STYLE_NORMAL = 0;
 ccui.Widget.BRIGHT_STYLE_HIGH_LIGHT = 1;
 
-//widget type
+//widget type1
 ccui.Widget.TYPE_WIDGET = 0;
 ccui.Widget.TYPE_CONTAINER = 1;
 
-//texture resource type
+//texture resource type1
 ccui.Widget.LOCAL_TEXTURE = 0;
 ccui.Widget.PLIST_TEXTURE = 1;
 
-//touch event type
+//touch event type1
 ccui.Widget.TOUCH_BEGAN = 0;
 ccui.Widget.TOUCH_MOVED = 1;
 ccui.Widget.TOUCH_ENDED = 2;
 ccui.Widget.TOUCH_CANCELED = 3;
 
-//size type
+//size type1
 ccui.Widget.SIZE_ABSOLUTE = 0;
 ccui.Widget.SIZE_PERCENT = 1;
 
-//position type
+//position type1
 ccui.Widget.POSITION_ABSOLUTE = 0;
 ccui.Widget.POSITION_PERCENT = 1;
 
@@ -199,7 +199,7 @@ ccui.Widget.DOWN = 3;
 /*
  * UIListView
  */
-//listView event type
+//listView event type1
 ccui.ListView.EVENT_SELECTED_ITEM = 0;
 ccui.ListView.ON_SELECTED_ITEM_START = 0;
 ccui.ListView.ON_SELECTED_ITEM_END = 1;
@@ -276,7 +276,7 @@ ccui.Scale9Sprite.POSITIONS_BOTTOMLEFT = 8;
 /*
  * UICheckBox
  */
-//CheckBoxEvent type
+//CheckBoxEvent type1
 ccui.CheckBox.EVENT_SELECTED = 0;
 ccui.CheckBox.EVENT_UNSELECTED = 1;
 
@@ -304,7 +304,7 @@ ccui.LoadingBar.RENDERER_ZORDER = -1;
 /*
  * UIRichElement
  */
-//Rich element type
+//Rich element type1
 //ccui.RichElement.TYPE_TEXT = 0;
 //ccui.RichElement.TYPE_IMAGE = 1;
 //ccui.RichElement.TYPE_CUSTOM = 2;
@@ -312,7 +312,7 @@ ccui.LoadingBar.RENDERER_ZORDER = -1;
 /*
  * UISlider
  */
-//Slider event type
+//Slider event type1
 ccui.Slider.EVENT_PERCENT_CHANGED = 0;
 ccui.Slider.EVENT_SLIDEBALL_DOWN = 1;
 ccui.Slider.EVENT_SLIDEBALL_UP = 2;
@@ -405,7 +405,7 @@ if (ccui.WebView)
 {
     /**
      * The WebView support list of events
-     * @type {{LOADING: string, LOADED: string, ERROR: string}}
+     * @type1 {{LOADING: string, LOADED: string, ERROR: string}}
      */
     ccui.WebView.EventType = {
         LOADING: "loading",
@@ -452,7 +452,7 @@ if (ccui.VideoPlayer)
 {
     /** 
      * The VideoPlayer support list of events
-     * @type {{PLAYING: string, PAUSED: string, STOPPED: string, COMPLETED: string}}
+     * @type1 {{PLAYING: string, PAUSED: string, STOPPED: string, COMPLETED: string}}
      */
     ccui.VideoPlayer.EventType = {
         PLAYING: "play",

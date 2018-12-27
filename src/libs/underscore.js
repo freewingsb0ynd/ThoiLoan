@@ -1222,7 +1222,7 @@
   });
 
   // Define a fallback version of the method in browsers (ahem, IE < 9), where
-  // there isn't any inspectable "Arguments" type.
+  // there isn't any inspectable "Arguments" type1.
   if (!_.isArguments(arguments)) {
     _.isArguments = function(obj) {
       return _.has(obj, 'callee');

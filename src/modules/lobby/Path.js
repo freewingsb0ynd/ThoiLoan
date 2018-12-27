@@ -16,7 +16,12 @@ gv.BUILDING.RESOURCE  = 8;
 gv.BUILDING.STORAGE  = 9;  // da thay
 gv.BUILDING.TOWN_HALL  = 10;  // ok
 
-
+gv.RESOURCE_TYPE = {
+    GOLD : 1,
+    ELIXIR : 2,
+    DARK_ELIXIR : 3,
+    COIN : 4
+}
 
 
 var TL = TL || {};
@@ -44,3 +49,7 @@ TL.PATH = {
 
 
 }
+TL.TOWNHALL = {}
+cc.loader.loadJson("res/Config json/TownHall.json",function(error, data){
+    TL.TOWNHALL = data;
+});

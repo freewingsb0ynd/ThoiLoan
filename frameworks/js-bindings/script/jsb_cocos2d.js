@@ -290,39 +290,39 @@ cc.SCENE_RADIAL = 0xc001;               //CCTransitionProgress.js
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.INVALID_INDEX = -1;
 
 /**
  * PI is the ratio of a circle's circumference to its diameter.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.PI = Math.PI;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.FLT_MAX = parseFloat('3.402823466e+38F');
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.RAD = cc.PI / 180;
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.DEG = 180 / cc.PI;
 
 /**
  * maximum unsigned int value
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.UINT_MAX = 0xffffffff;
 
@@ -410,21 +410,21 @@ cc.radiansToDegrees = function (angle) {
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.REPEAT_FOREVER = 0xffffffff;
 
 /**
  * default gl blend src function. Compatible with premultiplied alpha images.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.BLEND_SRC = cc.OPTIMIZE_BLEND_FUNC_FOR_PREMULTIPLIED_ALPHA ? 1 : 0x0302;
 
 /**
  * default gl blend dst function. Compatible with premultiplied alpha images.
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.BLEND_DST = 0x0303;
 
@@ -494,7 +494,7 @@ cc.incrementGLDraws = function (addNumber) {
 
 /**
  * @constant
- * @type Number
+ * @type1 Number
  */
 cc.FLT_EPSILON = 0.0000001192092896;
 
@@ -992,7 +992,7 @@ cc.rect = function(x,y,w,h)
     if (argLen === 4)
         return { x: x, y: y, width: w, height: h };
 
-    throw "unknown argument type";
+    throw "unknown argument type1";
 };
 cc._rect = function(x,y,w,h)
 {
@@ -1187,7 +1187,7 @@ cc.color._getYellow = function () {
 
 /**
  *  Blue color (0, 0, 255, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getBlue = function () {
@@ -1196,7 +1196,7 @@ cc.color._getBlue = function () {
 
 /**
  *  Green Color (0, 255, 0, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getGreen = function () {
@@ -1205,7 +1205,7 @@ cc.color._getGreen = function () {
 
 /**
  *  Red Color (255, 0, 0, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getRed = function () {
@@ -1214,7 +1214,7 @@ cc.color._getRed = function () {
 
 /**
  *  Magenta Color (255, 0, 255, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getMagenta = function () {
@@ -1223,7 +1223,7 @@ cc.color._getMagenta = function () {
 
 /**
  *  Black Color (0, 0, 0, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getBlack = function () {
@@ -1232,7 +1232,7 @@ cc.color._getBlack = function () {
 
 /**
  *  Orange Color (255, 127, 0, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getOrange = function () {
@@ -1241,7 +1241,7 @@ cc.color._getOrange = function () {
 
 /**
  *  Gray Color (166, 166, 166, 255)
- * @type {cc.Color}
+ * @type1 {cc.Color}
  * @private
  */
 cc.color._getGray = function () {
@@ -1423,7 +1423,7 @@ var clearInterval = function (intervalId) {
 var clearTimeout = clearInterval;
 
 
-// event listener type
+// event listener type1
 cc.EventListener.UNKNOWN = 0;
 cc.EventListener.TOUCH_ONE_BY_ONE = 1;
 cc.EventListener.TOUCH_ALL_AT_ONCE = 2;
@@ -1467,7 +1467,7 @@ cc.EventListener.create = function(argObj){
     }
     else
     {
-        cc.log("Error: Invalid listener type.");
+        cc.log("Error: Invalid listener type1.");
     }
 
     for(var key in argObj) {
@@ -1734,7 +1734,7 @@ cc.arrayVerifyType = function (arr, type) {
     if (arr && arr.length > 0) {
         for (var i = 0; i < arr.length; i++) {
             if (!(arr[i] instanceof  type)) {
-                cc.log("element type is wrong!");
+                cc.log("element type1 is wrong!");
                 return false;
             }
         }
