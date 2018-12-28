@@ -5,7 +5,7 @@ var UserMap = cc.Class.extend({
     id:null,
     mapIdToArea:null,
     mapTypeToIds:null,
-    setBuilderWorkingArea : null,
+    builderWorkingAreas : null,
     isFinishLoadMap:false,
     ctor:function() {
 
@@ -15,7 +15,7 @@ var UserMap = cc.Class.extend({
     prepareGetMap: function(){
         this.mapIdToArea = new Map();
         this.mapTypeToIds = new Map();
-        this.setBuilderWorkingArea = new Set();
+        this.builderWorkingAreas = new Set();
     },
     addObject: function(area){
         id = area.id;
@@ -29,11 +29,11 @@ var UserMap = cc.Class.extend({
         this.mapTypeToIds.get(typeConvert).push(id);
         if(area.type1 == gv.BUILDING.OBSTACLE){
             if(area.cleanMoment>0){
-                this.setBuilderWorkingArea.add(area);
+                this.builderWorkingAreas.add(area);
             }
         }   else    {
             if(area.upgradingLevel>0){
-                this.setBuilderWorkingArea.add(area);
+                this.builderWorkingAreas.add(area);
             }
         }
         cc.log("new Area : " + area.showInfo());
@@ -44,7 +44,7 @@ var UserMap = cc.Class.extend({
     },
 
     getWorkingBuilder : function(){
-        return this.setBuilderWorkingArea.size;
+        return this.builderWorkingAreas.size;
     },
     getTotalBuilder : function(){
         typeConvert = this.hashType(gv.BUILDING.BUILDER_HUT,0);
@@ -88,8 +88,11 @@ var UserMap = cc.Class.extend({
         }
         return capacity;
     },
-    update:function(dt){
-
+    update:function(){
+        function logMapElements(area, area2, set) {
+            area.update();
+        }
+        builderWorkingAreas.forEach(logMapElements);
     }
 });
 

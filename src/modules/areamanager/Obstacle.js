@@ -3,6 +3,7 @@
  */
 
 
+//gv.BUILDING.OBSTACLE  = 7;
 
 var Obstacle  = Area.extend({
     cleanMoment : null,
@@ -15,5 +16,13 @@ var Obstacle  = Area.extend({
     },
     showInfo: function(){
         return this._super() + "cleanMoment : " + this.cleanMoment + " obstacleType :" + this.obstacleType;
+    },
+    update : function(){
+        if(this.cleanMoment>0){
+            // cleaning
+            if(TimeManager.getServerTime() >this.cleanMoment){
+                this.cleanMoment = -1;
+            }
+        }
     }
 })

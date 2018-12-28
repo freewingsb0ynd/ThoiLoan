@@ -11,7 +11,6 @@ gv.BUILDING.BUILDER_HUT  = 3;  // ok
 gv.BUILDING.CLAN_CASTLE  = 4; // ok
 gv.BUILDING.DEFENSE  = 5;   // load only cai base truoc
 gv.BUILDING.LABORATORY  = 6;  // ok
-gv.BUILDING.OBSTACLE  = 7;
 gv.BUILDING.RESOURCE  = 8;
 gv.BUILDING.STORAGE  = 9;  // da thay
 gv.BUILDING.TOWN_HALL  = 10;  // ok
@@ -58,3 +57,54 @@ TL.STORAGE = {}
 cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
     TL.STORAGE = data;
 });
+
+TL.ARMY_CAMP = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.ARMY_CAMP = data;
+});
+
+TL.BARRACK = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.BARRACK = data;
+});
+
+TL.BUILDER_HUT = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.BUILDER_HUT = data;
+});
+
+TL.CLAN_CASTLE = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.CLAN_CASTLE = data;
+});
+
+TL.DEFENCE= {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.DEFENCE= data;
+});
+
+TL.INIT_GAME= {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.INIT_GAME = data;
+});
+
+TL.LABORATORY = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.LABORATORY = data;
+});
+
+TL.OBSTACLE = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.OBSTACLE = data;
+});
+
+TL.RESOURCE = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.RESOURCE = data;
+});
+
+TL.WALL = {}
+cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
+    TL.WALL = data;
+});
+

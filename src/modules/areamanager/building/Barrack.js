@@ -2,6 +2,7 @@
  * Created by CPU11630_LOCAL on 12/27/2018.
  */
 
+//gv.BUILDING.BARRACK  = 2;  // ok
 
 var Barrack = Building2Type.extend({
     // need a class for barrack because we need to add tranining queue to barracktype
@@ -10,5 +11,8 @@ var Barrack = Building2Type.extend({
     },
     showInfo : function(){
         return this._super();
+    },
+    update : function(){
+
     }
 })
