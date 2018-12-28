@@ -9,6 +9,7 @@ var ScreenMenu = cc.Layer.extend({
 
 
     ctor:function() {
+        cc.log("heloo");
         this._super();
         var size = cc.director.getVisibleSize();
 
@@ -57,9 +58,8 @@ var ScreenMenu = cc.Layer.extend({
         testnetwork.connector._id = Number(this.tfID.getString());
         testnetwork.connector._userName = "Fresher " + this.tfID.getString();
 
-        //testnetwork.connector._id = 1111;
-        gv.gameClient.connect();
         fr.view(ScreenGame);
+        //testnetwork.connector._id = 1111;
     },
 
 });

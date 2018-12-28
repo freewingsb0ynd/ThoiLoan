@@ -52,6 +52,7 @@ var UserData = cc.Class.extend({
         this.gCoin = usrResPacket.coin;
         this.shieldTime = usrResPacket.shieldTime;
 
+
     },
 
 

@@ -11,6 +11,8 @@ var LobbyLayer = cc.Layer.extend({
         this._super();
         this.loadGui();
         //this.initGame();
+
+        this.scheduleUpdate();
     },
 
 
@@ -39,10 +41,6 @@ var LobbyLayer = cc.Layer.extend({
         this.addChild(this.shopComp);
 
 
-        var btnLoad = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.35, "Load");
-        this.addChild(btnLoad);
-        btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
-
     },
 
 
@@ -57,11 +55,6 @@ var LobbyLayer = cc.Layer.extend({
 
     onEnter:function(){
         this._super();
-    },
-
-    onSelectLoad:function(sender)
-    {
-        testnetwork.connector.sendGetUserResRq();
     },
 
     onSelectShop:function(sender)
@@ -87,6 +80,10 @@ var LobbyLayer = cc.Layer.extend({
         this.shop.setVisible(false);
     },
 
+    update: function(){
+        if (UserMap.getInstance().isFinishLoadMap) this.reloadGui();
+
+    }
 
 
 });

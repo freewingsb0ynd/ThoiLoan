@@ -12,6 +12,7 @@ var ScreenGame = cc.Layer.extend({
     ctor:function() {
         this._super();
         this.loadGui();
+        gv.gameClient.connect();
         this.initGame();
     },
 
@@ -20,10 +21,6 @@ var ScreenGame = cc.Layer.extend({
     {
         //this.removeAllChildren();
         var size = cc.winSize;
-
-        var btnBack = gv.commonButton(100, 64, size.width * 0.85, size.height * 0.07,"Back");
-        this.addChild(btnBack);
-        btnBack.addClickEventListener(this.onSelectBack.bind(this));
 
     },
 
@@ -37,11 +34,14 @@ var ScreenGame = cc.Layer.extend({
         var node = new cc.Node();
         this.addChild(node);
         //scene = new cc.Scene();
-        this.layerMap = new MapLayer();
+        this.layerMap = MapLayer2.getInstance();
+        this.layerMap.setPosition(cc.p(100,100));
+        //this.layerMap.scale = 1;
         //scene.addChild(layerMap, 1);
         this.layerLobby = new LobbyLayer();
         //scene.addChild(layerLobby, 2);
         //return scene;
+        //this.layerLobby.reloadGui();
 
         this.layerCheat = new CheatLayer();
 
@@ -52,12 +52,6 @@ var ScreenGame = cc.Layer.extend({
 
 
 
-    },
-
-
-    onSelectBack:function(sender)
-    {
-        fr.view(ScreenMenu);
     },
 
     onConnectFail:function()

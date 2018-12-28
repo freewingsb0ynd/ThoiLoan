@@ -25,6 +25,7 @@ testnetwork.Connector = cc.Class.extend({
                 break;
             case gv.CMD.USER_LOGIN:
                 //this.sendGetUserInfo();
+                this.sendGetUserMap();
                 //fr.getCurrentScreen().onFinishLogin();
                 break;
             case gv.CMD.USER_INFO:
@@ -46,7 +47,7 @@ testnetwork.Connector = cc.Class.extend({
                 cc.log("shield: " + packet.shieldTime.toString());
                 cc.log("gCoin: " + packet.coin.toString());*/
                 UserData.getInstance().updateData(packet);
-                fr.getCurrentScreen().layerLobby.reloadGui();
+                //fr.getCurrentScreen().layerLobby.reloadGui();
                 //fr.getCurrentScreen().updateMove(packet.x, packet.y);
                 break;
 
@@ -61,10 +62,12 @@ testnetwork.Connector = cc.Class.extend({
                     cc.log("Image Link: " + packet.object[i].Imagelink.toString());
 
                 }
+                // get server time from server and update
+                // TimeManager.getInstance.updateServerTime(serverTime);
                 cc.log("working builder / total builder :" +UserMap.getInstance().getWorkingBuilder() + " / " +UserMap.getInstance().getTotalBuilder());
                 cc.log("capacity Gold :" + UserMap.getInstance().getCapacity(1));
-                UserData.getInstance().updateData(packet);
                 // fr.getCurrentScreen().layerMap().reloadGui();
+                this.sendGetUserResRq();
                 break;
 
 

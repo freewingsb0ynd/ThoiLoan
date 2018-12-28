@@ -6,6 +6,7 @@ var UserMap = cc.Class.extend({
     mapIdToArea:null,
     mapTypeToIds:null,
     setBuilderWorkingArea : null,
+    isFinishLoadMap:false,
     ctor:function() {
 
     },
@@ -86,6 +87,9 @@ var UserMap = cc.Class.extend({
                 break;
         }
         return capacity;
+    },
+    update:function(dt){
+
     }
 });
 
