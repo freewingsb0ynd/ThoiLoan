@@ -25,10 +25,7 @@ res.shop.shop_main = 'shopMain_node';
 res.shop.shop_tab = 'shopTab_node';
 
 
-var game = game || {};
+//var game = game || {};
+
 //CHEAT
-game.cheat = {};
-game.cheat.gold = 1;
-game.cheat.elixir = 2;
-game.cheat.darkElixir = 3;
-game.cheat.gCoin = 4;
+

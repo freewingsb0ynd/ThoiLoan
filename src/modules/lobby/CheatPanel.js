@@ -19,28 +19,27 @@ var CheatLayer = cc.Layer.extend({
 
         //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
 
-        var btnCheatGold = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.95 ,"Gold");
-        this.addChild(btnCheatGold);
-        var btnCheatElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.86 ,"Elixir");
-        this.addChild(btnCheatElixir);
-        var btnCheatDarkElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.77 ,"Dark");
-        this.addChild(btnCheatDarkElixir);
-        var btnCheatGCoin = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.68 ,"Coin");
-        this.addChild(btnCheatGCoin);
+        this.btnCheatGold = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.95 ,"Gold");
+        this.addChild(this.btnCheatGold);
+        this.btnCheatElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.86 ,"Elixir");
+        this.addChild(this.btnCheatElixir);
+        this.btnCheatDarkElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.77 ,"Dark");
+        this.addChild(this.btnCheatDarkElixir);
+        this.btnCheatGCoin = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.68 ,"Coin");
+        this.addChild(this.btnCheatGCoin);
 
-        //this.btnCheats.add(btnCheatGold);
-        //this.btnCheats.add(btnCheatElixir);
-        //this.btnCheats.add(btnCheatDarkElixir);
-        //this.btnCheats.add(btnCheatGCoin);
-
-        //for ()
-
-        btnCheatGold.addClickEventListener(this.onSelectCheatGold.bind(this));
-        btnCheatElixir.addClickEventListener(this.onSelectCheatElixir.bind(this));
-        btnCheatDarkElixir.addClickEventListener(this.onSelectCheatDarkE.bind(this));
-        btnCheatGCoin.addClickEventListener(this.onSelectCheatGCoin.bind(this));
+        this.btnCheatGold.addClickEventListener(this.onSelectCheatGold.bind(this));
+        this.btnCheatElixir.addClickEventListener(this.onSelectCheatElixir.bind(this));
+        this.btnCheatDarkElixir.addClickEventListener(this.onSelectCheatDarkE.bind(this));
+        this.btnCheatGCoin.addClickEventListener(this.onSelectCheatGCoin.bind(this));
 
 
+        this.activeCheatButtons = false;
+        this.tfAmountCheat.setVisible(this.activeCheatButtons);
+        this.btnCheatGold.setVisible(this.activeCheatButtons);
+        this.btnCheatElixir.setVisible(this.activeCheatButtons);
+        this.btnCheatDarkElixir.setVisible(this.activeCheatButtons);
+        this.btnCheatGCoin.setVisible(this.activeCheatButtons);
 
         this.lblLog = gv.commonText(fr.Localization.text("..."), size.width*0.4, size.height*0.05);
         this.addChild(this.lblLog);
@@ -67,6 +66,7 @@ var CheatLayer = cc.Layer.extend({
         btnMoveConstruction.addClickEventListener(this.onSelectMove.bind(this));
 
 
+
         this.tfArgIDBuild = ccui.TextField();
 
         this.tfArgIDBuild.setPosition(size.width * 0.3, size.height * 0.25);
@@ -87,24 +87,33 @@ var CheatLayer = cc.Layer.extend({
         this.addChild(btnFinishNow);
         btnFinishNow.addClickEventListener(this.onSelectFinish.bind(this));
 
-        var btnCheat = gv.commonButton(100, 64, cc.winSize.width * 0.9, cc.winSize.height * 0.5, "Cheat");
-        this.addChild(btnCheat);
-        //btnLoad.addClickEventListener(this.onSelectLoad.bind(this));
+        this.btnCheat = gv.commonButton(80, 32, cc.winSize.width * 0.95, cc.winSize.height * 0.6, "Cheat");
+        this.addChild(this.btnCheat);
+        this.btnCheat.addClickEventListener(this.onSelectCheat.bind(this));
 
 
+    },
+
+    onSelectCheat: function(sender){
+        this.activeCheatButtons = !this.activeCheatButtons;
+        this.tfAmountCheat.setVisible(this.activeCheatButtons);
+        this.btnCheatGold.setVisible(this.activeCheatButtons);
+        this.btnCheatElixir.setVisible(this.activeCheatButtons);
+        this.btnCheatDarkElixir.setVisible(this.activeCheatButtons);
+        this.btnCheatGCoin.setVisible(this.activeCheatButtons);
     },
 
     onSelectCheatGold: function(sender){
-        testnetwork.connector.sendCheatRq(game.cheat.gold, Number(this.tfAmountCheat.getString()));
+        testnetwork.connector.sendCheatRq(gv.RESOURCE_TYPE.GOLD, Number(this.tfAmountCheat.getString()));
     },
     onSelectCheatElixir: function(sender){
-        testnetwork.connector.sendCheatRq(game.cheat.elixir, Number(this.tfAmountCheat.getString()));
+        testnetwork.connector.sendCheatRq(gv.RESOURCE_TYPE.ELIXIR, Number(this.tfAmountCheat.getString()));
     },
     onSelectCheatDarkE: function(sender){
-        testnetwork.connector.sendCheatRq(game.cheat.darkElixir, Number(this.tfAmountCheat.getString()));
+        testnetwork.connector.sendCheatRq(gv.RESOURCE_TYPE.DARK_ELIXIR, Number(this.tfAmountCheat.getString()));
     },
     onSelectCheatGCoin: function(sender){
-        testnetwork.connector.sendCheatRq(game.cheat.gCoin, Number(this.tfAmountCheat.getString()));
+        testnetwork.connector.sendCheatRq(gv.RESOURCE_TYPE.COIN, Number(this.tfAmountCheat.getString()));
     },
 
     onSelectBuild: function(sender){

@@ -1,6 +1,8 @@
 /**
  * Created by GSN on 7/6/2015.
  */
+res = res || {}
+res.LOGIN_SCREEN = './res/gui/Art/LoginGui/loading.png';
 
 var ScreenMenu = cc.Layer.extend({
     _itemMenu:null,
@@ -9,7 +11,7 @@ var ScreenMenu = cc.Layer.extend({
 
 
     ctor:function() {
-        cc.log("heloo");
+        //cc.log("heloo");
         this._super();
         var size = cc.director.getVisibleSize();
 
@@ -27,13 +29,24 @@ var ScreenMenu = cc.Layer.extend({
         this.addChild(btnDragonbones);
         btnDragonbones.addClickEventListener(this.onSelectDragonbones.bind(this));
 
+
+
+        var loginScr = new cc.Sprite('res/gui/Art/LoginGui/loading.jpg');
+        loginScr.attr({
+            anchorX: 0,
+            anchorY: 0,
+            scaleX: cc.winSize.width/loginScr.getBoundingBox().width,
+            scaleY: cc.winSize.height/loginScr.getBoundingBox().height,
+        });
+        this.addChild(loginScr);
+
         this.tfID = ccui.TextField();
         this.tfID.setPosition(size.width/4, size.height/3);
-        this.tfID.setPlaceHolder("Your ID...")
+        this.tfID.setPlaceHolder("Your ID...");
         this.addChild(this.tfID);
         //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
 
-        var btnLobby = gv.commonButton(200, 64, size.width/2, size.height/3 ,"Lobby");
+        var btnLobby = gv.commonButton(200, 64, size.width/2, size.height/3 ,"Login");
         this.addChild(btnLobby);
         btnLobby.addClickEventListener(this.onSelectLobby.bind(this));
 
