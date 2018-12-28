@@ -332,6 +332,9 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
             this._super();
         },
         readData: function () {
+            serverTime = this.getInt();
+            TimeManager.getInstance().updateServerTime(serverTime);
+            cc.log("server Time " + serverTime);
             this.User_id = this.getInt();
             this.Objects_Number = this.getInt();
 
