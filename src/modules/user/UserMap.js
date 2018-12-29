@@ -36,7 +36,7 @@ var UserMap = cc.Class.extend({
                 this.builderWorkingAreas.add(area);
             }
         }
-        cc.log("new Area : " + area.showInfo());
+        cc.log("+Area : " + area.showInfo());
     },
 
     hashType: function(type1, type2){

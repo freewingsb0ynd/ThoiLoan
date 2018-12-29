@@ -332,89 +332,117 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
             this._super();
         },
         readData: function () {
-            serverTime = this.getInt();
-            TimeManager.getInstance().updateServerTime(serverTime);
-            cc.log("server Time " + serverTime);
+            this.serverTime = this.getInt();
             this.User_id = this.getInt();
-            this.Objects_Number = this.getInt();
-
-           this.object = new Array(1000);
-
-            var i;
+            this.nAreas = this.getInt();
+            TimeManager.getInstance().updateServerTime(this.serverTime);
             UserMap.getInstance().prepareGetMap();
-            for (i = 1; i <= this.Objects_Number; i++) {
-                this.object[i] = new BaseObject();
-                this.object[i].id = this.getInt();
-                this.object[i].type1 = this.getInt();
-
-                // khong thu hoach, khong type1 7: ARMY_CAMP, BUILDER_HUT, CLAN_CASTLE, LABORATORY, TOWN_HALL
-                if (this.object[i].type1 == gv.BUILDING.ARMY_CAMP || this.object[i].type1 == gv.BUILDING.BUILDER_HUT  || this.object[i].type1 == gv.BUILDING.CLAN_CASTLE || this.object[i].type1 == gv.BUILDING.LABORATORY || this.object[i].type1 == gv.BUILDING.TOWN_HALL) {
-                    this.object[i].currentLevel = this.getInt();
-                    this.object[i].nextLevel = this.getInt();
-                    this.object[i].upgradeTime = this.getInt();
-                    this.object[i].PosX = this.getInt();
-                    this.object[i].PosY = this.getInt();
-
-                };
-
-                // khong thu hoach, co type1 8
-                if (this.object[i].type1 == gv.BUILDING.BARRACK || this.object[i].type1 == gv.BUILDING.DEFENSE || this.object[i].type1 == gv.BUILDING.STORAGE) {
-                    this.object[i].currentLevel = this.getInt();
-                    this.object[i].nextLevel = this.getInt();
-                    this.object[i].upgradeTime = this.getInt();
-                    this.object[i].type2 = this.getInt();
-                    this.object[i].PosX = this.getInt();
-                    this.object[i].PosY = this.getInt();
-                };
-
-                // co thu hoach, co type1: 9
-                if (this.object[i].type1 == gv.BUILDING.RESOURCE) {
-                    this.object[i].currentLevel = this.getInt();
-                    this.object[i].nextLevel = this.getInt();
-                    this.object[i].upgradeTime = this.getInt();
-                    this.object[i].type2 = this.getInt();
-                    this.object[i].harvestTime = this.getInt();
-                    this.object[i].PosX = this.getInt();
-                    this.object[i].PosY = this.getInt();
-                };
-
-                // vat can
-                if (this.object[i].type1 == gv.BUILDING.OBSTACLE) {
-                    this.object[i].removeTime = this.getInt();
-                    this.object[i].type2 = this.getInt();
-                    this.object[i].PosX = this.getInt();
-                    this.object[i].PosY = this.getInt();
-                };
-
-                this.object[i].setImage();
-
-                // trungnq
-                if(this.object[i].type1 == gv.BUILDING.OBSTACLE){
-                    area = new Obstacle(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].removeTime, this.object[i].type2);
-                    UserMap.getInstance().addObject(area);
+            for (var i = 1; i <= this.nAreas; i++) {
+                _posX = this.getInt();
+                _posY = this.getInt();
+                _id = this.getInt();
+                _type1 = this.getInt();
+                console.log("next obj :" + _posX + " " + _posY + " " + _id + " " + _type1);
+                if(_type1 == gv.BUILDING.OBSTACLE){
+                    _cleanMoment = this.getInt();
+                    _obstacleType =  this.getInt();
+                    obs = new Obstacle(_id, _posX, _posY, _cleanMoment, _obstacleType);
+                    UserMap.getInstance().addObject(obs);
+                }   else    {
+                    _currentLevel = this.getInt();
+                    _upgradingLevel = this.getInt();
+                    _upgradedMoment = this.getInt();
+                    switch (_type1){
+                        case gv.BUILDING.ARMY_CAMP:
+                            armyCamp = new ArmyCamp(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                            UserMap.getInstance().addObject(armyCamp);
+                            break;
+                        case gv.BUILDING.BUILDER_HUT:
+                            builderHut = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                            UserMap.getInstance().addObject(builderHut);
+                            break;
+                        case gv.BUILDING.TOWN_HALL:
+                            townHall = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                            UserMap.getInstance().addObject(townHall);
+                            break;
+                        case gv.BUILDING.LABORATORY:
+                            laboratory = new Laboratory(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                            UserMap.getInstance().addObject(laboratory);
+                            break;
+                        case gv.BUILDING.DEFENSE:
+                            _type2 = this.getInt();
+                            switch(_type2){
+                                case 1:
+                                    cannon = new Cannon(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(cannon);
+                                    break;
+                                case 2:
+                                    archerTower = new ArcherTower(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(archerTower);
+                                    break;
+                                case 3:
+                                    mortar = new Mortar(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(mortar);
+                                    break;
+                                case 4:
+                                    wall = new Wall(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(wall);
+                                    break;
+                            }
+                            break;
+                        case gv.BUILDING.STORAGE:
+                            _type2 = this.getInt();
+                            switch (_type2){
+                                case gv.RESOURCE_TYPE.GOLD:
+                                    goldStorage = new GoldStorage(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(goldStorage);
+                                    break;
+                                case gv.RESOURCE_TYPE.ELIXIR:
+                                    elixirStorage = new ElixirStorage(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(elixirStorage);
+                                    break;
+                                case gv.RESOURCE_TYPE.DARK_ELIXIR:
+                                    darkElixirStorage = new DarkElixirStorage(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(darkElixirStorage);
+                                    break;
+                            }
+                            break;
+                        case gv.BUILDING.BARRACK:
+                            _type2 = this.getInt();
+                            switch (_type2){
+                                case 1:
+                                    barrackNormal = new BarrackNormal(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(barrackNormal);
+                                    break;
+                                case 2:
+                                    barrackXmen = new BarrackXmen(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(barrackXmen);
+                                    break;
+                            }
+                            break;
+                            // resource building
+                        case gv.BUILDING.RESOURCE:
+                            _type2 = this.getInt();
+                            _harvestMoment = this.getInt();
+                            switch (_type2){
+                                case gv.RESOURCE_TYPE.GOLD:
+                                    goldMine = new GoldMine(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _harvestMoment);
+                                    UserMap.getInstance().addObject(goldMine);
+                                    break;
+                                case gv.RESOURCE_TYPE.ELIXIR:
+                                    elixirMine = new ElixirMine(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(elixirMine);
+                                    break;
+                                case gv.RESOURCE_TYPE.DARK_ELIXIR:
+                                    darkElixirMine = new DarkElixirMine(_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                                    UserMap.getInstance().addObject(darkElixirMine);
+                                    break;
+                            }
+                            break;
+                    }
                 }
-                if(this.object[i].type1 == gv.BUILDING.BARRACK){
-                    area = new Barrack(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2);
-                    UserMap.getInstance().addObject(area);
-                }
-                if(this.object[i].type1 == gv.BUILDING.RESOURCE){
-                    area = new Resource(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2, this.object[i].harvestTime);
-                    UserMap.getInstance().addObject(area);
-                }
-                if(this.object[i].type1 == gv.BUILDING.DEFENSE || this.object[i].type1 == gv.BUILDING.STORAGE){
-                    area = new Building2Type(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime, this.object[i].type2);
-                    UserMap.getInstance().addObject(area);
-                }
-                if(this.object[i].type1 == gv.BUILDING.LABORATORY){
-                    area = new Laboratory(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime);
-                    UserMap.getInstance().addObject(area);
-                }
-                if(this.object[i].type1 == gv.BUILDING.ARMY_CAMP || this.object[i].type1 == gv.BUILDING.BUILDER_HUT  || this.object[i].type1 == gv.BUILDING.CLAN_CASTLE || this.object[i].type1 == gv.BUILDING.TOWN_HALL){
-                    area = new Building(this.object[i].id, this.object[i].type1, this.object[i].PosX, this.object[i].PosY, this.object[i].currentLevel, this.object[i].nextLevel, this.object[i].upgradeTime);
-                    UserMap.getInstance().addObject(area);
-                }
+                UserMap.getInstance().isFinishLoadMap  = true;
             }
-            UserMap.getInstance().isFinishLoadMap  = true;
         }
     }
 );

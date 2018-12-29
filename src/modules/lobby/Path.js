@@ -11,6 +11,7 @@ gv.BUILDING.BUILDER_HUT  = 3;  // ok
 gv.BUILDING.CLAN_CASTLE  = 4; // ok
 gv.BUILDING.DEFENSE  = 5;   // load only cai base truoc
 gv.BUILDING.LABORATORY  = 6;  // ok
+gv.BUILDING.OBSTACLE = 7;
 gv.BUILDING.RESOURCE  = 8;
 gv.BUILDING.STORAGE  = 9;  // da thay
 gv.BUILDING.TOWN_HALL  = 10;  // ok

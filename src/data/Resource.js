@@ -19,7 +19,19 @@ var res = {
     ZCSD_POPUP_MINI_GAME:"zcsd/game/mini_game/PopupMiniGame.json",
 
     //images
-    Slot1_png : "zcsd/slot1.png"
+    Slot1_png : "zcsd/slot1.png",
+    // my resources
+    Stars1_plist : "res/Stars1.plist",
+    Stars2_plist : "res/Stars2.plist",
+    Stars3_plist : "res/Stars3.plist",
+    Sprites_plist : "res/Sprites.plist",
+    Sprites_prv_ccz : "res/Sprites.pvr.ccz",
+    bg_galaxy : "res/bg_galaxy.png",
+    bg_front_spacedust : "res/bg_front_spacedust.png",
+    bg_planetsunrise : "res/bg_planetsunrise.png",
+    bg_spacialanomaly : "res/bg_spacialanomaly.png",
+    bg_spacialanomaly2 : "res/bg_spacialanomaly2.png",
+    arial_fnt : "res/Arial.fnt",
 
 };
 

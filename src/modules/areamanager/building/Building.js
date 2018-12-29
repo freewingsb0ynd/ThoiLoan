@@ -23,15 +23,12 @@ var Building = Area.extend({
         this.upgradedMoment = _upgradedMoment;
     },
     showInfo : function(){
-        return this._super() + "currentLevel :" + this.currentLevel + " upgradingLevel : " + this.upgradingLevel + " upgradedMoment :" + this.upgradedMoment;
+        return this._super() + " currentLevel :" + this.currentLevel + " upgradingLevel : " + this.upgradingLevel + " upgradedMoment :" + this.upgradedMoment;
     },
     update : function(){
 
     },
     getMaxLevel : function(){
-        switch (this.type1){
-            case gv.BUILDING.ARMY_CAMP:
 
-        }
     }
 })

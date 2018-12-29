@@ -54,14 +54,14 @@ testnetwork.Connector = cc.Class.extend({
             // process User_Map data
             case gv.CMD.USER_MAP:
                 cc.log("User id: " + packet.User_id.toString());
-                cc.log("Objects Number: " + packet.Objects_Number.toString());
+                cc.log("Objects Number: " + packet.nAreas.toString());
 
-                for (var i = 1; i <= packet.Objects_Number; i++) {
-                    cc.log("Object id: " + packet.object[i].id.toString());
-                    cc.log("Type: " + packet.object[i].type1.toString());
-                    cc.log("Image Link: " + packet.object[i].Imagelink.toString());
-
-                }
+                //for (var i = 1; i <= packet.nAreas; i++) {
+                //    cc.log("Object id: " + packet.object[i].id.toString());
+                //    cc.log("Type: " + packet.object[i].type1.toString());
+                //    cc.log("Image Link: " + packet.object[i].Imagelink.toString());
+                //
+                //}
                 // get server time from server and update
                 // TimeManager.getInstance.updateServerTime(serverTime);
                 cc.log("working builder / total builder :" +UserMap.getInstance().getWorkingBuilder() + " / " +UserMap.getInstance().getTotalBuilder());
