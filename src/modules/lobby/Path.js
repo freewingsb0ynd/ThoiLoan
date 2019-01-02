@@ -49,63 +49,59 @@ TL.PATH = {
 
 
 }
-TL.TOWNHALL = {}
+TL.CONFIG = {}
+datas = []
+
 cc.loader.loadJson("res/Config json/TownHall.json",function(error, data){
-    TL.TOWNHALL = data;
+    datas.push(data);
 });
 
-TL.STORAGE = {}
 cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.STORAGE = data;
+    datas.push(data);
 });
 
-TL.ARMY_CAMP = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.ARMY_CAMP = data;
+cc.loader.loadJson("res/Config json/ArmyCamp.json",function(error, data){
+    datas.push(data);
 });
 
-TL.BARRACK = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.BARRACK = data;
+cc.loader.loadJson("res/Config json/Barrack.json",function(error, data){
+    datas.push(data);
 });
 
-TL.BUILDER_HUT = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.BUILDER_HUT = data;
+cc.loader.loadJson("res/Config json/BuilderHut.json",function(error, data){
+    datas.push(data);
 });
 
-TL.CLAN_CASTLE = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.CLAN_CASTLE = data;
+cc.loader.loadJson("res/Config json/ClanCastle.json",function(error, data){
+    datas.push(data);
 });
 
-TL.DEFENCE= {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.DEFENCE= data;
+cc.loader.loadJson("res/Config json/Defence.json",function(error, data){
+    datas.push(data);
 });
 
-TL.INIT_GAME= {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.INIT_GAME = data;
+cc.loader.loadJson("res/Config json/InitGame.json",function(error, data){
+    datas.push(data);
 });
 
-TL.LABORATORY = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.LABORATORY = data;
+cc.loader.loadJson("res/Config json/Laboratory.json",function(error, data){
+    datas.push(data);
 });
 
-TL.OBSTACLE = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.OBSTACLE = data;
+cc.loader.loadJson("res/Config json/Obstacle.json",function(error, data){
+    datas.push(data);
 });
 
-TL.RESOURCE = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.RESOURCE = data;
+cc.loader.loadJson("res/Config json/Resource.json",function(error, data){
+    datas.push(data);
 });
 
-TL.WALL = {}
-cc.loader.loadJson("res/Config json/Storage.json",function(error, data){
-    TL.WALL = data;
+cc.loader.loadJson("res/Config json/Wall.json",function(error, data){
+    datas.push(data);
 });
 
+datas.forEach(function(data){
+    Object.keys(data).forEach(function (value) {
+        TL.CONFIG[value] = data[value];
+    });
+})

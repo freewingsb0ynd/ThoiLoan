@@ -12,7 +12,11 @@ var Barrack = Building.extend({
     showInfo : function(){
         return this._super() + " type2 :" + this.type2;
     },
-    update : function(){
-
+    getDescription : function(){
+        this.description = " Description : Barrack level " + this.currentLevel;
+        return this.description;
+    },
+    getImage : function(){
+        return this._super();
     }
 })

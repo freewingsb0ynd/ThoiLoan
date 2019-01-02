@@ -12,7 +12,11 @@ var Storage = Building.extend({
     showInfo : function(){
         return this._super() + " type2 :" + this.type2;
     },
-    update : function(){
+    getDescription : function(){
+        this.description = " Description : Storage level " + this.currentLevel;
+        return this.description;
+    },
+    getImage : function(){
 
     }
 })

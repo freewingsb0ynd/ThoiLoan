@@ -441,8 +441,8 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                             break;
                     }
                 }
-                UserMap.getInstance().isFinishLoadMap  = true;
             }
+            UserMap.getInstance().finishLoadMap();
         }
     }
 );

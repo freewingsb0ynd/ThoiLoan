@@ -15,10 +15,11 @@ var Resource = Building.extend({
     showInfo : function(){
         return this._super() + " harvestMoment " + this.harvestMoment;
     },
-    update : function(){
-
+    getDescription : function(){
+        this.description = " Description : Resource level " + this.currentLevel;
+        return this.description;
     },
     getImage : function(){
-        
+
     }
 })
