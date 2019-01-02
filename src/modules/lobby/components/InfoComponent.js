@@ -23,8 +23,8 @@ var InfoComponent = Component.extend({
     },
 
     updateGui:function(){
-        var totalBuilders = UserMap.getInstance().getTotalBuilder();
-        var workingBuilders = UserMap.getInstance().getWorkingBuilder();
+        var totalBuilders = UserMap.getInstance().totalNumberBuilder;
+        var workingBuilders = UserMap.getInstance().numberWorkingBuilder;
         var freeBuilders = totalBuilders - workingBuilders;
 
 

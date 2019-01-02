@@ -65,6 +65,7 @@ testnetwork.Connector = cc.Class.extend({
                 // get server time from server and update
                 // TimeManager.getInstance.updateServerTime(serverTime);
                 cc.log("working builder / total builder :" +UserMap.getInstance().getWorkingBuilder() + " / " +UserMap.getInstance().getTotalBuilder());
+                cc.log(UserMap.getInstance().numberWorkingBuilder)
                 cc.log("capacity Gold :" + UserMap.getInstance().getCapacity(1));
                 // fr.getCurrentScreen().layerMap().reloadGui();
                 this.sendGetUserResRq();

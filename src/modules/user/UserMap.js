@@ -20,6 +20,13 @@ var UserMap = cc.Class.extend({
     mapSize : null,
     townHall : null,
     buildingWaiting:null,
+    // --- for hoang
+    numberWorkingBuilder : 0,
+    totalNumberBuilder:0,
+    goldCapacity : 0,
+    elixirCapacity : 0,
+    darkElixirCapacity : 0,
+
     ctor:function() {
         mapSize = {w:42,h:42};
         this.grid = [];
@@ -59,7 +66,8 @@ var UserMap = cc.Class.extend({
         }
     },
     getWorkingBuilder : function(){
-        return this.builderWorkingAreas.size;
+        cc.log("workingbuilder :" + this.builderWorkingAreas.size);
+        return this.numberWorkingBuilder = this.builderWorkingAreas.size;
     },
     getTotalBuilder : function(){
         typeConvert = this.hashType(gv.BUILDING.BUILDER_HUT,0);
@@ -67,7 +75,7 @@ var UserMap = cc.Class.extend({
         if(listIds==null){
             return 0;
         }
-        return listIds.size;
+        return this.totalNumberBuilder = listIds.size;
     },
     getCapacity : function(type2){
         capacity  = 0 ;
@@ -84,7 +92,14 @@ var UserMap = cc.Class.extend({
             return capacity;
         }
         capacity += this.townHall.getCapacity(type2);
-        return capacity;
+        switch (type2){
+            case gv.RESOURCE_TYPE.GOLD:
+                return this.goldCapacity = capacity;
+            case gv.RESOURCE_TYPE.ELIXIR:
+                return this.elixirCapacity = capacity;
+            case gv.RESOURCE_TYPE.DARK_ELIXIR:
+                return this.darkElixirCapacity= capacity;
+        }
     },
 
 
@@ -131,6 +146,7 @@ var UserMap = cc.Class.extend({
         }
         this.addObject(building);
         buildingWaiting = null;
+
     },
     moveBuilding:function(id, newPos){
         // check valid position, let LayerMap do this
@@ -176,7 +192,10 @@ var UserMap = cc.Class.extend({
         building.startUpgrade();
         if(building.update()){
             this.builderWorkingAreas.add(building);
+        }   else    {
+            // finish upgrade immediately
         }
+        this.checkUpdateAttribute(building);
     },
 
     upgradeBuildingNow:function(id){
@@ -191,6 +210,7 @@ var UserMap = cc.Class.extend({
         // TODO: current allow upgrade without check coin
         building.finishUpgrade()
         testnetwork.connector.sendFinishBuildRq(id);
+        this.checkUpdateAttribute(building);
         return true;
     },
 
@@ -217,6 +237,7 @@ var UserMap = cc.Class.extend({
             this.mapIdToArea.delete(building.id);
         }
         testnetwork.connector.sendCancelBuildRq(id);
+        this.checkUpdateAttribute(building);
         return true;
     },
     harvest:function(id){
@@ -260,6 +281,7 @@ var UserMap = cc.Class.extend({
         if(area.type1 == gv.BUILDING.TOWN_HALL){
             townHall = area;
         }
+        this.getWorkingBuilder();
         //cc.log(area.getSize());
         //if(area.type1 != gv.BUILDING.OBSTACLE){
         //    cc.log(area.getUpgradeResourceRequire().gold + " " + area.getUpgradeResourceRequire().elixir + " " + area.getUpgradeResourceRequire().darkElixir + " " + area.getUpgradeResourceRequire().coin);
@@ -284,12 +306,31 @@ var UserMap = cc.Class.extend({
                 cc.log("a builder is released");
                 self.builderWorkingAreas.delete(area);
                 if(area.type1 == gv.BUILDING.OBSTACLE){
-                    this.mapIdToArea.delete(area);
+                    self.mapIdToArea.delete(area);
+                    self.getWorkingBuilder();
+                }   else{
+                    self.checkUpdateAttribute(area);
                 }
             }
         }
         if(this.builderWorkingAreas!=null){
             this.builderWorkingAreas.forEach(logMapElements);
+        }
+    },
+    checkUpdateAttribute:function(area){
+        this.getWorkingBuilder();
+        if(area.typeStrCode=="BDH_1"){
+            this.getTotalBuilder();
+        }   else if(area.typeStrCode=="STO_1"){
+            this.getCapacity(gv.RESOURCE_TYPE.GOLD)
+        }   else if(area.typeStrCode=="STO_2"){
+            this.getCapacity(gv.RESOURCE_TYPE.ELIXIR)
+        }   else if(area.typeStrCode=="STO_3"){
+            this.getCapacity(gv.RESOURCE_TYPE.DARK_ELIXIR)
+        }   else if(area.typeStrCode=="TOW_1"){
+            this.getCapacity(gv.RESOURCE_TYPE.GOLD)
+            this.getCapacity(gv.RESOURCE_TYPE.ELIXIR)
+            this.getCapacity(gv.RESOURCE_TYPE.DARK_ELIXIR)
         }
     },
     showMapGrid: function(){
