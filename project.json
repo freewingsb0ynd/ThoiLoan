@@ -59,6 +59,7 @@
         "src/modules/areamanager/building/BuilderHut.js",
         "src/modules/areamanager/building/Laboratory.js",
         "src/modules/areamanager/building/TownHall.js",
+        "src/modules/areamanager/building/ClanCastle.js",
         "src/modules/areamanager/building/DefenseBuildings/Defense.js",
         "src/modules/areamanager/building/DefenseBuildings/Cannon.js",
         "src/modules/areamanager/building/DefenseBuildings/ArcherTower.js",

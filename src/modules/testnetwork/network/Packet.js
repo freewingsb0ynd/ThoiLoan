@@ -365,6 +365,10 @@ testnetwork.packetMap[gv.CMD.USER_MAP] = fr.InPacket.extend(
                             townHall = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                             UserMap.getInstance().addObject(townHall);
                             break;
+                        case gv.BUILDING.CLAN_CASTLE:
+                            clanCastle = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                            UserMap.getInstance().addObject(clanCastle);
+                            break;
                         case gv.BUILDING.LABORATORY:
                             laboratory = new Laboratory(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                             UserMap.getInstance().addObject(laboratory);

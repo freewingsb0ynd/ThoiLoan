@@ -3,12 +3,81 @@
  */
 var convertNumberToStrType = function(type1,type2){
     // TODO : convert Type
-    return "";
+    return null;
+    switch (type1){
+        case gv.BUILDING.OBSTACLE:
+            return "OBS_"+type2;
+        case gv.BUILDING.ARMY_CAMP:
+            return "AMC_1";
+        case gv.BUILDING.BUILDER_HUT:
+            return "BDH_1";
+        case gv.BUILDING.TOWN_HALL:
+            return "TOW_1";
+        case gv.BUILDING.CLAN_CASTLE:
+            return "CLC_1";
+        case gv.BUILDING.LABORATORY:
+            return "LAB_1";
+        case gv.BUILDING.DEFENSE:
+            switch(type2){
+                case 1:
+                case 2:
+                case 3:
+                    return "DEF_"+type2;
+                case 4:
+                    return "WAL_1";
+            }
+        case gv.BUILDING.STORAGE:
+            return "STO_"+type2;
+        case gv.BUILDING.BARRACK:
+            return "BAR_"+type2;
+        case gv.BUILDING.RESOURCE:
+            return "RES_"+type2;
+    }
 }
 
 var convertStrToNumberType = function(strType){
     // TODO : convert Type
-    return {type1:0,type2:0};
+    switch(strType){
+        case "AMC_1":
+            return {type1:gv.BUILDING.ARMY_CAMP,type2:0};
+        case "BDH_1":
+            return {type1:gv.BUILDING.BUILDER_HUT,type2:0};
+        case "LAB_1":
+            return {type1:gv.BUILDING.LABORATORY,type2:0};
+        case "TOW_1":
+            return {type1:gv.BUILDING.TOWN_HALL,type2:0};
+        case "CLC_1":
+            return {type1:gv.BUILDING.CLAN_CASTLE,type2:0};
+        case "DEF_1":
+            return {type1:gv.BUILDING.DEFENSE,type2:1};
+        case "DEF_2":
+            return {type1:gv.BUILDING.DEFENSE,type2:2};
+        case "DEF_3":
+            return {type1:gv.BUILDING.DEFENSE,type2:3};
+        case "WAL_1":
+            return {type1:gv.BUILDING.DEFENSE,type2:4};
+        case "STO_1":
+            return {type1:gv.BUILDING.STORAGE,type2:1};
+        case "STO_2":
+            return {type1:gv.BUILDING.STORAGE,type2:2};
+        case "STO_3":
+            return {type1:gv.BUILDING.STORAGE,type2:3};
+        case "RES_1":
+            return {type1:gv.BUILDING.RESOURCE,type2:1};
+        case "RES_2":
+            return {type1:gv.BUILDING.RESOURCE,type2:2};
+        case "RES_3":
+            return {type1:gv.BUILDING.RESOURCE,type2:3};
+        case "BAR_1":
+            return {type1:gv.BUILDING.BARRACK,type2:1};
+        case "BAR_2":
+            return {type1:gv.BUILDING.BARRACK,type2:2};
+    }
+    if(strType.substring(0,4) == "OBS_"){
+        return {type1:gv.BUILDING.OBSTACLE,type2:strType.charAt(4)};
+        // TODO : check if ok or not < type2:strType.charAt(4)} >
+    }
+    return null;
 }
 var UserMap = cc.Class.extend({
     id:null,
@@ -139,11 +208,64 @@ var UserMap = cc.Class.extend({
     buildOK : function(id){
         // will be called from onReceivedPacket build OK with id = id
         // create new building with data from buildingWaiting and id
-        switch (buildingWaiting.strType){
-            //TODO : switch case
-            case "":
-                building = new Buidling();
+        _posX = buildingWaiting.position.x
+        _posY = buildingWaiting.position.y
+        _currentLevel = 1;
+        _upgradingLevel = 1;
+        _upgradedMoment = buildingWaiting.momentBuilt;
+        switch(buildingWaiting.strType){
+            case "AMC_1":
+                building = new ArmyCamp(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "BDH_1":
+                building = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "LAB_1":
+                building = new Laboratory((_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment));
+                break;
+            case "TOW_1":
+                building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "CLC_1":
+                buiding = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "DEF_1":
+                buiding = new Cannon(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "DEF_2":
+                buiding = new ArcherTower(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "DEF_3":
+                buiding = new Mortar(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "WAL_1":
+                buiding = new Wall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "STO_1":
+                buiding = new GoldStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "STO_2":
+                buiding = new ElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "STO_3":
+                buiding = new DarkElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "RES_1":
+                buiding = new GoldMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                break;
+            case "RES_2":
+                buiding = new ElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                break;
+            case "RES_3":
+                buiding = new DarkElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                break;
+            case "BAR_1":
+                buiding = new BarrackNormal(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                break;
+            case "BAR_2":
+                buiding = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
         }
+
         this.addObject(building);
         buildingWaiting = null;
 
