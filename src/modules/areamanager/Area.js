@@ -12,12 +12,19 @@ var Area = cc.Node.extend({
     size : null,
     description:null,
     image:null,
+    _jsonRes:null,
 
     ctor: function (_id, _type1, _posX, _posY) {
         this._super("");
         this.id = _id;
         this.type1 = _type1;
         this.position = {x:_posX, y:_posY};
+
+        //var node = new cc.Node();
+        //var sp = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
+        //node.addChild(sp);
+        //
+        //this._jsonRes = node;
         this.addChild(this.getImage());
     },
     showInfo : function(){

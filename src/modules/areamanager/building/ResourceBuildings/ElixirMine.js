@@ -7,6 +7,8 @@ var ElixirMine = Resource.extend({
     ctor: function (_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _harvestMoment) {
         this._super(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, gv.RESOURCE_TYPE.ELIXIR, _harvestMoment);
         this.typeStrCode = "RES_2";
+
+
     },
     showInfo : function(){
         return "Elixir  Mine" +  this._super();
@@ -16,7 +18,7 @@ var ElixirMine = Resource.extend({
         return this.description;
     },
     getImage : function(){
-        this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
+        //this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
         return this.image;
     }
 })

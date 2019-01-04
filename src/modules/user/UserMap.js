@@ -3,7 +3,10 @@
  */
 var convertNumberToStrType = function(type1,type2){
     // TODO : convert Type
-    return null;
+
+    //
+    //return null;
+    //cc.log(type1 + " ** " + type2)
     switch (type1){
         case gv.BUILDING.OBSTACLE:
             return "OBS_"+type2;
@@ -27,12 +30,15 @@ var convertNumberToStrType = function(type1,type2){
                     return "WAL_1";
             }
         case gv.BUILDING.STORAGE:
+            //cc.log("STO_"+ type2)
             return "STO_"+type2;
         case gv.BUILDING.BARRACK:
             return "BAR_"+type2;
         case gv.BUILDING.RESOURCE:
             return "RES_"+type2;
     }
+
+
 }
 
 var convertStrToNumberType = function(strType){
@@ -178,42 +184,46 @@ var UserMap = cc.Class.extend({
 
     // need a Userdata.getInstance().checkIfEnough(resourceRequired)
     addNewBuilding:function(strType, newPos){
+        cc.log("strtype " + strType);
         //newPos{x,y}
         // check resources
-            resourceRequired = this.getCostToBuyNew(strType);
+            //resourceRequired = this.getCostToBuyNew(strType);
             //TODO: checkIfEnough resources
         // check worker available
-            if(this.getTotalBuilder()-this.getWorkingBuilder()<=0){
-                return;
-            }
+        //    if(this.getTotalBuilder()-this.getWorkingBuilder()<=0){
+        //        return;
+        //    }
         // check valid position, let LayerMap do it
         //    size = {width:TL.CONFIG[this.typeStrCode][this.currentLevel]["width"], height:TL.CONFIG[this.typeStrCode][this.currentLevel]["height"]};
         // check enough level townhall
-            if(this.getMaxNumberByType(strType)>=this.getCurrentNumberByType()){
-                return;
-            }
+        //    if(this.getMaxNumberByType(strType)>=this.getCurrentNumberByType()){
+        //        return;
+        //    }
         // update Resources
             //TODO: decrease resources
         // save building in building Waiting
-        if(buildingWaiting != null) return;
-        buildingWaiting = {
+        cc.log("1234");
+        if(this.buildingWaiting != null) return;
+        this.buildingWaiting = {
             strType : strType,
             position : newPos,
             momentBuilt : TimeManager.getInstance().getServerTime(),
         }
+        cc.log("tisssss")
         // send request
-        testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);
+        var type = convertStrToNumberType(strType);
+        //testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);
 
     },
     buildOK : function(id){
         // will be called from onReceivedPacket build OK with id = id
         // create new building with data from buildingWaiting and id
-        _posX = buildingWaiting.position.x
-        _posY = buildingWaiting.position.y
+        _posX = this.buildingWaiting.position.x;
+        _posY = this.buildingWaiting.position.y;
         _currentLevel = 1;
         _upgradingLevel = 1;
-        _upgradedMoment = buildingWaiting.momentBuilt;
-        switch(buildingWaiting.strType){
+        _upgradedMoment = this.buildingWaiting.momentBuilt;
+        switch(this.buildingWaiting.strType){
             case "AMC_1":
                 building = new ArmyCamp(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
@@ -227,47 +237,47 @@ var UserMap = cc.Class.extend({
                 building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "CLC_1":
-                buiding = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "DEF_1":
-                buiding = new Cannon(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new Cannon(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "DEF_2":
-                buiding = new ArcherTower(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new ArcherTower(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "DEF_3":
-                buiding = new Mortar(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new Mortar(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "WAL_1":
-                buiding = new Wall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new Wall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "STO_1":
-                buiding = new GoldStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new GoldStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "STO_2":
-                buiding = new ElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new ElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "STO_3":
-                buiding = new DarkElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new DarkElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "RES_1":
-                buiding = new GoldMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                building = new GoldMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
                 break;
             case "RES_2":
-                buiding = new ElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                building = new ElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
                 break;
             case "RES_3":
-                buiding = new DarkElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+                building = new DarkElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
                 break;
             case "BAR_1":
-                buiding = new BarrackNormal(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new BarrackNormal(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
                 break;
             case "BAR_2":
-                buiding = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+                building = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
         }
 
         this.addObject(building);
-        buildingWaiting = null;
+        this.buildingWaiting = null;
 
     },
     moveBuilding:function(id, newPos){
@@ -393,7 +403,7 @@ var UserMap = cc.Class.extend({
         }
         cc.log("+Area : " + area.showInfo());
         area.refreshInfo();
-        MapLayer2.getInstance().addArea(area);
+        fr.getCurrentScreen().layerMap.addArea(area);
         for(i=0;i<area.size.width;i++){
             for(j=0;j<area.size.height;j++){
                 this.grid[area.position.x+i][area.position.y+j] = area.id;

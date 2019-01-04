@@ -91,8 +91,15 @@ var MapLayer2 = cc.Layer.extend({
             height: boundary[1].height + boundary[3].height
         };
         cc.log(this.bgSize.width + " & " + this.bgSize.height);
-        
 
+        var anim = ccs.load("gui/ElixirMine.json").node;
+        anim.attr({
+            anchorX: 0,
+            anchorY: 0,
+            x: 500,
+            y: 500,
+        });
+        this.addChild(anim);
     },
 
     update: function(){
@@ -111,14 +118,19 @@ var MapLayer2 = cc.Layer.extend({
             y: this.sc * this.isoVsBg * this.bgSize.height * (this.rt.y + (aP.y*this.vt.y + aP.x*this.vt.x)/42),
             scale:this.sc * this.scArea
         });
+        //
+        //area._jsonRes.attr({
+        //        anchorX: 0.5,
+        //        anchorY: 0.5,
+        //        x: this.sc * this.isoVsBg * this.bgSize.width * (this.rt.x + 0.5 + (aP.y*this.vt.y - aP.x*this.vt.x)/42),
+        //        y: this.sc * this.isoVsBg * this.bgSize.height * (this.rt.y + (aP.y*this.vt.y + aP.x*this.vt.x)/42),
+        //        scale:this.sc * this.scArea
+        //});
         this.areaNodes.addChild(area)
-    }
+    },
+    //
+    //loadInitBuilding: function(){
+    //    forEach(var area in UserMap.getInstance().)
+    //}
 
 });
-
-MapLayer2.getInstance = function() {
-    if(this.instance == null) {
-        this.instance = new MapLayer2();
-    }
-    return this.instance;
-}

@@ -8,7 +8,8 @@ fr.view = function(Screen, transitionTime)
     scene.addChild(layer);
     if(!transitionTime)
     {
-        transitionTime = 1.2;
+        //transitionTime = 1.2;
+        transitionTime = 0;
     }
     cc.director.runScene(new cc.TransitionFade(transitionTime, scene));
 };

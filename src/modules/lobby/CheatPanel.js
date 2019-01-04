@@ -120,6 +120,8 @@ var CheatLayer = cc.Layer.extend({
 
         var args = this.tfArgBuild.getString().split(',');
         cc.log(args[0] + ", " + args[1] + ", " + args[2] + ", " + args[3]);
+        UserMap.getInstance().addNewBuilding(convertNumberToStrType(Number(args[2]),Number(args[3])),{x: args[0], y: args[1]})
+
 
         testnetwork.connector.sendBuildRq(args[0],args[1],args[2],args[3]);
 
@@ -157,6 +159,8 @@ var CheatLayer = cc.Layer.extend({
         switch (status){
             case 0:
                 this.lblLog.setString("Xay thanh cong, id: " + idBuilding);
+
+                UserMap.getInstance().buildOK(idBuilding);
                 break;
             case 1:
                 this.lblLog.setString("Xay khong thanh cong, loi: Khong du tai nguyen");
@@ -177,6 +181,8 @@ var CheatLayer = cc.Layer.extend({
                 this.lblLog.setString("Xay khong thanh cong, loi: Unknown");
                 break;
         }
+
+
     },
 
     finishNowResponse: function(status){

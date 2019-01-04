@@ -1,13 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bcf3754-0424-49dc-aeba-b996cbbdd1a8" name="Default" comment="" />
+    <list default="true" id="8bcf3754-0424-49dc-aeba-b996cbbdd1a8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/gui/ElixirMine.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_1/ARM_1_1/ARM_1_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_1/ARM_1_1/ARM_1_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_2/ARM_1_2/ARM_1_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_2/ARM_1_2/ARM_1_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_3/ARM_1_3/ARM_1_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_3/ARM_1_3/ARM_1_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_1/ARM_2_1/ARM_2_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_1/ARM_2_1/ARM_2_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_2/ARM_2_2/ARM_2_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_2/ARM_2_2/ARM_2_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_3/ARM_2_3/ARM_2_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_2_3/ARM_2_3/ARM_2_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_1/ARM_3_1/ARM_3_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_1/ARM_3_1/ARM_3_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_2/ARM_3_2/ARM_3_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_2/ARM_3_2/ARM_3_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_3/ARM_3_3/ARM_3_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_3_3/ARM_3_3/ARM_3_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_1/ARM_4_1/ARM_4_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_1/ARM_4_1/ARM_4_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_2/ARM_4_2/ARM_4_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_2/ARM_4_2/ARM_4_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_3/ARM_4_3/ARM_4_3_.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_3/ARM_4_3/ARM_4_3_.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/areamanager/Area.js" afterPath="$PROJECT_DIR$/src/modules/areamanager/Area.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/lobby/CheatPanel.js" afterPath="$PROJECT_DIR$/src/modules/lobby/CheatPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_1/DEF_2_1/DEF_2_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_1/DEF_2_1/DEF_2_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_2/DEF_2_2/DEF_2_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_2/DEF_2_2/DEF_2_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_3/DEF_2_3/DEF_2_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_3/DEF_2_3/DEF_2_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_4/DEF_2_4/DEF_2_4_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_4/DEF_2_4/DEF_2_4_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_5/DEF_2_5/DEF_2_5_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_5/DEF_2_5/DEF_2_5_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_6/DEF_2_6/DEF_2_6_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_6/DEF_2_6/DEF_2_6_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_7/DEF_2_7/DEF_2_7_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_7/DEF_2_7/DEF_2_7_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_8/DEF_2_8/DEF_2_8_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_8/DEF_2_8/DEF_2_8_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_1/DEF_3_1/DEF_3_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_1/DEF_3_1/DEF_3_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_2/DEF_3_2/DEF_3_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_2/DEF_3_2/DEF_3_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_3/DEF_3_3/DEF_3_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_3/DEF_3_3/DEF_3_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_4/DEF_3_4/DEF_3_4_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_4/DEF_3_4/DEF_3_4_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_5/DEF_3_5/DEF_3_5_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_5/DEF_3_5/DEF_3_5_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/ElixirMine.js" afterPath="$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/ElixirMine.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/framework/GUI.js" afterPath="$PROJECT_DIR$/src/framework/GUI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/map/MapLayer2.js" afterPath="$PROJECT_DIR$/src/modules/map/MapLayer2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" afterPath="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/user/UserMap.js" afterPath="$PROJECT_DIR$/src/modules/user/UserMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_1/WAL_1_1/WAL_1_1_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_1/WAL_1_1/WAL_1_1_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_2/WAL_1_2/WAL_1_2_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_2/WAL_1_2/WAL_1_2_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_3/WAL_1_3/WAL_1_3_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_3/WAL_1_3/WAL_1_3_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_4/WAL_1_4/WAL_1_4_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_4/WAL_1_4/WAL_1_4_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_5/WAL_1_5/WAL_1_5_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_5/WAL_1_5/WAL_1_5_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_6/WAL_1_6/WAL_1_6_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_6/WAL_1_6/WAL_1_6_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_7/WAL_1_7/WAL_1_7_info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/wall/WAL_1_7/WAL_1_7/WAL_1_7_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_9/DEF_2_9/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/AcherTower/DEF_2_9/DEF_2_9/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_6/DEF_3_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_6/DEF_3_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_7/DEF_3_7/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_7/DEF_3_7/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_8/DEF_3_8/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/Motar/DEF_3_8/DEF_3_8/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_7/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_7/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_8/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/barrack/BAR_1_8/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_10/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_10/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_2/builder_hut/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_2/builder_hut/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_3/builder_hut/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_3/builder_hut/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_7/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_7/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_8/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_8/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_9/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/cannon/canon_9/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_0/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_0/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/clan_castle/CLC_1_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/labratory/LAB_1_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_10/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_10/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_10/OBS_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_10/OBS_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_11/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_11/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_12/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_12/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_13/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_13/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_14/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_14/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_15/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_15/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_16/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_16/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_17/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_17/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_18/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_18/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_19/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_19/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_20/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_20/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_21/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_21/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_22/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_22/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_23/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_23/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_24/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_24/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_25/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_25/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_26/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_26/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_27/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_27/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_3/nha_chinh_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_3/nha_chinh_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_7/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_7/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_8/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_8/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_9/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/obstacle/OBS_9/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_1/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_1/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_10/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_10/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_2/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_2/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_3/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_3/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_5/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_5/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_6/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_6/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_7/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_7/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_8/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_8/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_9/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Buildings/townhall/TOW_1_9/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_4/ARM_1_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_1_4/ARM_1_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_4/ARM_4_4/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/Troops/ARM_4_4/ARM_4_4/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/gui/Art/builder/info.json" afterPath="$PROJECT_DIR$/res/gui/Art/builder/info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="ThoiLoan.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/frameworks/cocos2d-x/" />
     <ignored path="$PROJECT_DIR$/frameworks/runtime-src/" />
     <ignored path="$PROJECT_DIR$/frameworks/runtime-src_release/" />
     <ignored path="$PROJECT_DIR$/runtime/" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +144,150 @@
   <component name="FavoritesManager">
     <favorites_list name="ThoiLoan" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ElixirMine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/ElixirMine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapLayer2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/map/MapLayer2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BattleComp.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/gui/BattleComp.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElixirMine.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/gui/ElixirMine.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0018115">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BattleComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/lobby/components/BattleComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resource.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/lobby/Resource.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resource.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/Resource.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="94" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Area.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/areamanager/Area.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="31" selection-start-line="22" selection-start-column="10" selection-end-line="26" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMap.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/user/UserMap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/lobby/components/Component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" />
+        <option value="$PROJECT_DIR$/src/framework/GUI.js" />
+        <option value="$PROJECT_DIR$/res/gui/BattleComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/ChatComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/ConstructionComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/ElixirMine.json" />
+        <option value="$PROJECT_DIR$/res/gui/InfoComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/NotiNum.json" />
+        <option value="$PROJECT_DIR$/res/gui/ProfileComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/ResourceComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/Shop.json" />
+        <option value="$PROJECT_DIR$/res/gui/ShopComp.json" />
+        <option value="$PROJECT_DIR$/res/gui/ShopItem.json" />
+        <option value="$PROJECT_DIR$/res/gui/ShopMain.json" />
+        <option value="$PROJECT_DIR$/res/gui/ShopScrollView.json" />
+        <option value="$PROJECT_DIR$/res/gui/ShopTab.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabArmy.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabChest.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabDecorate.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabDefense.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabResource.json" />
+        <option value="$PROJECT_DIR$/res/gui/TabShield.json" />
+        <option value="$PROJECT_DIR$/src/modules/lobby/CheatPanel.js" />
+        <option value="$PROJECT_DIR$/src/modules/user/UserMap.js" />
+        <option value="$PROJECT_DIR$/src/modules/areamanager/Area.js" />
+        <option value="$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/ElixirMine.js" />
+        <option value="$PROJECT_DIR$/src/modules/map/MapLayer2.js" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
@@ -39,7 +298,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -67,7 +326,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -82,7 +343,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -92,7 +353,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -110,7 +393,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -132,7 +437,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lobby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lobby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -154,7 +529,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -180,7 +555,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ThoiLoanClient" />
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="areamanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="building" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResourceBuildings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -188,17 +593,195 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThoiLoan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GameDemo" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/project.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/modules/lobby/components/InfoComponent.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/modules/testnetwork/network/Network.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/modules/testnetwork/network/Packet.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/modules/user/UserMap.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/modules/areamanager/building/ClanCastle.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunManager" selected="JSBinding.HelloJavascript">
+    <configuration default="false" name="HelloJavascript" type="#org.ccdt.lua.launch.CocosJSConfigurationType" factoryName="JSBinding" temporary="true">
+      <first key="runtime_arguments" stringValue="" />
+      <first key="force_update_entry_file" booleanValue="true" />
+      <first key="disable_live_coding" booleanValue="false" />
+      <first key="disable_using_upload" booleanValue="false" />
+      <first key="argument_map">
+        <second key="macruntime" stringValue="" />
+        <second key="win32runtime" stringValue="simulator\win32\HelloJavascript.exe" />
+        <second key="connector_id" stringValue="jsbinding.win32.attach.connector" />
+        <second key="remotePlatform" stringValue="Android" />
+        <second key="host" stringValue="127.0.0.1" />
+        <second key="androidruntime" stringValue="" />
+        <second key="iosruntime" stringValue="" />
+      </first>
+      <method />
+    </configuration>
     <configuration default="true" type="#org.ccdt.lua.launch.CocosJSConfigurationType" factoryName="JSBinding">
       <first key="argument_map">
         <second key="win32runtime" stringValue="" />
@@ -402,6 +985,9 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -445,6 +1031,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -453,8 +1045,19 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JSBinding.HelloJavascript" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JSBinding.HelloJavascript" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8bcf3754-0424-49dc-aeba-b996cbbdd1a8" name="Default" comment="" />
@@ -462,6 +1065,9 @@
       <option name="number" value="Default" />
       <updated>1546077444172</updated>
       <workItem from="1546077444454" duration="691000" />
+      <workItem from="1546420076952" duration="155000" />
+      <workItem from="1546420393986" duration="598000" />
+      <workItem from="1546426070400" duration="6785000" />
     </task>
     <task id="LOCAL-00001" summary="add classes for buildings and obstacles, fix reading data from packet&#10;&lt;btw trungnq found out another way to push&gt;">
       <created>1546077720119</created>
@@ -473,37 +1079,45 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="691000" />
+    <option name="totallyTimeSpent" value="8229000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5104167" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.49583334" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -513,7 +1127,301 @@
     <option name="LAST_COMMIT_MESSAGE" value="add classes for buildings and obstacles, fix reading data from packet&#10;&lt;btw trungnq found out another way to push&gt;" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/modules/user/UserData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/components/InfoComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/ScreenGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/GUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ChatComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ConstructionComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/InfoComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/NotiNum.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ProfileComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ResourceComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/Shop.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ShopComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ShopItem.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ShopMain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ShopScrollView.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ShopTab.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabArmy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabChest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabDecorate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabDefense.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabResource.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/TabShield.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/Path.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/CheatPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/StorageBuildings/ElixirStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/Building.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/Resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="94" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/components/Component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/Area.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="31" selection-start-line="22" selection-start-column="10" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/user/UserMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/BattleComp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/components/BattleComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/lobby/Resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/building/ResourceBuildings/ElixirMine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/map/MapLayer2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/gui/ElixirMine.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0018115">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
