@@ -1,0 +1,250 @@
+{
+  "ID": "d9777240-860a-436c-b539-c62099bd696f",
+  "Version": "2.1.0.0",
+  "Name": "MapBackground",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 20,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/42x42map.tmx",
+              "Plist": ""
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": -483.7199,
+              "Y": -358.0822
+            },
+            "Scale": {
+              "ScaleX": 0.3,
+              "ScaleY": 0.3
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -483.7199,
+            "RightMargin": -2708.28,
+            "TopMargin": -2035.9178,
+            "BottomMargin": -358.0822,
+            "Tag": 26,
+            "ActionTag": 520864934,
+            "Size": {
+              "X": 3192.0,
+              "Y": 2394.0
+            },
+            "Name": "Map_1",
+            "ctype": "GameMapObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/1_0003_Layer-2.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.6184,
+              "ScaleY": 0.6113
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": -1045.0,
+            "BottomMargin": -836.0,
+            "Tag": 27,
+            "ActionTag": 1922784248,
+            "Size": {
+              "X": 1045.0,
+              "Y": 836.0
+            },
+            "Name": "Sprite_4_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/1_0002_Layer-4.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.6184,
+              "ScaleY": 0.6113
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": -1045.0,
+            "TopMargin": -764.0,
+            "Tag": 28,
+            "ActionTag": 209541975,
+            "Size": {
+              "X": 1045.0,
+              "Y": 764.0
+            },
+            "Name": "Sprite_4_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/1_0000_Layer-3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.6184,
+              "ScaleY": 0.6113
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -1055.0,
+            "TopMargin": -763.0,
+            "Tag": 29,
+            "ActionTag": 1363364741,
+            "Size": {
+              "X": 1055.0,
+              "Y": 763.0
+            },
+            "Name": "Sprite_4_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/1_0001_Layer-1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.6184,
+              "ScaleY": 0.6113
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -1055.0,
+            "BottomMargin": -838.0,
+            "Tag": 30,
+            "ActionTag": -1768715403,
+            "Size": {
+              "X": 1055.0,
+              "Y": 838.0
+            },
+            "Name": "Sprite_4",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Map/1_0000_Layer-3.png",
+        "Art/Map/1_0001_Layer-1.png",
+        "Art/Map/1_0002_Layer-4.png",
+        "Art/Map/1_0003_Layer-2.png",
+        "Art/Map/42x42map.tmx",
+        "Art/Map/gird.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

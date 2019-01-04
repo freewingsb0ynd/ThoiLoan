@@ -36,7 +36,7 @@ var ScreenGame = cc.Layer.extend({
         //scene = new cc.Scene();
         this.layerMap = new MapLayer2();
         //this.layerMap.setPosition(cc.p(100,100));
-        //this.layerMap.scale = 1;
+        this.layerMap.scale = 0.5;
         //scene.addChild(layerMap, 1);
         this.layerLobby = new LobbyLayer();
         //scene.addChild(layerLobby, 2);

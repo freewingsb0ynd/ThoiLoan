@@ -5,23 +5,31 @@
 var MapLayer2 = cc.Layer.extend({
     areaNodes : null,
     bgSize : null,
-    sc : 0.55,
-    rt : {
-        x:0.55,
-        y:0.3
-    },
     vt : {
-        x:0.75,
-        y:0.65
+        x:0.795433172,
+        y:0.6060432
     },
-    isoVsBg : 0.5,
-    scArea : 0.84,
+    scArea : 0.58,
+    areaVsBg:{
+        x : 0.45,
+        y: 0.57
+    },
     ctor:function() {
         this._super();
         this.areaNodes = new cc.Node();
-        this.showBackground();
+        this.backgroundMap = ccs.load(res.backgroundmap).node;
+        this.addChild(this.backgroundMap);
+        this.bgSize = this.backgroundMap.getBoundingBoxToWorld();
+        //this.backgroundMap.scale = 0.5;
+        cc.log(this.bgSize.width + " &&& " +  this.bgSize.height);
+        //this.bgSize = {
+        //    width :  this.bgSize.width,
+        //    height: this.bgSize.width * 1600 / 2100
+        //};
+        //this.showBackground();
         this.addChild(this.areaNodes);
         this.scheduleUpdate();
+        //this.scArea = this.bgSize.width /2100 * this.areaVsBg;
     },
     loadBase:function()
     {
@@ -29,108 +37,32 @@ var MapLayer2 = cc.Layer.extend({
 
     },
 
-    showBackground: function()
-    {
-        var isometricMap = new cc.TMXTiledMap.create("res/gui/Art/Map/42x42map.tmx");
-        var boundary = [];
-        boundary[3] = new cc.Sprite("res/gui/Art/Map/1_0000_Layer-3.png");
-        boundary[1] = new cc.Sprite("res/gui/Art/Map/1_0001_Layer-1.png");
-        boundary[4] = new cc.Sprite("res/gui/Art/Map/1_0002_Layer-4.png");
-        boundary[2] = new cc.Sprite("res/gui/Art/Map/1_0003_Layer-2.png");
-        isometricMap.attr({
-            anchorX: 0.5,
-            anchorY: 0.5,
-            x: boundary[1].width * this.sc,
-            y: boundary[1].height* this.sc,
-            scale: this.sc* this.isoVsBg
-        });
-        //  isometricMap.setPosition(cc.p(size.width * 0.1, size.height * 0.1));
-        this.addChild(isometricMap);
-
-
-        boundary[1].attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: 0,
-            y: 0,
-            scale: this.sc
-        });
-
-        boundary[3].attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: 0,
-            y: (boundary[1].height - 1)*this.sc,
-            scale: this.sc
-        });
-
-        boundary[2].attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: (boundary[1].width - 1)*this.sc,
-            y: 0,
-            scale: this.sc
-        });
-
-        boundary[4].attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: (boundary[1].width - 1)*this.sc,
-            y: (boundary[1].height - 4)*this.sc,
-            scale: this.sc
-        });
-
-        this.addChild(boundary[1]);
-        this.addChild(boundary[3]);
-        this.addChild(boundary[2]);
-        this.addChild(boundary[4]);
-
-
-        this.bgSize = {
-            width :  boundary[1].width+boundary[2].width,
-            height: boundary[1].height + boundary[3].height
-        };
-        cc.log(this.bgSize.width + " & " + this.bgSize.height);
-
-        var anim = ccs.load("gui/ElixirMine.json").node;
-        anim.attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: 500,
-            y: 500,
-        });
-        this.addChild(anim);
-    },
-
     update: function(){
-        UserMap.getInstance().update();
+        //UserMap.getInstance().update();
     },
     addArea: function (area) {
         aSize = area.size;
+
         aP = {
-            x:area.position.x + aSize.width / 2,
-            y:area.position.y + aSize.height / 2
+            //x:42  - 21,
+            //y:42 - 21
+            x:area.position.x + aSize.width * 0.5  - 21,
+            y:area.position.y + aSize.height * 0.5 -21
         }
         area.image.attr({
             anchorX: 0.5,
             anchorY: 0.5,
-            x: this.sc * this.isoVsBg * this.bgSize.width * (this.rt.x + 0.5 + (aP.y*this.vt.y - aP.x*this.vt.x)/42),
-            y: this.sc * this.isoVsBg * this.bgSize.height * (this.rt.y + (aP.y*this.vt.y + aP.x*this.vt.x)/42),
-            scale:this.sc * this.scArea
+            x: this.bgSize.width * ( + this.areaVsBg.x*(aP.y*this.vt.x - aP.x*this.vt.x)/42),
+            y: this.bgSize.height * ( + this.areaVsBg.y* (aP.y*this.vt.y + aP.x*this.vt.y)/42),
+            scale:this.scArea
         });
-        //
-        //area._jsonRes.attr({
-        //        anchorX: 0.5,
-        //        anchorY: 0.5,
-        //        x: this.sc * this.isoVsBg * this.bgSize.width * (this.rt.x + 0.5 + (aP.y*this.vt.y - aP.x*this.vt.x)/42),
-        //        y: this.sc * this.isoVsBg * this.bgSize.height * (this.rt.y + (aP.y*this.vt.y + aP.x*this.vt.x)/42),
-        //        scale:this.sc * this.scArea
-        //});
-        this.areaNodes.addChild(area)
-    },
-    //
-    //loadInitBuilding: function(){
-    //    forEach(var area in UserMap.getInstance().)
-    //}
-
+        this.areaNodes.addChild(area);
+    }
 });
+
+MapLayer2.getInstance = function() {
+    if(this.instance == null) {
+        this.instance = new MapLayer2();
+    }
+    return this.instance;
+}

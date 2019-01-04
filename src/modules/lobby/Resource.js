@@ -24,6 +24,7 @@ res.shop.btn_exit = 'Button_1';
 res.shop.shop_main = 'shopMain_node';
 res.shop.shop_tab = 'shopTab_node';
 
+res.backgroundmap = 'gui/MapBackground.json';
 
 //var game = game || {};
 
