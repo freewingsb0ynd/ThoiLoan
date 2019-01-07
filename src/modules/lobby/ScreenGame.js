@@ -14,6 +14,9 @@ var ScreenGame = cc.Layer.extend({
         this.loadGui();
         gv.gameClient.connect();
         this.initGame();
+        this.addTouchListener();
+        this.addKeyboardListener();
+        this.scheduleUpdate();
     },
 
 
@@ -35,8 +38,15 @@ var ScreenGame = cc.Layer.extend({
         this.addChild(node);
         //scene = new cc.Scene();
         this.layerMap = new MapLayer2();
-        this.layerMap.setPosition(cc.p(200,200));
-        this.layerMap.scale = 1;
+        this.layerMap.attr({
+            anchorX: 0,
+            anchorY: 0,
+            x: this.layerMap.width/2,
+            y: this.layerMap.height/2,
+            scale:1
+        })
+        //this.layerMap.setPosition(cc.p(0,0));
+        //this.layerMap.scale = 1;
         //scene.addChild(layerMap, 1);
         this.layerLobby = new LobbyLayer();
         //scene.addChild(layerLobby, 2);
@@ -58,7 +68,53 @@ var ScreenGame = cc.Layer.extend({
     {
         this.layerCheat.logConnectionFail();
     },
+    addTouchListener:function(){
+        //Add code here
+        var self = this;
+        cc.eventManager.addListener({
+            prevTouchId : -1,
+            event: cc.EventListener.TOUCH_ALL_AT_ONCE,
+            onTouchesMoved : function(touches, event){
+                var touch = touches[0];
+                if(self.prevTouchId != touch.getID()){
+                    self.prevTouchId = touch.getID()
+                }   else{
+                    var delta = touch.getDelta();
+                    var curPos = cc.p(self.layerMap.x, self.layerMap.y);
+                    curPos = cc.pAdd(curPos,delta);
+                    self.layerMap.setPosition(curPos);
+                }
+            }
 
+        },this);
+    },
+    addKeyboardListener:function(){
+        //Add code here
+        if(cc.sys.capabilities.hasOwnProperty('keyboard'))
+            cc.eventManager.addListener({
+                event: cc.EventListener.KEYBOARD,
+                onKeyPressed: function(key,event){
+                    MW.KEYS[key] = true;
+                },
+                onKeyReleased: function(key,event){
+                    MW.KEYS[key] = false;
+                }
+            },this);
+    },
+    update:function (dt) {
+        self = this;
+        if (MW.KEYS[cc.KEY.a]) {
+            scale =  self.layerMap.getScale();
+            scale = scale*1.01;
+            this.layerMap.setScale(scale);
+            return;
+        }
+        if (MW.KEYS[cc.KEY.s]) {
+            scale =  self.layerMap.getScale();
+            scale = scale*0.99;
+            this.layerMap.setScale(scale);
+        }
+    },
 });
 //
 //ScreenGame.scene = function () {

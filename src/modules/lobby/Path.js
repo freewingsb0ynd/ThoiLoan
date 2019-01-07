@@ -2,6 +2,8 @@
  * Created by CPU11643_LOCAL on 12/24/2018.
  */
 
+var MW = MW || {}
+MW.KEYS = {}
 
 gv.BUILDING = {}
 
