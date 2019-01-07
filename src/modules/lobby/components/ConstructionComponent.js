@@ -32,64 +32,85 @@ var ConstructionComponent = Component.extend({
         this._actionBtnHeight = this._demoBtn.getChildByName('action_btn').getBoundingBox().height /0.95;
 
 
-        this.button1 = new ActionButton();
+        //this.button1 = new ActionButton();
         //cc.log("da them nut");
         //this.button1.attr({
         //    x: 200,
         //    y: 500,
         //});
-        this.addChild(this.button1);
+        //this.addChild(this.button1);
     },
 
     updateGui:function(building){
-        this.actionButtonsList = null;
+        this.actionButtonsList = {};
 
         this._textConstructionName.setString(building.constructionName);
 
         //
         //
         var optionsNum = building.options.length;                       // lay do dai actions list
+
         //cc.log("optionsssssss: " + optionsNum);
+        //cc.log("optionsssssss: " + building.options[0]);
+        //cc.log("optionsssssss: " + building.options[1]);
+        //cc.log("optionsssssss: " + building.options[2]);
+
+
 
         if (optionsNum %2 == 0){                                        // neu actions list co so phan tu chan
             for(var i = 0; i < optionsNum; i++){
-                //var actionBtn = new ActionButton(building.options[i].typeOption);
-                var actionBtn = new ActionButton();
+                //cc.log("aaaaaaaaa "+ building.options[i].typeOption);
+
+                var actionBtn = new ActionButton(building.options[i]);
+
+                //var actionBtn = new ActionButton();
 
                 //actionBtn.;
+                actionBtn.attr({
+                    x: this._actionBtnWidth * gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP * ((i - optionsNum / 2) + 0.5),
+                    y: this._actionBtnHeight * gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP,
 
-                switch (building.options.typeOption){
-                    case ACTION_BUTTON.TYPE.FINISH_NOW:                 // neu phan tu option co resources:[]
-                    case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
+                });
 
+                this.addChild(actionBtn);
 
-                        break;
-
-                    default:                                            // neu phan tu option khong co resources:[]
-                        break;
-
-
-
-                }
-
-                this.actionButtonsList.push(actionBtn);
+                //this.actionButtonsList.push(actionBtn);
             }
 
         }
         else{                                                           // neu actions list co so phan tu le
 
+            for(var i = 0; i < optionsNum; i++){
+                //cc.log("aaaaaaaaa "+ building.options[i].typeOption);
+
+                var actionBtn = new ActionButton(building.options[i]);
+
+                //var actionBtn = new ActionButton();
+
+                //actionBtn.;
+
+                actionBtn.attr({
+                    x: this._actionBtnWidth * gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP *(i - (optionsNum - 1)/2),
+                    y: this._actionBtnHeight * gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP,
+
+                });
+
+
+                this.addChild(actionBtn);
+                //this.actionButtonsList.push(actionBtn);
+            }
         }
 
         this._demoBtn.attr({
-            x: - this._actionBtnWidth * 1.1,
-            y: this._actionBtnHeight * 0.6,
-
+            x: - this._actionBtnWidth * gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP,
+            y: this._actionBtnHeight * gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP,
+            visible: false,
         });
 
-        this.button1.attr({
-            x: this._actionBtnWidth * 1.1,
-            y: this._actionBtnHeight * 0.6,
-
+        this._demoBtn1.attr({
+            x: this._actionBtnWidth * gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP,
+            y: this._actionBtnHeight * gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP,
+            visible: false,
         });
 
 
@@ -102,4 +123,12 @@ var ConstructionComponent = Component.extend({
 
 
 });
+
+var gv = gv || {};
+
+gv.CONSTRUCTION_COMP = {}
+gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP = 1.1;
+gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP = 0.6;
+
+
 
