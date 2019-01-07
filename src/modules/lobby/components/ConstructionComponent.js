@@ -42,34 +42,43 @@ var ConstructionComponent = Component.extend({
     },
 
     updateGui:function(building){
-        //this.actionButtonsList = null;
+        this.actionButtonsList = null;
+
+        this._textConstructionName.setString(building.constructionName);
+
         //
         //
-        //var optionsNum = building.options.length();                     // lay do dai actions list
-        //
-        //if (optionsNum %2 == 0){                                        // neu actions list co so phan tu chan
-        //    for(var i = 0; i < optionsNum; i++){
-        //        var actionBtn = new ActionButton();
-        //
-        //        switch (building.options.typeOption){
-        //            case ACTION_BUTTON.TYPE.FINISH_NOW:                 // neu phan tu option co resources:[]
-        //            case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
-        //
-        //
-        //                break;
-        //
-        //            default:                                            // neu phan tu option khong co resources:[]
-        //                break;
-        //
-        //        }
-        //
-        //        this.actionButtonsList.push(actionBtn);
-        //    }
-        //
-        //}
-        //else{                                                           // neu actions list co so phan tu le
-        //
-        //}
+        var optionsNum = building.options.length;                       // lay do dai actions list
+        //cc.log("optionsssssss: " + optionsNum);
+
+        if (optionsNum %2 == 0){                                        // neu actions list co so phan tu chan
+            for(var i = 0; i < optionsNum; i++){
+                //var actionBtn = new ActionButton(building.options[i].typeOption);
+                var actionBtn = new ActionButton();
+
+                //actionBtn.;
+
+                switch (building.options.typeOption){
+                    case ACTION_BUTTON.TYPE.FINISH_NOW:                 // neu phan tu option co resources:[]
+                    case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
+
+
+                        break;
+
+                    default:                                            // neu phan tu option khong co resources:[]
+                        break;
+
+
+
+                }
+
+                this.actionButtonsList.push(actionBtn);
+            }
+
+        }
+        else{                                                           // neu actions list co so phan tu le
+
+        }
 
         this._demoBtn.attr({
             x: - this._actionBtnWidth * 1.1,

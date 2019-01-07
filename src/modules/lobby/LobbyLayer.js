@@ -43,7 +43,14 @@ var LobbyLayer = cc.Layer.extend({
         this.constructionComp = new ConstructionComponent();
         this.addChild(this.constructionComp);
 
-        this.constructionComp.updateGui();
+
+        var example  = {constructionName: "building level 1",
+                        options: [{typeOption: ACTION_BUTTON.TYPE.UPGRADE_BUILDING, resources: [{type: gv.RESOURCE_TYPE.DARK_ELIXIR, amount: 100}]},
+                                  {typeOption: ACTION_BUTTON.TYPE.UPGRADE_BUILDING, resources: [{type: gv.RESOURCE_TYPE.ELIXIR,amount: 1000}]},
+                                  {typeOption: ACTION_BUTTON.TYPE.UPGRADE_BUILDING, resources: [{type: gv.RESOURCE_TYPE.GOLD,amount: 1500}]},
+                        ]
+                        };
+        this.constructionComp.updateGui(example);
     },
 
 
