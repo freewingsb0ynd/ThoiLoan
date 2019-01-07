@@ -41,7 +41,7 @@ var CheatLayer = cc.Layer.extend({
         this.btnCheatDarkElixir.setVisible(this.activeCheatButtons);
         this.btnCheatGCoin.setVisible(this.activeCheatButtons);
 
-        this.lblLog = gv.commonText(fr.Localization.text("..."), size.width*0.4, size.height*0.05);
+        this.lblLog = gv.commonText(fr.Localization.text("..."), size.width*0.4, size.height*0.4);
         this.addChild(this.lblLog);
 
 
@@ -90,7 +90,6 @@ var CheatLayer = cc.Layer.extend({
         this.btnCheat = gv.commonButton(80, 32, cc.winSize.width * 0.95, cc.winSize.height * 0.6, "Cheat");
         this.addChild(this.btnCheat);
         this.btnCheat.addClickEventListener(this.onSelectCheat.bind(this));
-
 
     },
 

@@ -244,6 +244,48 @@
             },
             "Name": "notiNum_node",
             "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "LabelText": "CỬA HÀNG",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -47.5016,
+              "Y": 18.806
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -88.5016,
+            "RightMargin": 6.5016,
+            "TopMargin": -28.306,
+            "BottomMargin": 9.306,
+            "Tag": 215,
+            "ActionTag": 71964136,
+            "Size": {
+              "X": 82.0,
+              "Y": 19.0
+            },
+            "Name": "shop_lbl",
+            "ctype": "TextBMFontObjectData"
           }
         ],
         "Size": {
@@ -254,6 +296,8 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
         "Art/GUIs/Main_Gui/kho.png",
         "Art/GUIs/Main_Gui/setting.png",
         "Art/GUIs/Main_Gui/shop.png",

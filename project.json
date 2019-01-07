@@ -44,6 +44,8 @@
         "src/modules/testnetwork/network/Packet.js",
         "src/modules/testnetwork/ScreenNetwork.js",
         "src/modules/user/UserData.js",
+
+        "src/modules/lobby/components/ActionButton.js",
         "src/modules/lobby/components/Component.js",
         "src/modules/lobby/components/ProfileComponent.js",
         "src/modules/lobby/components/ResourceComponent.js",

@@ -40,7 +40,10 @@ var LobbyLayer = cc.Layer.extend({
         this.shopComp = new ShopComponent();
         this.addChild(this.shopComp);
 
+        this.constructionComp = new ConstructionComponent();
+        this.addChild(this.constructionComp);
 
+        this.constructionComp.updateGui();
     },
 
 

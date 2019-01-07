@@ -73,6 +73,47 @@
             "Tag": 1355,
             "Children": [
               {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ShopItem.json",
+                  "Plist": ""
+                },
+                "StretchWidthEnable": false,
+                "StretchHeightEnable": false,
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 590.723,
+                  "Y": 182.7848
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.3938,
+                  "Y": 0.5222
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 590.723,
+                "RightMargin": 909.277,
+                "TopMargin": 167.2152,
+                "BottomMargin": 182.7848,
+                "Tag": 230,
+                "ActionTag": -283693162,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "FileNode_1",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
                 "AnchorPoint": {},
                 "Position": {
                   "X": 423.2341,
@@ -224,6 +265,47 @@
                 },
                 "Name": "Button_27",
                 "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ShopItem.json",
+                  "Plist": ""
+                },
+                "StretchWidthEnable": false,
+                "StretchHeightEnable": false,
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 263.8732,
+                  "Y": 180.5891
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.1759,
+                  "Y": 0.516
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 263.8732,
+                "RightMargin": 1236.1268,
+                "TopMargin": 169.4109,
+                "BottomMargin": 180.5891,
+                "Tag": 237,
+                "ActionTag": -1191397820,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "FileNode_1_0",
+                "ctype": "ProjectNodeObjectData"
               }
             ],
             "ActionTag": 191886529,
@@ -233,47 +315,6 @@
             },
             "Name": "ScrollView_2",
             "ctype": "ScrollViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "ShopItem.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 411.2443,
-              "Y": 0.7025
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 411.2443,
-            "RightMargin": -411.2443,
-            "TopMargin": -0.7025,
-            "BottomMargin": 0.7025,
-            "Tag": 1364,
-            "ActionTag": -243952819,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "FileNode_1",
-            "ctype": "ProjectNodeObjectData"
           }
         ],
         "Size": {
