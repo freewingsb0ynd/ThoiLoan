@@ -49,7 +49,7 @@ var Area = cc.Node.extend({
     },
     getOptions:function(){
         options = [];
-        example  = {typeOption:1,resources:[{type:1,amount:100}]};
+        example  = {constructionName : "builiding level 1" , typeOption:1,resources:[{type:1,amount:100}]};
         options.push(example);
         return options;
     }

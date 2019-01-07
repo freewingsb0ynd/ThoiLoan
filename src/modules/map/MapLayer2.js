@@ -45,11 +45,12 @@ var MapLayer2 = cc.Layer.extend({
             x:area.position.x + aSize.width * 0.5  - 21,
             y:area.position.y + aSize.height * 0.5 -21
         }
+        pixelPos = this.convertLogicToPixel(aP);
         area.image.attr({
             anchorX: 0.5,
             anchorY: 0.5,
-            x: this.bgSize.width * ( + this.areaVsBg.x*(aP.x*this.vt.x - aP.y*this.vt.x)/42),
-            y: this.bgSize.height * ( + this.areaVsBg.y* (aP.y*this.vt.y + aP.x*this.vt.y)/42),
+            x: pixelPos.x,
+            y: pixelPos.y,
             scale:this.scArea
         });
         this.areaNodes.addChild(area);
@@ -66,6 +67,12 @@ var MapLayer2 = cc.Layer.extend({
                     self.prevTouchId = touch.getID()
                 }   else{
                     cc.log("touch at " + touch.getLocation().x + "," + touch.getLocation().y)
+                    touchPos = {
+                        x:touch.getLocation().x,
+                        y:touch.getLocation().y
+                    }
+                    logicP = self.convertPixelToLogic(touchPos);
+                    cc.log(logicP.x + " - " +logicP.y)
                     var delta = touch.getDelta();
                     //var curPos = cc.p(self.layerMap.x, self.layerMap.y);
                     //curPos = cc.pAdd(curPos,delta);
@@ -114,6 +121,30 @@ var MapLayer2 = cc.Layer.extend({
             scale = scale*0.99;
             scale = Math.max(scale,0.9);
             this.setScale(scale);
+        }
+    },
+    convertPixelToLogic:function(pixelPoint){
+        scale = this.getScale();
+        centerPos = {
+            x:this.x,
+            y:this.y
+        }
+        curPos = cc.pSub(cc.pMult(pixelPoint,scale),centerPos);
+        curPos.x*=42;
+        curPos.y*=42;
+        curPos.x /=  this.bgSize.width * this.areaVsBg.x ;
+        curPos.y /= this.bgSize.height * this.areaVsBg.y  ;
+        x2y2 = this.vt.x*this.vt.x + this.vt.y * this.vt.y;
+        logicPoint = {
+            x: Math.ceil((curPos.y*this.vt.x - curPos.x*this.vt.y + 21)/x2y2),
+            y: Math.ceil((curPos.x*this.vt.x + curPos.y*this.vt.y + 21)/x2y2) ,
+        }
+        return logicPoint;
+    },
+    convertLogicToPixel:function(logicPoint){
+        return {
+            x: this.bgSize.width * (this.areaVsBg.x * (logicPoint.x*this.vt.x - logicPoint.y*this.vt.x)/42),
+            y: this.bgSize.height * (this.areaVsBg.y* (logicPoint.y*this.vt.y + logicPoint.x*this.vt.y)/42),
         }
     },
 });
