@@ -41,6 +41,7 @@ var ScreenMenu = cc.Layer.extend({
         this.addChild(loginScr);
 
         this.tfID = ccui.TextField();
+        //this.tfID.setTexture('gui/Art/LoginGui/g_background.png');
         this.tfID.setPosition(size.width/4, size.height/3);
         this.tfID.setPlaceHolder("Your ID...");
         this.addChild(this.tfID);

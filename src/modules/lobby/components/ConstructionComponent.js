@@ -28,8 +28,8 @@ var ConstructionComponent = Component.extend({
 
         this._actionBtnX = this._demoBtn.x;
         this._actionBtnY = this._demoBtn.y;
-        this._actionBtnWidth = this._demoBtn.getChildByName('action_btn').getBoundingBox().width /0.93;
-        this._actionBtnHeight = this._demoBtn.getChildByName('action_btn').getBoundingBox().height /0.95;
+        this._actionBtnWidth = this._demoBtn.getChildByName('action_btn').getBoundingBox().width /gv.CONSTRUCTION_COMP.RESCALE_WIDTH_BUTTON_TO_100;
+        this._actionBtnHeight = this._demoBtn.getChildByName('action_btn').getBoundingBox().height /gv.CONSTRUCTION_COMP.RESCALE_HEIGHT_BUTTON_TO_100;
 
 
         //this.button1 = new ActionButton();
@@ -129,6 +129,7 @@ var gv = gv || {};
 gv.CONSTRUCTION_COMP = {}
 gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP = 1.1;
 gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP = 0.6;
-
+gv.CONSTRUCTION_COMP.RESCALE_WIDTH_BUTTON_TO_100 = 0.93;
+gv.CONSTRUCTION_COMP.RESCALE_HEIGHT_BUTTON_TO_100 = 0.95;
 
 
