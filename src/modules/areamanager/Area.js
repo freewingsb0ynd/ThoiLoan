@@ -46,5 +46,11 @@ var Area = cc.Node.extend({
         this.getSize();
         this.getDescription();
         this.setImage();
+    },
+    getOptions:function(){
+        options = [];
+        example  = {typeOption:1,resources:[{type:1,amount:100}]};
+        options.push(example);
+        return options;
     }
 })

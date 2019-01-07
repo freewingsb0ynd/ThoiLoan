@@ -48,7 +48,7 @@ var MapLayer2 = cc.Layer.extend({
         area.image.attr({
             anchorX: 0.5,
             anchorY: 0.5,
-            x: this.bgSize.width * ( + this.areaVsBg.x*(aP.y*this.vt.x - aP.x*this.vt.x)/42),
+            x: this.bgSize.width * ( + this.areaVsBg.x*(aP.x*this.vt.x - aP.y*this.vt.x)/42),
             y: this.bgSize.height * ( + this.areaVsBg.y* (aP.y*this.vt.y + aP.x*this.vt.y)/42),
             scale:this.scArea
         });
