@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8b9903d-16da-4d11-ac4e-984b794ea1c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/lobby/Path.js" afterPath="$PROJECT_DIR$/src/modules/lobby/Path.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/map/MapLayer2.js" afterPath="$PROJECT_DIR$/src/modules/map/MapLayer2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" afterPath="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Area.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Area.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/areamanager/Area.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5519481">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -84,17 +84,17 @@
         <entry file="file://$PROJECT_DIR$/src/modules/lobby/ScreenGame.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapLayer2.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MapLayer2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/map/MapLayer2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.4707792">
+              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -104,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/modules/user/UserMap.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="414" column="29" selection-start-line="414" selection-start-column="29" selection-end-line="414" selection-end-column="29" />
+              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -165,7 +165,6 @@
         <option value="$PROJECT_DIR$/res/gui/TabDefense.json" />
         <option value="$PROJECT_DIR$/res/gui/TabResource.json" />
         <option value="$PROJECT_DIR$/res/gui/TabShield.json" />
-        <option value="$PROJECT_DIR$/src/modules/map/MapLayer2.js" />
         <option value="$PROJECT_DIR$/src/modules/areamanager/building/BuilderHut.js" />
         <option value="$PROJECT_DIR$/src/modules/areamanager/building/Building.js" />
         <option value="$PROJECT_DIR$/src/modules/areamanager/building/ClanCastle.js" />
@@ -192,8 +191,9 @@
         <option value="$PROJECT_DIR$/src/modules/areamanager/Obstacle.js" />
         <option value="$PROJECT_DIR$/src/modules/user/UserMap.js" />
         <option value="$PROJECT_DIR$/src/modules/lobby/Path.js" />
-        <option value="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" />
         <option value="$PROJECT_DIR$/src/modules/areamanager/Area.js" />
+        <option value="$PROJECT_DIR$/src/modules/lobby/ScreenGame.js" />
+        <option value="$PROJECT_DIR$/src/modules/map/MapLayer2.js" />
       </list>
     </option>
   </component>
@@ -1687,11 +1687,17 @@
       <option name="project" value="LOCAL" />
       <updated>1546834146344</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="trungnq: zoomin(press a), zoomout(press s) map and move map (drag and drop mouse)">
+      <created>1546836134914</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546836134914</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13483000" />
+    <option name="totallyTimeSpent" value="16804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1737,7 +1743,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add classes for buildings and obstacles, fix reading data from packet&#10;&lt;btw trungnq found out another way to push&gt;" />
     <MESSAGE value="trungnq: setImage method : ready for Hoang to set image/animation of Areas, &lt;delete getImage method&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="trungnq: setImage method : ready for Hoang to set image/animation of Areas, &lt;delete getImage method&gt;" />
+    <MESSAGE value="trungnq: zoomin(press a), zoomout(press s) map and move map (drag and drop mouse)" />
+    <option name="LAST_COMMIT_MESSAGE" value="trungnq: zoomin(press a), zoomout(press s) map and move map (drag and drop mouse)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2114,14 +2121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/user/UserMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="414" column="29" selection-start-line="414" selection-start-column="29" selection-end-line="414" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/lobby/Path.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2130,10 +2129,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/map/MapLayer2.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/Area.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/user/UserMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2141,15 +2148,15 @@
     <entry file="file://$PROJECT_DIR$/src/modules/lobby/ScreenGame.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/areamanager/Area.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/map/MapLayer2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5519481">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.4707792">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
           <folding />
         </state>
       </provider>

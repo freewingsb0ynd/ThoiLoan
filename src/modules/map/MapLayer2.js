@@ -20,16 +20,12 @@ var MapLayer2 = cc.Layer.extend({
         this.backgroundMap = ccs.load(res.backgroundmap).node;
         this.addChild(this.backgroundMap);
         this.bgSize = this.backgroundMap.getBoundingBoxToWorld();
-        //this.backgroundMap.scale = 0.5;
         cc.log(this.bgSize.width + " &&& " +  this.bgSize.height);
-        //this.bgSize = {
-        //    width :  this.bgSize.width,
-        //    height: this.bgSize.width * 1600 / 2100
-        //};
         //this.showBackground();
         this.addChild(this.areaNodes);
+        this.addTouchListener();
+        this.addKeyboardListener();
         this.scheduleUpdate();
-        //this.scArea = this.bgSize.width /2100 * this.areaVsBg;
     },
     loadBase:function()
     {
@@ -57,7 +53,69 @@ var MapLayer2 = cc.Layer.extend({
             scale:this.scArea
         });
         this.areaNodes.addChild(area);
-    }
+    },
+    addTouchListener:function(){
+        //Add code here
+        var self = this;
+        cc.eventManager.addListener({
+            prevTouchId : -1,
+            event: cc.EventListener.TOUCH_ALL_AT_ONCE,
+            onTouchesBegan : function(touches, event){
+                var touch = touches[0];
+                if(self.prevTouchId != touch.getID()){
+                    self.prevTouchId = touch.getID()
+                }   else{
+                    cc.log("touch at " + touch.getLocation().x + "," + touch.getLocation().y)
+                    var delta = touch.getDelta();
+                    //var curPos = cc.p(self.layerMap.x, self.layerMap.y);
+                    //curPos = cc.pAdd(curPos,delta);
+                    //self.layerMap.setPosition(curPos);
+                }
+            },
+            onTouchesMoved : function(touches, event){
+                var touch = touches[0];
+                if(self.prevTouchId != touch.getID()){
+                    self.prevTouchId = touch.getID()
+                }   else{
+                    var delta = touch.getDelta();
+                    var curPos = cc.p(self.x, self.y);
+                    curPos = cc.pAdd(curPos,delta);
+                    self.setPosition(curPos);
+                    //cc.log(self.x + " , " + self.y);
+                    // TODO : set not let map move out
+                }
+            }
+        },this);
+    },
+    addKeyboardListener:function(){
+        //Add code here
+        if(cc.sys.capabilities.hasOwnProperty('keyboard'))
+            cc.eventManager.addListener({
+                event: cc.EventListener.KEYBOARD,
+                onKeyPressed: function(key,event){
+                    MW.KEYS[key] = true;
+                },
+                onKeyReleased: function(key,event){
+                    MW.KEYS[key] = false;
+                }
+            },this);
+    },
+    update:function (dt) {
+        self = this;
+        if (MW.KEYS[cc.KEY.a]) {
+            scale =  self.getScale();
+            scale = scale*1.01;
+            scale = Math.min(scale,2);
+            this.setScale(scale);
+            return;
+        }
+        if (MW.KEYS[cc.KEY.s]) {
+            scale =  self.getScale();
+            scale = scale*0.99;
+            scale = Math.max(scale,0.9);
+            this.setScale(scale);
+        }
+    },
 });
 
 MapLayer2.getInstance = function() {
