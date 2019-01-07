@@ -15,8 +15,7 @@ var Cannon = Defense.extend({
         this.description = " Description : Cannon level " + this.currentLevel;
         return this.description;
     },
-    getImage : function(){
-        this.image = new cc.Sprite("res/gui/Art/Buildings/cannon/canon_1/idle/image0000.png");
-        return this.image;
+    setImage : function(){
+        this.image.setTexture("res/gui/Art/Buildings/cannon/canon_1/idle/image0000.png");
     }
 })

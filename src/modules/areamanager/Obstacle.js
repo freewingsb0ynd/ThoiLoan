@@ -38,9 +38,9 @@ var Obstacle  = Area.extend({
         this.description = " Description : Obstacle type " + this.obstacleType;
         return this.description;
     },
-    getImage: function () {
-        this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_2.png");
-        return this.image;
-    },
+    //setImage: function () {
+    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_2.png");
+    //    return this.image;
+    //},
 
 })

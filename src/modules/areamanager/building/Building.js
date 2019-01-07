@@ -121,13 +121,11 @@ var Building = Area.extend({
             coin:TL.CONFIG[this.typeStrCode][this.currentLevel]["coin"]||0,
         }
     },
-    getImage : function(){
-
-    },
+    //getImage : function(){
+    //
+    //},
     refreshInfo:function(){
-        this.getDescription();
-        //this.getImage();
-        this.getSize();
+        this._super();
         this.getLevelTownHallRequiredToUpgrade();
         this.getUpgradeResourceRequire();
         if(this.upgradingLevel>0){

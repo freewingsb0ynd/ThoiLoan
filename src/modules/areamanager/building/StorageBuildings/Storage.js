@@ -16,7 +16,7 @@ var Storage = Building.extend({
         this.description = " Description : Storage level " + this.currentLevel;
         return this.description;
     },
-    getImage : function(){
-
-    }
+    //getImage : function(){
+    //
+    //}
 })

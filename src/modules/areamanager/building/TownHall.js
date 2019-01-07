@@ -15,9 +15,8 @@ var TownHall = Building.extend({
         this.description = " Description : TownHall level " + this.currentLevel;
         return this.description;
     },
-    getImage : function(){
-        this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_4.png");
-        return this.image;
+    setImage : function(){
+        this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_4.png");
     },
     getCapacity:function(type){
         switch (type){

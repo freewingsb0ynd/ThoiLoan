@@ -25,7 +25,8 @@ var Area = cc.Node.extend({
         //node.addChild(sp);
         //
         //this._jsonRes = node;
-        this.addChild(this.getImage());
+        this.image = new cc.Sprite();
+        this.addChild(this.image);
     },
     showInfo : function(){
         return " id " + this.id + " type1 :" + this.type1 + " position : (" + this.position.x + "," + this.position.y + ")";
@@ -37,13 +38,13 @@ var Area = cc.Node.extend({
     },
     getDescription : function(){
     },
-    getImage : function(){
-        this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG_1.png");
-        return this.image;
+    setImage : function(){
+        // set texture or animation for this.image
+        this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
     },
     refreshInfo:function(){
-        this.getDescription();
-        //this.getImage();
         this.getSize();
+        this.getDescription();
+        this.setImage();
     }
 })

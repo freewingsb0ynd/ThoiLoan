@@ -19,7 +19,7 @@ var Resource = Building.extend({
         this.description = " Description : Resource level " + this.currentLevel;
         return this.description;
     },
-    getImage : function(){
-
-    }
+    //getImage : function(){
+    //
+    //}
 })

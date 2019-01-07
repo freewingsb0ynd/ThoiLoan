@@ -404,8 +404,10 @@ var UserMap = cc.Class.extend({
         cc.log("+Area : " + area.showInfo());
         area.refreshInfo();
         fr.getCurrentScreen().layerMap.addArea(area);
+        //cc.log(area.size.width + "," +area.size.height  + "pos " + area.position.x + "," + area.position.y)
         for(i=0;i<area.size.width;i++){
             for(j=0;j<area.size.height;j++){
+                //cc.log((area.position.x) + " " + i + " " + (area.position.x+i))
                 this.grid[area.position.x+i][area.position.y+j] = area.id;
             }
         }
