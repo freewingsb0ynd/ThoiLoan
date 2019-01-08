@@ -28,6 +28,8 @@ var ShopGui = cc.Node.extend({
             scaleY: cc.winSize.height/this.bgShop.getBoundingBox().height,
 
         });
+
+        //this.guiShop.setSwallowTouch()
         this.addChild(this.guiShop);
 
         this.exitBtn = this.guiShop.getChildByName(res.shop.btn_exit);

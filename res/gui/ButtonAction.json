@@ -166,7 +166,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "Art/GUIs/research troop/dau den.png",
+              "Path": "Art/GUIs/Main_Gui/gold_icon.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -179,11 +179,11 @@
             },
             "Position": {
               "X": 30.0,
-              "Y": 35.4999
+              "Y": 35.5
             },
             "Scale": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
+              "ScaleX": 0.4,
+              "ScaleY": 0.4
             },
             "CColor": {},
             "IconVisible": false,
@@ -195,17 +195,106 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 22.0,
-            "RightMargin": -38.0,
-            "TopMargin": -45.4999,
-            "BottomMargin": 25.4999,
-            "Tag": 217,
-            "ActionTag": -1220618195,
+            "LeftMargin": 16.5,
+            "RightMargin": -43.5,
+            "TopMargin": -49.5,
+            "BottomMargin": 21.5,
+            "Tag": 377,
+            "ActionTag": 606217453,
             "Size": {
-              "X": 16.0,
-              "Y": 20.0
+              "X": 28.0,
+              "Y": 29.0
             },
             "Name": "priceType_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "300",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 20.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -21.0,
+            "RightMargin": -21.0,
+            "TopMargin": -29.5,
+            "BottomMargin": 10.5,
+            "Tag": 114,
+            "ActionTag": -698634934,
+            "Size": {
+              "X": 42.0,
+              "Y": 19.0
+            },
+            "VisibleForFrame": false,
+            "Name": "price_lbl_0",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/elixir_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 30.0,
+              "Y": 20.0
+            },
+            "Scale": {
+              "ScaleX": 0.4,
+              "ScaleY": 0.4
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 16.5,
+            "RightMargin": -43.5,
+            "TopMargin": -34.0,
+            "BottomMargin": 6.0,
+            "Tag": 115,
+            "ActionTag": -1078979168,
+            "Size": {
+              "X": 27.0,
+              "Y": 32.0
+            },
+            "VisibleForFrame": false,
+            "Name": "priceType_spr_0",
             "ctype": "SpriteObjectData"
           }
         ],
@@ -220,7 +309,8 @@
         "Art/Fonts/soji_12.fnt",
         "Art/Fonts/soji_12.png",
         "Art/GUIs/Action_Building_Icon/bg_button.png",
-        "Art/GUIs/research troop/dau den.png"
+        "Art/GUIs/Main_Gui/elixir_icon.png",
+        "Art/GUIs/Main_Gui/gold_icon.png"
       ],
       "ctype": "GameFileData"
     }

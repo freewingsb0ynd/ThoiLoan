@@ -19,6 +19,9 @@ var ActionButton = cc.Node.extend({
         this.button_bg = this._jsonRes.getChildByName('action_btn');
         this.price_lbl = this._jsonRes.getChildByName('price_lbl');
         this.priceType_spr =  this._jsonRes.getChildByName('priceType_spr');
+
+        this.price_lbl_0 = this._jsonRes.getChildByName('price_lbl_0');
+        this.priceType_spr_0 =  this._jsonRes.getChildByName('priceType_spr_0');
         this.actionName_lbl = this._jsonRes.getChildByName('actionName_lbl');
 
         //cc.log(new ccui.Button(ACTION_BUTTON.RES_LINK[typeActionButton]));
@@ -40,10 +43,21 @@ var ActionButton = cc.Node.extend({
         //this.button_bg.get('NormalFileData').get('Path').setString("Art/GUIs/Action_Building_Icon/upgrade_icon.png");
         switch (actionBtn.typeOption){
             case ACTION_BUTTON.TYPE.FINISH_NOW:                 // neu phan tu option co resources:[]
+                this.price_lbl.setString(actionBtn.resources[0].amount);
+                this.priceType_spr.setVisible(false);
+                break;
             case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
 
                 this.price_lbl.setString(actionBtn.resources[0].amount);
                 this.priceType_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[actionBtn.resources[0].type]);
+
+                if(actionBtn.resources[1] != null){
+                    this.price_lbl_0.setString(actionBtn.resources[1].amount);
+                    this.priceType_spr_0.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[actionBtn.resources[1].type]);
+
+                    this.price_lbl_0.setVisible(true);
+                    this.priceType_spr_0.setVisible(true);
+                }
 
                 break;
 

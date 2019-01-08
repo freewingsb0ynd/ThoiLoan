@@ -46,9 +46,10 @@ var LobbyLayer = cc.Layer.extend({
 
         var example  = {constructionName: "building level 1",
                         options: [{typeOption: ACTION_BUTTON.TYPE.SHOW_INFO, resources: []},
-                                  //{typeOption: ACTION_BUTTON.TYPE.FINISH_NOW, resources: [{type: gv.RESOURCE_TYPE.ELIXIR,amount: 1000}]},
-                                  {typeOption: ACTION_BUTTON.TYPE.FINISH_NOW, resources: [{type: gv.RESOURCE_TYPE.COIN,amount: 1000}]},
-                                  //{typeOption: ACTION_BUTTON.TYPE.FINISH_NOW, resources: [{type: gv.RESOURCE_TYPE.ELIXIR,amount: 1000}]},
+                                  {typeOption: ACTION_BUTTON.TYPE.CANCEL_BUILDING, resources: []},
+                                  {typeOption: ACTION_BUTTON.TYPE.FINISH_NOW, resources: [{type: gv.RESOURCE_TYPE.COIN,amount: 24}]},
+                                  {typeOption: ACTION_BUTTON.TYPE.UPGRADE_BUILDING, resources: [{type: gv.RESOURCE_TYPE.ELIXIR,amount: 1000},
+                                                                                                {type: gv.RESOURCE_TYPE.DARK_ELIXIR,amount: 600}]},
 
                                   {typeOption: ACTION_BUTTON.TYPE.UPGRADE_BUILDING, resources: [{type: gv.RESOURCE_TYPE.GOLD,amount: 1500}]},
                         ]
