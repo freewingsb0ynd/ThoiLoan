@@ -158,7 +158,7 @@ var CheatLayer = cc.Layer.extend({
     onSelectFinish: function(sender){
         //cc.log();
         testnetwork.connector.sendFinishBuildRq(Number(this.tfArgIDBuild.getString()));
-
+        //cc.log('town hall lvl: ' + UserMap.getInstance().townHall.currentLevel);
     },
 
     onSelectMove: function(sender){

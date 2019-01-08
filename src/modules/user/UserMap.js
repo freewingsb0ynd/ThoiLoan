@@ -413,7 +413,7 @@ var UserMap = cc.Class.extend({
         }
 
         if(area.type1 == gv.BUILDING.TOWN_HALL){
-            townHall = area;
+            this.townHall = area;
         }
         this.getWorkingBuilder();
         //cc.log(area.getSize());

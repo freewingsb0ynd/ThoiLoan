@@ -22,11 +22,6 @@
               "G": 65,
               "B": 70
             },
-            "DisabledFileData": {
-              "Type": "Normal",
-              "Path": "Art/GUIs/shop_gui/slot.png",
-              "Plist": ""
-            },
             "NormalFileData": {
               "Type": "Normal",
               "Path": "Art/GUIs/shop_gui/slot.png",
@@ -126,7 +121,7 @@
               "X": 235.0,
               "Y": 325.0
             },
-            "Name": "item_background_3",
+            "Name": "item_bg",
             "ctype": "SpriteObjectData"
           },
           {
@@ -258,8 +253,387 @@
               "X": 27.0,
               "Y": 28.0
             },
-            "Name": "g_icon_6",
+            "Name": "itemPrice_spr",
             "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "Yêu cầu nhà chính cấp 3",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": -85.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -93.0,
+            "RightMargin": -93.0,
+            "TopMargin": 75.5,
+            "BottomMargin": -94.5,
+            "Tag": 156,
+            "ActionTag": 1266189356,
+            "Size": {
+              "X": 186.0,
+              "Y": 19.0
+            },
+            "VisibleForFrame": false,
+            "Name": "townHallRequest_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/time.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -75.0,
+              "Y": -75.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -89.0,
+            "RightMargin": 61.0,
+            "TopMargin": 54.0,
+            "BottomMargin": -96.0,
+            "Tag": 157,
+            "ActionTag": -1406666942,
+            "Size": {
+              "X": 28.0,
+              "Y": 42.0
+            },
+            "Name": "builtTime_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "15m0s",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -20.0,
+              "Y": -75.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -58.0,
+            "RightMargin": -18.0,
+            "TopMargin": 62.5,
+            "BottomMargin": -87.5,
+            "Tag": 158,
+            "ActionTag": -354377044,
+            "Size": {
+              "X": 76.0,
+              "Y": 25.0
+            },
+            "Name": "builtTime_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "0/1",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 70.0,
+              "Y": -75.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 47.5,
+            "RightMargin": -92.5,
+            "TopMargin": 62.5,
+            "BottomMargin": -87.5,
+            "Tag": 159,
+            "ActionTag": 415931137,
+            "Size": {
+              "X": 45.0,
+              "Y": 25.0
+            },
+            "Name": "builtNum_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "10% KHO",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/fista_20_non.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 135.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 207,
+              "G": 139,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -31.5,
+            "RightMargin": -31.5,
+            "TopMargin": -145.5,
+            "BottomMargin": 124.5,
+            "Tag": 160,
+            "ActionTag": 1370733440,
+            "Size": {
+              "X": 63.0,
+              "Y": 21.0
+            },
+            "VisibleForFrame": false,
+            "Name": "amountTopUp_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "20000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_16.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 110.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 229,
+              "G": 229,
+              "B": 229
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -41.0,
+            "RightMargin": -41.0,
+            "TopMargin": -122.5,
+            "BottomMargin": 97.5,
+            "Tag": 161,
+            "ActionTag": 755482783,
+            "Size": {
+              "X": 82.0,
+              "Y": 25.0
+            },
+            "Name": "itemName_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/gold.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 70.0,
+              "Y": 110.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 56.0,
+            "RightMargin": -84.0,
+            "TopMargin": -125.0,
+            "BottomMargin": 95.0,
+            "Tag": 162,
+            "ActionTag": 162519530,
+            "Size": {
+              "X": 28.0,
+              "Y": 30.0
+            },
+            "VisibleForFrame": false,
+            "Name": "amountTopup_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/shop_gui/info.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 7,
+            "Scale9Height": 17,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 75.0,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 56.5,
+            "RightMargin": -93.5,
+            "TopMargin": -139.5,
+            "BottomMargin": 100.5,
+            "Tag": 163,
+            "ActionTag": -411273164,
+            "Size": {
+              "X": 37.0,
+              "Y": 39.0
+            },
+            "Name": "itemInfo_btn",
+            "ctype": "ButtonObjectData"
           }
         ],
         "Size": {
@@ -270,12 +644,21 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "Art/Fonts/fista_20_non.fnt",
+        "Art/Fonts/fista_20_non.png",
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
+        "Art/Fonts/soji_16.fnt",
+        "Art/Fonts/soji_16.png",
         "Art/Fonts/soji_20.fnt",
         "Art/Fonts/soji_20.png",
         "Art/GUIs/icons/shop_res/elixir_10.png",
         "Art/GUIs/Main_Gui/g_icon.png",
+        "Art/GUIs/shop_gui/gold.png",
+        "Art/GUIs/shop_gui/info.png",
         "Art/GUIs/shop_gui/item_background.png",
-        "Art/GUIs/shop_gui/slot.png"
+        "Art/GUIs/shop_gui/slot.png",
+        "Art/GUIs/shop_gui/time.png"
       ],
       "ctype": "GameFileData"
     }
