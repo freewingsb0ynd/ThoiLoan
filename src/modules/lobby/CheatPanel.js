@@ -11,21 +11,29 @@ var CheatLayer = cc.Layer.extend({
 
         var size = cc.winSize;
 
-        this.tfAmountCheat = ccui.TextField();
-        this.tfAmountCheat.setPosition(size.width * 0.7, size.height * 0.95);
+        this.tfAmountCheatNode = ccs.load('gui/TextField.json').node;
+        this.tfAmountCheatNode.setPosition(size.width * 0.7, size.height * 0.95);
+
+        var tfAmountCheatBg = this.tfAmountCheatNode.getChildByName('text_bg');
+        tfAmountCheatBg.attr({
+            scaleX: (size.width / 1280) * 0.5,
+        });
+
+        this.tfAmountCheat = this.tfAmountCheatNode.getChildByName('textField');
+
+        //cc.log('12312312123');
         this.tfAmountCheat.setPlaceHolder("Input amount cheat...");
-        this.addChild(this.tfAmountCheat);
         this.tfAmountCheat.setString('1000');
 
-        //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
+        this.addChild(this.tfAmountCheatNode);
 
-        this.btnCheatGold = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.95 ,"Gold");
+        this.btnCheatGold = gv.commonButton(32, 32, size.width * 0.84, size.height * 0.95 ,"G");
         this.addChild(this.btnCheatGold);
-        this.btnCheatElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.86 ,"Elixir");
+        this.btnCheatElixir = gv.commonButton(32, 32, size.width * 0.84, size.height * 0.86 ,"E");
         this.addChild(this.btnCheatElixir);
-        this.btnCheatDarkElixir = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.77 ,"Dark");
+        this.btnCheatDarkElixir = gv.commonButton(32, 32, size.width * 0.84, size.height * 0.77 ,"D");
         this.addChild(this.btnCheatDarkElixir);
-        this.btnCheatGCoin = gv.commonButton(80, 32, size.width * 0.8, size.height * 0.68 ,"Coin");
+        this.btnCheatGCoin = gv.commonButton(32, 32, size.width * 0.84, size.height * 0.68 ,"C");
         this.addChild(this.btnCheatGCoin);
 
         this.btnCheatGold.addClickEventListener(this.onSelectCheatGold.bind(this));
@@ -35,43 +43,54 @@ var CheatLayer = cc.Layer.extend({
 
 
         this.activeCheatButtons = false;
-        this.tfAmountCheat.setVisible(this.activeCheatButtons);
+        this.tfAmountCheatNode.setVisible(this.activeCheatButtons);
         this.btnCheatGold.setVisible(this.activeCheatButtons);
         this.btnCheatElixir.setVisible(this.activeCheatButtons);
         this.btnCheatDarkElixir.setVisible(this.activeCheatButtons);
         this.btnCheatGCoin.setVisible(this.activeCheatButtons);
 
-        this.lblLog = gv.commonText(fr.Localization.text("..."), size.width*0.4, size.height*0.4);
+        this.lblLog = gv.commonText(fr.Localization.text("..."), size.width*0.4, size.height*0.45);
         this.addChild(this.lblLog);
 
 
+        this.tfArgBuildNode = ccs.load('gui/TextField.json').node;
+        this.tfArgBuildNode.setPosition(size.width * 0.2, size.height * 0.35);
 
+        var tfArgBuildBg = this.tfArgBuildNode.getChildByName('text_bg');
+        tfArgBuildBg.attr({
+            scaleX: (size.width / 1280) * 0.7,
+            scaleY: (size.height / 720),
+        });
 
-        this.tfArgBuild = ccui.TextField();
-
-        this.tfArgBuild.setPosition(size.width * 0.3, size.height * 0.3);
+        this.tfArgBuild = this.tfArgBuildNode.getChildByName('textField');
         this.tfArgBuild.setPlaceHolder("Input args build...");
-        this.addChild(this.tfArgBuild);
+        this.addChild(this.tfArgBuildNode);
 
         //this.tfArgBuild.setTextAreaSize(new cc.size(100,64));
         //this.tfArgBuild.setString('1000');
-        var btnBuild = gv.commonButton(80, 32, size.width * 0.4, size.height * 0.3 ,"Build");
+        var btnBuild = gv.commonButton(80, 32, size.width * 0.4, size.height * 0.35 ,"Build");
         this.addChild(btnBuild);
 
         btnBuild.addClickEventListener(this.onSelectBuild.bind(this));
 
-        var btnMoveConstruction = gv.commonButton(80, 32, size.width * 0.5, size.height * 0.3 ,"Move");
+        var btnMoveConstruction = gv.commonButton(80, 32, size.width * 0.5, size.height * 0.35 ,"Move");
         this.addChild(btnMoveConstruction);
 
         btnMoveConstruction.addClickEventListener(this.onSelectMove.bind(this));
 
+        this.tfArgIDBuildNode = ccs.load('gui/TextField.json').node;
+        this.tfArgIDBuildNode.setPosition(size.width * 0.2, size.height * 0.25);
 
+        var tfArgIDBuildBg = this.tfArgIDBuildNode.getChildByName('text_bg');
+        tfArgIDBuildBg.attr({
+            scaleX: (size.width / 1280) * 0.7,
+            scaleY: (size.height / 720),
+        });
 
-        this.tfArgIDBuild = ccui.TextField();
-
-        this.tfArgIDBuild.setPosition(size.width * 0.3, size.height * 0.25);
+        this.tfArgIDBuild = this.tfArgIDBuildNode.getChildByName('textField');
         this.tfArgIDBuild.setPlaceHolder("Input id building...");
-        this.addChild(this.tfArgIDBuild);
+        this.addChild(this.tfArgIDBuildNode);
+
 
         //this.tfArgBuild.setTextAreaSize(new cc.size(100,64));
         //this.tfArgBuild.setString('1000');
@@ -95,7 +114,7 @@ var CheatLayer = cc.Layer.extend({
 
     onSelectCheat: function(sender){
         this.activeCheatButtons = !this.activeCheatButtons;
-        this.tfAmountCheat.setVisible(this.activeCheatButtons);
+        this.tfAmountCheatNode.setVisible(this.activeCheatButtons);
         this.btnCheatGold.setVisible(this.activeCheatButtons);
         this.btnCheatElixir.setVisible(this.activeCheatButtons);
         this.btnCheatDarkElixir.setVisible(this.activeCheatButtons);

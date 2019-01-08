@@ -16,36 +16,55 @@ var ScreenMenu = cc.Layer.extend({
         var size = cc.director.getVisibleSize();
 
         var yBtn = 7*size.height/12;
+        //
+        //var btnNetwork = gv.commonButton(200, 64, cc.winSize.width/4, yBtn,"Network");
+        //this.addChild(btnNetwork);
+        //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
+        //
+        //var btnLocalization = gv.commonButton(200, 64, cc.winSize.width/2, yBtn,"Localize");
+        //this.addChild(btnLocalization);
+        //btnLocalization.addClickEventListener(this.onSelectLocalization.bind(this));
+        //
+        //var btnDragonbones = gv.commonButton(200, 64, 3*cc.winSize.width/4, yBtn,"Dragonbone");
+        //this.addChild(btnDragonbones);
+        //btnDragonbones.addClickEventListener(this.onSelectDragonbones.bind(this));
+        //
 
-        var btnNetwork = gv.commonButton(200, 64, cc.winSize.width/4, yBtn,"Network");
-        this.addChild(btnNetwork);
-        btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
 
-        var btnLocalization = gv.commonButton(200, 64, cc.winSize.width/2, yBtn,"Localize");
-        this.addChild(btnLocalization);
-        btnLocalization.addClickEventListener(this.onSelectLocalization.bind(this));
-
-        var btnDragonbones = gv.commonButton(200, 64, 3*cc.winSize.width/4, yBtn,"Dragonbone");
-        this.addChild(btnDragonbones);
-        btnDragonbones.addClickEventListener(this.onSelectDragonbones.bind(this));
-
-
-
-        var loginScr = new cc.Sprite('res/gui/Art/LoginGui/loading.jpg');
-        loginScr.attr({
+        var lobbyBg = new cc.Sprite('res/gui/Art/LoginGui/loading.jpg');
+        lobbyBg.attr({
             anchorX: 0,
             anchorY: 0,
-            scaleX: cc.winSize.width/loginScr.getBoundingBox().width,
-            scaleY: cc.winSize.height/loginScr.getBoundingBox().height,
+            scaleX: size.width/lobbyBg.getBoundingBox().width,
+            scaleY: size.height/lobbyBg.getBoundingBox().height,
         });
-        this.addChild(loginScr);
+        this.addChild(lobbyBg);
 
-        this.tfID = ccui.TextField();
-        //this.tfID.setTexture('gui/Art/LoginGui/g_background.png');
-        this.tfID.setPosition(size.width/4, size.height/3);
-        this.tfID.setPlaceHolder("Your ID...");
-        this.addChild(this.tfID);
+        //this.tfID = ccui.TextField();
+        ////this.tfID.setTexture('gui/Art/LoginGui/g_background.png');
+        //this.tfID.setPosition(size.width/4, size.height/3);
+        //this.tfID.setPlaceHolder("Your ID...");
+        //this.addChild(this.tfID);
         //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
+
+        this.tfCustom = ccs.load('gui/TextField.json').node;
+
+        this.tfCustom.setPosition(size.width /4, size.height/3);
+        var tfCustomBg = this.tfCustom.getChildByName('text_bg');
+        //var nativeScaleX = tfCustomBg.getBoundingBox().width / 1280;
+
+        cc.log('size width' + tfCustomBg.getBoundingBox().width);
+        tfCustomBg.attr({
+            scaleX: (size.width/1280) * 0.5,
+        });
+
+        this.tfID = this.tfCustom.getChildByName('textField');
+
+        this.tfID.setPlaceHolder("Your ID...");
+        //this.tfID.setCursorEnabled(true);
+
+        this.addChild(this.tfCustom);
+
 
         var btnLobby = gv.commonButton(200, 64, size.width/2, size.height/3 ,"Login");
         this.addChild(btnLobby);
