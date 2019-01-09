@@ -87,6 +87,7 @@
         "src/modules/lobby/LobbyLayer.js",
         "src/modules/lobby/CheatPanel.js",
 
+        "src/modules/shop/ShopConfig.js",
         "src/modules/shop/ShopGui.js",
         "src/modules/shop/ShopItem.js",
         "src/modules/shop/ShopMain.js",
