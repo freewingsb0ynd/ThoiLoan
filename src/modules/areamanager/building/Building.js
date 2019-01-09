@@ -139,7 +139,7 @@ var Building = Area.extend({
         data.constructionName = " Building ";
         var option = {typeOption:ACTION_BUTTON.TYPE.SHOW_INFO};
         data.options.push(option);
-
+        if(this.typeStrCode == "BDH_1") return data;
         if(this.upgradingLevel >0) {
             // upgrading/constructing
             option = {typeOption:ACTION_BUTTON.TYPE.CANCEL_BUILDING};

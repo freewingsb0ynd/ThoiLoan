@@ -17,7 +17,9 @@ var Laboratory = Building.extend({
         this.description = " Description : Laboratory level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_1.png");
-    //}
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Laboratory ";
+        return data;
+    }
 })

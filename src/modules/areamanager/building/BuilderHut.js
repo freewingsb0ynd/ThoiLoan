@@ -15,7 +15,9 @@ var BuilderHut = Building.extend({
         this.description = " Description : BuilderHut level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_2.png");
-    //}
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Builder Hut ";
+        return data;
+    }
 })

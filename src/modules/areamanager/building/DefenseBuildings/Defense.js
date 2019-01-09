@@ -16,7 +16,4 @@ var Defense = Building.extend({
         this.description = " Description : Defense level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //
-    //}
 })

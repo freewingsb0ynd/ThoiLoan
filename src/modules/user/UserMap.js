@@ -223,59 +223,7 @@ var UserMap = cc.Class.extend({
         _currentLevel = 1;
         _upgradingLevel = 1;
         _upgradedMoment = this.buildingWaiting.momentBuilt;
-        switch(this.buildingWaiting.strType){
-            case "AMC_1":
-                building = new ArmyCamp(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "BDH_1":
-                building = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "LAB_1":
-                building = new Laboratory((_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment));
-                break;
-            case "TOW_1":
-                building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "CLC_1":
-                building = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "DEF_1":
-                building = new Cannon(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "DEF_2":
-                building = new ArcherTower(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "DEF_3":
-                building = new Mortar(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "WAL_1":
-                building = new Wall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "STO_1":
-                building = new GoldStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "STO_2":
-                building = new ElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "STO_3":
-                building = new DarkElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "RES_1":
-                building = new GoldMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
-                break;
-            case "RES_2":
-                building = new ElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
-                break;
-            case "RES_3":
-                building = new DarkElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
-                break;
-            case "BAR_1":
-                building = new BarrackNormal(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-                break;
-            case "BAR_2":
-                building = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
-        }
-
+        building = Building.newBuildingByType(this.buildingWaiting.strType, _id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
         this.addObject(building);
         this.buildingWaiting = null;
 

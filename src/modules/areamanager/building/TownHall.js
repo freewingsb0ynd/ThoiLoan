@@ -27,5 +27,10 @@ var TownHall = Building.extend({
             case gv.RESOURCE_TYPE.DARK_ELIXIR:
                 return TL.CONFIG["TOW_1"][this.currentLevel]["capacityDarkElixir"];
         }
+    },
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Town Hall ";
+        return data;
     }
 })

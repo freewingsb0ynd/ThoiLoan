@@ -15,8 +15,11 @@ var Wall = Defense.extend({
         this.description = " Description : Wall level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Buildings/wall/WAL_1_7/WAL_1_7/idle/image0000.png");
-    //    return this.image;
-    //}
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Wall ";
+        var option = {typeOption:ACTION_BUTTON.TYPE.SELECT_LINE_WALL};
+        data.options.push(option);
+        return data;
+    }
 })

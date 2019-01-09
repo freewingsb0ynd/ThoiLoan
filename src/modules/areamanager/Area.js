@@ -48,9 +48,27 @@ var Area = cc.Node.extend({
         this.setImage();
     },
     getOptions:function(){
-        options = [];
-        example  = {constructionName : "builiding level 1" , typeOption:1,resources:[{type:1,amount:100}]};
-        options.push(example);
-        return options;
+        this.update();
+        data = {
+            constructionName : "An Area",
+            options :[]
+            };
+        // 1 check cancel option
+        // 2 check clan option
+        // 3 check spell option
+        // 4 check harvest_dark_elixir option
+        // 5 check harvest_elixir option
+        // 6 check harvest_gold option
+        // 7 check info option
+        // 8 check quick_finish option
+        // 10 check request_troop option
+        // 11 check research option
+        // 12 check rorate option
+        // 13 check select_line option
+        // 14 check shop option
+        // 15 check train option
+        // 16 check upgrade option
+
+        return data;
     }
 })

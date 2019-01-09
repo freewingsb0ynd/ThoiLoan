@@ -15,7 +15,9 @@ var ClanCastle = Building.extend({
         this.description = " Description : ClanCastle level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_4.png");
-    //}
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Clan Castle ";
+        return data;
+    }
 })

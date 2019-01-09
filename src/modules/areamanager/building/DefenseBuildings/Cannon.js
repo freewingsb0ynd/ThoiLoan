@@ -17,5 +17,10 @@ var Cannon = Defense.extend({
     },
     setImage : function(){
         this.image.setTexture("res/gui/Art/Buildings/cannon/canon_1/idle/image0000.png");
+    },
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Cannon ";
+        return data;
     }
 })

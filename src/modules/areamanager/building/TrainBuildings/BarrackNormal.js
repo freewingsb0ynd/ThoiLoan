@@ -15,8 +15,11 @@ var BarrackNormal = Barrack.extend({
         this.description = " Description : BarrackNormal level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
-    //    return this.image;
-    //}
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Barrack Normal ";
+        var option = {typeOption:ACTION_BUTTON.TYPE.TRAIN_TROOP};
+        data.options.push(option);
+        return data;
+    }
 })

@@ -8,7 +8,6 @@
 var Obstacle  = Area.extend({
     cleanMoment : null,
     obstacleType : null,
-    sprite : null,
     ctor: function (_id, _posX, _posY, _cleanMoment, _obstacleType) {
         this._super(_id,gv.BUILDING.OBSTACLE,_posX,_posY);
         this.cleanMoment = _cleanMoment;
@@ -38,9 +37,28 @@ var Obstacle  = Area.extend({
         this.description = " Description : Obstacle type " + this.obstacleType;
         return this.description;
     },
-    //setImage: function () {
-    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_2.png");
-    //    return this.image;
-    //},
-
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Obstacle type " + this.obstacleType;
+        if(this.cleanMoment ==0 ){
+            // 9 remove option
+            var option = {typeOption:ACTION_BUTTON.TYPE.REMOVE_OBSTACLE,resources:[]}
+            goldAmount = TL.CONFIG[this.typeStrCode]["1"]["gold"];
+            if(goldAmount!=0){
+                option.resources.push({type: gv.RESOURCE_TYPE.GOLD,amount: goldAmount})
+            }
+            elixirAmount = TL.CONFIG[this.typeStrCode]["1"]["elixir"];
+            if(elixirAmount!=0){
+                option.resources.push({type: gv.RESOURCE_TYPE.ELIXIR,amount: elixirAmount})
+            }
+            data.options.push(option);
+        }   else    if(this.cleanMoment>0){
+            // 8 check quick_finish option
+            var option = {typeOption:ACTION_BUTTON.TYPE.FINISH_NOW,resources:[]}
+            quickFinishCost = 2;
+            option.resources.push({type: gv.RESOURCE_TYPE.COIN,amount: quickFinishCost});
+            data.options.push(option);
+        }
+        return data;
+    }
 })

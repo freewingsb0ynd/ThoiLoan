@@ -65,7 +65,18 @@ var MapLayer2 = cc.Layer.extend({
                     logicP = self.convertTouchPointToLogic(touchPos);
                     cc.log(logicP.x + " - " +logicP.y)
                     if((logicP.x >0 && logicP.x < self.SZ) || (logicP.y >0 && logicP.y < self.SZ)){
-
+                        id = UserMap.getInstance().grid[logicP.x][logicP.y];
+                        cc.log("id   = " + id);
+                        if(id>0){
+                            area = UserMap.getInstance().mapIdToArea.get(id);
+                            if(area != null){
+                                example = area.getOptions();
+                                fr.getCurrentScreen().layerLobby.constructionComp.setVisible(false);
+                                fr.getCurrentScreen().layerLobby.constructionComp.updateGui(example);
+                                fr.getCurrentScreen().layerLobby.constructionComp.setVisible(true);
+                                cc.log("hello")
+                            }
+                        }
                     }
                 }
             },
