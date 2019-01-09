@@ -16,7 +16,7 @@ var TownHall = Building.extend({
         return this.description;
     },
     setImage : function(){
-        this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_4.png");
+        this.image.setTexture(TL.PATH.town_hall + this.currentLevel + "/idle/image0000.png");
     },
     getCapacity:function(type){
         switch (type){

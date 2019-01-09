@@ -19,7 +19,7 @@ var Resource = Building.extend({
         this.description = " Description : Resource level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //
-    //}
+    //setImage : function(){
+    //    this.image.setTexture(TL.PATH.elixir_storage + this.currentLevel + "/idle/image0000.png");
+    //},
 })
