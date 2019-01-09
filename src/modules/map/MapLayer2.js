@@ -3,6 +3,7 @@
  */
 
 var MapLayer2 = cc.Layer.extend({
+    SZ : SIZE_AREA+1,
     areaNodes : null,
     bgSize : null,
     vt : {
@@ -20,30 +21,20 @@ var MapLayer2 = cc.Layer.extend({
         this.backgroundMap = ccs.load(res.backgroundmap).node;
         this.addChild(this.backgroundMap);
         this.bgSize = this.backgroundMap.getBoundingBoxToWorld();
-        cc.log(this.bgSize.width + " &&& " +  this.bgSize.height);
         //this.showBackground();
         this.addChild(this.areaNodes);
         this.addTouchListener();
         this.addKeyboardListener();
         this.scheduleUpdate();
     },
-    loadBase:function()
-    {
-
-
-    },
-
     update: function(){
         //UserMap.getInstance().update();
     },
     addArea: function (area) {
         aSize = area.size;
-
         aP = {
-            //x:42  - 21,
-            //y:42 - 21
-            x:area.position.x + aSize.width * 0.5  - 21,
-            y:area.position.y + aSize.height * 0.5 -21
+            x:area.position.x + aSize.width * 0.5,
+            y:area.position.y + aSize.height * 0.5
         }
         pixelPos = this.convertLogicToPixel(aP);
         area.image.attr({
@@ -71,12 +62,11 @@ var MapLayer2 = cc.Layer.extend({
                         x:touch.getLocation().x,
                         y:touch.getLocation().y
                     }
-                    logicP = self.convertPixelToLogic(touchPos);
+                    logicP = self.convertTouchPointToLogic(touchPos);
                     cc.log(logicP.x + " - " +logicP.y)
-                    var delta = touch.getDelta();
-                    //var curPos = cc.p(self.layerMap.x, self.layerMap.y);
-                    //curPos = cc.pAdd(curPos,delta);
-                    //self.layerMap.setPosition(curPos);
+                    if((logicP.x >0 && logicP.x < self.SZ) || (logicP.y >0 && logicP.y < self.SZ)){
+
+                    }
                 }
             },
             onTouchesMoved : function(touches, event){
@@ -112,7 +102,7 @@ var MapLayer2 = cc.Layer.extend({
         if (MW.KEYS[cc.KEY.a]) {
             scale =  self.getScale();
             scale = scale*1.01;
-            scale = Math.min(scale,2);
+            scale = Math.min(scale,3);
             this.setScale(scale);
             return;
         }
@@ -123,28 +113,37 @@ var MapLayer2 = cc.Layer.extend({
             this.setScale(scale);
         }
     },
-    convertPixelToLogic:function(pixelPoint){
+    convertTouchPointToLogic:function(touchPoint){
         scale = this.getScale();
         centerPos = {
             x:this.x,
             y:this.y
         }
-        curPos = cc.pSub(cc.pMult(pixelPoint,scale),centerPos);
-        curPos.x*=42;
-        curPos.y*=42;
+        var pixelPosInMap = cc.pMult(cc.pSub(touchPoint,centerPos),1/scale);
+        return this.convertPixelToLogic(pixelPosInMap);
+    },
+    convertPixelToLogic:function(pixelPoint){
+        var curPos  ={
+            x: pixelPoint.x * this.SZ,
+            y: pixelPoint.y * this.SZ
+        }
         curPos.x /=  this.bgSize.width * this.areaVsBg.x ;
         curPos.y /= this.bgSize.height * this.areaVsBg.y  ;
-        x2y2 = this.vt.x*this.vt.x + this.vt.y * this.vt.y;
-        logicPoint = {
-            x: Math.ceil((curPos.y*this.vt.x - curPos.x*this.vt.y + 21)/x2y2),
-            y: Math.ceil((curPos.x*this.vt.x + curPos.y*this.vt.y + 21)/x2y2) ,
+        twoxy = 2 * (this.vt.x * this.vt.y)
+        var logicPoint = {
+            x: Math.floor((curPos.y*this.vt.x + curPos.x*this.vt.y)/twoxy + this.SZ/2),
+            y: Math.floor((curPos.y*this.vt.x - curPos.x*this.vt.y)/twoxy + this.SZ/2)
         }
         return logicPoint;
     },
-    convertLogicToPixel:function(logicPoint){
+    convertLogicToPixel:function(logicPoint_){
+        var logicPoint= {
+            x : logicPoint_.x - this.SZ/2,
+            y :  logicPoint_.y - this.SZ/2
+        }
         return {
-            x: this.bgSize.width * (this.areaVsBg.x * (logicPoint.x*this.vt.x - logicPoint.y*this.vt.x)/42),
-            y: this.bgSize.height * (this.areaVsBg.y* (logicPoint.y*this.vt.y + logicPoint.x*this.vt.y)/42),
+            x: this.bgSize.width * this.areaVsBg.x * (logicPoint.x*this.vt.x - logicPoint.y*this.vt.x)/this.SZ,
+            y: this.bgSize.height * this.areaVsBg.y* (logicPoint.y*this.vt.y + logicPoint.x*this.vt.y)/this.SZ,
         }
     },
 });

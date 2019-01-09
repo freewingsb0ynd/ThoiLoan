@@ -5,6 +5,7 @@
 var MW = MW || {}
 MW.KEYS = {}
 
+var SIZE_AREA =40;
 gv.BUILDING = {}
 
 gv.BUILDING.ARMY_CAMP = 1; // ok

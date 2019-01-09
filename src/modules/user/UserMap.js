@@ -103,7 +103,7 @@ var UserMap = cc.Class.extend({
     darkElixirCapacity : 0,
 
     ctor:function() {
-        mapSize = {w:42,h:42};
+        mapSize = {w:SIZE_AREA+1,h:SIZE_AREA+1};
         this.grid = [];
         for(i=0;i<mapSize.w;i++){
             newRow = [];
@@ -404,7 +404,7 @@ var UserMap = cc.Class.extend({
         cc.log("+Area : " + area.showInfo());
         area.refreshInfo();
         fr.getCurrentScreen().layerMap.addArea(area);
-        //cc.log(area.size.width + "," +area.size.height  + "pos " + area.position.x + "," + area.position.y)
+        cc.log(area.size.width + "," +area.size.height  + "pos " + area.position.x + "," + area.position.y)
         for(i=0;i<area.size.width;i++){
             for(j=0;j<area.size.height;j++){
                 //cc.log((area.position.x) + " " + i + " " + (area.position.x+i))
