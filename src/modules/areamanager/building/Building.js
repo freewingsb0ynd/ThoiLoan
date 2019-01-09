@@ -13,7 +13,7 @@
 
 var Building = Area.extend({
     currentLevel : null,
-    upgradingLevel: null,
+    upgradingLevel: null,// (0: not building, not upgrading), (1:constructing), (>1:upgrading)
     upgradedMoment: null,
 
     //-------- additional attribute
@@ -106,6 +106,7 @@ var Building = Area.extend({
         return this.levelTownHallRequireToUpgrade;
     },
     getUpgradeResourceRequire: function () {
+        // amount of resources require to upgrade to next level
         return {
             gold:TL.CONFIG[this.typeStrCode][this.currentLevel+1]["gold"]||0,
             elixir:TL.CONFIG[this.typeStrCode][this.currentLevel+1]["elixir"]||0,
@@ -114,6 +115,7 @@ var Building = Area.extend({
         }
     },
     getResourcePaidToUpgrade: function () {
+        // amount of resources paid to upgrade to current level
         return {
             gold:TL.CONFIG[this.typeStrCode][this.currentLevel]["gold"]||0,
             elixir:TL.CONFIG[this.typeStrCode][this.currentLevel]["elixir"]||0,
@@ -131,5 +133,94 @@ var Building = Area.extend({
         if(this.upgradingLevel>0){
             this.getCurrentBuildTime();
         }
+    },
+    getOptions:function() {
+        data = this._super();
+        data.constructionName = " Building ";
+        var option = {typeOption:ACTION_BUTTON.TYPE.SHOW_INFO};
+        data.options.push(option);
+
+        if(this.upgradingLevel >0) {
+            // upgrading/constructing
+            option = {typeOption:ACTION_BUTTON.TYPE.CANCEL_BUILDING};
+            data.options.push(option);
+            quickFinishCost = 0;
+            option = {typeOption:ACTION_BUTTON.TYPE.FINISH_NOW,resources:[{type: gv.RESOURCE_TYPE.COIN,amount: quickFinishCost}]};
+            data.options.push(option);
+        }   else    if(this.upgradingLevel ==0 ){
+            // not upgrading, add upgrade option
+            option = {typeOption:ACTION_BUTTON.TYPE.UPGRADE_BUILDING,resources:[]};
+
+            resourceRequire = this.getUpgradeResourceRequire();
+            if(resourceRequire.gold!=0){
+                option.resources.push({type: gv.RESOURCE_TYPE.GOLD,amount: resourceRequire.gold})
+            }
+            if(resourceRequire.elixir!=0){
+                option.resources.push({type: gv.RESOURCE_TYPE.ELIXIR,amount: resourceRequire.elixir})
+            }
+            if(resourceRequire.darkElixir!=0){
+                option.resources.push({type: gv.RESOURCE_TYPE.DARK_ELIXIR,amount: resourceRequire.darkElixir})
+            }
+            data.options.push(option);
+        }
+        return data;
     }
-})
+});
+Building.newBuildingByType = function(strTypeCode, _id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment) {
+    var building = null;
+    switch(strTypeCode){
+        case "AMC_1":
+            building = new ArmyCamp(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "BDH_1":
+            building = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "LAB_1":
+            building = new Laboratory((_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment));
+            break;
+        case "TOW_1":
+            building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "CLC_1":
+            building = new ClanCastle(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "DEF_1":
+            building = new Cannon(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "DEF_2":
+            building = new ArcherTower(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "DEF_3":
+            building = new Mortar(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "WAL_1":
+            building = new Wall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "STO_1":
+            building = new GoldStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "STO_2":
+            building = new ElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "STO_3":
+            building = new DarkElixirStorage(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "RES_1":
+            building = new GoldMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+            break;
+        case "RES_2":
+            building = new ElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+            break;
+        case "RES_3":
+            building = new DarkElixirMine(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, _upgradedMoment);
+            break;
+        case "BAR_1":
+            building = new BarrackNormal(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+            break;
+        case "BAR_2":
+            building = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+    }
+    return building;
+}
+
+
