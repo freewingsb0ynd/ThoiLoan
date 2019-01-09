@@ -16,7 +16,8 @@ var Defense = Building.extend({
         this.description = " Description : Defense level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //
-    //}
+
+    setImage : function(){
+        this.image.setTexture(TL.PATH.defense_base + this.type2 + "_" + this.currentLevel + "_Shadow.png");
+    },
 })

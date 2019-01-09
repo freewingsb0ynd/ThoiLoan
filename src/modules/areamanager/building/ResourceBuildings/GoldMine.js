@@ -15,8 +15,7 @@ var GoldMine = Resource.extend({
         this.description = " Description : GoldMine level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
-    //    return this.image;
-    //}
+    //setImage : function(){
+    //    this.image.setTexture(TL.PATH.gold_mine + this.currentLevel + "/idle/image0000.png");
+    //},
 })

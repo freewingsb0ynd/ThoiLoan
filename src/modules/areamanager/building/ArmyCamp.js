@@ -15,8 +15,9 @@ var ArmyCamp = Building.extend({
         this.description = " Description : ArmyCamp level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_5.png");
-    //    return this.image;
-    //}
+
+    setImage : function(){
+        this.image.setTexture(TL.PATH.army_camp + this.currentLevel + "/idle/image0000.png");
+    },
+
 })

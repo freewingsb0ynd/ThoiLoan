@@ -15,8 +15,7 @@ var Wall = Defense.extend({
         this.description = " Description : Wall level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Buildings/wall/WAL_1_7/WAL_1_7/idle/image0000.png");
-    //    return this.image;
-    //}
+    //setImage : function(){
+    //    this.image.setTexture(TL.PATH.elixir_storage + this.currentLevel + "/idle/image0000.png");
+    //},
 })

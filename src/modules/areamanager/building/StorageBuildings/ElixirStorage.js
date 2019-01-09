@@ -15,8 +15,8 @@ var ElixirStorage = Storage.extend({
         this.description = " Description : Elixir Storage level " + this.currentLevel;
         return this.description;
     },
-    //getImage : function(){
-    //    this.image = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
-    //    return this.image;
-    //}
+
+    setImage : function(){
+        this.image.setTexture(TL.PATH.elixir_storage + this.currentLevel + "/idle/image0000.png");
+    },
 })
