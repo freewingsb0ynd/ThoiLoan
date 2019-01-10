@@ -12,6 +12,7 @@ SHOP_ITEMS = {
         TOWNHALL_REQUEST_LBL_VISIBLE: false,
         ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_res/",
         MAX_BUILT_NUM_VISIBLE: false,
+        BUTTON_ENABLED: true,
         ITEMS: [
             {
                 AMOUNT: "10% KHO",
@@ -92,8 +93,7 @@ SHOP_ITEMS = {
         TOPUP_RESOURCE_SPR_VISIBLE: false,
         AMOUNT_LBL_VISIBLE: false,
         INFO_BTN_VISIBLE: true,
-        TIME_VISIBLE: true,
-        MAX_BUILT_NUM_VISIBLE: true,
+
         ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_gui/icon/",
         TOWNHALL_REQUEST_LBL: "Yêu cầu nhà chính cấp ",
         WARNING_COLOR: "FF0000",
@@ -107,6 +107,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -118,6 +120,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -129,6 +133,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -140,6 +146,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -151,6 +159,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -162,6 +172,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
 
@@ -174,6 +186,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             }
         ]
@@ -243,8 +257,7 @@ SHOP_ITEMS = {
         TOPUP_RESOURCE_SPR_VISIBLE: false,
         AMOUNT_LBL_VISIBLE: false,
         INFO_BTN_VISIBLE: true,
-        TIME_VISIBLE: true,
-        MAX_BUILT_NUM_VISIBLE: true,
+
         ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_gui/icon/",
         TOWNHALL_REQUEST_LBL: "Yêu cầu nhà chính cấp ",
         WARNING_COLOR: "FF0000",
@@ -258,6 +271,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -269,6 +284,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -280,17 +297,21 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
                 BUTTON_ENABLED: true,
-                BUILDING_TYPE_CODE: "SPF_2",
+                BUILDING_TYPE_CODE: "SPF_1",
                 ITEM_NAME: "Nhà phép thuật",
                 TIME_BUILD_LBL: "0m0s",
                 MAX_BUILT_NUM_LBL: "0/0",
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -302,6 +323,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -313,6 +336,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
 
@@ -325,6 +350,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -336,6 +363,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -347,6 +376,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             }
         ]
@@ -356,8 +387,7 @@ SHOP_ITEMS = {
         TOPUP_RESOURCE_SPR_VISIBLE: false,
         AMOUNT_LBL_VISIBLE: false,
         INFO_BTN_VISIBLE: true,
-        TIME_VISIBLE: true,
-        MAX_BUILT_NUM_VISIBLE: true,
+
         ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_gui/icon/",
         TOWNHALL_REQUEST_LBL: "Yêu cầu nhà chính cấp ",
         WARNING_COLOR: "FF0000",
@@ -371,6 +401,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -382,6 +414,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -393,6 +427,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -404,6 +440,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -415,6 +453,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -426,6 +466,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
 
@@ -438,6 +480,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -449,6 +493,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -460,6 +506,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -471,6 +519,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -482,6 +532,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -493,6 +545,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -504,6 +558,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -515,6 +571,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -526,6 +584,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             },
             {
@@ -537,6 +597,8 @@ SHOP_ITEMS = {
                 TOWNHALL_REQUEST_LBL_VISIBLE: false,
                 ITEM_PRICE: 150,
                 ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+                TIME_VISIBLE: true,
+                MAX_BUILT_NUM_VISIBLE: true,
                 TOWNHALL_REQUEST: 0
             }
         ]

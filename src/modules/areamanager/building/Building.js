@@ -105,6 +105,10 @@ var Building = Area.extend({
         this.levelTownHallRequireToUpgrade = TL.CONFIG[this.typeStrCode][this.currentLevel+1]["townHallLevelRequired"] || 1000;
         return this.levelTownHallRequireToUpgrade;
     },
+    getLevelTownHallRequiredToBuild:function(){
+        this.levelTownHallRequireToUpgrade = TL.CONFIG[this.typeStrCode][1]["townHallLevelRequired"] || 1000;
+        return this.levelTownHallRequireToUpgrade;
+    },
     getUpgradeResourceRequire: function () {
         // amount of resources require to upgrade to next level
         return {

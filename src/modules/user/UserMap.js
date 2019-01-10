@@ -122,7 +122,7 @@ var UserMap = cc.Class.extend({
         type = convertStrToNumberType(strType);
         typeConvert = this.hashType(type.type1,type.type2);
         ids = this.mapTypeToIds.get(typeConvert);
-        if(ids = null){
+        if(ids == null){
             return 0;
         }
         return ids.size;

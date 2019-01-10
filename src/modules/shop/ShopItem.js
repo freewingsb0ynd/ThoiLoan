@@ -116,11 +116,13 @@ var ShopItem = cc.Node.extend({
             //this.WARNING_COLOR = shopItemArgs.WARNING_COLOR;
         }
 
-//        this.item_btn.setEnable(this.BUTTON_ENABLED);
+        this.item_btn.setEnabled(this.BUTTON_ENABLED);
+
         this.itemName_lbl.setString(this.ITEM_NAME);
 
         this.itemPrice_lbl.setString(this.ITEM_PRICE);
-        this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE]);
+        if (ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE] != null) this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE]);
+        else this.itemPrice_spr.setVisible(false);
 
     }
 
