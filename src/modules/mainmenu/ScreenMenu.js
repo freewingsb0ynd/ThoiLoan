@@ -1,8 +1,14 @@
 /**
  * Created by GSN on 7/6/2015.
  */
-res = res || {}
+res = res || {};
 res.LOGIN_SCREEN = './res/gui/Art/LoginGui/loading.png';
+gv = gv || {};
+gv.RESOLUTION = {
+    SCALE_X : cc.winSize.width / 1280,
+    SCALE_Y : cc.winSize.height / 720
+};
+
 
 var ScreenMenu = cc.Layer.extend({
     _itemMenu:null,
@@ -35,8 +41,8 @@ var ScreenMenu = cc.Layer.extend({
         lobbyBg.attr({
             anchorX: 0,
             anchorY: 0,
-            scaleX: size.width/lobbyBg.getBoundingBox().width,
-            scaleY: size.height/lobbyBg.getBoundingBox().height,
+            scaleX: size.width/lobbyBg.getBoundingBox().width * gv.RESOLUTION.SCALE_X,
+            scaleY: size.height/lobbyBg.getBoundingBox().height * gv.RESOLUTION.SCALE_Y
         });
         this.addChild(lobbyBg);
 
@@ -55,7 +61,7 @@ var ScreenMenu = cc.Layer.extend({
 
         cc.log('size width' + tfCustomBg.getBoundingBox().width);
         tfCustomBg.attr({
-            scaleX: (size.width/1280) * 0.5,
+            scaleX: (size.width/1280) * 0.5 * gv.RESOLUTION.SCALE_X
         });
 
         this.tfID = this.tfCustom.getChildByName('textField');

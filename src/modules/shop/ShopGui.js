@@ -21,7 +21,7 @@ var ShopGui = cc.Node.extend({
 
         this.bgShop = this.guiShop.getChildByName(res.shop.bg_shop);
 
-        //cc.log(cc.winSize.x);
+    //    cc.log("den day roi");
 
         this.guiShop.attr({
             scaleX: cc.winSize.width/this.bgShop.getBoundingBox().width,

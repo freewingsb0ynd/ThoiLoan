@@ -55,7 +55,6 @@ var LobbyLayer = cc.Layer.extend({
         //                ]
         //                };
         //this.constructionComp.updateGui(example);
-
         this.constructionComp.setVisible(false);
     },
 

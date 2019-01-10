@@ -165,7 +165,6 @@ var MapLayer2 = cc.Layer.extend({
                             self.touch_status = TOUCH_STATUSES.AREA_CLICKED;
                             self.data_touched.area_clicked.id = id;
                             example = area.getOptions();
-                            cc.log(JSON.stringify(example))
                             fr.getCurrentScreen().layerLobby.constructionComp.onConstructionClick(example);
                         }   else    {
                             self.touch_status = TOUCH_STATUSES.NONE;
