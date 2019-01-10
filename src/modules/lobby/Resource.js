@@ -23,7 +23,8 @@ res.shop.bg_shop = 'bg_shop';
 res.shop.btn_exit = 'Button_1';
 res.shop.shop_main = 'shopMain_node';
 res.shop.shop_tab = 'shopTab_node';
-
+res.shop.title_shop = 'titleShop_text';
+res.shop.DEFAULT_TITLE = 'CỬA HÀNG';
 res.backgroundmap = 'gui/MapBackground.json';
 
 //var game = game || {};

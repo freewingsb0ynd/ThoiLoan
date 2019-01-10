@@ -18,11 +18,11 @@ var ShopGui = cc.Node.extend({
 
         this.guiShop = ccs.load(res.shop.gui_shop).node;
         //var scaleShop = cc.winSize.x/ this.guiShop.x;
-
+        this.titleShop = this.guiShop.getChildByName(res.shop.title_shop);
         this.bgShop = this.guiShop.getChildByName(res.shop.bg_shop);
 
     //    cc.log("den day roi");
-
+        this.titleShop.setString(res.shop.DEFAULT_TITLE);
         this.guiShop.attr({
             scaleX: cc.winSize.width/this.bgShop.getBoundingBox().width,
             scaleY: cc.winSize.height/this.bgShop.getBoundingBox().height,

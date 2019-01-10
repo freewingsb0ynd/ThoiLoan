@@ -21,7 +21,7 @@
             },
             "ScrollDirectionType": "Horizontal",
             "ClipAble": true,
-            "BackColorAlpha": 102,
+            "BackColorAlpha": 0,
             "ComboBoxIndex": 2,
             "SingleColor": {
               "R": 100,
