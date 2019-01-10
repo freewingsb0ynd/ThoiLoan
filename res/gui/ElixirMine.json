@@ -125,6 +125,51 @@
           {
             "FileData": {
               "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/BG_0/3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.5,
+              "ScaleY": 1.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -57.0,
+            "RightMargin": -57.0,
+            "TopMargin": -43.0,
+            "BottomMargin": -43.0,
+            "Tag": 165,
+            "ActionTag": 1018825870,
+            "Size": {
+              "X": 114.0,
+              "Y": 86.0
+            },
+            "Name": "grass_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
               "Path": "Art/Buildings/elixir collector/RES_2_1/idle/image0000.png",
               "Plist": ""
             },
@@ -164,7 +209,7 @@
               "X": 270.0,
               "Y": 270.0
             },
-            "Name": "image0000_1",
+            "Name": "idle_spr",
             "ctype": "SpriteObjectData"
           },
           {
@@ -209,7 +254,7 @@
               "X": 270.0,
               "Y": 270.0
             },
-            "Name": "Sprite_3",
+            "Name": "anim_spr",
             "ctype": "SpriteObjectData"
           }
         ],
@@ -231,7 +276,8 @@
         "Art/Effects/RES_2_1_effect/06.png",
         "Art/Effects/RES_2_1_effect/07.png",
         "Art/Effects/RES_2_1_effect/08.png",
-        "Art/Effects/RES_2_1_effect/09.png"
+        "Art/Effects/RES_2_1_effect/09.png",
+        "Art/Map/map_obj_bg/BG_0/3.png"
       ],
       "ctype": "GameFileData"
     }

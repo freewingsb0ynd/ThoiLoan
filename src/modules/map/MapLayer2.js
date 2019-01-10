@@ -90,65 +90,65 @@ var MapLayer2 = cc.Layer.extend({
         cc.eventManager.addListener({
             prevTouchId : -1,
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
-            onTouchesBegan : function(touches, event){
-                //cc.log("touches began")
-                var touch = touches[0];
-                if(self.prevTouchId != touch.getID()){
-                    self.prevTouchId = touch.getID()
-                }   else{
-                    cc.log("touch at " + touch.getLocation().x + "," + touch.getLocation().y)
-                    touchPos = {
-                        x:touch.getLocation().x,
-                        y:touch.getLocation().y
-                    }
-                    if(self.touch_status == TOUCH_STATUSES.AREA_CLICKED){
-                        if(self.data_touched.posInfo.isMoving == false){
-                            // check start moving
-                            area = self.getAreaClicked(touchPos)
-                            if(area == null) return;
-                            if(area.id != self.data_touched.area_clicked.id && area.type != gv.BUILDING.OBSTACLE){
-                                return;
-                            }
-                            // start moving from the valid position
-                            self.data_touched.posInfo.isMoving = true;
-                        }
-                    }   else if(self.touch_status == TOUCH_STATUSES.TRY_NEW_BUILDING){
-                        if(self.data_touched.posInfo.isMoving == false){
-                            // check start moving new position
-                            if(touchLogicPos.x < self.data_touched.posInfo.x || touchLogicPos.x > self.data_touched.posInfo.x + self.data_touched.try_new_building.size ) return;
-                            if(touchLogicPos.y < self.data_touched.posInfo.y || touchLogicPos.y > self.data_touched.posInfo.y + self.data_touched.try_new_building.size ) return;
-                            // start moving from the valid position
-                            self.data_touched.posInfo.isMoving = true;
-                        }
-                    }
-                }
-            },
-            onTouchesMoved : function(touches, event){
-                cc.log("touches moved")
-                var touch = touches[0];
-                if(self.prevTouchId != touch.getID()){
-                    self.prevTouchId = touch.getID()
-                }   else{
-                    if(self.touch_status == TOUCH_STATUSES.NONE || self.data_touched.posInfo.isMoving == false){
-                        var delta = touch.getDelta();
-                        var curPos = cc.p(self.x, self.y);
-                        curPos = cc.pAdd(curPos,delta);
-                        self.setPosition(curPos);
-                        // TODO : set not let map move out
-                    }
-                    touchPos = {
-                        x:touch.getLocation().x,
-                        y:touch.getLocation().y
-                    }
-                    touchLogicPos = self.convertTouchPointToLogic(touchPos);
-                        if(self.data_touched.posInfo.isMoving == true){
-                            self.data_touched.posInfo.x = touchLogicPos.x;
-                            self.data_touched.posInfo.y = touchLogicPos.y;
-                            cc.log("come here, move to pos " + touchLogicPos.x + "," + touchLogicPos.y)
-                        }
-                    }
-
-                },
+            //onTouchesBegan : function(touches, event){
+            //    //cc.log("touches began")
+            //    var touch = touches[0];
+            //    if(self.prevTouchId != touch.getID()){
+            //        self.prevTouchId = touch.getID()
+            //    }   else{
+            //        cc.log("touch at " + touch.getLocation().x + "," + touch.getLocation().y)
+            //        touchPos = {
+            //            x:touch.getLocation().x,
+            //            y:touch.getLocation().y
+            //        }
+            //        if(self.touch_status == TOUCH_STATUSES.AREA_CLICKED){
+            //            if(self.data_touched.posInfo.isMoving == false){
+            //                // check start moving
+            //                area = self.getAreaClicked(touchPos)
+            //                if(area == null) return;
+            //                if(area.id != self.data_touched.area_clicked.id && area.type != gv.BUILDING.OBSTACLE){
+            //                    return;
+            //                }
+            //                // start moving from the valid position
+            //                self.data_touched.posInfo.isMoving = true;
+            //            }
+            //        }   else if(self.touch_status == TOUCH_STATUSES.TRY_NEW_BUILDING){
+            //            if(self.data_touched.posInfo.isMoving == false){
+            //                // check start moving new position
+            //                if(touchLogicPos.x < self.data_touched.posInfo.x || touchLogicPos.x > self.data_touched.posInfo.x + self.data_touched.try_new_building.size ) return;
+            //                if(touchLogicPos.y < self.data_touched.posInfo.y || touchLogicPos.y > self.data_touched.posInfo.y + self.data_touched.try_new_building.size ) return;
+            //                // start moving from the valid position
+            //                self.data_touched.posInfo.isMoving = true;
+            //            }
+            //        }
+            //    }
+            //},
+            //onTouchesMoved : function(touches, event){
+            //    cc.log("touches moved")
+            //    var touch = touches[0];
+            //    if(self.prevTouchId != touch.getID()){
+            //        self.prevTouchId = touch.getID()
+            //    }   else{
+            //        if(self.touch_status == TOUCH_STATUSES.NONE || self.data_touched.posInfo.isMoving == false){
+            //            var delta = touch.getDelta();
+            //            var curPos = cc.p(self.x, self.y);
+            //            curPos = cc.pAdd(curPos,delta);
+            //            self.setPosition(curPos);
+            //            // TODO : set not let map move out
+            //        }
+            //        touchPos = {
+            //            x:touch.getLocation().x,
+            //            y:touch.getLocation().y
+            //        }
+            //        touchLogicPos = self.convertTouchPointToLogic(touchPos);
+            //            if(self.data_touched.posInfo.isMoving == true){
+            //                self.data_touched.posInfo.x = touchLogicPos.x;
+            //                self.data_touched.posInfo.y = touchLogicPos.y;
+            //                cc.log("come here, move to pos " + touchLogicPos.x + "," + touchLogicPos.y)
+            //            }
+            //        }
+            //
+            //    },
                 onTouchesEnded:  function(touches, event){
                     cc.log("touches ended")
                     var touch = touches[0];
@@ -165,9 +165,8 @@ var MapLayer2 = cc.Layer.extend({
                             self.touch_status = TOUCH_STATUSES.AREA_CLICKED;
                             self.data_touched.area_clicked.id = id;
                             example = area.getOptions();
-                            fr.getCurrentScreen().layerLobby.constructionComp.setVisible(false);
-                            fr.getCurrentScreen().layerLobby.constructionComp.updateGui(example);
-                            fr.getCurrentScreen().layerLobby.constructionComp.setVisible(true);
+                            cc.log(JSON.stringify(example))
+                            fr.getCurrentScreen().layerLobby.constructionComp.onConstructionClick(example);
                         }   else    {
                             self.touch_status = TOUCH_STATUSES.NONE;
                         }

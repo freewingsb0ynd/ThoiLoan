@@ -15,86 +15,6 @@
         "Tag": 48,
         "Children": [
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "ButtonAction.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 0.0,
-              "Y": 60.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "TopMargin": -60.0,
-            "BottomMargin": 60.0,
-            "Tag": 244,
-            "ActionTag": -1798978409,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "demo1_node",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "ButtonAction.json",
-              "Plist": ""
-            },
-            "StretchWidthEnable": false,
-            "StretchHeightEnable": false,
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 110.0,
-              "Y": 60.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 110.0,
-            "RightMargin": -110.0,
-            "TopMargin": -60.0,
-            "BottomMargin": 60.0,
-            "Tag": 250,
-            "ActionTag": 2005892239,
-            "Size": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "Name": "demo0_node",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
             "LabelText": "Tên công trình",
             "LabelBMFontFile_CNB": {
               "Type": "Normal",
@@ -135,6 +55,35 @@
             },
             "Name": "cosntruction_lbl",
             "ctype": "TextBMFontObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 221,
+            "ActionTag": -421810516,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "buttons_parent",
+            "ctype": "SingleNodeObjectData"
           }
         ],
         "Size": {
@@ -146,8 +95,7 @@
       },
       "UsedResources": [
         "Art/Fonts/soji_16.fnt",
-        "Art/Fonts/soji_16.png",
-        "ButtonAction.json"
+        "Art/Fonts/soji_16.png"
       ],
       "ctype": "GameFileData"
     }

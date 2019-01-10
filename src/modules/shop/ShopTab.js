@@ -13,10 +13,12 @@ var ShopTab = cc.Node.extend({
         this._node = node;
 
         this.tabBackBtn = this._node.getChildByName('tabBack_btn');
-        this.shopTabScrView = this._node.getChildByName('shop_scrview');
+        this.shopTabView = this._node.getChildByName('shop_scrview');
+
+        this.shopTabScrView = this.shopTabView.getChildByName('shopTab_scrView');
         this.tabBackBtn.addClickEventListener(this.onSelectTabBack.bind(this));
 
-        //this.shopTabScrView.removeAllChildren(true);
+        this.shopTabScrView.removeAllChildren(true);
 
         var newShopItem = {
             TOPUP_RESOURCE_SPR_VISIBLE: SHOP_ITEMS["1"]["DEFENSE_TAB"]["TOPUP_RESOURCE_SPR_VISIBLE"],
@@ -48,6 +50,7 @@ var ShopTab = cc.Node.extend({
         }
 
         var shopItemNode = new ShopItem(newShopItem);
+
         this.shopTabScrView.addChild(shopItemNode);
 
     },
