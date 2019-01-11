@@ -52,7 +52,6 @@ var g_resources = [
     "Default/Button_Press.png",
 
     "favicon.ico",
-    "HelloWorld.png",
     "fonts/diceNumber.fnt",
     "fonts/diceNumber.png",
     "fonts/eff_number.fnt",

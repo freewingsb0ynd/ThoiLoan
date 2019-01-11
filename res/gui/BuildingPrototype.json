@@ -1,0 +1,834 @@
+{
+  "ID": "d5fe7df4-d2b5-416e-9bba-cb860e32f440",
+  "Version": "2.1.0.0",
+  "Name": "BuildingPrototype",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 45,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": 1169345385,
+            "Property": "FileData",
+            "Frames": [
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/00.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/01.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 5,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/02.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 10,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/03.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 15,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/04.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 20,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/05.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 25,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/06.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 30,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/07.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 35,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/08.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 40,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              },
+              {
+                "TextureFile": {
+                  "Type": "Normal",
+                  "Path": "Art/Effects/RES_2_1_effect/09.png",
+                  "Plist": ""
+                },
+                "FrameIndex": 45,
+                "Tween": false,
+                "ctype": "TextureFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 105,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/BG_0/3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 2.0,
+              "ScaleY": 2.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -57.0,
+            "RightMargin": -57.0,
+            "TopMargin": -43.0,
+            "BottomMargin": -43.0,
+            "Tag": 872,
+            "ActionTag": -1139758938,
+            "Size": {
+              "X": 114.0,
+              "Y": 86.0
+            },
+            "Name": "grass_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/BG/arrowmove3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -114.0,
+            "RightMargin": -114.0,
+            "TopMargin": -85.5,
+            "BottomMargin": -85.5,
+            "Tag": 883,
+            "ActionTag": 1970894066,
+            "Size": {
+              "X": 228.0,
+              "Y": 171.0
+            },
+            "VisibleForFrame": false,
+            "Name": "arrow_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/GRASS_3_Shadow.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 2.0,
+              "ScaleY": 2.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -57.0,
+            "RightMargin": -57.0,
+            "TopMargin": -43.0,
+            "BottomMargin": -43.0,
+            "Tag": 871,
+            "ActionTag": -1528793570,
+            "Size": {
+              "X": 114.0,
+              "Y": 86.0
+            },
+            "Name": "shadow_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Buildings/elixir collector/RES_2_1/idle/image0000.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -135.0,
+            "RightMargin": -135.0,
+            "TopMargin": -135.0,
+            "BottomMargin": -135.0,
+            "Tag": 106,
+            "ActionTag": -1379238626,
+            "Size": {
+              "X": 270.0,
+              "Y": 270.0
+            },
+            "Name": "buildingIdle_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Effects/RES_2_1_effect/09.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -135.0,
+            "RightMargin": -135.0,
+            "TopMargin": -135.0,
+            "BottomMargin": -135.0,
+            "Tag": 108,
+            "ActionTag": 1169345385,
+            "Size": {
+              "X": 270.0,
+              "Y": 270.0
+            },
+            "Name": "buildingAnim_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/upgrading.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": -40.515
+            },
+            "Scale": {
+              "ScaleX": 1.5,
+              "ScaleY": 1.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -42.0,
+            "RightMargin": -42.0,
+            "TopMargin": 17.515,
+            "BottomMargin": -63.515,
+            "Tag": 868,
+            "ActionTag": -931597012,
+            "Size": {
+              "X": 84.0,
+              "Y": 46.0
+            },
+            "VisibleForFrame": false,
+            "Name": "upgrading_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/lightpole.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -100.0,
+            "RightMargin": -100.0,
+            "TopMargin": -450.0,
+            "Tag": 873,
+            "ActionTag": -539610060,
+            "Size": {
+              "X": 200.0,
+              "Y": 450.0
+            },
+            "VisibleForFrame": false,
+            "Name": "upgradeDone_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "15m0s",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0117,
+              "Y": 130.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -29.9883,
+            "RightMargin": -30.0117,
+            "TopMargin": -139.5,
+            "BottomMargin": 120.5,
+            "Tag": 875,
+            "ActionTag": -1213205479,
+            "Size": {
+              "X": 60.0,
+              "Y": 19.0
+            },
+            "VisibleForFrame": false,
+            "Name": "timeUpgrade_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/info_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 110.0
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -155.5,
+            "RightMargin": -155.5,
+            "TopMargin": -128.0,
+            "BottomMargin": 92.0,
+            "Tag": 876,
+            "ActionTag": 936010773,
+            "Size": {
+              "X": 311.0,
+              "Y": 36.0
+            },
+            "VisibleForFrame": false,
+            "Name": "upgradeProcessBg_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.02,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -75.0,
+              "Y": 110.0
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -81.22,
+            "RightMargin": -229.78,
+            "TopMargin": -128.0,
+            "BottomMargin": 92.0,
+            "Tag": 877,
+            "ActionTag": -720803050,
+            "Size": {
+              "X": 311.0,
+              "Y": 36.0
+            },
+            "VisibleForFrame": false,
+            "Name": "upgradeProcess_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "Mỏ vàng",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_20.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -1.0503,
+              "Y": 170.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -52.5503,
+            "RightMargin": -50.4497,
+            "TopMargin": -186.0,
+            "BottomMargin": 154.0,
+            "Tag": 884,
+            "ActionTag": 2113763865,
+            "Size": {
+              "X": 103.0,
+              "Y": 32.0
+            },
+            "VisibleForFrame": false,
+            "Name": "buildingName_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "cấp 5",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 150.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -25.5,
+            "RightMargin": -25.5,
+            "TopMargin": -159.5,
+            "BottomMargin": 140.5,
+            "Tag": 885,
+            "ActionTag": 1344867644,
+            "Size": {
+              "X": 51.0,
+              "Y": 19.0
+            },
+            "VisibleForFrame": false,
+            "Name": "buildingLevel_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Action_Building_Icon/accept.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 59,
+            "Scale9Height": 68,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 60.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 15.5,
+            "RightMargin": -104.5,
+            "TopMargin": -145.0,
+            "BottomMargin": 55.0,
+            "Tag": 889,
+            "ActionTag": -2032511153,
+            "Size": {
+              "X": 89.0,
+              "Y": 90.0
+            },
+            "VisibleForFrame": false,
+            "Name": "okBuild_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Action_Building_Icon/cancel.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 59,
+            "Scale9Height": 68,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -60.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -104.5,
+            "RightMargin": 15.5,
+            "TopMargin": -145.0,
+            "BottomMargin": 55.0,
+            "Tag": 891,
+            "ActionTag": 865093542,
+            "Size": {
+              "X": 89.0,
+              "Y": 90.0
+            },
+            "VisibleForFrame": false,
+            "Name": "cancelBuild_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Buildings/elixir collector/RES_2_1/idle/image0000.png",
+        "Art/Effects/RES_2_1_effect/00.png",
+        "Art/Effects/RES_2_1_effect/01.png",
+        "Art/Effects/RES_2_1_effect/02.png",
+        "Art/Effects/RES_2_1_effect/03.png",
+        "Art/Effects/RES_2_1_effect/04.png",
+        "Art/Effects/RES_2_1_effect/05.png",
+        "Art/Effects/RES_2_1_effect/06.png",
+        "Art/Effects/RES_2_1_effect/07.png",
+        "Art/Effects/RES_2_1_effect/08.png",
+        "Art/Effects/RES_2_1_effect/09.png",
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
+        "Art/Fonts/soji_20.fnt",
+        "Art/Fonts/soji_20.png",
+        "Art/GUIs/Action_Building_Icon/accept.png",
+        "Art/GUIs/Action_Building_Icon/cancel.png",
+        "Art/GUIs/upgrade_building_gui/info_bar.png",
+        "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
+        "Art/Map/map_obj_bg/BG/arrowmove3.png",
+        "Art/Map/map_obj_bg/BG_0/3.png",
+        "Art/Map/map_obj_bg/GRASS_3_Shadow.png",
+        "Art/Map/map_obj_bg/lightpole.png",
+        "Art/Map/map_obj_bg/upgrading.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}
