@@ -5,7 +5,7 @@
 
 var Wall = Defense.extend({
     ctor: function (_id , _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment) {
-        this._super(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, 4);
+        this._super(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, 14);
         this.typeStrCode = "WAL";
     },
     showInfo : function(){

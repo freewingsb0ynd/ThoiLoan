@@ -421,10 +421,42 @@ var UserMap = cc.Class.extend({
             for(j=0;j<mapSize.h;j++){
                 if(this.grid[i][j]<9)
                     s += " ";
-                s += this.grid[i][j];
+                if(this.grid[i][j]>0){
+                    s += this.grid[i][j];
+                }
+                else    {
+                    s += " ";
+                }
+
             }
             cc.log(s);
         }
+    },
+    hideAreaFromGrid:function(area){
+        if(area==null) return;
+        for(i=0;i<area.size.width;i++){
+            for(j=0;j<area.size.height;j++){
+                this.grid[area.position.x+i][area.position.y+j] = 0;
+            }
+        }
+    },
+    showAreaInGrid:function(area){
+        for(i=0;i<area.size.width;i++){
+            for(j=0;j<area.size.height;j++){
+                this.grid[area.position.x+i][area.position.y+j] = area.id;
+            }
+        }
+        testnetwork.connector.sendMoveConsRq(area.id, area.position.x, area.position.y);
+    },
+    checkValidPosition:function(newPos,size){
+        for(i=0;i<size.width;i++){
+            for(j=0;j<size.height;j++){
+                if(this.grid[newPos.x+i][newPos.y+j]!=0) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 });
 

@@ -15,9 +15,9 @@ var TownHall = Building.extend({
         this.description = " Description : TownHall level " + this.currentLevel;
         return this.description;
     },
-    setImage : function(){
-        this.image.setTexture(TL.PATH.town_hall + this.currentLevel + "/idle/image0000.png");
-    },
+    //setImage : function(){
+    //    this.image.setTexture(TL.PATH.town_hall + this.currentLevel + "/idle/image0000.png");
+    //},
     getCapacity:function(type){
         switch (type){
             case gv.RESOURCE_TYPE.GOLD:
