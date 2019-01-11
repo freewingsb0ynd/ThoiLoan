@@ -21,8 +21,8 @@ var ConstructionComponent = Component.extend({
 
         this._buttons = this._jsonRes.getChildByName('buttons_parent');
 
-        this._actionBtnWidth = 100 * gv.RESOLUTION.SCALE_X;
-        this._actionBtnHeight = 100 * gv.RESOLUTION.SCALE_Y;
+        this._actionBtnWidth = gv.CONSTRUCTION_COMP.ACTION_BUTTON.NATIVE_WIDTH * gv.RESOLUTION.SCALE_X;
+        this._actionBtnHeight = gv.CONSTRUCTION_COMP.ACTION_BUTTON.NATIVE_HEIGHT * gv.RESOLUTION.SCALE_Y;
 
         this.setVisible(false);
 
@@ -115,8 +115,11 @@ var ConstructionComponent = Component.extend({
 
 var gv = gv || {};
 
-gv.CONSTRUCTION_COMP = {}
+gv.CONSTRUCTION_COMP = {};
 gv.CONSTRUCTION_COMP.SCALE_WIDTH_GAP = 1.1;
 gv.CONSTRUCTION_COMP.SCALE_HEIGHT_GAP = 0.6;
+gv.CONSTRUCTION_COMP.ACTION_BUTTON = {};
+gv.CONSTRUCTION_COMP.ACTION_BUTTON.NATIVE_WIDTH = 100;
+gv.CONSTRUCTION_COMP.ACTION_BUTTON.NATIVE_HEIGHT = 100;
 
 

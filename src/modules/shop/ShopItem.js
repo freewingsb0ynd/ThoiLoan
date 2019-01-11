@@ -2,34 +2,34 @@
  * Created by Hoangelato on 08/01/2019.
  */
 var ShopItem = cc.Node.extend({
-    TOPUP_RESOURCE_SPR_VISIBLE: false,
-    TOPUP_RESOURCE: gv.RESOURCE_TYPE.GOLD,
-
-    AMOUNT_LBL_VISIBLE: false,
-    AMOUNT: "10% KHO",
-
-    INFO_BTN_VISIBLE: true,
-
-    TIME_VISIBLE: true,
-    TIME_BUILD_LBL: "0m0s",
-
-    MAX_BUILT_NUM_VISIBLE: true,
-    MAX_BUILT_NUM_LBL: "0/0",
-
-    ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_gui/icon/",
-    BUILDING_TYPE_CODE: "WAL_1",
-
-    TOWNHALL_REQUEST_LBL_VISIBLE: false,
-    TOWNHALL_REQUEST_LBL: "Yêu cầu nhà chính cấp ",
-    TOWNHALL_REQUEST: 0,
-    WARNING_COLOR: "FF0000",
-
-    BUTTON_ENABLED: true,
-
-    NAME: "Tường",
-
-    PRICE: 150,
-    PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
+    //TOPUP_RESOURCE_SPR_VISIBLE: false,
+    //TOPUP_RESOURCE: gv.RESOURCE_TYPE.GOLD,
+    //
+    //AMOUNT_LBL_VISIBLE: false,
+    //AMOUNT: "10% KHO",
+    //
+    //INFO_BTN_VISIBLE: true,
+    //
+    //TIME_VISIBLE: true,
+    //TIME_BUILD_LBL: "0m0s",
+    //
+    //MAX_BUILT_NUM_VISIBLE: true,
+    //MAX_BUILT_NUM_LBL: "0/0",
+    //
+    //ITEM_SPR_RESLINK_BASE: "gui/Art/GUIs/icons/shop_gui/icon/",
+    //BUILDING_TYPE_CODE: "WAL_1",
+    //
+    //TOWNHALL_REQUEST_LBL_VISIBLE: false,
+    //TOWNHALL_REQUEST_LBL: "Yêu cầu nhà chính cấp ",
+    //TOWNHALL_REQUEST: 0,
+    //WARNING_COLOR: "FF0000",
+    //
+    //BUTTON_ENABLED: true,
+    //
+    //ITEM_NAME: "Tường",
+    //
+    //ITEM_PRICE: 150,
+    //ITEM_PRICE_TYPE: gv.RESOURCE_TYPE.ELIXIR,
 
     _jsonRes: null,
     ctor: function(shopItemArgs){
@@ -50,14 +50,11 @@ var ShopItem = cc.Node.extend({
         this.itemInfo_btn = this._jsonRes.getChildByName('itemInfo_btn');
 
 
-        this.reloadChildNode();
-        this.addChild(this._jsonRes);
-
         this.TOPUP_RESOURCE_SPR_VISIBLE = shopItemArgs.TOPUP_RESOURCE_SPR_VISIBLE;
         if(this.TOPUP_RESOURCE_SPR_VISIBLE) this.TOPUP_RESOURCE = shopItemArgs.TOPUP_RESOURCE;
 
         this.AMOUNT_LBL_VISIBLE = shopItemArgs.AMOUNT_LBL_VISIBLE;
-        if(this.AMOUNT_LBL_VISIBLE) this.AMOUNT = shopItemArgs.AMOUNT;
+        if(this.AMOUNT_LBL_VISIBLE) this.AMOUNT = shopItemArgs.AMOUNT_TOPUP;
 
         this.INFO_BTN_VISIBLE = shopItemArgs.INFO_BTN_VISIBLE;
 
@@ -78,16 +75,21 @@ var ShopItem = cc.Node.extend({
         }
 
         this.BUTTON_ENABLED = shopItemArgs.BUTTON_ENABLED;
-        this.NAME = shopItemArgs.NAME;
 
-        this.PRICE = shopItemArgs.PRICE;
-        this.PRICE_TYPE = shopItemArgs.PRICE_TYPE;
+        this.ITEM_NAME = shopItemArgs.ITEM_NAME;
+        this.ITEM_PRICE = shopItemArgs.ITEM_PRICE;
+        this.ITEM_PRICE_TYPE = shopItemArgs.ITEM_PRICE_TYPE;
 
+        //cc.log (JSON.stringify(shopItemArgs));
+
+        this.reloadChildNode();
+        this.addChild(this._jsonRes);
     },
 
     reloadChildNode: function(){
 
         this.amountTopup_spr.setVisible(this.TOPUP_RESOURCE_SPR_VISIBLE);
+
         if(this.TOPUP_RESOURCE_SPR_VISIBLE) this.amountTopup_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.TOPUP_RESOURCE]);
 
         this.amountTopUp_lbl.setVisible(this.AMOUNT_LBL_VISIBLE);
@@ -112,11 +114,13 @@ var ShopItem = cc.Node.extend({
             //this.WARNING_COLOR = shopItemArgs.WARNING_COLOR;
         }
 
-//        this.item_btn.setEnable(this.BUTTON_ENABLED);
-        this.itemName_lbl.setString(this.NAME);
+        this.item_btn.setEnabled(this.BUTTON_ENABLED);
 
-        this.itemPrice_lbl.setString(this.PRICE);
-        this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.PRICE_TYPE]);
+        this.itemName_lbl.setString(this.ITEM_NAME);
+
+        this.itemPrice_lbl.setString(this.ITEM_PRICE);
+        if (ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE] != null) this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE]);
+        else this.itemPrice_spr.setVisible(false);
 
     }
 

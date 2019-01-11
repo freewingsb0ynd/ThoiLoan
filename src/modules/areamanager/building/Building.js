@@ -105,6 +105,10 @@ var Building = Area.extend({
         this.levelTownHallRequireToUpgrade = TL.CONFIG[this.typeStrCode][this.currentLevel+1]["townHallLevelRequired"] || 1000;
         return this.levelTownHallRequireToUpgrade;
     },
+    getLevelTownHallRequiredToBuild:function(){
+        this.levelTownHallRequireToUpgrade = TL.CONFIG[this.typeStrCode][1]["townHallLevelRequired"] || 1000;
+        return this.levelTownHallRequireToUpgrade;
+    },
     getUpgradeResourceRequire: function () {
         // amount of resources require to upgrade to next level
         return {
@@ -176,7 +180,7 @@ Building.newBuildingByType = function(strTypeCode, _id, _posX, _posY, _currentLe
             building = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
             break;
         case "LAB_1":
-            building = new Laboratory((_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment));
+            building = new Laboratory(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
             break;
         case "TOW_1":
             building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);

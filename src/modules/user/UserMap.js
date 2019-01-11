@@ -122,12 +122,14 @@ var UserMap = cc.Class.extend({
         type = convertStrToNumberType(strType);
         typeConvert = this.hashType(type.type1,type.type2);
         ids = this.mapTypeToIds.get(typeConvert);
-        if(ids = null){
+        if(ids == null){
             return 0;
         }
         return ids.size;
     },
     getMaxNumberByType:function(strType){
+        if(strType == 'BDH_1')
+            return _.keys(TL.CONFIG[strType]).length;
         return TL.CONFIG["TOW_1"][townHall.currentLevel][strType];
     },
     getCostToBuyNew:function(strType){
@@ -202,14 +204,12 @@ var UserMap = cc.Class.extend({
         // update Resources
             //TODO: decrease resources
         // save building in building Waiting
-        cc.log("1234");
         if(this.buildingWaiting != null) return;
         this.buildingWaiting = {
             strType : strType,
             position : newPos,
             momentBuilt : TimeManager.getInstance().getServerTime(),
-        }
-        cc.log("tisssss")
+        };
         // send request
         var type = convertStrToNumberType(strType);
         //testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);

@@ -29,28 +29,27 @@ var ShopMain = cc.Class.extend({
     },
 
     onSelectChestTab: function(sender){
-        this.shopGui.shopTab.initShopTab();
-
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.CHEST);
     },
 
     onSelectResourceTab: function(sender){
-        this.shopGui.shopTab.initShopTab();
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.RESOURCE);
     },
 
     onSelectDecorTab: function(sender){
-        this.shopGui.shopTab.initShopTab();
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.DECOR);
     },
 
     onSelectArmyTab: function(sender){
-        this.shopGui.shopTab.initShopTab();
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.ARMY);
     },
 
     onSelectDefenseTab: function(sender){
-        this.shopGui.shopTab.initShopTab();
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.DEFENSE);
     },
 
     onSelectShieldTab: function(sender){
-
+        this.shopGui.shopTab.initShopTab(SHOP.TABS.SHIELD);
     },
 
 

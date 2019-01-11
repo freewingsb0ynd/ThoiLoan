@@ -18,11 +18,11 @@ var ShopGui = cc.Node.extend({
 
         this.guiShop = ccs.load(res.shop.gui_shop).node;
         //var scaleShop = cc.winSize.x/ this.guiShop.x;
-
+        this.titleShop = this.guiShop.getChildByName(res.shop.title_shop);
         this.bgShop = this.guiShop.getChildByName(res.shop.bg_shop);
 
     //    cc.log("den day roi");
-
+        this.titleShop.setString(res.shop.DEFAULT_TITLE);
         this.guiShop.attr({
             scaleX: cc.winSize.width/this.bgShop.getBoundingBox().width,
             scaleY: cc.winSize.height/this.bgShop.getBoundingBox().height,
@@ -49,3 +49,12 @@ var ShopGui = cc.Node.extend({
 
 
 });
+
+SHOP = {}
+SHOP.TABS = {};
+SHOP.TABS.CHEST = 'CHEST_TAB';
+SHOP.TABS.RESOURCE = 'RESOURCE_TAB';
+SHOP.TABS.DECOR = 'DECOR_TAB';
+SHOP.TABS.ARMY = 'ARMY_TAB';
+SHOP.TABS.DEFENSE = 'DEFENSE_TAB';
+SHOP.TABS.SHIELD = 'SHIELD_TAB';

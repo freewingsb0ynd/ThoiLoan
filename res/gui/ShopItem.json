@@ -170,18 +170,18 @@
             "ctype": "SpriteObjectData"
           },
           {
-            "LabelText": "888",
+            "LabelText": "8587",
             "LabelBMFontFile_CNB": {
               "Type": "Normal",
               "Path": "Art/Fonts/soji_20.fnt",
               "Plist": ""
             },
             "AnchorPoint": {
-              "ScaleX": 0.5,
+              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 25.0,
+              "X": 52.5,
               "Y": -125.0
             },
             "Scale": {
@@ -198,14 +198,14 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -2.5,
+            "LeftMargin": -15.5,
             "RightMargin": -52.5,
             "TopMargin": 109.0,
             "BottomMargin": -141.0,
             "Tag": 751,
             "ActionTag": -328595587,
             "Size": {
-              "X": 55.0,
+              "X": 68.0,
               "Y": 32.0
             },
             "Name": "itemPrice_lbl",
@@ -355,11 +355,10 @@
               "Plist": ""
             },
             "AnchorPoint": {
-              "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -20.0,
+              "X": -58.0,
               "Y": -75.0
             },
             "Scale": {
@@ -397,11 +396,11 @@
               "Plist": ""
             },
             "AnchorPoint": {
-              "ScaleX": 0.5,
+              "ScaleX": 1.0,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 70.0,
+              "X": 92.5,
               "Y": -75.0
             },
             "Scale": {
