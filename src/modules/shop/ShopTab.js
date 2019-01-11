@@ -29,7 +29,6 @@ var ShopTab = cc.Node.extend({
     viewTabByName: function(tabName){
         this.shopTabScrView.removeAllChildren();
         var itemsNum = SHOP_ITEMS[tabName].ITEMS.length;
-        //var itemsNum = 10;
         this.shopTabScrView.setInnerContainerSize({width: gv.SHOP_TAB.ITEM_BUTTON.NATIVE_WIDTH * (1.1 * itemsNum), height: 350})
         this.shopTabScrView.setBounceEnabled(true);
         this.shopTabScrView.jumpToLeft();
@@ -98,7 +97,6 @@ var ShopTab = cc.Node.extend({
             case SHOP.TABS.ARMY:
             case SHOP.TABS.DEFENSE:
                 for (i = 0; i < SHOP_ITEMS[shopTab].ITEMS.length; i++) {
-                    cc.log("limits:         "+this.loadLimitElementsByTab(shopTab))
                     if (i >= this.loadLimitElementsByTab(shopTab)) {
 
 

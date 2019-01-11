@@ -120,8 +120,6 @@ var Building = Area.extend({
     },
     getResourcePaidToUpgrade: function () {
         // amount of resources paid to upgrade to current level
-        cc.log("code:   " + this.typeStrCode + "       level    " + this.currentLevel);
-
         return {
             gold:TL.CONFIG[this.typeStrCode][this.currentLevel]["gold"]||0,
             elixir:TL.CONFIG[this.typeStrCode][this.currentLevel]["elixir"]||0,

@@ -46,20 +46,12 @@ var ScreenMenu = cc.Layer.extend({
         });
         this.addChild(lobbyBg);
 
-        //this.tfID = ccui.TextField();
-        ////this.tfID.setTexture('gui/Art/LoginGui/g_background.png');
-        //this.tfID.setPosition(size.width/4, size.height/3);
-        //this.tfID.setPlaceHolder("Your ID...");
-        //this.addChild(this.tfID);
-        //btnNetwork.addClickEventListener(this.onSelectNetwork.bind(this));
-
         this.tfCustom = ccs.load('gui/TextField.json').node;
 
         this.tfCustom.setPosition(size.width /4, size.height/3);
         var tfCustomBg = this.tfCustom.getChildByName('text_bg');
         //var nativeScaleX = tfCustomBg.getBoundingBox().width / 1280;
 
-        cc.log('size width' + tfCustomBg.getBoundingBox().width);
         tfCustomBg.attr({
             scaleX: (size.width/1280) * 0.5 * gv.RESOLUTION.SCALE_X
         });
@@ -98,7 +90,6 @@ var ScreenMenu = cc.Layer.extend({
         testnetwork.connector._userName = "Fresher " + this.tfID.getString();
 
         fr.view(ScreenGame);
-        //testnetwork.connector._id = 1111;
     },
 
 });

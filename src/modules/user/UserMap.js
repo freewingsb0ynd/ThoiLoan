@@ -119,17 +119,8 @@ var UserMap = cc.Class.extend({
         // TODO: notify to MapLayer, can be call directly to MapLayer
     },
     getCurrentNumberByType:function(strType){
-
-
         type = convertStrToNumberType(strType);
-
-
-
         typeConvert = this.hashType(type.type1,type.type2);
-
-        cc.log("type:     " + JSON.stringify(type));
-        cc.log("typeConv:     " + typeConvert);
-
         ids = this.mapTypeToIds.get(typeConvert);
         if(ids == null){
             return 0;
@@ -213,14 +204,12 @@ var UserMap = cc.Class.extend({
         // update Resources
             //TODO: decrease resources
         // save building in building Waiting
-        cc.log("1234");
         if(this.buildingWaiting != null) return;
         this.buildingWaiting = {
             strType : strType,
             position : newPos,
             momentBuilt : TimeManager.getInstance().getServerTime(),
-        }
-        cc.log("tisssss")
+        };
         // send request
         var type = convertStrToNumberType(strType);
         //testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);

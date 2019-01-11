@@ -35,8 +35,6 @@ var ShopItem = cc.Node.extend({
     ctor: function(shopItemArgs){
         this._super();
 
-        //cc.log(JSON.stringify(shopItemArgs));
-
         this._jsonRes = ccs.load('gui/ShopItem.json').node;
         this.item_btn = this._jsonRes.getChildByName('item_btn');
         this.shopItem_spr = this._jsonRes.getChildByName('shopItem_spr');
