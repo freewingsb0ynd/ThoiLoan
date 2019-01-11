@@ -120,6 +120,8 @@ var Building = Area.extend({
     },
     getResourcePaidToUpgrade: function () {
         // amount of resources paid to upgrade to current level
+        cc.log("code:   " + this.typeStrCode + "       level    " + this.currentLevel);
+
         return {
             gold:TL.CONFIG[this.typeStrCode][this.currentLevel]["gold"]||0,
             elixir:TL.CONFIG[this.typeStrCode][this.currentLevel]["elixir"]||0,
@@ -180,7 +182,7 @@ Building.newBuildingByType = function(strTypeCode, _id, _posX, _posY, _currentLe
             building = new BuilderHut(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
             break;
         case "LAB_1":
-            building = new Laboratory((_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment));
+            building = new Laboratory(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
             break;
         case "TOW_1":
             building = new TownHall(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);

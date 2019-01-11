@@ -19,5 +19,23 @@ var BuilderHut = Building.extend({
         data = this._super();
         data.constructionName = " Builder Hut ";
         return data;
+    },
+
+    getLevelTownHallRequiredToBuild: function(){
+        return 1;
+    },
+
+
+
+    getResourcePaidToUpgrade: function(){
+        builtNum = UserMap.getInstance().getCurrentNumberByType('BDH_1');
+        stringQuery = (builtNum+1) + ''
+
+        if (builtNum < 5) {
+            return {
+                coin: TL.CONFIG['BDH_1'][stringQuery].coin
+            }
+        }
+        else return {};
     }
 })

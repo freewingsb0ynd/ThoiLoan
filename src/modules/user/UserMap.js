@@ -119,8 +119,17 @@ var UserMap = cc.Class.extend({
         // TODO: notify to MapLayer, can be call directly to MapLayer
     },
     getCurrentNumberByType:function(strType){
+
+
         type = convertStrToNumberType(strType);
+
+
+
         typeConvert = this.hashType(type.type1,type.type2);
+
+        cc.log("type:     " + JSON.stringify(type));
+        cc.log("typeConv:     " + typeConvert);
+
         ids = this.mapTypeToIds.get(typeConvert);
         if(ids == null){
             return 0;
@@ -128,6 +137,8 @@ var UserMap = cc.Class.extend({
         return ids.size;
     },
     getMaxNumberByType:function(strType){
+        if(strType == 'BDH_1')
+            return _.keys(TL.CONFIG[strType]).length;
         return TL.CONFIG["TOW_1"][townHall.currentLevel][strType];
     },
     getCostToBuyNew:function(strType){

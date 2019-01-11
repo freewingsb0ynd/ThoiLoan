@@ -82,7 +82,7 @@ var ShopTab = cc.Node.extend({
 
 
     initShopTab: function(tabName){
-        this.loadConfigByTownHallLevel(1);
+        this.loadConfigByTownHallLevel(UserMap.getInstance().townHall.currentLevel,tabName);
 
         this.viewTabByName(tabName);
 
@@ -92,111 +92,87 @@ var ShopTab = cc.Node.extend({
 
     loadConfigByTownHallLevel: function(townHallLevel, shopTab) {
 
-        var tabs = [SHOP.TABS.RESOURCE,SHOP.TABS.ARMY,SHOP.TABS.DEFENSE];
+        //var tabs = [SHOP.TABS.RESOURCE,SHOP.TABS.ARMY,SHOP.TABS.DEFENSE];
+        switch (shopTab){
+            case SHOP.TABS.RESOURCE:
+            case SHOP.TABS.ARMY:
+            case SHOP.TABS.DEFENSE:
+                for (i = 0; i < SHOP_ITEMS[shopTab].ITEMS.length; i++) {
+                    cc.log("limits:         "+this.loadLimitElementsByTab(shopTab))
+                    if (i >= this.loadLimitElementsByTab(shopTab)) {
 
 
-        //for(var j = 0; j < tabs.length; j++) {
-        //    //var shopTabs = SHOP_ITEMS[tabs[i]];
-        //    for (var i = 0; i < SHOP_ITEMS[tabs[j]].ITEMS.length; i++) {
-        //
-        //        tempBuilding = Building.newBuildingByType(SHOP_ITEMS[tabs[j]].ITEMS[i].BUILDING_TYPE_CODE, 0, 0, 0, 1, 1, 0);
-        //
-        //
-        //        var maxBuild = UserMap.getInstance().getMaxNumberByType(SHOP_ITEMS[tabs[j]].ITEMS[i].BUILDING_TYPE_CODE);
-        //        var builtNum = UserMap.getInstance().getCurrentNumberByType(SHOP_ITEMS[tabs[j]].ITEMS[i].BUILDING_TYPE_CODE);
-        //        if (SHOP_ITEMS[tabs[j]].ITEMS[i].BUILDING_TYPE_CODE == 'BDH_1') maxBuild = 5;
-        //
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].MAX_BUILT_NUM_LBL = builtNum + '/' + maxBuild;
-        //
-        //
-        //        var resPrice = tempBuilding.getResourcePaidToUpgrade();
-        //        if (resPrice.gold != 0) {
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE = resPrice.gold;
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.GOLD;
-        //        }
-        //        else if (resPrice.elixir != 0) {
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE = resPrice.elixir;
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.ELIXIR;
-        //        }
-        //        else if (resPrice.darkElixir != 0) {
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE = resPrice.darkElixir;
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.DARK_ELIXIR;
-        //        }
-        //        else if (resPrice.coin != 0) {
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE = resPrice.coin;
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.COIN;
-        //        }
-        //        else{
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE = "Miễn phí";
-        //            SHOP_ITEMS[tabs[j]].ITEMS[i].ITEM_PRICE_TYPE = null;
-        //        }
-        //
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST = tempBuilding.getLevelTownHallRequiredToBuild();
-        //
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE = townHallLevel < SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST;
-        //
-        //        cc.log("townhall lower = " + SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE);
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].BUTTON_ENABLED = townHallLevel >= SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST;
-        //        cc.log("button enabled = " + SHOP_ITEMS[tabs[j]].ITEMS[i].BUTTON_ENABLED);
-        //
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].MAX_BUILT_NUM_VISIBLE = !SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].TIME_VISIBLE = !SHOP_ITEMS[tabs[j]].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
-        //
-        //
-        //        SHOP_ITEMS[tabs[j]].ITEMS[i].TIME_BUILD_LBL = tempBuilding.getCurrentBuildTime() + '';
-        //
-        //    }
-        //}
+                        SHOP_ITEMS[shopTab].ITEMS[i].BUTTON_ENABLED = false;
+                        SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = "Miễn phí";
+                        SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = null;
+                        SHOP_ITEMS[shopTab].ITEMS[i].MAX_BUILT_NUM_VISIBLE = false;
+                        SHOP_ITEMS[shopTab].ITEMS[i].TIME_VISIBLE = false;
 
-        for (var i = 0; i < SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS.length; i++) {
-            tempBuilding = Building.newBuildingByType(SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].BUILDING_TYPE_CODE, 0, 0, 0, 1, 1, 0);
+                    }
+                    else{
+                        tempBuilding = Building.newBuildingByType(SHOP_ITEMS[shopTab].ITEMS[i].BUILDING_TYPE_CODE, 0, 0, 0, 1, 1, 0);
 
 
-            var maxBuild = UserMap.getInstance().getMaxNumberByType(SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].BUILDING_TYPE_CODE);
-            var builtNum = UserMap.getInstance().getCurrentNumberByType(SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].BUILDING_TYPE_CODE);
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].MAX_BUILT_NUM_LBL = builtNum + '/' + maxBuild;
+                        maxBuild = UserMap.getInstance().getMaxNumberByType(SHOP_ITEMS[shopTab].ITEMS[i].BUILDING_TYPE_CODE);
+                        builtNum = UserMap.getInstance().getCurrentNumberByType(SHOP_ITEMS[shopTab].ITEMS[i].BUILDING_TYPE_CODE);
+                        SHOP_ITEMS[shopTab].ITEMS[i].MAX_BUILT_NUM_LBL = builtNum + '/' + maxBuild;
 
 
-            var resPrice = tempBuilding.getResourcePaidToUpgrade();
-            if (resPrice.gold != 0) {
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE = resPrice.gold;
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.GOLD;
-            }
-            else if (resPrice.elixir != 0) {
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE = resPrice.elixir;
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.ELIXIR;
-            }
-            else if (resPrice.darkElixir != 0) {
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE = resPrice.darkElixir;
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.DARK_ELIXIR;
-            }
-            else if (resPrice.coin != 0) {
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE = resPrice.coin;
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.COIN;
-            }
-            else{
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE = "Miễn phí";
-                SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].ITEM_PRICE_TYPE = null;
-            }
+                        resPrice = tempBuilding.getResourcePaidToUpgrade();
+                        if (resPrice.coin != 0) {
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = resPrice.coin;
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.COIN;
+                        }
+                        else if (resPrice.gold != 0) {
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = resPrice.gold;
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.GOLD;
+                        }
+                        else if (resPrice.elixir != 0) {
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = resPrice.elixir;
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.ELIXIR;
+                        }
+                        else if (resPrice.darkElixir != 0) {
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = resPrice.darkElixir;
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = gv.RESOURCE_TYPE.DARK_ELIXIR;
+                        }
+                        else{
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = "Miễn phí";
+                            SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE_TYPE = null;
+                        }
 
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST = tempBuilding.getLevelTownHallRequiredToBuild();
+                        SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST = tempBuilding.getLevelTownHallRequiredToBuild();
 
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE = townHallLevel < SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST;
+                        SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE = townHallLevel < SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST;
 
-            cc.log("townhall lower = " + SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE);
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].BUTTON_ENABLED = townHallLevel >= SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST;
-            cc.log("button enabled = " + SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].BUTTON_ENABLED);
+                        SHOP_ITEMS[shopTab].ITEMS[i].MAX_BUILT_NUM_VISIBLE = !SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
+                        SHOP_ITEMS[shopTab].ITEMS[i].TIME_VISIBLE = !SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
 
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].MAX_BUILT_NUM_VISIBLE = !SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TIME_VISIBLE = !SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE;
+                        SHOP_ITEMS[shopTab].ITEMS[i].TIME_BUILD_LBL = convertToTimeString(tempBuilding.getCurrentBuildTime());
 
-
-            SHOP_ITEMS[SHOP.TABS.RESOURCE].ITEMS[i].TIME_BUILD_LBL = tempBuilding.getCurrentBuildTime() + '';
+                        maxBuiltCond = builtNum < maxBuild;
+                        townHallCond = townHallLevel >= SHOP_ITEMS[shopTab].ITEMS[i].TOWNHALL_REQUEST;
+                        SHOP_ITEMS[shopTab].ITEMS[i].BUTTON_ENABLED = maxBuiltCond && townHallCond;
+                    }
+                }
+                break;
 
         }
+    },
 
+    loadLimitElementsByTab: function(shopTab) {
+        switch (shopTab){
 
+            case SHOP.TABS.ARMY:
+            case SHOP.TABS.DEFENSE:
+                return gv.SHOP_TAB.ELEMENT_LIMIT[shopTab];
+            //case SHOP.TABS.CHEST:
+            //case SHOP.TABS.DECOR:
+            //case SHOP.TABS.SHIELD:
+            case SHOP.TABS.RESOURCE:
+                return SHOP_ITEMS[shopTab].ITEMS.length;
+        }
     }
+
 });
 
 var gv = gv || {};
@@ -205,3 +181,39 @@ gv.SHOP_TAB = {};
 gv.SHOP_TAB.ITEM_BUTTON = {};
 gv.SHOP_TAB.ITEM_BUTTON.NATIVE_WIDTH = 226;
 gv.SHOP_TAB.ITEM_BUTTON.NATIVE_HEIGHT = 325;
+gv.SHOP_TAB.ELEMENT_LIMIT = {
+    "ARMY_TAB": 3,
+    "DEFENSE_TAB": 4
+};
+
+var convertToTimeString = function(timeInSeconds){
+    var secs;
+    var mins;
+    var hours;
+    var days;
+
+    if(timeInSeconds < 3600){               //time < 1h
+        mins = Math.trunc(timeInSeconds/60);
+        secs = timeInSeconds - mins *60;
+
+        if (mins == 0) return secs+"s";     //time < 1m
+        else return mins+"m"+secs+"s";
+    }
+    else if(timeInSeconds < 86400) {        //time < 1d
+        hours = Math.trunc(timeInSeconds /3600);
+        mins = Math.trunc(timeInSeconds - hours * 3600)/60;
+        secs = timeInSeconds - hours * 3600 - mins *60;
+
+        if(mins == 0) return hours+"h";
+        else return hours+"h"+mins+"m";
+    }
+    else{                                   //time > 1d
+        days = Math.trunc(timeInSeconds/86400);
+        hours = Math.trunc((timeInSeconds - days * 86400)/3600);
+        mins = Math.trunc((timeInSeconds - days * 86400- hours * 3600)/60);
+        secs = timeInSeconds - days * 86400- hours * 3600 - mins *60;
+
+        if(hours == 0) return days+"d";
+        else return days+"d"+hours+"h";
+    }
+};
