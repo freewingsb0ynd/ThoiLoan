@@ -89,6 +89,7 @@ var UserMap = cc.Class.extend({
     id:null,
     mapIdToArea:null,
     mapTypeToIds:null,
+    mapIdToServerPos : null,
     builderWorkingAreas : null,
     isFinishLoadMap:false,
     grid : null,
@@ -328,10 +329,12 @@ var UserMap = cc.Class.extend({
     prepareGetMap: function(){
         this.mapIdToArea = new Map();
         this.mapTypeToIds = new Map();
+        this.mapIdToServerPos = new Map();
         this.builderWorkingAreas = new Set();
     },
     addObject: function(area){
         id = area.id;
+        this.mapIdToServerPos.set(id,area.position)
         type1 = area.type1;
         type2 = area.type2 || 0;
         this.mapIdToArea.set(id,area);
@@ -441,14 +444,20 @@ var UserMap = cc.Class.extend({
         }
     },
     showAreaInGrid:function(area){
+        posInServer = this.mapIdToServerPos.get(area.id);
         for(i=0;i<area.size.width;i++){
             for(j=0;j<area.size.height;j++){
                 this.grid[area.position.x+i][area.position.y+j] = area.id;
             }
         }
-        testnetwork.connector.sendMoveConsRq(area.id, area.position.x, area.position.y);
+        if(area.position.x != posInServer.x || area.position.y != posInServer.y){
+            testnetwork.connector.sendMoveConsRq(area.id, area.position.x, area.position.y);
+            this.mapIdToServerPos.set(area.id,area.position)
+        }
     },
     checkValidPosition:function(newPos,size){
+        if(newPos.x<0 || newPos.x + size.width > SIZE_AREA) return false;
+        if(newPos.y<0 || newPos.y + size.height> SIZE_AREA) return false;
         for(i=0;i<size.width;i++){
             for(j=0;j<size.height;j++){
                 if(this.grid[newPos.x+i][newPos.y+j]!=0) {

@@ -40,7 +40,7 @@ var ScreenGame = cc.Layer.extend({
             anchorY: 0,
             x: this.layerMap.width/2,
             y: this.layerMap.height/2,
-            scale:1
+            scale:2
         })
         //this.layerMap.setPosition(cc.p(0,0));
         //this.layerMap.scale = 1;

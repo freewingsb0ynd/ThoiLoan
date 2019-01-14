@@ -104,7 +104,7 @@ var MapLayer2 = cc.Layer.extend({
                             y:touch.getLocation().y
                         }
                         if(self.touch_status == TOUCH_STATUSES.AREA_CLICKED){
-                            cc.log("touch began : AREA_CLICKED" )
+                            cc.log("touch began : AREA_CLICKED")
 
                             logicPos = self.convertTouchPointToLogic(touchPos)
                             cc.log("touch to pos : (" + logicPos.x + "," + logicPos.y + ")")
@@ -157,6 +157,7 @@ var MapLayer2 = cc.Layer.extend({
             },
             onTouchesMoved : function(touches, event) {
                 var touch = touches[0];
+                var touch2 = touches[1];
                 if (self.prevTouchId != touch.getID()) {
                     self.prevTouchId = touch.getID()
                 } else {
@@ -182,6 +183,8 @@ var MapLayer2 = cc.Layer.extend({
                             var delta = touch.getDelta();
                             var curPos = cc.p(self.x, self.y);
                             curPos = cc.pAdd(curPos, delta);
+                            scale = self.getScale()
+                            if(self.checkOutSide(curPos,scale,{x:-1,y:1}) && self.checkOutSide(curPos,scale,{x:1,y:1}) && self.checkOutSide(curPos,scale,{x:-1,y:-1}) && self.checkOutSide(curPos,scale,{x:1,y:-1}))
                             self.setPosition(curPos);
                             break;
                         case TOUCH_STATUSES.MOVING_OBJECT:
@@ -278,6 +281,8 @@ var MapLayer2 = cc.Layer.extend({
                             self.data_touched.area.position = newPos
                             if(isValidPos){
                                 self.data_touched.latestValidPostion = newPos
+                                UserMap.getInstance().showAreaInGrid(self.data_touched.area);
+                                UserMap.getInstance().hideAreaFromGrid(self.data_touched.area);
                             }
                             self.touch_status = self.data_touched.prevState;
                             cc.log("return back to state " + self.data_touched.prevState)
@@ -286,7 +291,7 @@ var MapLayer2 = cc.Layer.extend({
                     cc.log("end touches end");
                 }
                 cc.log("touches ended status " + self.touch_status)
-                //UserMap.getInstance().showMapGrid()
+                UserMap.getInstance().showMapGrid()
             }
         },this);
     },
@@ -316,8 +321,27 @@ var MapLayer2 = cc.Layer.extend({
             scale =  self.getScale();
             scale = scale*0.99;
             scale = Math.max(scale,0.9);
+            curPos = {
+                x: this.x,
+                y: this.y
+            }
+            if(this.checkOutSide(curPos,scale,{x:-1,y:1}) && this.checkOutSide(curPos,scale,{x:1,y:1}) && this.checkOutSide(curPos,scale,{x:-1,y:-1}) && this.checkOutSide(curPos,scale,{x:1,y:-1}))
             this.setScale(scale);
         }
+    },
+    checkOutSide:function(curPos, scale, ind){
+        cc.log(curPos.x + "," + curPos.y)
+        dt = self.SZ/2 + 4;
+        pixelInGrid = self.convertLogicToPixel({x:ind.x*dt + dt,y:ind.y*dt + dt})
+        pos = cc.pAdd(cc.pMult(pixelInGrid,scale),curPos);
+        //cc.log(ind.x + "," + ind.y + ":" + pos.x + ", " + pos.y + "winsize " + cc.winSize.width + ", " + cc.winSize.height)
+        //cc.log("return true")
+        if(ind.x>0 && ind.y > 0 && pos.y > cc.winSize.height) return true
+        if(ind.x>0 && ind.y < 0 && pos.x > cc.winSize.width) return true
+        if(ind.x<0 && ind.y > 0 && pos.x < 0 ) return true
+        if(ind.x<0 && ind.y < 0 && pos.y < 0) return true
+        //cc.log("return false")
+        return false;
     },
     showAreaInLayerMap:function(area){
         displayPos =    {
