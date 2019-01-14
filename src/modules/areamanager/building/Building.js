@@ -66,7 +66,7 @@ var Building = Area.extend({
     showInfo : function(){
         return this._super() + " currentLevel :" + this.currentLevel + " upgradingLevel : " + this.upgradingLevel + " upgradedMoment :" + this.upgradedMoment;
     },
-    update : function(){
+    updateData : function(){
         // return true if a builder is working on
         if(this.upgradingLevel >0) {
             // upgrading/constructing

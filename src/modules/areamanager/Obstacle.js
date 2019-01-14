@@ -18,7 +18,7 @@ var Obstacle  = Area.extend({
     showInfo: function(){
         return "Obstacle " + this._super() + "cleanMoment : " + this.cleanMoment + " obstacleType :" + this.obstacleType;
     },
-    update : function(){
+    updateData : function(){
         // return true if a builder is working on
         if(this.cleanMoment <= 0) return false;
         if(TimeManager.getServerTime()-this.cleanMoment > TL.CONFIG["OBS_1"][this.obstacleType]["buildTime"]){

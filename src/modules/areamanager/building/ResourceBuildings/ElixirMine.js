@@ -23,5 +23,11 @@ var ElixirMine = Resource.extend({
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_ELIXIR};
         data.options.push(option);
         return data;
+    },
+
+    setImage: function(){
+        this._super("res/gui/Art/Buildings/elixir collector/RES_2_"+this.currentLevel+"/idle/image0000.png",
+                    "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
+
     }
 })

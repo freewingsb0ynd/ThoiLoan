@@ -21,5 +21,14 @@ var GoldMine = Resource.extend({
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_GOLD};
         data.options.push(option);
         return data;
+    },
+
+    setImage: function(){
+
+        this._super("gui/Art/Buildings/gold mine/RES_1_"+ this.currentLevel + "/idle/image0000.png",
+                    "gui/Art/Effects/RES_1_"+ this.currentLevel + "_effect/0", 10);
+
     }
+
+
 })

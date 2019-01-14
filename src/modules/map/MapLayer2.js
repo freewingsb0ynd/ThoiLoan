@@ -28,6 +28,7 @@ var MapLayer2 = cc.Layer.extend({
     },
     touch_status : null,
     data_touched : null,
+    elixirMine: null,
     ctor:function() {
         this._super();
         this.areaNodes = new cc.Node();
@@ -47,6 +48,17 @@ var MapLayer2 = cc.Layer.extend({
         this.addTouchListener();
         this.addKeyboardListener();
         this.scheduleUpdate();
+
+        //this.elixirMine = ccs.load("res/gui/BuildingPrototype.json").node;
+        ////this.elixirMine.attr({
+        ////    x: 500,
+        ////    y: 500
+        ////});
+        //this.areaNodes.addChild(this.elixirMine);
+
+
+
+
     },
     update: function(){
         //UserMap.getInstance().update();
@@ -65,6 +77,11 @@ var MapLayer2 = cc.Layer.extend({
             y: pixelPos.y,
             scale:this.scArea
         });
+        area._jsonRes.attr({
+            x: pixelPos.x,
+            y: pixelPos.y,
+            scale: 0.1* area.size.width,
+        })
         this.areaNodes.addChild(area);
     },
     getAreaClicked  : function(touchPos){
@@ -385,6 +402,11 @@ var MapLayer2 = cc.Layer.extend({
             y: this.bgSize.height * this.areaVsBg.y* (logicPoint.y*this.vt.y + logicPoint.x*this.vt.y)/this.SZ,
         }
     },
+
+
+
+
+
 });
 
 MapLayer2.getInstance = function() {

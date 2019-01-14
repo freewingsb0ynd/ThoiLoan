@@ -19,5 +19,10 @@ var ArmyCamp = Building.extend({
         data = this._super();
         data.constructionName = " Army Camp ";
         return data;
+    },
+    setImage: function(){
+        this._super("res/gui/Art/Buildings/elixir collector/RES_2_"+this.currentLevel+"/idle/image0000.png",
+            "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
+
     }
 })

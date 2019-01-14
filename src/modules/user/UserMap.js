@@ -386,7 +386,7 @@ var UserMap = cc.Class.extend({
     update:function(){
         self = this;
         function logMapElements(area, area2, set) {
-            isBuilderWorkingOn = area.update();
+            isBuilderWorkingOn = area.updateData();
             if(isBuilderWorkingOn == false){
                 cc.log("a builder is released");
                 self.builderWorkingAreas.delete(area);
