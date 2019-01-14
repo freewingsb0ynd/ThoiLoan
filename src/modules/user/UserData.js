@@ -75,8 +75,26 @@ var UserData = cc.Class.extend({
         }
 
 
-    }
-
+    },
+    checkIfEnough:function(resourceRequired){
+        if(resourceRequired.gold > this.gold) return false;
+        if(resourceRequired.elixir > this.elixir) return false;
+        if(resourceRequired.darkElixir> this.darkElixir) return false;
+        if(resourceRequired.coin> this.gCoin) return false;
+        return true
+    },
+    changeResources:function(resourceRequired, ratio){
+        this.gold -= resourceRequired.gold * ratio;
+        this.elixir-= resourceRequired.elixir * ratio;
+        this.darkElixir-= resourceRequired.darkElixir * ratio;
+        this.gCoin -= resourceRequired.coin * ratio;
+    },
+    checkFullIfAddResource:function(resourceAdd,capacity, ratio){
+        if(resourceAdd.gold*ratio + this.gold > capacity.gold) return false;
+        if(resourceAdd.elixir*ratio + this.elixir > capacity.elixir) return false;
+        if(resourceAdd.darkElixir*ratio + this.darkElixir > capacity.darkElixir) return false;
+        return true
+    },
 
 });
 

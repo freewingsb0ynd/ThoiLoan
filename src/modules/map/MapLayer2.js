@@ -85,8 +85,10 @@ var MapLayer2 = cc.Layer.extend({
         var self = this;
         cc.eventManager.addListener({
             prevTouchId : -1,
+            prevDistance : -1,
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
             onTouchesBegan : function(touches, event){
+                this.prevDistance = -1;
                 cc.log("begin touches began")
                 cc.log("touches began status " + self.touch_status)
                 var touch = touches[0];
@@ -158,9 +160,28 @@ var MapLayer2 = cc.Layer.extend({
             onTouchesMoved : function(touches, event) {
                 var touch = touches[0];
                 var touch2 = touches[1];
+                if(touch2 != null){
+                    dif = cc.pSub(touch.getLocation(),touch2.getLocation());
+                    curDistance = dif.x * dif.x + dif.y * dif.y;
+                    if(this.prevDistance > -1){
+                        zoomIncrease = curDistance - this.prevDistance;
+                        scale =  self.getScale();
+                        scale = scale*(1+zoomIncrease/1000000);
+                        scale = Math.min(scale,3);
+                        scale = Math.max(scale,0.9);
+                        curPos = {
+                            x: self.x,
+                            y: self.y
+                        }
+                        if(self.checkOutSide(curPos,scale,{x:-1,y:1}) && self.checkOutSide(curPos,scale,{x:1,y:1}) && self.checkOutSide(curPos,scale,{x:-1,y:-1}) && self.checkOutSide(curPos,scale,{x:1,y:-1}))
+                        self.setScale(scale);
+                    }
+                    this.prevDistance = curDistance;
+                }
                 if (self.prevTouchId != touch.getID()) {
                     self.prevTouchId = touch.getID()
                 } else {
+                    if(touch)
                     switch (self.touch_status) {
                         case TOUCH_STATUSES.NONE:
                             self.data_touched.prevState = self.touch_status;
@@ -188,6 +209,10 @@ var MapLayer2 = cc.Layer.extend({
                             self.setPosition(curPos);
                             break;
                         case TOUCH_STATUSES.MOVING_OBJECT:
+                            if(self.data_touched.area.type1 == gv.BUILDING.OBSTACLE){
+                                self.touch_status = TOUCH_STATUSES.MOVING_MAP;
+                                break;
+                            }
                             touchPos = {
                                 x: touch.getLocation().x,
                                 y: touch.getLocation().y
@@ -291,7 +316,7 @@ var MapLayer2 = cc.Layer.extend({
                     cc.log("end touches end");
                 }
                 cc.log("touches ended status " + self.touch_status)
-                UserMap.getInstance().showMapGrid()
+                //UserMap.getInstance().showMapGrid()
             }
         },this);
     },
@@ -330,7 +355,7 @@ var MapLayer2 = cc.Layer.extend({
         }
     },
     checkOutSide:function(curPos, scale, ind){
-        cc.log(curPos.x + "," + curPos.y)
+        //cc.log(curPos.x + "," + curPos.y)
         dt = self.SZ/2 + 4;
         pixelInGrid = self.convertLogicToPixel({x:ind.x*dt + dt,y:ind.y*dt + dt})
         pos = cc.pAdd(cc.pMult(pixelInGrid,scale),curPos);

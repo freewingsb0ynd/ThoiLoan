@@ -38,7 +38,7 @@ var Building = Area.extend({
             return false;
         }
         this.upgradingLevel = this.currentLevel+1;
-        this.upgradedMoment = TimeManager.getTime();
+        this.upgradedMoment = TimeManager.getInstance().getServerTime();
         return true;
     },
     finishUpgrade:function(){
@@ -102,6 +102,9 @@ var Building = Area.extend({
         return this.description;
     },
     getLevelTownHallRequiredToUpgrade:function(){
+        if(this.typeStrCode=="TOW_1"){
+            return 1;
+        }
         this.levelTownHallRequireToUpgrade = TL.CONFIG[this.typeStrCode][this.currentLevel+1]["townHallLevelRequired"] || 1000;
         return this.levelTownHallRequireToUpgrade;
     },

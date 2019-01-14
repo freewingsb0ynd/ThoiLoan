@@ -50,6 +50,7 @@ var Area = cc.Node.extend({
     getOptions:function(){
         this.update();
         data = {
+            id : this.id,
             constructionName : "An Area",
             options :[]
             };

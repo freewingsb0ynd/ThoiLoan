@@ -56,8 +56,7 @@ var ConstructionComponent = Component.extend({
             for(var i = 0; i < optionsNum; i++){
                 //cc.log("aaaaaaaaa "+ building.options[i].typeOption);
 
-                var actionBtn = new ActionButton(building.options[i]);
-
+                var actionBtn = new ActionButton(building.options[i],building.id);
                 //var actionBtn = new ActionButton();
 
                 //actionBtn.;
@@ -78,7 +77,7 @@ var ConstructionComponent = Component.extend({
             for(var j = 0; j < optionsNum; j++){
                 //cc.log("aaaaaaaaa "+ building.options[i].typeOption);
 
-                var actionBtn1 = new ActionButton(building.options[j]);
+                var actionBtn1 = new ActionButton(building.options[j],building.id);
 
                 //var actionBtn = new ActionButton();
 

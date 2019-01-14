@@ -5,7 +5,7 @@
 var ActionButton = cc.Node.extend({
     _jsonRes: null,
     button_bg: null,
-    ctor:function(actionBtn) {
+    ctor:function(actionBtn,idArea) {
         this._super();
 
         //this._jsonRes = ccs.load('gui/ButtonAction.json').node;
@@ -14,7 +14,9 @@ var ActionButton = cc.Node.extend({
 
 
         this.addChild(this._jsonRes);
-
+        cc.log("ID AREA " + idArea)
+        this.idArea = idArea;
+        this.actionType = actionBtn.typeOption;
 
         this.button_bg = this._jsonRes.getChildByName('action_btn');
         this.price_lbl = this._jsonRes.getChildByName('price_lbl');
@@ -24,6 +26,7 @@ var ActionButton = cc.Node.extend({
         this.priceType_spr_0 =  this._jsonRes.getChildByName('priceType_spr_0');
         this.actionName_lbl = this._jsonRes.getChildByName('actionName_lbl');
 
+        this.button_bg.addClickEventListener(this.onSelect.bind(this));
         //cc.log(new ccui.Button(ACTION_BUTTON.RES_LINK[typeActionButton]));
         //
         //var texType = ccui.Widget.PLIST_TEXTURE;
@@ -72,7 +75,23 @@ var ActionButton = cc.Node.extend({
         }
 
     },
-
+    onSelect:function(){
+        cc.log("select button ")
+        switch(this.actionType){
+            case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
+                cc.log("upgrade " + this.idArea);
+                UserMap.getInstance().upgradeBuilding(this.idArea);
+                break;
+            case ACTION_BUTTON.TYPE.CANCEL_BUILDING:
+                cc.log("cancel building  " + this.idArea);
+                UserMap.getInstance().stopBuilding(this.idArea);
+                break;
+            case ACTION_BUTTON.TYPE.FINISH_NOW:
+                cc.log("finish now " + this.idArea);
+                UserMap.getInstance().upgradeBuildingNow(this.idArea);
+                break;
+        }
+    }
 });
 
 var ACTION_BUTTON = {};
