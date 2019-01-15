@@ -8,12 +8,16 @@
 var Obstacle  = Area.extend({
     cleanMoment : null,
     obstacleType : null,
+
+    isUpgrading: null,
+    isOnChossing: null,
+
     ctor: function (_id, _posX, _posY, _cleanMoment, _obstacleType) {
         this._super(_id,gv.BUILDING.OBSTACLE,_posX,_posY);
         this.cleanMoment = _cleanMoment;
         this.obstacleType = _obstacleType;
         this.typeStrCode = "OBS_" + _obstacleType;
-
+        this.scheduleUpdate();
     },
     showInfo: function(){
         return "Obstacle " + this._super() + "cleanMoment : " + this.cleanMoment + " obstacleType :" + this.obstacleType;
@@ -61,6 +65,16 @@ var Obstacle  = Area.extend({
         }
         return data;
     },
+
+
+    update: function(){
+        if(this.isOnChossing){
+            //this._jsonRes.arrow_spr.setVisible(true);
+            this._jsonRes.buildingName_lbl.setVisible(true);
+        }
+    },
+
+
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/obstacle/OBS_"+ this.obstacleType + "/idle/image0000.png",
@@ -70,6 +84,7 @@ var Obstacle  = Area.extend({
             null
 
         );
+        this._jsonRes.buildingName_lbl.setString("Obstacle type " + this.obstacleType);
 
     }
 

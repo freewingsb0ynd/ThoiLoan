@@ -27,7 +27,7 @@ var Cannon = Defense.extend({
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/defense_base/DEF_1_"+ this.currentLevel + "_Shadow.png",
-            "res/gui/Art/Buildings/cannon/canon_"+ this.currentLevel + "/idle/image000", 5, 30,
+            "res/gui/Art/Buildings/cannon/canon_"+ this.currentLevel + "/idle/image000", 5, 300,
             "gui/Art/Map/map_obj_bg/BG_0/3.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
             null

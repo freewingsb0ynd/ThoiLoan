@@ -430,11 +430,11 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -38.0,
-              "Y": -92.0
+              "X": -37.9996,
+              "Y": -91.9995
             },
             "Scale": {
-              "ScaleX": 0.8352,
+              "ScaleX": 0.4679,
               "ScaleY": 1.0
             },
             "CColor": {},
@@ -447,10 +447,10 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -156.0,
-            "RightMargin": 38.0,
-            "TopMargin": 82.0,
-            "BottomMargin": -102.0,
+            "LeftMargin": -155.9996,
+            "RightMargin": 37.9996,
+            "TopMargin": 81.9995,
+            "BottomMargin": -101.9995,
             "Tag": 146,
             "ActionTag": 593887369,
             "Size": {
