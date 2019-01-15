@@ -1,0 +1,742 @@
+{
+  "ID": "a8337f2f-b2aa-436a-9f2f-d9ef8b846725",
+  "Version": "2.1.0.0",
+  "Name": "PopUpGui",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 183,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/Button_Disable.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 16,
+            "Scale9Height": 14,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -1.5645,
+              "Y": 0.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 77,
+              "G": 77,
+              "B": 77
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -641.5645,
+            "RightMargin": -638.4355,
+            "TopMargin": -360.0001,
+            "BottomMargin": -359.9999,
+            "Tag": 184,
+            "ActionTag": -2061812466,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Alpha": 204,
+            "Name": "background",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/train_troop_gui/background.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 2.5,
+              "ScaleY": 2.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -195.5,
+            "RightMargin": -195.5,
+            "TopMargin": -136.5,
+            "BottomMargin": -136.5,
+            "Tag": 186,
+            "ActionTag": 266885382,
+            "Size": {
+              "X": 391.0,
+              "Y": 273.0
+            },
+            "Name": "popUpBg_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/Button_Press.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -1.2603,
+              "Y": -165.1944
+            },
+            "Scale": {
+              "ScaleX": 21.2001,
+              "ScaleY": 7.5179
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -24.2603,
+            "RightMargin": -21.7397,
+            "TopMargin": 147.1944,
+            "BottomMargin": -183.1944,
+            "Tag": 188,
+            "ActionTag": -759941883,
+            "Size": {
+              "X": 46.0,
+              "Y": 36.0
+            },
+            "Name": "Button_Press_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/button.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 134,
+            "Scale9Height": 45,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -1.5644,
+              "Y": -240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -83.5644,
+            "RightMargin": -80.4356,
+            "TopMargin": 206.5,
+            "BottomMargin": -273.5,
+            "Tag": 189,
+            "ActionTag": -1758057565,
+            "Size": {
+              "X": 164.0,
+              "Y": 67.0
+            },
+            "Name": "upgrade_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "LabelText": "Nâng lên cấp 2",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_24.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 280.0
+            },
+            "Scale": {
+              "ScaleX": 1.5,
+              "ScaleY": 1.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -106.5,
+            "RightMargin": -106.5,
+            "TopMargin": -299.0,
+            "BottomMargin": 261.0,
+            "Tag": 197,
+            "ActionTag": 700194574,
+            "Size": {
+              "X": 213.0,
+              "Y": 38.0
+            },
+            "Name": "title_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "UpgradeItem.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -60.0,
+              "Y": 160.0
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -60.0,
+            "RightMargin": 60.0,
+            "TopMargin": -160.0,
+            "BottomMargin": 160.0,
+            "Tag": 205,
+            "ActionTag": 1049851202,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "Item1_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "UpgradeItem.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -60.0,
+              "Y": 90.0
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -60.0,
+            "RightMargin": 60.0,
+            "TopMargin": -90.0,
+            "BottomMargin": 90.0,
+            "Tag": 212,
+            "ActionTag": -1780925390,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "item2_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "UpgradeItem.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -60.0,
+              "Y": 20.0
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -60.0,
+            "RightMargin": 60.0,
+            "TopMargin": -20.0,
+            "BottomMargin": 20.0,
+            "Tag": 219,
+            "ActionTag": -1728465600,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "item3_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "BuildingPrototype.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -280.0,
+              "Y": 100.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -280.0,
+            "RightMargin": 280.0,
+            "TopMargin": -100.0,
+            "BottomMargin": 100.0,
+            "Tag": 226,
+            "ActionTag": -757811553,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "building_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "LabelText": "Thời gian nâng cấp:",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/fista_20_non.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -280.0,
+              "Y": 20.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 143,
+              "G": 96,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -356.5,
+            "RightMargin": 203.5,
+            "TopMargin": -30.5,
+            "BottomMargin": 9.5,
+            "Tag": 245,
+            "ActionTag": -748856683,
+            "Size": {
+              "X": 153.0,
+              "Y": 21.0
+            },
+            "Name": "timeTitle_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "5m0s",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_20.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -280.0,
+              "Y": -10.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -318.5,
+            "RightMargin": 241.5,
+            "TopMargin": -6.0,
+            "BottomMargin": -26.0,
+            "Tag": 378,
+            "ActionTag": -321323321,
+            "Size": {
+              "X": 77.0,
+              "Y": 32.0
+            },
+            "Name": "timeUpgrade_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "300",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_20.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 35.0,
+              "Y": -240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -25.0,
+            "RightMargin": -35.0,
+            "TopMargin": 224.0,
+            "BottomMargin": -256.0,
+            "Tag": 379,
+            "ActionTag": 174653251,
+            "Size": {
+              "X": 60.0,
+              "Y": 32.0
+            },
+            "Name": "price_lbl",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/Main_Gui/elixir_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 49.049,
+              "Y": -240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 35.549,
+            "RightMargin": -62.549,
+            "TopMargin": 224.0,
+            "BottomMargin": -256.0,
+            "Tag": 381,
+            "ActionTag": -936507243,
+            "Size": {
+              "X": 27.0,
+              "Y": 32.0
+            },
+            "Name": "resCost_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "Thông tin công trình: Nhà chính",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/fista_20_non.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": -100.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 143,
+              "G": 96,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -124.0,
+            "RightMargin": -124.0,
+            "TopMargin": 89.5,
+            "BottomMargin": -110.5,
+            "Tag": 418,
+            "ActionTag": 1821064100,
+            "Size": {
+              "X": 248.0,
+              "Y": 21.0
+            },
+            "Name": "timeTitle_lbl_0",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/pop_up/close.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 17,
+            "Scale9Height": 25,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 410.0,
+              "Y": 280.0
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 386.5,
+            "RightMargin": -433.5,
+            "TopMargin": -303.5,
+            "BottomMargin": 256.5,
+            "Tag": 419,
+            "ActionTag": -1115506544,
+            "Size": {
+              "X": 47.0,
+              "Y": 47.0
+            },
+            "Name": "Button_18",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Fonts/fista_20_non.fnt",
+        "Art/Fonts/fista_20_non.png",
+        "Art/Fonts/soji_20.fnt",
+        "Art/Fonts/soji_20.png",
+        "Art/Fonts/soji_24.fnt",
+        "Art/Fonts/soji_24.png",
+        "Art/GUIs/Main_Gui/elixir_icon.png",
+        "Art/GUIs/pop_up/close.png",
+        "Art/GUIs/train_troop_gui/background.png",
+        "Art/GUIs/upgrade_building_gui/button.png",
+        "Art/GUIs/upgrade_building_gui/Button_Disable.png",
+        "Art/GUIs/upgrade_building_gui/Button_Press.png",
+        "BuildingPrototype.json",
+        "UpgradeItem.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

@@ -21,5 +21,15 @@ var Laboratory = Building.extend({
         data = this._super();
         data.constructionName = " Laboratory ";
         return data;
+    },
+    setImage: function(){
+        //this._super("res/"+this.currentLevel+"/idle/image0000.png");
+        this._super("res/gui/Art/Buildings/labratory/LAB_1_"+ this.currentLevel + "/idle/image0000.png",
+            null, null, null,
+            "gui/Art/Map/map_obj_bg/BG_0/4.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove4.png",
+            "gui/Art/Map/map_obj_bg/GRASS_4_Shadow.png"
+
+        );
     }
 })

@@ -216,6 +216,52 @@
           {
             "FileData": {
               "Type": "Normal",
+              "Path": "Art/Map/map_obj_bg/BG/GREEN_3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 2.0,
+              "ScaleY": 2.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -57.0,
+            "RightMargin": -57.0,
+            "TopMargin": -43.0,
+            "BottomMargin": -43.0,
+            "Tag": 182,
+            "ActionTag": -292755816,
+            "Size": {
+              "X": 114.0,
+              "Y": 86.0
+            },
+            "VisibleForFrame": false,
+            "Name": "tryingPosition_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
               "Path": "Art/Map/map_obj_bg/GRASS_3_Shadow.png",
               "Plist": ""
             },
@@ -273,8 +319,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": -0.0009,
+              "Y": -0.0001
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -290,10 +336,10 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -135.0,
-            "RightMargin": -135.0,
-            "TopMargin": -135.0,
-            "BottomMargin": -135.0,
+            "LeftMargin": -135.0009,
+            "RightMargin": -134.9991,
+            "TopMargin": -134.9999,
+            "BottomMargin": -135.0001,
             "Tag": 106,
             "ActionTag": -1379238626,
             "Size": {
@@ -306,7 +352,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "Art/Effects/RES_2_1_effect/00.png",
+              "Path": "Art/Effects/RES_2_1_effect/04.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -916,6 +962,7 @@
         "Art/GUIs/upgrade_building_gui/info_bar.png",
         "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
         "Art/Map/map_obj_bg/BG/arrowmove3.png",
+        "Art/Map/map_obj_bg/BG/GREEN_3.png",
         "Art/Map/map_obj_bg/BG_0/3.png",
         "Art/Map/map_obj_bg/GRASS_3_Shadow.png",
         "Art/Map/map_obj_bg/lightpole.png",

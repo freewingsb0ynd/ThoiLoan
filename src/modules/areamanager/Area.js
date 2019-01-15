@@ -14,6 +14,12 @@ var Area = cc.Node.extend({
     image: null,
     _jsonRes: null,
 
+    isUpgrading: null,
+    isOnChossing: null,
+    isOnMoving: null,
+    isOnValidPos: null,
+    isTryingPos: null,
+    isCanHarvest: null,
 
     ctor: function (_id, _type1, _posX, _posY) {
         this._super("");
@@ -49,12 +55,14 @@ var Area = cc.Node.extend({
         this._jsonRes.okBuild_btn = this._jsonRes.getChildByName("okBuild_btn");
         this._jsonRes.harvestBg_spr = this._jsonRes.getChildByName("harvestBg_spr");
         this._jsonRes.harvestRes_spr = this._jsonRes.getChildByName("harvestRes_spr");
+        this._jsonRes.tryingPosition_spr = this._jsonRes.getChildByName("tryingPosition_spr");
 
         this._jsonRes.idleAnimArray = [];
         this._jsonRes.animSprNum = this._jsonRes.idleAnimArray.length;
         this._jsonRes.currentSprNum = 0;
         this._jsonRes.currentUpdateSpr = 0;
         this._jsonRes.updatesPerSprRate = 5;
+        this._jsonRes.size = 0;
 
         this.addChild(this._jsonRes);
 
@@ -69,6 +77,44 @@ var Area = cc.Node.extend({
     },
 
     update: function () {
+        if(this.isOnChossing){
+            this._jsonRes.arrow_spr.setVisible(true);
+            this._jsonRes.buildingName_lbl.setVisible(true);
+            this._jsonRes.buildingLevel_lbl.setVisible(true);
+        }
+
+        if(this.isOnMoving){
+            this._jsonRes.tryingPosition_spr.setVisible(true);
+            if(this.isOnValidPos){
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ size.width +".png");
+            } else {
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + size.width + ".png");
+            }
+
+        }
+
+        if(this.isUpgrading){
+            this._jsonRes.upgrading_spr.setVisible(true);
+            this._jsonRes.upgradeProcessBg_spr.setVisible(true);
+            this._jsonRes.upgradeProcess_spr.setVisible(true);
+        }
+
+        if(this.isTryingPos){
+            this._jsonRes.okBuild_btn.setVisible(true);
+            this._jsonRes.cancelBuild_btn.setVisible(true);
+            if(this.isOnValidPos){
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ size.width +".png");
+            } else {
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + size.width + ".png");
+            }
+
+        }
+
+        if(this.isCanHarvest){
+            this._jsonRes.harvestBg_spr.setVisible(true);
+            this._jsonRes.harvestRes_spr.setVisible(true);
+        }
+
         if (this._jsonRes.animSprNum != 0) {
             if (this._jsonRes.currentUpdateSpr == (this._jsonRes.updatesPerSprRate - 1)) {
                 //cc.log("bbbbbbb:   " + JSON.stringify(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]));
@@ -158,4 +204,8 @@ var Area = cc.Node.extend({
 
         return data;
     }
+
+
+
+
 })
