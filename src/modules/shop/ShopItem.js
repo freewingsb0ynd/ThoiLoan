@@ -118,10 +118,28 @@ var ShopItem = cc.Node.extend({
 
         this.itemName_lbl.setString(this.ITEM_NAME);
 
+        //if(UserData.getInstance().checkIfEnough({this.ITEM_PRICE_TYPE: this.ITEM_PRICE}))
+
+        //UserData.getInstance().()
         this.itemPrice_lbl.setString(this.ITEM_PRICE);
+        if(!this.checkEnoughResource()) this.itemPrice_lbl.setColor(new cc.Color(255,00,00));
+
         if (ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE] != null) this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE]);
         else this.itemPrice_spr.setVisible(false);
 
-    }
+    },
 
+
+    checkEnoughResource: function(){
+        switch (this.ITEM_PRICE_TYPE){
+            case gv.RESOURCE_TYPE.gold:
+                if (UserData.getInstance().gold > this.ITEM_PRICE) return true;
+            case gv.RESOURCE_TYPE.elixir:
+                if (UserData.getInstance().elixir > this.ITEM_PRICE) return true;
+            case gv.RESOURCE_TYPE.darkElixir:
+                if (UserData.getInstance().darkElixir > this.ITEM_PRICE) return true;
+
+        }
+        return false;
+    }
 });

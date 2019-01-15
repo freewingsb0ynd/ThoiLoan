@@ -35,22 +35,27 @@ var ScreenGame = cc.Layer.extend({
         this.addChild(node);
         //scene = new cc.Scene();
         this.layerMap = new MapLayer2();
+        this.layerMap.setName('map');
         this.layerMap.attr({
             anchorX: 0,
             anchorY: 0,
             x: this.layerMap.width/2,
             y: this.layerMap.height/2,
             scale:2
-        })
+        });
         //this.layerMap.setPosition(cc.p(0,0));
         //this.layerMap.scale = 1;
         //scene.addChild(layerMap, 1);
         this.layerLobby = new LobbyLayer();
+        this.layerLobby.setName('lobby');
+
         //scene.addChild(layerLobby, 2);
         //return scene;
         //this.layerLobby.reloadGui();
 
         this.layerCheat = new CheatLayer();
+        this.layerCheat.setName('cheat');
+
 
         node.addChild(this.layerMap);
 
@@ -60,6 +65,10 @@ var ScreenGame = cc.Layer.extend({
 
 
     },
+
+    //swallowTouch: function(layerName){
+    //    cc.eventManager.pauseTarget(this.getChildByName(layerName), true);
+    //},
 
     onConnectFail:function()
     {

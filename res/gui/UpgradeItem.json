@@ -1,0 +1,259 @@
+{
+  "ID": "39581680-776b-45de-ba96-5264de3310fe",
+  "Version": "2.1.0.0",
+  "Name": "UpgradeItem",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 199,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/small/DAMA_DEF.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 25.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 4.5,
+            "RightMargin": -45.5,
+            "TopMargin": -17.0,
+            "BottomMargin": -17.0,
+            "Tag": 200,
+            "ActionTag": 675606643,
+            "Size": {
+              "X": 41.0,
+              "Y": 34.0
+            },
+            "Name": "item_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/info_bar.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.02,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 55.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 48.78,
+            "RightMargin": -359.78,
+            "TopMargin": -18.0,
+            "BottomMargin": -18.0,
+            "Tag": 201,
+            "ActionTag": -1602606270,
+            "Size": {
+              "X": 311.0,
+              "Y": 36.0
+            },
+            "Name": "bgBar_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/info_bar_nextlv_BG.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.02,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 55.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.4509,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 48.78,
+            "RightMargin": -359.78,
+            "TopMargin": -18.0,
+            "BottomMargin": -18.0,
+            "Tag": 202,
+            "ActionTag": 1374283412,
+            "Size": {
+              "X": 311.0,
+              "Y": 36.0
+            },
+            "Name": "nextLvBar_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.02,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 55.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 0.4017,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 48.78,
+            "RightMargin": -359.78,
+            "TopMargin": -18.0,
+            "BottomMargin": -18.0,
+            "Tag": 203,
+            "ActionTag": -479944846,
+            "Size": {
+              "X": 311.0,
+              "Y": 36.0
+            },
+            "Name": "info_bar_BG_8",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "Sức chứa: 11/500",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "Art/Fonts/soji_12.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 153.8397,
+              "Y": 15.0084
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 84.8397,
+            "RightMargin": -222.8397,
+            "TopMargin": -24.5084,
+            "BottomMargin": 5.5084,
+            "Tag": 204,
+            "ActionTag": 61689740,
+            "Size": {
+              "X": 138.0,
+              "Y": 19.0
+            },
+            "Name": "title_lbl",
+            "ctype": "TextBMFontObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Art/Fonts/soji_12.fnt",
+        "Art/Fonts/soji_12.png",
+        "Art/GUIs/upgrade_building_gui/info_bar.png",
+        "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
+        "Art/GUIs/upgrade_building_gui/info_bar_nextlv_BG.png",
+        "Art/GUIs/upgrade_building_gui/small/DAMA_DEF.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

@@ -17,7 +17,7 @@ var ArcherTower = Defense.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Archer Tower ";
+        data.constructionName = " Archer Tower level " + this.currentLevel;
         return data;
     },
 

@@ -17,7 +17,7 @@ var GoldMine = Resource.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Gold Mine";
+        data.constructionName = " Gold Mine level " + this.currentLevel;
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_GOLD};
         data.options.push(option);
         return data;

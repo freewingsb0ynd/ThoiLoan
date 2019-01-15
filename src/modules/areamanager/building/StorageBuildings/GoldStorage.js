@@ -17,7 +17,7 @@ var GoldStorage = Storage.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Gold Storage ";
+        data.constructionName = " Gold Storage level " + this.currentLevel;
         return data;
     },
 

@@ -30,7 +30,7 @@ var TownHall = Building.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Town Hall ";
+        data.constructionName = " Town Hall level " + this.currentLevel;
         return data;
     },
 

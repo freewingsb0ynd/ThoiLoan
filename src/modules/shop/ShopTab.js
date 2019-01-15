@@ -15,7 +15,18 @@ var ShopTab = cc.Node.extend({
         this.tabBackBtn = this._node.getChildByName('tabBack_btn');
         this.shopTabScrView = this._node.getChildByName('shop_scrview').getChildByName("shopTab_scrView");
 
+        this.gold_lbl = this._node.getChildByName('gold_lbl');
+        this.elixir_lbl = this._node.getChildByName('elixir_lbl');
+        this.darkElixir_lbl = this._node.getChildByName('darkElixir_lbl');
+        this.gCoin_lbl = this._node.getChildByName('gCoin_lbl');
+
         this.tabBackBtn.addClickEventListener(this.onSelectTabBack.bind(this));
+
+        this.gold_lbl.setString(UserData.getInstance().gold+'');
+        this.elixir_lbl.setString(UserData.getInstance().elixir+'');
+        this.darkElixir_lbl.setString(UserData.getInstance().darkElixir+'');
+        this.gCoin_lbl.setString(UserData.getInstance().gCoin+'');
+
 
     },
 

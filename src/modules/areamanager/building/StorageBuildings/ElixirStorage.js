@@ -17,7 +17,7 @@ var ElixirStorage = Storage.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Elixir Storage ";
+        data.constructionName = " Elixir Storage level " + this.currentLevel;
         return data;
     },
 
