@@ -8,20 +8,18 @@ var Area = cc.Node.extend({
     position: null,
 
     //-----------addition information store for improving speed (maybe)
-    typeStrCode:null,
-    size : null,
-    description:null,
-    image:null,
-    _jsonRes:null,
-
-
+    typeStrCode: null,
+    size: null,
+    description: null,
+    image: null,
+    _jsonRes: null,
 
 
     ctor: function (_id, _type1, _posX, _posY) {
         this._super("");
         this.id = _id;
         this.type1 = _type1;
-        this.position = {x:_posX, y:_posY};
+        this.position = {x: _posX, y: _posY};
 
         //var node = new cc.Node();
         //var sp = new cc.Sprite("res/gui/Art/Map/map_obj_bg/BG/RED_3.png");
@@ -62,16 +60,16 @@ var Area = cc.Node.extend({
 
         this.scheduleUpdate();
     },
-    showInfo : function(){
+    showInfo: function () {
         return " id " + this.id + " type1 :" + this.type1 + " position : (" + this.position.x + "," + this.position.y + ")";
     },
-    updateData : function(){
+    updateData: function () {
 
         // return true if a builder is working on
     },
 
-    update: function(){
-        if (this._jsonRes.animSprNum != 0){
+    update: function () {
+        if (this._jsonRes.animSprNum != 0) {
             if (this._jsonRes.currentUpdateSpr == (this._jsonRes.updatesPerSprRate - 1)) {
                 //cc.log("bbbbbbb:   " + JSON.stringify(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]));
                 //this._jsonRes.anim_spr.setTexture(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]);
@@ -83,35 +81,41 @@ var Area = cc.Node.extend({
         //else this._jsonRes.anim_spr.setTexture(
     },
 
-    getSize : function(){
+    getSize: function () {
     },
-    getDescription : function(){
+    getDescription: function () {
     },
-    setImage : function(_resLinkIdle, _resLinkAnimBase, _animSprNum, _updatesPerSprRate, _grass_spr, _arrow_spr, _shadow_spr){
+    setImage: function (_resLinkIdle, _resLinkAnimBase, _animSprNum, _updatesPerSprRate, _grass_spr, _arrow_spr, _shadow_spr) {
         // set texture or animation for this.image
         //this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
 
-        if(_resLinkIdle != null) {
+        if (_resLinkIdle != null) {
             this._jsonRes.idle_spr.setTexture(_resLinkIdle);
         }
-        if (_resLinkAnimBase != null){
+        if (_resLinkAnimBase != null) {
             this._jsonRes.animSprNum = _animSprNum;
-            if(_animSprNum<10){
-                for(var i=0; i< _animSprNum; i++){
+            if (_animSprNum < 11) {
+                for (var i = 0; i < _animSprNum; i++) {
                     //sprFrame = cc.Sprite(_resLinkAnimBase+i+".png");
-                    //cc.log("aaaaaa: " + _resLinkAnimBase+i+".png");
+                    cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
                     //this._jsonRes.idleAnimArray.push(sprFrame);
-                    this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i +".png");
+                    this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
                     //this._jsonRes.idleAnimArray[i] = sprFrame;
                 }
             }
             else {
-                for(var i=0; i< _animSprNum; i++){
-                    if(_animSprNum < 10){
-                        this._jsonRes.idleAnimArray.push(_resLinkAnimBase + "0" + i +".png");
+                for (var i = 0; i < _animSprNum; i++) {
+                    if (i < 10) {
+                        //    resBase0 = _resLinkAnimBase + "0"
+                        var s = _resLinkAnimBase + "0" + i + ".png";
+                        this._jsonRes.idleAnimArray.push(s);
                         //this._jsonRes.idleAnimArray[i] = sprFrame;
+                        cc.log("aaaaaa: " + s);
                     }
-                    else this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i +".png");
+                    else {
+                        this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
+                        cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
+                    }
                 }
             }
         }
@@ -124,18 +128,18 @@ var Area = cc.Node.extend({
 
 
     },
-    refreshInfo:function(){
+    refreshInfo: function () {
         this.getSize();
         this.getDescription();
         this.setImage();
     },
-    getOptions:function(){
+    getOptions: function () {
         this.update();
         data = {
-            id : this.id,
-            constructionName : "An Area",
-            options :[]
-            };
+            id: this.id,
+            constructionName: "An Area",
+            options: []
+        };
         // 1 check cancel option
         // 2 check clan option
         // 3 check spell option

@@ -21,5 +21,15 @@ var DarkElixirMine = Resource.extend({
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_DARK_ELIXIR};
         data.options.push(option);
         return data;
+    },
+
+    setImage: function(){
+        this._super("res/gui/Art/Buildings/dark elixir collector/RES_3_"+ this.currentLevel + "/idle/image0000.png",
+            "res/gui/Art/Buildings/dark elixir collector/RES_3_"+ this.currentLevel + "/attack01/image000", 4, 5,
+            "gui/Art/Map/map_obj_bg/BG_0/3.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
+            "gui/Art/Map/map_obj_bg/GRASS_3_Shadow.png"
+
+        );
     }
 })
