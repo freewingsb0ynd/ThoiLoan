@@ -75,7 +75,7 @@ var MapLayer2 = cc.Layer.extend({
             anchorY: 0.5,
             x: pixelPos.x,
             y: pixelPos.y,
-            scale:this.scArea
+            scale:this.scArea,
         });
         area._jsonRes.attr({
             x: pixelPos.x,
@@ -83,6 +83,7 @@ var MapLayer2 = cc.Layer.extend({
             scale: 0.1* area.size.width,          // width = 3 scale 0.3
         });
         this.areaNodes.addChild(area);
+        area.setZOrder(-(area.position.x + area.position.y))
     },
     getAreaClicked  : function(touchPos){
         area = null;
@@ -240,8 +241,10 @@ var MapLayer2 = cc.Layer.extend({
                             logicPos.x += self.data_touched.area.size.width * 0.5
                             logicPos.y += self.data_touched.area.size.height * 0.5
                             pixelpos = self.convertLogicToPixel(logicPos)
-                            self.data_touched.area.image.x = pixelpos.x
-                            self.data_touched.area.image.y = pixelpos.y
+                            tArea = self.data_touched.area
+                            tArea._jsonRes.x = pixelpos.x
+                            tArea._jsonRes.y = pixelpos.y
+                            tArea.setZOrder(0)
                             break;
                     }
                 }
@@ -387,12 +390,13 @@ var MapLayer2 = cc.Layer.extend({
     },
     showAreaInLayerMap:function(area){
         displayPos =    {
-            x : this.data_touched.area.position.x + this.data_touched.area.size.width * 0.5,
-            y : this.data_touched.area.position.y + this.data_touched.area.size.height * 0.5
+            x : area.position.x + area.size.width * 0.5,
+            y : area.position.y + area.size.height * 0.5
         }
         pixelpos = this.convertLogicToPixel(displayPos)
-        this.data_touched.area.image.x = pixelpos.x
-        self.data_touched.area.image.y = pixelpos.y
+        area._jsonRes.x = pixelpos.x
+        area._jsonRes.y = pixelpos.y
+        area.setZOrder(-(area.position.x+area.position.y))
     },
     convertTouchPointToLogic:function(touchPoint){
         scale = this.getScale();
