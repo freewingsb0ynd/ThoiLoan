@@ -13,6 +13,7 @@ TOUCH_STATUSES = {
 
 }
 
+ALLOW_TOUCH = true;
 var MapLayer2 = cc.Layer.extend({
     SZ : SIZE_AREA+1,
     areaNodes : null,
@@ -98,6 +99,9 @@ var MapLayer2 = cc.Layer.extend({
         }
         return area;
     },
+    tryNewBuilding:function (building, initPos){
+
+    },
     addTouchListener:function(){
         //Add code here
         var self = this;
@@ -106,6 +110,7 @@ var MapLayer2 = cc.Layer.extend({
             prevDistance : -1,
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
             onTouchesBegan : function(touches, event){
+                if(!ALLOW_TOUCH) return;
                 this.prevDistance = -1;
                 cc.log("begin touches began")
                 cc.log("touches began status " + self.touch_status)
@@ -176,6 +181,7 @@ var MapLayer2 = cc.Layer.extend({
                 cc.log("end touches began")
             },
             onTouchesMoved : function(touches, event) {
+                if(!ALLOW_TOUCH) return;
                 var touch = touches[0];
                 var touch2 = touches[1];
                 if(touch2 != null){
@@ -250,11 +256,12 @@ var MapLayer2 = cc.Layer.extend({
                 }
             },
             onTouchesEnded:  function(touches, event){
+                if(!ALLOW_TOUCH) return;
                 var touch = touches[0];
                 if(self.prevTouchId != touch.getID()){
                     self.prevTouchId = touch.getID()
                 }   else{
-                    cc.log("before touches end :");
+                    cc.log("before touches end :" + self.touch_status );
                     touchPos = {
                         x: touch.getLocation().x,
                         y: touch.getLocation().y
@@ -263,6 +270,7 @@ var MapLayer2 = cc.Layer.extend({
                         case TOUCH_STATUSES.CHOOSING_NEW_OR_MOVING_MAP:
                         case TOUCH_STATUSES.NONE:
                             cc.log("touch end : NONE or CHOOSING_NEW_OR_MOVING_MAP")
+                            fr.getCurrentScreen().layerLobby.constructionComp.setVisible(false)
                             area = self.getAreaClicked(touchPos)
                             if(area != null) {
                                 UserMap.getInstance().hideAreaFromGrid(area);
@@ -308,6 +316,7 @@ var MapLayer2 = cc.Layer.extend({
                             if(!isValidPos){
                                 self.data_touched.area.position = self.data_touched.latestValidPostion;
                             }
+                            fr.getCurrentScreen().layerLobby.constructionComp.setVisible(false)
                             self.showAreaInLayerMap(self.data_touched.area)
                             UserMap.getInstance().showAreaInGrid(self.data_touched.area);
                             self.touch_status = TOUCH_STATUSES.NONE;

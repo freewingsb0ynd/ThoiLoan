@@ -76,6 +76,7 @@ var ActionButton = cc.Node.extend({
 
     },
     onSelect:function(){
+        ALLOW_TOUCH = false
         cc.log("select button ")
         switch(this.actionType){
             case ACTION_BUTTON.TYPE.UPGRADE_BUILDING:
@@ -91,6 +92,15 @@ var ActionButton = cc.Node.extend({
                 UserMap.getInstance().upgradeBuildingNow(this.idArea);
                 break;
         }
+        cc.log("get area")
+        area = UserMap.getInstance().mapIdToArea.get(this.idArea)
+        if(area!=null){
+            cc.log("area != null")
+            options = area.getOptions();
+            fr.getCurrentScreen().layerLobby.constructionComp.onConstructionClick(options);
+            fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.AREA_CLICKED
+        }
+        ALLOW_TOUCH = true
     }
 });
 

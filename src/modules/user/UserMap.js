@@ -118,6 +118,16 @@ var UserMap = cc.Class.extend({
 
     tryNewBuilding:function(strType){
         // TODO: notify to MapLayer, can be call directly to MapLayer
+        building = Building.newBuildingByType(strType,0,0,0,1,1,0);
+        building.refreshInfo()
+        for(i=1;i<mapSize.w;i++){
+            for(j=1;j<mapSize.h;j++){
+                if(this.checkValidPosition({x:i,y:j},building.size)){
+                    fr.getCurrentScreen().layerMap.tryNewBuilding(building, {x:i,y:j});
+                    break;
+                }
+            }
+        }
     },
     getCurrentNumberByType:function(strType){
         type = convertStrToNumberType(strType);
@@ -160,11 +170,13 @@ var UserMap = cc.Class.extend({
         typeConvert = this.hashType(gv.BUILDING.STORAGE,type2);
         listIds = this.mapTypeToIds.get(typeConvert);
         if(listIds!=null){
-            for (var i = 0; i < listIds.length; i++) {
-                resource = this.mapIdToArea.get(listIds[i]);
+            self=this;
+            function getCapacityStorage(id, value2, set) {
+                resource = self.mapIdToArea.get(id);
                 capacity += resource.getCapacity();
-                //Do something
             }
+            listIds.forEach(getCapacityStorage);
+
         }
         if(this.townHall == null){
             return capacity;
@@ -217,6 +229,7 @@ var UserMap = cc.Class.extend({
 
     },
     buildOK : function(id){
+        cc.log("build ok id " + id)
         // will be called from onReceivedPacket build OK with id = id
         // create new building with data from buildingWaiting and id
         _posX = this.buildingWaiting.position.x;
@@ -224,7 +237,7 @@ var UserMap = cc.Class.extend({
         _currentLevel = 1;
         _upgradingLevel = 1;
         _upgradedMoment = this.buildingWaiting.momentBuilt;
-        building = Building.newBuildingByType(this.buildingWaiting.strType, _id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+        building = Building.newBuildingByType(this.buildingWaiting.strType, Number(id), _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
         this.addObject(building);
         this.buildingWaiting = null;
 
@@ -402,6 +415,7 @@ var UserMap = cc.Class.extend({
     finishLoadMap:function(){
         this.isFinishLoadMap = true;
         this.showMapGrid();
+        this.checkUpdateAttribute(this.townHall);
     },
     hashType: function(type1, type2){
         return type1*100 + type2;
@@ -427,6 +441,7 @@ var UserMap = cc.Class.extend({
         }
     },
     checkUpdateAttribute:function(area){
+        area.setImage()
         this.getWorkingBuilder();
         if(area.typeStrCode=="BDH_1"){
             this.getTotalBuilder();
