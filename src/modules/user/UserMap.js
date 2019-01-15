@@ -245,6 +245,7 @@ var UserMap = cc.Class.extend({
     },
 
     upgradeBuilding:function(id){
+         cc.log("upgrade building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
             return false;
@@ -259,15 +260,24 @@ var UserMap = cc.Class.extend({
         }
         // check resources
         //TODO checkIfEnough resources
+        resourceRequired = building.getUpgradeResourceRequire();
+        if(!UserData.getInstance().checkIfEnough(resourceRequired)) return false;
+
         // check worker available
         if(this.getTotalBuilder()-this.getWorkingBuilder()<=0){
             return;
         }
+        cc.log("4")
         // check level townhall
+        cc.log(building.getLevelTownHallRequiredToUpgrade())
+        cc.log(townHall.currentLevel)
         if(building.getLevelTownHallRequiredToUpgrade() > townHall.currentLevel){
             return;
         }
+        cc.log("5")
         // TODO : decrease resources
+        UserData.getInstance().changeResources(resourceRequire,1);
+        cc.log("6")
         testnetwork.connector.sendUpgradeRq(id);
 
         building.startUpgrade();
@@ -280,6 +290,7 @@ var UserMap = cc.Class.extend({
     },
 
     upgradeBuildingNow:function(id){
+        cc.log("finish now building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
             return false;
@@ -290,12 +301,14 @@ var UserMap = cc.Class.extend({
         }
         // TODO: current allow upgrade without check coin
         building.finishUpgrade()
+        this.builderWorkingAreas.delete(building);
         testnetwork.connector.sendFinishBuildRq(id);
         this.checkUpdateAttribute(building);
         return true;
     },
 
     stopBuilding:function(id){
+        cc.log("stop building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
             return false;
@@ -305,6 +318,12 @@ var UserMap = cc.Class.extend({
             return false;
         }
         resourcePaid = building.getResourcePaidToUpgrade();
+        capacity = {
+            gold : this.goldCapacity,
+            elixir : this.elixirCapacity,
+            darkElixir : this.darkElixirCapacity
+        }
+        if(!UserData.getInstance().checkFullIfAddResource(resourcePaid, capacity, 0.5))
         //TODO : check UserData - checkOverFlow(resourcePaid)
 
         building.stopUpgrade();
@@ -317,6 +336,7 @@ var UserMap = cc.Class.extend({
             ids.delete(building.id);
             this.mapIdToArea.delete(building.id);
         }
+        UserData.getInstance().changeResources(resourcePaid, -0.5)
         testnetwork.connector.sendCancelBuildRq(id);
         this.checkUpdateAttribute(building);
         return true;
