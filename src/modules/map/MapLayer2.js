@@ -80,8 +80,8 @@ var MapLayer2 = cc.Layer.extend({
         area._jsonRes.attr({
             x: pixelPos.x,
             y: pixelPos.y,
-            scale: 0.1* area.size.width,
-        })
+            scale: 0.1* area.size.width,          // width = 3 scale 0.3
+        });
         this.areaNodes.addChild(area);
     },
     getAreaClicked  : function(touchPos){
@@ -374,7 +374,7 @@ var MapLayer2 = cc.Layer.extend({
         centerPos = {
             x:this.x,
             y:this.y
-        }
+        };
         var pixelPosInMap = cc.pMult(cc.pSub(touchPoint,centerPos),1/scale);
         return this.convertPixelToLogic(pixelPosInMap);
     },
@@ -382,21 +382,21 @@ var MapLayer2 = cc.Layer.extend({
         var curPos  ={
             x: pixelPoint.x * this.SZ,
             y: pixelPoint.y * this.SZ
-        }
+        };
         curPos.x /=  this.bgSize.width * this.areaVsBg.x ;
         curPos.y /= this.bgSize.height * this.areaVsBg.y  ;
         twoxy = 2 * (this.vt.x * this.vt.y)
         var logicPoint = {
             x: Math.floor((curPos.y*this.vt.x + curPos.x*this.vt.y)/twoxy + this.SZ/2),
             y: Math.floor((curPos.y*this.vt.x - curPos.x*this.vt.y)/twoxy + this.SZ/2)
-        }
+        };
         return logicPoint;
     },
     convertLogicToPixel:function(logicPoint_){
         var logicPoint= {
             x : logicPoint_.x - this.SZ/2,
             y :  logicPoint_.y - this.SZ/2
-        }
+            };
         return {
             x: this.bgSize.width * this.areaVsBg.x * (logicPoint.x*this.vt.x - logicPoint.y*this.vt.x)/this.SZ,
             y: this.bgSize.height * this.areaVsBg.y* (logicPoint.y*this.vt.y + logicPoint.x*this.vt.y)/this.SZ,

@@ -47,6 +47,8 @@ var Area = cc.Node.extend({
         this._jsonRes.buildingLevel_lbl = this._jsonRes.getChildByName("buildingLevel_lbl");
         this._jsonRes.cancelBuild_btn = this._jsonRes.getChildByName("cancelBuild_btn");
         this._jsonRes.okBuild_btn = this._jsonRes.getChildByName("okBuild_btn");
+        this._jsonRes.harvestBg_spr = this._jsonRes.getChildByName("harvestBg_spr");
+        this._jsonRes.harvestRes_spr = this._jsonRes.getChildByName("harvestRes_spr");
 
         this._jsonRes.idleAnimArray = [];
         this._jsonRes.animSprNum = this._jsonRes.idleAnimArray.length;

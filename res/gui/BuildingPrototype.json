@@ -306,7 +306,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "Art/Effects/RES_2_1_effect/09.png",
+              "Path": "Art/Effects/RES_2_1_effect/00.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -792,6 +792,98 @@
             "VisibleForFrame": false,
             "Name": "cancelBuild_btn",
             "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/collect_res/collect_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 150.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -42.0,
+            "RightMargin": -42.0,
+            "TopMargin": -200.5,
+            "BottomMargin": 99.5,
+            "Tag": 140,
+            "ActionTag": -2092115749,
+            "Size": {
+              "X": 84.0,
+              "Y": 101.0
+            },
+            "VisibleForFrame": false,
+            "Name": "harvestBg_spr",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Art/GUIs/collect_res/RES_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 155.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -29.0,
+            "RightMargin": -29.0,
+            "TopMargin": -185.5,
+            "BottomMargin": 124.5,
+            "Tag": 141,
+            "ActionTag": -585930238,
+            "Size": {
+              "X": 58.0,
+              "Y": 61.0
+            },
+            "VisibleForFrame": false,
+            "Name": "harvestRes_spr",
+            "ctype": "SpriteObjectData"
           }
         ],
         "Size": {
@@ -819,6 +911,8 @@
         "Art/Fonts/soji_20.png",
         "Art/GUIs/Action_Building_Icon/accept.png",
         "Art/GUIs/Action_Building_Icon/cancel.png",
+        "Art/GUIs/collect_res/collect_bg.png",
+        "Art/GUIs/collect_res/RES_1.png",
         "Art/GUIs/upgrade_building_gui/info_bar.png",
         "Art/GUIs/upgrade_building_gui/info_bar_BG.png",
         "Art/Map/map_obj_bg/BG/arrowmove3.png",
