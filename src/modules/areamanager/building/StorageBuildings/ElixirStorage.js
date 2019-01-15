@@ -19,5 +19,17 @@ var ElixirStorage = Storage.extend({
         data = this._super();
         data.constructionName = " Elixir Storage ";
         return data;
+    },
+
+    setImage: function(){
+
+        this._super("res/gui/Art/Buildings/elixir storage/STO_2_"+ this.currentLevel + "/idle/image0001.png",
+            null, null, null,
+            "gui/Art/Map/map_obj_bg/BG_0/3.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
+            "gui/Art/Map/map_obj_bg/GRASS_5_Shadow.png"
+
+        );
+
     }
 })

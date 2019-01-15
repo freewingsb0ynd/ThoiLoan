@@ -37,5 +37,17 @@ var BuilderHut = Building.extend({
             }
         }
         else return {};
+    },
+
+    setImage: function(){
+
+        this._super("res/gui/Art/Buildings/builder hut/idle/image0000.png",
+            null, null, null,
+            "gui/Art/Map/map_obj_bg/BG_0/2.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove2.png",
+            "gui/Art/Map/map_obj_bg/GRASS_2_Shadow.png"
+
+        );
+
     }
 })
