@@ -80,7 +80,7 @@ var MapLayer2 = cc.Layer.extend({
         area._jsonRes.attr({
             x: pixelPos.x,
             y: pixelPos.y,
-            scale: 0.1* area.size.width,          // width = 3 scale 0.3
+            
         });
         this.areaNodes.addChild(area);
     },

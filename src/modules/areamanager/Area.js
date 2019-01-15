@@ -32,6 +32,8 @@ var Area = cc.Node.extend({
         this.addChild(this.image);
 
         this._jsonRes = ccs.load("gui/BuildingPrototype.json").node;
+        this._jsonRes.setScale(0.3);
+
         this._jsonRes.idle_spr = this._jsonRes.getChildByName("buildingIdle_spr");
         this._jsonRes.anim_spr = this._jsonRes.getChildByName("buildingAnim_spr");
 
@@ -85,35 +87,40 @@ var Area = cc.Node.extend({
     },
     getDescription : function(){
     },
-    setImage : function(resLinkIdle, resLinkAnimBase, animSprNum){
+    setImage : function(_resLinkIdle, _resLinkAnimBase, _animSprNum, _updatesPerSprRate, _grass_spr, _arrow_spr, _shadow_spr){
         // set texture or animation for this.image
-        this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
+        //this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
 
-        if(resLinkIdle != null) {
-            this._jsonRes.idle_spr.setTexture(resLinkIdle);
+        if(_resLinkIdle != null) {
+            this._jsonRes.idle_spr.setTexture(_resLinkIdle);
         }
-        if (resLinkAnimBase != null){
-            this._jsonRes.animSprNum = animSprNum;
-            if(animSprNum<10){
-                for(var i=0; i< animSprNum; i++){
-                    //sprFrame = cc.Sprite(resLinkAnimBase+i+".png");
-                    //cc.log("aaaaaa: " + resLinkAnimBase+i+".png");
+        if (_resLinkAnimBase != null){
+            this._jsonRes.animSprNum = _animSprNum;
+            if(_animSprNum<10){
+                for(var i=0; i< _animSprNum; i++){
+                    //sprFrame = cc.Sprite(_resLinkAnimBase+i+".png");
+                    //cc.log("aaaaaa: " + _resLinkAnimBase+i+".png");
                     //this._jsonRes.idleAnimArray.push(sprFrame);
-                    this._jsonRes.idleAnimArray.push(resLinkAnimBase + i +".png");
+                    this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i +".png");
                     //this._jsonRes.idleAnimArray[i] = sprFrame;
                 }
             }
             else {
-                for(var i=0; i< animSprNum; i++){
-                    if(animSprNum < 10){
-                        this._jsonRes.idleAnimArray.push(resLinkAnimBase + "0" + i +".png");
-                    //this._jsonRes.idleAnimArray[i] = sprFrame;
+                for(var i=0; i< _animSprNum; i++){
+                    if(_animSprNum < 10){
+                        this._jsonRes.idleAnimArray.push(_resLinkAnimBase + "0" + i +".png");
+                        //this._jsonRes.idleAnimArray[i] = sprFrame;
                     }
-                    else this._jsonRes.idleAnimArray.push(resLinkAnimBase + i +".png");
+                    else this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i +".png");
                 }
             }
         }
         else this._jsonRes.anim_spr.setVisible(false);
+
+        if (_updatesPerSprRate != null) this._jsonRes.updatesPerSprRate = _updatesPerSprRate;
+        if (_grass_spr != null) this._jsonRes.grass_spr.setTexture(_grass_spr); else this._jsonRes.grass_spr.setVisible(false)
+        if (_arrow_spr != null) this._jsonRes.arrow_spr.setTexture(_arrow_spr);
+        if (_shadow_spr != null) this._jsonRes.shadow_spr.setTexture(_shadow_spr); else this._jsonRes.shadow_spr.setVisible(false)
 
 
     },

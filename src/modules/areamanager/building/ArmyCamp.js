@@ -21,8 +21,15 @@ var ArmyCamp = Building.extend({
         return data;
     },
     setImage: function(){
-        this._super("res/gui/Art/Buildings/elixir collector/RES_2_"+this.currentLevel+"/idle/image0000.png",
-            "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
+        //this._super("res/gui/Art/Buildings/elixir collector/RES_2_"+this.currentLevel+"/idle/image0000.png",
+        //    "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
 
+        this._super("gui/Art/Buildings/army camp/AMC_1_"+ this.currentLevel + "/idle/image0000.png",
+            "res/gui/Art/Effects/armycam_1/0", 5, 10,
+            "gui/Art/Map/map_obj_bg/BG_0/5.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove5.png",
+            null
+
+        );
     }
 })

@@ -26,7 +26,12 @@ var GoldMine = Resource.extend({
     setImage: function(){
 
         this._super("gui/Art/Buildings/gold mine/RES_1_"+ this.currentLevel + "/idle/image0000.png",
-                    "gui/Art/Effects/RES_1_"+ this.currentLevel + "_effect/0", 10);
+                    "gui/Art/Effects/RES_1_"+ this.currentLevel + "_effect/0", 10, 5,
+                    "gui/Art/Map/map_obj_bg/BG_0/3.png",
+                    "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
+                    "gui/Art/Map/map_obj_bg/GRASS_3_Shadow.png"
+
+        );
 
     }
 
