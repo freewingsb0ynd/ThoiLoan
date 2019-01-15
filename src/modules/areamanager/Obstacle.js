@@ -60,5 +60,18 @@ var Obstacle  = Area.extend({
             data.options.push(option);
         }
         return data;
+    },
+    setImage: function(){
+
+        this._super("res/gui/Art/Buildings/obstacle/OBS_"+ this.obstacleType + "/idle/image0000.png",
+            null, null, null,
+            "res/gui/Art/Map/map_obj_bg/GRASS_0_"+ this.size.width +"_OBS.png",
+            null,
+            null
+
+        );
+
     }
+
+
 })

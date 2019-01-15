@@ -123,7 +123,7 @@ var Area = cc.Node.extend({
 
         if (_updatesPerSprRate != null) this._jsonRes.updatesPerSprRate = _updatesPerSprRate;
         if (_grass_spr != null) this._jsonRes.grass_spr.setTexture(_grass_spr); else this._jsonRes.grass_spr.setVisible(false)
-        if (_arrow_spr != null) this._jsonRes.arrow_spr.setTexture(_arrow_spr);
+        if (_arrow_spr != null) this._jsonRes.arrow_spr.setTexture(_arrow_spr); else this._jsonRes.arrow_spr.setVisible(false)
         if (_shadow_spr != null) this._jsonRes.shadow_spr.setTexture(_shadow_spr); else this._jsonRes.shadow_spr.setVisible(false)
 
 
