@@ -251,7 +251,7 @@ var UserMap = cc.Class.extend({
             return false;
         }
         // check upgrading already
-        if(building.update()){
+        if(building.updateData()){
             return false;
         }
         // check maxlevel
@@ -281,7 +281,7 @@ var UserMap = cc.Class.extend({
         testnetwork.connector.sendUpgradeRq(id);
 
         building.startUpgrade();
-        if(building.update()){
+        if(building.updateData()){
             this.builderWorkingAreas.add(building);
         }   else    {
             // finish upgrade immediately
@@ -293,15 +293,19 @@ var UserMap = cc.Class.extend({
         cc.log("finish now building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
+            cc.log("building null")
             return false;
         }
         // check not upgrade yet
-        if(!building.update()){
+        if(!building.updateData()){
+            cc.log("building not upgrade")
             return false;
         }
+        cc.log("!!")
         // TODO: current allow upgrade without check coin
         building.finishUpgrade()
         this.builderWorkingAreas.delete(building);
+        cc.log("!!!")
         testnetwork.connector.sendFinishBuildRq(id);
         this.checkUpdateAttribute(building);
         return true;
@@ -314,7 +318,7 @@ var UserMap = cc.Class.extend({
             return false;
         }
         // check not upgrade yet
-        if(!building.update()){
+        if(!building.updateData()){
             return false;
         }
         resourcePaid = building.getResourcePaidToUpgrade();
