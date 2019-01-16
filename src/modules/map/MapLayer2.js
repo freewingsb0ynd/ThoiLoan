@@ -67,9 +67,6 @@ var MapLayer2 = cc.Layer.extend({
 
 
     },
-    update: function(){
-        //UserMap.getInstance().update();
-    },
     addArea: function (area) {
         aSize = area.size;
         aP = {
@@ -329,6 +326,9 @@ var MapLayer2 = cc.Layer.extend({
                             }
                             break;
                         case TOUCH_STATUSES.AREA_CLICKED:
+                            if(self.data_touched.area.type1 == gv.BUILDING.OBSTACLE){
+                                return;
+                            }
                             cc.log("touch end : AREA_CLICKED" )
                             logicPos = self.convertTouchPointToLogic(touchPos)
                             if(logicPos.x < self.data_touched.area.position.x || logicPos.x >= self.data_touched.area.position.x + self.data_touched.area.size.width || logicPos.y < self.data_touched.area.position.y || logicPos.y >= self.data_touched.area.position.y + self.data_touched.area.size.height ){
@@ -375,6 +375,9 @@ var MapLayer2 = cc.Layer.extend({
                         case TOUCH_STATUSES.MOVING_OBJECT:
                             cc.log("touch end : MOVING_OBJECT" )
                                 if(self.data_touched.prevState == TOUCH_STATUSES.AREA_CLICKED) {
+                                    if(self.data_touched.area.type == gv.BUILDING.OBSTACLE){
+                                        return;
+                                    }
                                 newPos = self.convertTouchPointToLogic(touchPos);
                                 newPos.x -= Math.floor(self.data_touched.area.size.width * 0.5)
                                 newPos.y -= Math.floor(self.data_touched.area.size.height * 0.5)
@@ -396,7 +399,7 @@ var MapLayer2 = cc.Layer.extend({
                     cc.log("end touches end");
                 //}
                 cc.log("touches ended status " + self.touch_status)
-                UserMap.getInstance().showMapGrid()
+                //UserMap.getInstance().showMapGrid()
             }
         },this);
     },
@@ -414,6 +417,7 @@ var MapLayer2 = cc.Layer.extend({
             },this);
     },
     update:function (dt) {
+        UserMap.getInstance().update();
         self = this;
         if (MW.KEYS[cc.KEY.a]) {
             scale =  self.getScale();
