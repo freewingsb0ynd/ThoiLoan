@@ -6,7 +6,6 @@ var convertNumberToStrType = function(type1,type2){
 
     //
     //return null;
-    //cc.log(type1 + " ** " + type2)
     switch (type1){
         case gv.BUILDING.OBSTACLE:
             return "OBS_"+type2;
@@ -30,7 +29,6 @@ var convertNumberToStrType = function(type1,type2){
                     return "WAL_1";
             }
         case gv.BUILDING.STORAGE:
-            //cc.log("STO_"+ type2)
             return "STO_"+type2;
         case gv.BUILDING.BARRACK:
             return "BAR_"+type2;
@@ -117,7 +115,6 @@ var UserMap = cc.Class.extend({
     // API to  lobby & shop
 
     tryNewBuilding:function(strType){
-        cc.log("try new building " + strType)
         fr.getCurrentScreen().layerLobby.onSelectShopBack()
         // TODO: notify to MapLayer, can be call directly to MapLayer
         building = Building.newBuildingByType(strType,0,0,0,1,1,0);
@@ -170,7 +167,6 @@ var UserMap = cc.Class.extend({
         return this.totalNumberBuilder = listIds.size;
     },
     getCapacity : function(type2){
-        cc.log("get capacity type2 " + type2)
         capacity  = 0 ;
         typeConvert = this.hashType(gv.BUILDING.STORAGE,type2);
         listIds = this.mapTypeToIds.get(typeConvert);
@@ -204,18 +200,17 @@ var UserMap = cc.Class.extend({
 
     // need a Userdata.getInstance().checkIfEnough(resourceRequired)
     addNewBuilding:function(strType, newPos){
-        cc.log("strtype " + strType);
         //newPos{x,y}
         // check resources
         resourceRequired = this.getCostToBuyNew(strType);
             //TODO: checkIfEnough resources
-        cc.log("check enough resources")
         if(!UserData.getInstance().checkIfEnough(resourceRequired)){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" Không đủ tài nguyên ")
             return;
         }
-        cc.log("check builder available")
         // check worker available
         if(this.getTotalBuilder()<=this.getWorkingBuilder()){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" Không còn thợ rảnh")
             return;
         }
         // check valid position, let LayerMap do it
@@ -228,7 +223,6 @@ var UserMap = cc.Class.extend({
             //TODO: decrease resources
         // save building in building Waiting
         UserData.getInstance().changeResources(resourceRequired,1)
-        cc.log("changed resources")
         if(this.buildingWaiting != null) return;
         this.buildingWaiting = {
             strType : strType,
@@ -241,7 +235,6 @@ var UserMap = cc.Class.extend({
 
     },
     buildOK : function(id){
-        cc.log("build ok id " + id)
         // will be called from onReceivedPacket build OK with id = id
         // create new building with data from buildingWaiting and id
         _posX = this.buildingWaiting.position.x;
@@ -272,39 +265,40 @@ var UserMap = cc.Class.extend({
     },
 
     upgradeBuilding:function(id){
-         cc.log("upgrade building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
             return false;
         }
         // check upgrading already
         if(building.updateData()){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" không đang nâng cấp ")
             return false;
         }
         // check maxlevel
         if(building.getMaxLevel() <= building.currentLevel){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" nhà max level")
             return false;
         }
         // check resources
         //TODO checkIfEnough resources
         resourceRequired = building.getUpgradeResourceRequire();
-        if(!UserData.getInstance().checkIfEnough(resourceRequired)) return false;
+        if(!UserData.getInstance().checkIfEnough(resourceRequired)){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" không đủ tài nguyên ")
+            return false;
+        }
 
         // check worker available
         if(this.getTotalBuilder()-this.getWorkingBuilder()<=0){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" không còn thợ rảnh")
             return;
         }
-        cc.log("4")
         // check level townhall
-        cc.log(building.getLevelTownHallRequiredToUpgrade())
-        cc.log(townHall.currentLevel)
         if(building.getLevelTownHallRequiredToUpgrade() > townHall.currentLevel){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" không đủ cấp độ nhà chính")
             return;
         }
-        cc.log("5")
         // TODO : decrease resources
         UserData.getInstance().changeResources(resourceRequire,1);
-        cc.log("6")
         testnetwork.connector.sendUpgradeRq(id);
 
         building.startUpgrade();
@@ -320,19 +314,16 @@ var UserMap = cc.Class.extend({
         cc.log("finish now building id " + id);
         building = this.mapIdToArea.get(id);
         if(building == null) {
-            cc.log("building null")
             return false;
         }
         // check not upgrade yet
         if(!building.updateData()){
-            cc.log("building not upgrade")
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" chưa đang nâng cấp")
             return false;
         }
-        cc.log("!!")
         // TODO: current allow upgrade without check coin
         building.finishUpgrade()
         this.builderWorkingAreas.delete(building);
-        cc.log("!!!")
         testnetwork.connector.sendFinishBuildRq(id);
         this.checkUpdateAttribute(building);
         return true;
@@ -346,6 +337,7 @@ var UserMap = cc.Class.extend({
         }
         // check not upgrade yet
         if(!building.updateData()){
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" đang không nâng cấp")
             return false;
         }
         resourcePaid = building.getResourcePaidToUpgrade();
@@ -355,7 +347,7 @@ var UserMap = cc.Class.extend({
             darkElixir : this.darkElixirCapacity
         }
         if(!UserData.getInstance().checkFullIfAddResource(resourcePaid, capacity, 0.5)){
-
+            fr.getCurrentScreen().layerCheat.lblLog.setString(" không đủ sức chứa tài nguyên")
         }
         //TODO : check UserData - checkOverFlow(resourcePaid)
 
@@ -414,10 +406,10 @@ var UserMap = cc.Class.extend({
                 this.builderWorkingAreas.add(area);
             }
         }
-        cc.log("+Area : " + area.showInfo());
+        //cc.log("+Area : " + area.showInfo());
         area.refreshInfo();
         fr.getCurrentScreen().layerMap.addArea(area);
-        cc.log(area.size.width + "," +area.size.height  + "pos " + area.position.x + "," + area.position.y)
+        //cc.log(area.size.width + "," +area.size.height  + "pos " + area.position.x + "," + area.position.y)
         for(i=0;i<area.size.width;i++){
             for(j=0;j<area.size.height;j++){
                 //cc.log((area.position.x) + " " + i + " " + (area.position.x+i))
@@ -429,13 +421,6 @@ var UserMap = cc.Class.extend({
             this.townHall = area;
         }
         this.getWorkingBuilder();
-        //cc.log(area.getSize());
-        //if(area.type1 != gv.BUILDING.OBSTACLE){
-        //    cc.log(area.getUpgradeResourceRequire().gold + " " + area.getUpgradeResourceRequire().elixir + " " + area.getUpgradeResourceRequire().darkElixir + " " + area.getUpgradeResourceRequire().coin);
-        //    cc.log(area.getMaxLevel());
-        //    cc.log(area.getCurrentBuildTime());
-        //    cc.log(area.getLevelTownHallRequiredToUpgrade());
-        //}
     },
     finishLoadMap:function(){
         this.isFinishLoadMap = true;

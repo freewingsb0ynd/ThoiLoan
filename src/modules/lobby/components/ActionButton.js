@@ -14,7 +14,6 @@ var ActionButton = cc.Node.extend({
 
 
         this.addChild(this._jsonRes);
-        cc.log("ID AREA " + idArea)
         this.idArea = idArea;
         this.actionType = actionBtn.typeOption;
 

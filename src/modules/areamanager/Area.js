@@ -85,9 +85,17 @@ var Area = cc.Node.extend({
     },
 
     update: function () {
-        this._jsonRes.arrow_spr.setVisible(this.isOnChossing);
         this._jsonRes.buildingName_lbl.setVisible(this.isOnChossing);
         this._jsonRes.buildingLevel_lbl.setVisible(this.isOnChossing);
+        this._jsonRes.buildingName_lbl.setString(this.getBuildingName())
+        if(this.type1 != gv.BUILDING.OBSTACLE){
+            this._jsonRes.buildingLevel_lbl.setString("Cấp " + this.currentLevel)
+        }
+        else{
+            this._jsonRes.buildingLevel_lbl.setVisible(false);
+        }
+        this._jsonRes.arrow_spr.setVisible(this.isOnChossing);
+
 
 
         if(this.isOnMoving){
