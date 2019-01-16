@@ -146,7 +146,7 @@ var UserMap = cc.Class.extend({
     },
     getCostToBuyNew:function(strType){
         level = 1;
-        if(type1 == gv.BUILDING.BUILDER_HUT) level = this.getTotalBuilder() + 1;
+        if(strType == "BDH_1") level = Math.min(this.getTotalBuilder() + 1,5);
         return {
             gold:TL.CONFIG[strType][level]["gold"]||0,
             elixir:TL.CONFIG[strType][level]["elixir"]||0,
@@ -203,6 +203,7 @@ var UserMap = cc.Class.extend({
         //newPos{x,y}
         // check resources
         resourceRequired = this.getCostToBuyNew(strType);
+        cc.log("coin" + resourceRequired.coin)
             //TODO: checkIfEnough resources
         if(!UserData.getInstance().checkIfEnough(resourceRequired)){
             fr.getCurrentScreen().layerCheat.lblLog.setString(" Không đủ tài nguyên ")
