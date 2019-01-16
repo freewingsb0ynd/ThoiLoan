@@ -232,7 +232,8 @@ Building.newBuildingByType = function(strTypeCode, _id, _posX, _posY, _currentLe
         case "BAR_2":
             building = new BarrackXmen(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
     };
-    building._jsonRes.anim_spr.setVisible(false);
+    building.setImage();
+    //building._jsonRes.anim_spr.setVisible(false);
     return building;
 }
 

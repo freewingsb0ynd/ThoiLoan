@@ -85,11 +85,10 @@ var Area = cc.Node.extend({
     },
 
     update: function () {
-        if(this.isOnChossing){
-            this._jsonRes.arrow_spr.setVisible(true);
-            this._jsonRes.buildingName_lbl.setVisible(true);
-            this._jsonRes.buildingLevel_lbl.setVisible(true);
-        }
+        this._jsonRes.arrow_spr.setVisible(this.isOnChossing);
+        this._jsonRes.buildingName_lbl.setVisible(this.isOnChossing);
+        this._jsonRes.buildingLevel_lbl.setVisible(this.isOnChossing);
+
 
         if(this.isOnMoving){
             this._jsonRes.tryingPosition_spr.setVisible(true);
@@ -98,19 +97,21 @@ var Area = cc.Node.extend({
             } else {
                 this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
             }
-
+        }   else    {
+            this._jsonRes.tryingPosition_spr.setVisible(false);
         }
 
-        if(this.isUpgrading){
-            this._jsonRes.upgradeProcess_spr.setScaleX(this.getRemainingTime()/this.currentBuildTime * 0.5);
+
+        if(this.isUpgrading) {
+            this._jsonRes.upgradeProcess_spr.setScaleX(this.getRemainingTime() / this.currentBuildTime * 0.5);
             this._jsonRes.timeUpgrade_lbl.setString(convertToTimeString(Math.floor(this.getRemainingTime())));
 
-
-            this._jsonRes.timeUpgrade_lbl.setVisible(true);
-            this._jsonRes.upgrading_spr.setVisible(true);
-            this._jsonRes.upgradeProcessBg_spr.setVisible(true);
-            this._jsonRes.upgradeProcess_spr.setVisible(true);
         }
+        this._jsonRes.timeUpgrade_lbl.setVisible(this.isUpgrading);
+        this._jsonRes.upgrading_spr.setVisible(this.isUpgrading);
+        this._jsonRes.upgradeProcessBg_spr.setVisible(this.isUpgrading);
+        this._jsonRes.upgradeProcess_spr.setVisible(this.isUpgrading);
+
 
         if(this.isTryingPos){
             this._jsonRes.okBuild_btn.setVisible(true);
@@ -198,6 +199,8 @@ var Area = cc.Node.extend({
 
     },
     refreshInfo: function () {
+        this.isUpgrading = this.updateData()
+        cc.log("refresh info " + this.typeStrCode + " isUpgrading : " + this.isUpgrading)
         this.getSize();
         this.getDescription();
         this.setImage();
