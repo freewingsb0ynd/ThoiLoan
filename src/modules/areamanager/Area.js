@@ -66,6 +66,8 @@ var Area = cc.Node.extend({
 
         this.addChild(this._jsonRes);
 
+        this._jsonRes.okBuild_btn.addClickEventListener(this.buildOK.bind(this))
+        this._jsonRes.cancelBuild_btn.addClickEventListener(this.cancelBuild.bind(this))
         this.scheduleUpdate();
     },
     showInfo: function () {
@@ -86,14 +88,15 @@ var Area = cc.Node.extend({
         if(this.isOnMoving){
             this._jsonRes.tryingPosition_spr.setVisible(true);
             if(this.isOnValidPos){
-                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ size.width +".png");
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ this.size.width +".png");
             } else {
-                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + size.width + ".png");
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
             }
 
         }
 
         if(this.isUpgrading){
+            this._jsonRes.timeUpgrade_lbl.setVisible(true);
             this._jsonRes.upgrading_spr.setVisible(true);
             this._jsonRes.upgradeProcessBg_spr.setVisible(true);
             this._jsonRes.upgradeProcess_spr.setVisible(true);
@@ -103,9 +106,9 @@ var Area = cc.Node.extend({
             this._jsonRes.okBuild_btn.setVisible(true);
             this._jsonRes.cancelBuild_btn.setVisible(true);
             if(this.isOnValidPos){
-                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ size.width +".png");
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/GREEN_"+ this.size.width +".png");
             } else {
-                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + size.width + ".png");
+                this._jsonRes.tryingPosition_spr.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
             }
 
         }
@@ -127,6 +130,20 @@ var Area = cc.Node.extend({
         //else this._jsonRes.anim_spr.setTexture(
     },
 
+    buildOK:function(){
+        cc.log("build OK id " + this.id + " type " + this.typeStrCode + "pos : " + this.position.x + ", " + this.position.y)
+        if(UserMap.getInstance().checkValidPosition(this.position, this.size)){
+            UserMap.getInstance().addNewBuilding(this.typeStrCode, this.position)
+            fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE
+            this.removeFromParent()
+        }
+
+    },
+    cancelBuild:function(){
+        cc.log("cancel Build")
+        fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE
+        this.removeFromParent()
+    },
     getSize: function () {
     },
     getDescription: function () {

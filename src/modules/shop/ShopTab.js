@@ -52,7 +52,6 @@ var ShopTab = cc.Node.extend({
 
                 ITEM_SPR_RESLINK_BASE: SHOP_ITEMS[tabName].ITEM_SPR_RESLINK_BASE,
                 BUILDING_TYPE_CODE: SHOP_ITEMS[tabName].ITEMS[i].BUILDING_TYPE_CODE,
-
                 WARNING_COLOR: SHOP_ITEMS[tabName].WARNING_COLOR,
 
                 TOWNHALL_REQUEST_LBL_VISIBLE: SHOP_ITEMS[tabName].ITEMS[i].TOWNHALL_REQUEST_LBL_VISIBLE,
@@ -66,7 +65,7 @@ var ShopTab = cc.Node.extend({
                 ITEM_PRICE: SHOP_ITEMS[tabName].ITEMS[i].ITEM_PRICE,
                 ITEM_PRICE_TYPE: SHOP_ITEMS[tabName].ITEMS[i].ITEM_PRICE_TYPE
             };
-
+            //cc.log("SHOP_ITEMS[tabName].ITEMS[i].BUILDING_TYPE_CODE" + SHOP_ITEMS[tabName].ITEMS[i].BUILDING_TYPE_CODE)
             var shopItemNode = new ShopItem(newShopItem);
             shopItemNode.attr({
                 x: gv.SHOP_TAB.ITEM_BUTTON.NATIVE_WIDTH * (0.5 + 1.1 * i),

@@ -84,8 +84,13 @@ var ShopItem = cc.Node.extend({
 
         this.reloadChildNode();
         this.addChild(this._jsonRes);
+        this.item_btn.addClickEventListener(this.onClickBuy.bind(this))
     },
 
+    onClickBuy:function(){
+        cc.log("this._jsonRes.BUILDING_TYPE_CODE : " + this.BUILDING_TYPE_CODE)
+        UserMap.getInstance().tryNewBuilding(this.BUILDING_TYPE_CODE)
+    },
     reloadChildNode: function(){
 
         this.amountTopup_spr.setVisible(this.TOPUP_RESOURCE_SPR_VISIBLE);

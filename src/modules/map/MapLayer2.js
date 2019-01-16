@@ -45,7 +45,13 @@ var MapLayer2 = cc.Layer.extend({
             latestValidPostion : null
         }
 
+
         this.addChild(this.areaNodes);
+        this.tempNewBuilding = new cc.Node();
+        this.areaNodes.addChild(this.tempNewBuilding);
+        this.tempNewBuilding.setVisible(false);
+        this.tempNewBuilding.setZOrder(0)
+        this.tempNewBuilding.removeFromParent()
         this.addTouchListener();
         this.addKeyboardListener();
         this.scheduleUpdate();
@@ -99,8 +105,15 @@ var MapLayer2 = cc.Layer.extend({
         }
         return area;
     },
-    tryNewBuilding:function (building, initPos){
-
+    tryNewBuilding:function (building){
+        if(this.touch_status == TOUCH_STATUSES.AREA_CLICKED){
+            UserMap.getInstance().showAreaInGrid(this.data_touched.area);
+        }
+        this.touch_status = TOUCH_STATUSES.TRY_NEW_BUILDING
+        building.isTryingPos = true;
+        //this.tempNewBuilding.removeFromParent()
+        this.tempNewBuilding = building
+        this.addArea(this.tempNewBuilding)
     },
     addTouchListener:function(){
         //Add code here
@@ -115,14 +128,34 @@ var MapLayer2 = cc.Layer.extend({
                 cc.log("begin touches began")
                 cc.log("touches began status " + self.touch_status)
                 var touch = touches[0];
-                if(self.prevTouchId != touch.getID()){
-                    self.prevTouchId = touch.getID()
-                }   else{
+                //if(self.prevTouchId != touch.getID()){
+                //    cc.log("self.prevTouchId != touch.getID()")
+                //    self.prevTouchId = touch.getID()
+                //}   else{
+                //    cc.log("self.prevTouchId == touch.getID()")
                     if(self.touch_status == TOUCH_STATUSES.MOVING_MAP){
                         self.touch_status = TOUCH_STATUSES.NONE
                         return
                     }
                     cc.log("touch began at " + touch.getLocation().x + "," + touch.getLocation().y + " touch_status : " + self.touch_status)
+                    if(self.touch_status == TOUCH_STATUSES.TRY_NEW_BUILDING){
+                        cc.log("111")
+                        touchPos = {
+                            x:touch.getLocation().x,
+                            y:touch.getLocation().y
+                        }
+                        logicPos = self.convertTouchPointToLogic(touchPos)
+                        self.data_touched.prevState = TOUCH_STATUSES.TRY_NEW_BUILDING
+                        if(logicPos.x < self.tempNewBuilding.position.x || logicPos.x >= self.tempNewBuilding.position.x + self.tempNewBuilding.size.width|| logicPos.y < self.tempNewBuilding.position.y || logicPos.y >= self.tempNewBuilding.position.y + self.tempNewBuilding.size.height){
+                            self.touch_status = TOUCH_STATUSES.MOVING_MAP
+                            cc.log("try_new_building to moving_map")
+                            return;
+                        }   else    {
+                            self.touch_status = TOUCH_STATUSES.MOVING_OBJECT
+                            cc.log("try_new_building to moving_object status")
+                            return;
+                        }
+                    }
                     if(self.touch_status == TOUCH_STATUSES.AREA_CLICKED || self.touch_status == TOUCH_STATUSES.TRY_NEW_BUILDING){
                         touchPos = {
                             x:touch.getLocation().x,
@@ -155,8 +188,10 @@ var MapLayer2 = cc.Layer.extend({
                                     //fr.getCurrentScreen().layerLobby.constructionComp.onConstructionClick(example);
                                     //
                                     self.data_touched.prevState = self.touch_status;
+                                    cc.log("end touch TOUCH_STATUSES.CHOOSING_NEW_OR_MOVING_MAP")
                                     self.touch_status = TOUCH_STATUSES.CHOOSING_NEW_OR_MOVING_MAP;
                                 }   else    {
+                                    cc.log(" end touch TOUCH_STATUSES.START_MOVING_MAP")
                                     self.touch_status = TOUCH_STATUSES.START_MOVING_MAP;
                                 }
                             }   else    {
@@ -165,19 +200,9 @@ var MapLayer2 = cc.Layer.extend({
                                 self.data_touched.prevState = self.touch_status;
                                 self.touch_status = TOUCH_STATUSES.MOVING_OBJECT;
                             }
-                        }   else if(self.touch_status == TOUCH_STATUSES.TRY_NEW_BUILDING){
-                            cc.log("touch began : TRY_NEW_BUILDING" )
-                            logicPos = self.convertTouchPointToLogic(touchPos)
-                            logicPos.x -= self.data_touched.area.size.width * 0.5
-                            logicPos.y -= self.data_touched.area.size.height * 0.5
-
-                            if(logicPos.x < self.data_touched.area.position.x || logicPos.x >= self.data_touched.area.position.x + self.data_touched.area.size ) return;
-                            if(logicPos.y < self.data_touched.area.position.y || logicPos.y >= self.data_touched.area.position.y + self.data_touched.area.size ) return;
-                            self.data_touched.prevState = self.touch_status;
-                            self.touch_status = TOUCH_STATUSES.MOVING_OBJECT;
                         }
                     }
-                }
+                //}
                 cc.log("end touches began")
             },
             onTouchesMoved : function(touches, event) {
@@ -202,10 +227,9 @@ var MapLayer2 = cc.Layer.extend({
                     }
                     this.prevDistance = curDistance;
                 }
-                if (self.prevTouchId != touch.getID()) {
-                    self.prevTouchId = touch.getID()
-                } else {
-                    if(touch)
+                //if (self.prevTouchId != touch.getID()) {
+                //    self.prevTouchId = touch.getID()
+                //}   else{
                     switch (self.touch_status) {
                         case TOUCH_STATUSES.NONE:
                             self.data_touched.prevState = self.touch_status;
@@ -230,37 +254,60 @@ var MapLayer2 = cc.Layer.extend({
                             curPos = cc.pAdd(curPos, delta);
                             scale = self.getScale()
                             if(self.checkOutSide(curPos,scale,{x:-1,y:1}) && self.checkOutSide(curPos,scale,{x:1,y:1}) && self.checkOutSide(curPos,scale,{x:-1,y:-1}) && self.checkOutSide(curPos,scale,{x:1,y:-1}))
-                            self.setPosition(curPos);
+                                self.setPosition(curPos);
                             break;
                         case TOUCH_STATUSES.MOVING_OBJECT:
-                            if(self.data_touched.area.type1 == gv.BUILDING.OBSTACLE){
-                                self.touch_status = TOUCH_STATUSES.MOVING_MAP;
-                                break;
-                            }
                             touchPos = {
                                 x: touch.getLocation().x,
                                 y: touch.getLocation().y
                             }
                             logicPos = self.convertTouchPointToLogic(touchPos)
-                            logicPos.x -= Math.floor(self.data_touched.area.size.width * 0.5)
-                            logicPos.y -= Math.floor(self.data_touched.area.size.height * 0.5)
-                            logicPos.x += self.data_touched.area.size.width * 0.5
-                            logicPos.y += self.data_touched.area.size.height * 0.5
-                            pixelpos = self.convertLogicToPixel(logicPos)
-                            tArea = self.data_touched.area
-                            tArea._jsonRes.x = pixelpos.x
-                            tArea._jsonRes.y = pixelpos.y
-                            tArea.setZOrder(0)
-                            break;
+                            if(self.data_touched.prevState == TOUCH_STATUSES.AREA_CLICKED){
+                                if(self.data_touched.area.type1 == gv.BUILDING.OBSTACLE){
+                                    self.touch_status = TOUCH_STATUSES.MOVING_MAP;
+                                    break;
+                                }
+                                cc.log(" 111moving temp " + logicPos.x + "," + logicPos.y)
+                                logicPos.x -= Math.floor(self.data_touched.area.size.width * 0.5)
+                                logicPos.y -= Math.floor(self.data_touched.area.size.height * 0.5)
+                                logicPos.x += self.data_touched.area.size.width * 0.5
+                                logicPos.y += self.data_touched.area.size.height * 0.5
+                                cc.log("after " + logicPos.x + "," + logicPos.y)
+                                pixelpos = self.convertLogicToPixel(logicPos)
+                                cc.log("pixel pos  " + pixelpos.x + "," + pixelpos.y)
+                                tArea = self.data_touched.area
+                                tArea._jsonRes.x = pixelpos.x
+                                tArea._jsonRes.y = pixelpos.y
+                                tArea.setZOrder(0)
+                                break;
+                            }   else    if(self.data_touched.prevState == TOUCH_STATUSES.TRY_NEW_BUILDING){
+                                logicPos.x -= Math.floor(self.tempNewBuilding.size.width * 0.5)
+                                logicPos.y -= Math.floor(self.tempNewBuilding.size.height * 0.5)
+                                cc.log("moving temp " + logicPos.x + "," + logicPos.y)
+                                tempLogicPos = {
+                                    x : logicPos.x,
+                                    y : logicPos.y
+                                }
+                                logicPos.x += self.tempNewBuilding.size.width * 0.5
+                                logicPos.y += self.tempNewBuilding.size.height * 0.5
+                                cc.log("after " + logicPos.x + "," + logicPos.y)
+                                pixelpos = self.convertLogicToPixel(logicPos)
+                                cc.log("pixel pos  " + pixelpos.x + "," + pixelpos.y)
+                                self.tempNewBuilding._jsonRes.x = pixelpos.x
+                                self.tempNewBuilding._jsonRes.y = pixelpos.y
+                                self.tempNewBuilding.setZOrder(0)
+                                self.tempNewBuilding.position = tempLogicPos
+                                break;
+                            }
                     }
-                }
+                //}
             },
             onTouchesEnded:  function(touches, event){
                 if(!ALLOW_TOUCH) return;
                 var touch = touches[0];
-                if(self.prevTouchId != touch.getID()){
-                    self.prevTouchId = touch.getID()
-                }   else{
+                //if(self.prevTouchId != touch.getID()){
+                //    self.prevTouchId = touch.getID()
+                //}   else{
                     cc.log("before touches end :" + self.touch_status );
                     touchPos = {
                         x: touch.getLocation().x,
@@ -322,30 +369,34 @@ var MapLayer2 = cc.Layer.extend({
                             self.touch_status = TOUCH_STATUSES.NONE;
                             break;
                         case TOUCH_STATUSES.MOVING_MAP:
-                            cc.log("touch end : MOVING_MAP" )
+                            cc.log("touch end : MOVING_MAP, move to state  + " + self.data_touched.prevState)
                             self.touch_status = self.data_touched.prevState;
                             break;
                         case TOUCH_STATUSES.MOVING_OBJECT:
                             cc.log("touch end : MOVING_OBJECT" )
-                            newPos = self.convertTouchPointToLogic(touchPos);
-                            newPos.x -= Math.floor(self.data_touched.area.size.width*0.5)
-                            newPos.y -= Math.floor(self.data_touched.area.size.height*0.5)
-                            isValidPos = UserMap.getInstance().checkValidPosition(newPos,self.data_touched.area.size)
-                            cc.log("end moving object at (" + newPos.x + "," + newPos.y + ")")
-                            self.data_touched.area.position = newPos
-                            if(isValidPos){
-                                self.data_touched.latestValidPostion = newPos
-                                UserMap.getInstance().showAreaInGrid(self.data_touched.area);
-                                UserMap.getInstance().hideAreaFromGrid(self.data_touched.area);
+                                if(self.data_touched.prevState == TOUCH_STATUSES.AREA_CLICKED) {
+                                newPos = self.convertTouchPointToLogic(touchPos);
+                                newPos.x -= Math.floor(self.data_touched.area.size.width * 0.5)
+                                newPos.y -= Math.floor(self.data_touched.area.size.height * 0.5)
+                                isValidPos = UserMap.getInstance().checkValidPosition(newPos, self.data_touched.area.size)
+                                cc.log("end moving object at (" + newPos.x + "," + newPos.y + ")")
+                                self.data_touched.area.position = newPos
+                                if (isValidPos) {
+                                    self.data_touched.latestValidPostion = newPos
+                                    UserMap.getInstance().showAreaInGrid(self.data_touched.area);
+                                    UserMap.getInstance().hideAreaFromGrid(self.data_touched.area);
+                                }
+                                self.touch_status = self.data_touched.prevState;
+                                cc.log("return back to state " + self.data_touched.prevState)
+                                break;
+                            }   else    if(self.data_touched.prevState == TOUCH_STATUSES.TRY_NEW_BUILDING){
+                                self.touch_status = self.data_touched.prevState;
                             }
-                            self.touch_status = self.data_touched.prevState;
-                            cc.log("return back to state " + self.data_touched.prevState)
-                            break;
                     }
                     cc.log("end touches end");
-                }
+                //}
                 cc.log("touches ended status " + self.touch_status)
-                //UserMap.getInstance().showMapGrid()
+                UserMap.getInstance().showMapGrid()
             }
         },this);
     },

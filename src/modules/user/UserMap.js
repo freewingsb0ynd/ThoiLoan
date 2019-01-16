@@ -104,11 +104,11 @@ var UserMap = cc.Class.extend({
     darkElixirCapacity : 0,
 
     ctor:function() {
-        mapSize = {w:SIZE_AREA+1,h:SIZE_AREA+1};
+        this.mapSize = {w:SIZE_AREA+1,h:SIZE_AREA+1};
         this.grid = [];
-        for(i=0;i<mapSize.w;i++){
+        for(i=0;i<this.mapSize.w;i++){
             newRow = [];
-            for(j=0;j<mapSize.h;j++){
+            for(j=0;j<this.mapSize.h;j++){
                 newRow.push(0);
             }
             this.grid.push(newRow);
@@ -117,14 +117,18 @@ var UserMap = cc.Class.extend({
     // API to  lobby & shop
 
     tryNewBuilding:function(strType){
+        cc.log("try new building " + strType)
+        fr.getCurrentScreen().layerLobby.onSelectShopBack()
         // TODO: notify to MapLayer, can be call directly to MapLayer
         building = Building.newBuildingByType(strType,0,0,0,1,1,0);
         building.refreshInfo()
-        for(i=1;i<mapSize.w;i++){
-            for(j=1;j<mapSize.h;j++){
-                if(this.checkValidPosition({x:i,y:j},building.size)){
-                    fr.getCurrentScreen().layerMap.tryNewBuilding(building, {x:i,y:j});
-                    break;
+        for(ii=1;ii<41;ii++){
+            for(jj=1;jj<41;jj++){
+                bol = this.checkValidPosition({x:ii,y:jj},building.size)
+                if(bol){
+                    building.position = {x:ii,y:jj};
+                    fr.getCurrentScreen().layerMap.tryNewBuilding(building);
+                    return;
                 }
             }
         }
@@ -147,10 +151,10 @@ var UserMap = cc.Class.extend({
         level = 1;
         if(type1 == gv.BUILDING.BUILDER_HUT) level = this.getTotalBuilder() + 1;
         return {
-            gold:TL.CONFIG[this.strType][level]["gold"]||0,
-            elixir:TL.CONFIG[this.strType][level]["elixir"]||0,
-            darkElixir:TL.CONFIG[this.strType][level]["darkElixir"]||0,
-            coin:TL.CONFIG[this.strType][level]["coin"]||0,
+            gold:TL.CONFIG[strType][level]["gold"]||0,
+            elixir:TL.CONFIG[strType][level]["elixir"]||0,
+            darkElixir:TL.CONFIG[strType][level]["darkElixir"]||0,
+            coin:TL.CONFIG[strType][level]["coin"]||0,
         }
     },
     getWorkingBuilder : function(){
@@ -166,6 +170,7 @@ var UserMap = cc.Class.extend({
         return this.totalNumberBuilder = listIds.size;
     },
     getCapacity : function(type2){
+        cc.log("get capacity type2 " + type2)
         capacity  = 0 ;
         typeConvert = this.hashType(gv.BUILDING.STORAGE,type2);
         listIds = this.mapTypeToIds.get(typeConvert);
@@ -202,12 +207,17 @@ var UserMap = cc.Class.extend({
         cc.log("strtype " + strType);
         //newPos{x,y}
         // check resources
-            //resourceRequired = this.getCostToBuyNew(strType);
+        resourceRequired = this.getCostToBuyNew(strType);
             //TODO: checkIfEnough resources
+        cc.log("check enough resources")
+        if(!UserData.getInstance().checkIfEnough(resourceRequired)){
+            return;
+        }
+        cc.log("check builder available")
         // check worker available
-        //    if(this.getTotalBuilder()-this.getWorkingBuilder()<=0){
-        //        return;
-        //    }
+        if(this.getTotalBuilder()<=this.getWorkingBuilder()){
+            return;
+        }
         // check valid position, let LayerMap do it
         //    size = {width:TL.CONFIG[this.typeStrCode][this.currentLevel]["width"], height:TL.CONFIG[this.typeStrCode][this.currentLevel]["height"]};
         // check enough level townhall
@@ -217,6 +227,8 @@ var UserMap = cc.Class.extend({
         // update Resources
             //TODO: decrease resources
         // save building in building Waiting
+        UserData.getInstance().changeResources(resourceRequired,1)
+        cc.log("changed resources")
         if(this.buildingWaiting != null) return;
         this.buildingWaiting = {
             strType : strType,
@@ -225,7 +237,7 @@ var UserMap = cc.Class.extend({
         };
         // send request
         var type = convertStrToNumberType(strType);
-        //testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);
+        testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);
 
     },
     buildOK : function(id){
@@ -238,7 +250,9 @@ var UserMap = cc.Class.extend({
         _upgradingLevel = 1;
         _upgradedMoment = this.buildingWaiting.momentBuilt;
         building = Building.newBuildingByType(this.buildingWaiting.strType, Number(id), _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment);
+        building.isUpgrading = true;
         this.addObject(building);
+        this.checkUpdateAttribute(building)
         this.buildingWaiting = null;
 
     },
@@ -340,19 +354,29 @@ var UserMap = cc.Class.extend({
             elixir : this.elixirCapacity,
             darkElixir : this.darkElixirCapacity
         }
-        if(!UserData.getInstance().checkFullIfAddResource(resourcePaid, capacity, 0.5))
+        if(!UserData.getInstance().checkFullIfAddResource(resourcePaid, capacity, 0.5)){
+
+        }
         //TODO : check UserData - checkOverFlow(resourcePaid)
 
-        building.stopUpgrade();
-        this.builderWorkingAreas.delete(building);
-        if(building.currentLevel == 1){
+        if(building.upgradingLevel == 1){
             // stop constructing
+            building.stopUpgrade();
+            this.builderWorkingAreas.delete(building);
             type = convertStrToNumberType(building.typeStrCode);
             typeConvert = this.hashType(type.type1,type.type2);
             ids = this.mapTypeToIds.get(typeConvert);
             ids.delete(building.id);
             this.mapIdToArea.delete(building.id);
+            building.removeFromParent()
+            fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE
+            fr.getCurrentScreen().layerLobby.constructionComp.setVisible(false)
+            UserData.getInstance().changeResources(resourcePaid, -0.5)
+            testnetwork.connector.sendCancelBuildRq(id);
+            return true;
         }
+        building.stopUpgrade();
+        this.builderWorkingAreas.delete(building);
         UserData.getInstance().changeResources(resourcePaid, -0.5)
         testnetwork.connector.sendCancelBuildRq(id);
         this.checkUpdateAttribute(building);
@@ -370,6 +394,7 @@ var UserMap = cc.Class.extend({
         this.builderWorkingAreas = new Set();
     },
     addObject: function(area){
+        area.updateData()
         id = area.id;
         this.mapIdToServerPos.set(id,area.position)
         type1 = area.type1;
@@ -434,6 +459,7 @@ var UserMap = cc.Class.extend({
                 }   else{
                     self.checkUpdateAttribute(area);
                 }
+                area.isUpgrading = false
             }
         }
         if(this.builderWorkingAreas!=null){
@@ -458,9 +484,9 @@ var UserMap = cc.Class.extend({
         }
     },
     showMapGrid: function(){
-        for(i=0;i<mapSize.w;i++){
+        for(i=0;i<this.mapSize.w;i++){
             s = "|";
-            for(j=0;j<mapSize.h;j++){
+            for(j=0;j<this.mapSize.h;j++){
                 if(this.grid[i][j]<9)
                     s += " ";
                 if(this.grid[i][j]>0){

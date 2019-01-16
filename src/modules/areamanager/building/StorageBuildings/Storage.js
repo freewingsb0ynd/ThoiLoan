@@ -17,6 +17,7 @@ var Storage = Building.extend({
         return this.description;
     },
     getCapacity:function(){
+        if(this.upgradingLevel == 1) return 0;
         return TL.CONFIG[this.typeStrCode][this.currentLevel]["capacity"];
     },
     //getImage : function(){
