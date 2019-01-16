@@ -201,25 +201,25 @@ var convertToTimeString = function(timeInSeconds){
     var days;
 
     if(timeInSeconds < 3600){               //time < 1h
-        mins = Math.trunc(timeInSeconds/60);
-        secs = timeInSeconds - mins *60;
+        mins = Math.floor(timeInSeconds/60);
+        secs = Math.floor(timeInSeconds - mins *60);
 
         if (mins == 0) return secs+"s";     //time < 1m
         else return mins+"m"+secs+"s";
     }
     else if(timeInSeconds < 86400) {        //time < 1d
-        hours = Math.trunc(timeInSeconds /3600);
-        mins = Math.trunc(timeInSeconds - hours * 3600)/60;
-        secs = timeInSeconds - hours * 3600 - mins *60;
+        hours = Math.floor(timeInSeconds /3600);
+        mins = Math.floor((timeInSeconds - hours * 3600)/60);
+        secs = Math.floor(timeInSeconds - hours * 3600 - mins *60);
 
         if(mins == 0) return hours+"h";
         else return hours+"h"+mins+"m";
     }
     else{                                   //time > 1d
-        days = Math.trunc(timeInSeconds/86400);
-        hours = Math.trunc((timeInSeconds - days * 86400)/3600);
-        mins = Math.trunc((timeInSeconds - days * 86400- hours * 3600)/60);
-        secs = timeInSeconds - days * 86400- hours * 3600 - mins *60;
+        days = Math.floor(timeInSeconds/86400);
+        hours = Math.floor((timeInSeconds - days * 86400)/3600);
+        mins = Math.floor((timeInSeconds - days * 86400- hours * 3600)/60);
+        secs = Math.floor(timeInSeconds - days * 86400- hours * 3600 - mins *60);
 
         if(hours == 0) return days+"d";
         else return days+"d"+hours+"h";

@@ -12,6 +12,8 @@ var Area = cc.Node.extend({
     size: null,
     description: null,
     image: null,
+    remainingTime: null,
+    currentBuildTime:0,
     _jsonRes: null,
 
     isUpgrading: null,
@@ -46,7 +48,7 @@ var Area = cc.Node.extend({
         this._jsonRes.shadow_spr = this._jsonRes.getChildByName("shadow_spr");
         this._jsonRes.upgrading_spr = this._jsonRes.getChildByName("upgrading_spr");
         this._jsonRes.upgradeDone_spr = this._jsonRes.getChildByName("upgradeDone_spr");
-        this._jsonRes.timeUpgrade_lbl = this._jsonRes.getChildByName("buildingAnim_spr");
+        this._jsonRes.timeUpgrade_lbl = this._jsonRes.getChildByName("timeUpgrade_lbl");
         this._jsonRes.upgradeProcessBg_spr = this._jsonRes.getChildByName("upgradeProcessBg_spr");
         this._jsonRes.upgradeProcess_spr = this._jsonRes.getChildByName("upgradeProcess_spr");
         this._jsonRes.buildingName_lbl = this._jsonRes.getChildByName("buildingName_lbl");
@@ -78,6 +80,10 @@ var Area = cc.Node.extend({
         // return true if a builder is working on
     },
 
+    getRemainingTime: function(){
+
+    },
+
     update: function () {
         if(this.isOnChossing){
             this._jsonRes.arrow_spr.setVisible(true);
@@ -96,6 +102,10 @@ var Area = cc.Node.extend({
         }
 
         if(this.isUpgrading){
+            this._jsonRes.upgradeProcess_spr.setScaleX(this.getRemainingTime()/this.currentBuildTime * 0.5);
+            this._jsonRes.timeUpgrade_lbl.setString(convertToTimeString(Math.floor(this.getRemainingTime())));
+
+
             this._jsonRes.timeUpgrade_lbl.setVisible(true);
             this._jsonRes.upgrading_spr.setVisible(true);
             this._jsonRes.upgradeProcessBg_spr.setVisible(true);
@@ -156,31 +166,27 @@ var Area = cc.Node.extend({
             this._jsonRes.idle_spr.setTexture(_resLinkIdle);
         }
         if (_resLinkAnimBase != null) {
+            //cc.log("upgrade building: " + this.getDescription());
+
+            this._jsonRes.idleAnimArray = [];
             this._jsonRes.animSprNum = _animSprNum;
             if (_animSprNum < 11) {
                 for (var i = 0; i < _animSprNum; i++) {
-                    //sprFrame = cc.Sprite(_resLinkAnimBase+i+".png");
-                    cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
-                    //this._jsonRes.idleAnimArray.push(sprFrame);
                     this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
-                    //this._jsonRes.idleAnimArray[i] = sprFrame;
                 }
             }
             else {
                 for (var i = 0; i < _animSprNum; i++) {
                     if (i < 10) {
-                        //    resBase0 = _resLinkAnimBase + "0"
-                        var s = _resLinkAnimBase + "0" + i + ".png";
-                        this._jsonRes.idleAnimArray.push(s);
-                        //this._jsonRes.idleAnimArray[i] = sprFrame;
-                        cc.log("aaaaaa: " + s);
+                        this._jsonRes.idleAnimArray.push(_resLinkAnimBase + "0" + i + ".png");
                     }
                     else {
                         this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
-                        cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
                     }
                 }
             }
+
+            //cc.log("upgrade bbbbbbbb  " + JSON.stringify(this._jsonRes.idleAnimArray))
         }
         else this._jsonRes.anim_spr.setVisible(false);
 

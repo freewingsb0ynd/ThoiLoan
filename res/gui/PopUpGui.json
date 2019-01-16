@@ -29,7 +29,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -1.5645,
+              "X": 0.0,
               "Y": 0.0001
             },
             "Scale": {
@@ -50,8 +50,8 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -641.5645,
-            "RightMargin": -638.4355,
+            "LeftMargin": -640.0,
+            "RightMargin": -640.0,
             "TopMargin": -360.0001,
             "BottomMargin": -359.9999,
             "Tag": 184,
@@ -124,7 +124,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -1.2603,
+              "X": 0.0,
               "Y": -165.1944
             },
             "Scale": {
@@ -141,8 +141,8 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -24.2603,
-            "RightMargin": -21.7397,
+            "LeftMargin": -23.0,
+            "RightMargin": -23.0,
             "TopMargin": 147.1944,
             "BottomMargin": -183.1944,
             "Tag": 188,
@@ -151,7 +151,7 @@
               "X": 46.0,
               "Y": 36.0
             },
-            "Name": "Button_Press_4",
+            "Name": "whiteBg_spr",
             "ctype": "SpriteObjectData"
           },
           {
@@ -189,7 +189,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": -1.5644,
+              "X": 0.0,
               "Y": -240.0
             },
             "Scale": {
@@ -206,8 +206,8 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -83.5644,
-            "RightMargin": -80.4356,
+            "LeftMargin": -82.0,
+            "RightMargin": -82.0,
             "TopMargin": 206.5,
             "BottomMargin": -273.5,
             "Tag": 189,
@@ -273,7 +273,7 @@
             "AnchorPoint": {},
             "Position": {
               "X": -60.0,
-              "Y": 160.0
+              "Y": 200.0
             },
             "Scale": {
               "ScaleX": 1.2,
@@ -291,15 +291,15 @@
             },
             "LeftMargin": -60.0,
             "RightMargin": 60.0,
-            "TopMargin": -160.0,
-            "BottomMargin": 160.0,
+            "TopMargin": -200.0,
+            "BottomMargin": 200.0,
             "Tag": 205,
             "ActionTag": 1049851202,
             "Size": {
               "X": 0.0,
               "Y": 0.0
             },
-            "Name": "Item1_node",
+            "Name": "item1_node",
             "ctype": "ProjectNodeObjectData"
           },
           {
@@ -313,8 +313,8 @@
             "InnerActionSpeed": 1.0,
             "AnchorPoint": {},
             "Position": {
-              "X": -60.0,
-              "Y": 90.0
+              "X": -60.0002,
+              "Y": 130.0
             },
             "Scale": {
               "ScaleX": 1.2,
@@ -330,10 +330,10 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -60.0,
-            "RightMargin": 60.0,
-            "TopMargin": -90.0,
-            "BottomMargin": 90.0,
+            "LeftMargin": -60.0002,
+            "RightMargin": 60.0002,
+            "TopMargin": -130.0,
+            "BottomMargin": 130.0,
             "Tag": 212,
             "ActionTag": -1780925390,
             "Size": {
@@ -355,7 +355,7 @@
             "AnchorPoint": {},
             "Position": {
               "X": -60.0,
-              "Y": 20.0
+              "Y": 60.0
             },
             "Scale": {
               "ScaleX": 1.2,
@@ -373,8 +373,8 @@
             },
             "LeftMargin": -60.0,
             "RightMargin": 60.0,
-            "TopMargin": -20.0,
-            "BottomMargin": 20.0,
+            "TopMargin": -60.0,
+            "BottomMargin": 60.0,
             "Tag": 219,
             "ActionTag": -1728465600,
             "Size": {
@@ -382,6 +382,47 @@
               "Y": 0.0
             },
             "Name": "item3_node",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "UpgradeItem.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -60.0005,
+              "Y": -10.0
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -60.0005,
+            "RightMargin": 60.0005,
+            "TopMargin": 10.0,
+            "BottomMargin": -10.0,
+            "Tag": 377,
+            "ActionTag": -846569069,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "item4_node",
             "ctype": "ProjectNodeObjectData"
           },
           {
@@ -570,7 +611,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 49.049,
+              "X": 50.0,
               "Y": -240.0
             },
             "Scale": {
@@ -587,8 +628,8 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 35.549,
-            "RightMargin": -62.549,
+            "LeftMargin": 36.5,
+            "RightMargin": -63.5,
             "TopMargin": 224.0,
             "BottomMargin": -256.0,
             "Tag": 381,
@@ -643,7 +684,7 @@
               "X": 248.0,
               "Y": 21.0
             },
-            "Name": "timeTitle_lbl_0",
+            "Name": "description_lbl",
             "ctype": "TextBMFontObjectData"
           },
           {
@@ -708,7 +749,7 @@
               "X": 47.0,
               "Y": 47.0
             },
-            "Name": "Button_18",
+            "Name": "close_btn",
             "ctype": "ButtonObjectData"
           }
         ],
