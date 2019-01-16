@@ -17,7 +17,7 @@ var DarkElixirStorage = Storage.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Dark Elixir Storage ";
+        data.constructionName = " Dark Elixir Storage level " + this.currentLevel;
         return data;
     },
 

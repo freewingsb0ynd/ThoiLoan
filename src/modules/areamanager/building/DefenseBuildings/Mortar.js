@@ -17,7 +17,21 @@ var Mortar = Defense.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Mortar ";
+        data.constructionName = " Mortar level " + this.currentLevel;
         return data;
-    }
+    },
+
+    setImage: function(){
+
+        this._super("res/gui/Art/Buildings/defense_base/DEF_1_"+ this.currentLevel + "_Shadow.png",
+            "res/gui/Art/Buildings/cannon/canon_"+ this.currentLevel + "/idle/image000", 5, 300,
+            "gui/Art/Map/map_obj_bg/BG_0/3.png",
+            "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
+            null
+
+        );
+
+        this._jsonRes.anim_spr.setPosition({x: 6, y: -5})
+    },
+
 })

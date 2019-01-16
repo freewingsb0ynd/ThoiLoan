@@ -86,13 +86,19 @@ var LobbyLayer = cc.Layer.extend({
             y: cc.winSize.height * 0.5,
             //scaleX: scaleSX,
             //scaleY: scaleSY,
-        })
+        });
+
+        //cc.director.getRunningScene().swallowTouch('map');
+        cc.eventManager.pauseTarget(fr.getCurrentScreen().layerMap, true);
+
+
         this.addChild(this.shop);
     },
 
     onSelectShopBack:function(sender)
     {
         this.shop.setVisible(false);
+        cc.eventManager.resumeTarget(fr.getCurrentScreen().layerMap, true);
     },
 
     update: function(){

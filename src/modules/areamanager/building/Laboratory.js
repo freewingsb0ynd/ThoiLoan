@@ -19,7 +19,7 @@ var Laboratory = Building.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Laboratory ";
+        data.constructionName = " Laboratory level " + this.currentLevel;
         return data;
     },
     setImage: function(){

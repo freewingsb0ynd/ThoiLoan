@@ -17,7 +17,7 @@ var DarkElixirMine = Resource.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Dark Elixir Mine";
+        data.constructionName = " Dark Elixir Mine level " + this.currentLevel;
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_DARK_ELIXIR};
         data.options.push(option);
         return data;

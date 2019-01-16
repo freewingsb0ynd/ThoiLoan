@@ -19,7 +19,7 @@ var ElixirMine = Resource.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Elixir Mine";
+        data.constructionName = " Elixir Mine level " + this.currentLevel;
         var option = {typeOption:ACTION_BUTTON.TYPE.HARVEST_ELIXIR};
         data.options.push(option);
         return data;

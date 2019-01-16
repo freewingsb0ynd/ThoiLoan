@@ -20,7 +20,7 @@ var Cannon = Defense.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Cannon ";
+        data.constructionName = " Cannon level " + this.currentLevel;
         return data;
     },
 

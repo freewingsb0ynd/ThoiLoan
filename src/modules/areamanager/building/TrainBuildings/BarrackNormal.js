@@ -17,7 +17,7 @@ var BarrackNormal = Barrack.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Barrack Normal ";
+        data.constructionName = " Barrack Normal level " + this.currentLevel;
         var option = {typeOption:ACTION_BUTTON.TYPE.TRAIN_TROOP};
         data.options.push(option);
         return data;

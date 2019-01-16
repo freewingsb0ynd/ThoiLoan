@@ -17,7 +17,7 @@ var ArmyCamp = Building.extend({
     },
     getOptions:function() {
         data = this._super();
-        data.constructionName = " Army Camp ";
+        data.constructionName = " Army Camp level " + this.currentLevel;
         return data;
     },
     setImage: function(){
