@@ -156,31 +156,27 @@ var Area = cc.Node.extend({
             this._jsonRes.idle_spr.setTexture(_resLinkIdle);
         }
         if (_resLinkAnimBase != null) {
+            //cc.log("upgrade building: " + this.getDescription());
+
+            this._jsonRes.idleAnimArray = [];
             this._jsonRes.animSprNum = _animSprNum;
             if (_animSprNum < 11) {
                 for (var i = 0; i < _animSprNum; i++) {
-                    //sprFrame = cc.Sprite(_resLinkAnimBase+i+".png");
-                    cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
-                    //this._jsonRes.idleAnimArray.push(sprFrame);
                     this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
-                    //this._jsonRes.idleAnimArray[i] = sprFrame;
                 }
             }
             else {
                 for (var i = 0; i < _animSprNum; i++) {
                     if (i < 10) {
-                        //    resBase0 = _resLinkAnimBase + "0"
-                        var s = _resLinkAnimBase + "0" + i + ".png";
-                        this._jsonRes.idleAnimArray.push(s);
-                        //this._jsonRes.idleAnimArray[i] = sprFrame;
-                        cc.log("aaaaaa: " + s);
+                        this._jsonRes.idleAnimArray.push(_resLinkAnimBase + "0" + i + ".png");
                     }
                     else {
                         this._jsonRes.idleAnimArray.push(_resLinkAnimBase + i + ".png");
-                        cc.log("aaaaaa: " + _resLinkAnimBase + i + ".png");
                     }
                 }
             }
+
+            //cc.log("upgrade bbbbbbbb  " + JSON.stringify(this._jsonRes.idleAnimArray))
         }
         else this._jsonRes.anim_spr.setVisible(false);
 

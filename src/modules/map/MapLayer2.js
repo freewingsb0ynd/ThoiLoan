@@ -396,7 +396,7 @@ var MapLayer2 = cc.Layer.extend({
                     cc.log("end touches end");
                 //}
                 cc.log("touches ended status " + self.touch_status)
-                UserMap.getInstance().showMapGrid()
+                //UserMap.getInstance().showMapGrid()
             }
         },this);
     },

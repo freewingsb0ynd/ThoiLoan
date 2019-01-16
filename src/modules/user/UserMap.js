@@ -467,7 +467,7 @@ var UserMap = cc.Class.extend({
         }
     },
     checkUpdateAttribute:function(area){
-        area.setImage()
+        area.refreshInfo()
         this.getWorkingBuilder();
         if(area.typeStrCode=="BDH_1"){
             this.getTotalBuilder();

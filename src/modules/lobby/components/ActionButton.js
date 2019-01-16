@@ -26,6 +26,20 @@ var ActionButton = cc.Node.extend({
         this.priceType_spr_0 =  this._jsonRes.getChildByName('priceType_spr_0');
         this.actionName_lbl = this._jsonRes.getChildByName('actionName_lbl');
 
+        this.bg = this._jsonRes.getChildByName('bgButton_spr');
+        //
+        //tempTexture = cc.TextureCache.getInstance().addImage("res/gui/Art/GUIs/Action_Building_Icon/cancel_icon.png");
+        //this.bg.setTexture(tempTexture);
+
+        cc.eventManager.addListener({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true
+        }, this.bg);
+        //cc.log(this.button_bg);
+        this.button_bg.setSwallowTouches(true);
+        this.button_bg.setPropagateTouchEvents(false);
+        //this.button_bg.setPosition({x: 0, y: 100});
+
         this.button_bg.addClickEventListener(this.onSelect.bind(this));
         //cc.log(new ccui.Button(ACTION_BUTTON.RES_LINK[typeActionButton]));
         //
