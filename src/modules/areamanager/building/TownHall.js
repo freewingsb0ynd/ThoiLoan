@@ -34,6 +34,11 @@ var TownHall = Building.extend({
         return data;
     },
 
+    getBuildingName : function(){
+        this.name = "Town Hall";
+        return this.name;
+    },
+
     setImage: function(){
         //this._super("res/"+this.currentLevel+"/idle/image0000.png");
         this._super("gui/Art/Buildings/townhall/TOW_1_"+ this.currentLevel + "/idle/image0000.png",

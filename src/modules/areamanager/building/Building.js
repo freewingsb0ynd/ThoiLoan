@@ -36,6 +36,7 @@ var Building = Area.extend({
         if(this.currentLevel <=0 || this.currentLevel >= this.getMaxLevel()){
             // can't upgrade because currentLevel is maxLevel
             return false;
+
         }
         this.upgradingLevel = this.currentLevel+1;
         this.upgradedMoment = TimeManager.getInstance().getServerTime();

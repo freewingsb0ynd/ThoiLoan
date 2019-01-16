@@ -22,6 +22,12 @@ var Laboratory = Building.extend({
         data.constructionName = " Laboratory level " + this.currentLevel;
         return data;
     },
+
+    getBuildingName : function(){
+        this.name = "Laboratory";
+        return this.name;
+    },
+
     setImage: function(){
         //this._super("res/"+this.currentLevel+"/idle/image0000.png");
         this._super("res/gui/Art/Buildings/labratory/LAB_1_"+ this.currentLevel + "/idle/image0000.png",

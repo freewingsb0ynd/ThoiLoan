@@ -20,6 +20,10 @@ var ElixirStorage = Storage.extend({
         data.constructionName = " Elixir Storage level " + this.currentLevel;
         return data;
     },
+    getBuildingName : function(){
+        this.name = "Elixir Storage";
+        return this.name;
+    },
 
     setImage: function(){
 

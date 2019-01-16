@@ -21,6 +21,11 @@ var Mortar = Defense.extend({
         return data;
     },
 
+    getBuildingName : function(){
+        this.name = "Mortar";
+        return this.name;
+    },
+
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/defense_base/DEF_1_"+ this.currentLevel + "_Shadow.png",

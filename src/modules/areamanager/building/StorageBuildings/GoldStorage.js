@@ -8,6 +8,7 @@ var GoldStorage = Storage.extend({
         this._super(_id, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment, gv.RESOURCE_TYPE.GOLD);
         this.typeStrCode = "STO_1";
     },
+
     showInfo : function(){
         return "Gold Storage " +  this._super();
     },
@@ -15,6 +16,12 @@ var GoldStorage = Storage.extend({
         this.description = " Description : Gold Storage level " + this.currentLevel;
         return this.description;
     },
+
+    getBuildingName : function(){
+        this.name = "Gold Storage";
+        return this.name;
+    },
+
     getOptions:function() {
         data = this._super();
         data.constructionName = " Gold Storage level " + this.currentLevel;

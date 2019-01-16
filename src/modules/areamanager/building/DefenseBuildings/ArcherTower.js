@@ -21,6 +21,11 @@ var ArcherTower = Defense.extend({
         return data;
     },
 
+    getBuildingName : function(){
+        this.name = "Archer Tower";
+        return this.name;
+    },
+
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/defense_base/DEF_2_"+ gv.LOAD_IMAGE_INDEX.ARCHER_TOWER[this.currentLevel] + "_Shadow.png",
