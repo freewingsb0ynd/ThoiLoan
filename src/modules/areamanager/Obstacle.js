@@ -86,7 +86,13 @@ var Obstacle  = Area.extend({
         );
         this._jsonRes.buildingName_lbl.setString("Obstacle type " + this.obstacleType);
 
-    }
+    },
+
+    getRemainingTime: function(){
+        if(this.cleanMoment <= 0) return 0;
+        this.remainingTime = Math.max(this.currentBuildTime - (TimeManager.getInstance().getServerTime() - this.cleanMoment),0);
+        return this.remainingTime;
+    },
 
 
 })

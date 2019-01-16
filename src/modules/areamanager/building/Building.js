@@ -18,7 +18,7 @@ var Building = Area.extend({
 
     //-------- additional attribute
     maxLevel:1,
-    currentBuildTime:0,
+
     levelTownHallRequireToUpgrade:1,
 
     ctor: function (_id, _type1, _posX, _posY, _currentLevel, _upgradingLevel, _upgradedMoment) {
@@ -92,6 +92,11 @@ var Building = Area.extend({
     getCurrentBuildTime:function(){
         this.currentBuildTime = TL.CONFIG[this.typeStrCode][this.upgradingLevel]["buildTime"] || 0;
         return this.currentBuildTime;
+    },
+    getRemainingTime: function(){
+        if(this.upgradingLevel==0) return 0;
+        this.remainingTime = Math.max(this.currentBuildTime - (TimeManager.getInstance().getServerTime() - this.upgradedMoment),0);
+        return this.remainingTime;
     },
     getSize:function(){
         this.size = {width:TL.CONFIG[this.typeStrCode][this.currentLevel]["width"], height:TL.CONFIG[this.typeStrCode][this.currentLevel]["height"]};

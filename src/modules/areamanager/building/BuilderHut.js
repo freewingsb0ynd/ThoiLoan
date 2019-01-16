@@ -36,7 +36,9 @@ var BuilderHut = Building.extend({
                 coin: TL.CONFIG['BDH_1'][stringQuery].coin
             }
         }
-        else return {};
+        else return {
+            coin: "Miễn phí"
+        };
     },
 
     setImage: function(){
