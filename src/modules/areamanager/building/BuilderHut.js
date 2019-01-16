@@ -40,6 +40,10 @@ var BuilderHut = Building.extend({
             coin: "Miễn phí"
         };
     },
+    getBuildingName : function(){
+        this.name = "Builder Hut";
+        return this.name;
+    },
 
     setImage: function(){
 

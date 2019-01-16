@@ -23,6 +23,11 @@ var DarkElixirMine = Resource.extend({
         return data;
     },
 
+    getBuildingName : function(){
+        this.name = "Dark Elixir Collector";
+        return this.name;
+    },
+
     setImage: function(){
         this._super("res/gui/Art/Buildings/dark elixir collector/RES_3_"+ this.currentLevel + "/idle/image0000.png",
             "res/gui/Art/Buildings/dark elixir collector/RES_3_"+ this.currentLevel + "/attack01/image000", 4, 5,

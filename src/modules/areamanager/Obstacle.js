@@ -88,6 +88,11 @@ var Obstacle  = Area.extend({
 
     },
 
+    getBuildingName : function(){
+        this.name = "Obstacle type " + this.obstacleType;
+        return this.name;
+    },
+
     getRemainingTime: function(){
         if(this.cleanMoment <= 0) return 0;
         this.remainingTime = Math.max(this.currentBuildTime - (TimeManager.getInstance().getServerTime() - this.cleanMoment),0);

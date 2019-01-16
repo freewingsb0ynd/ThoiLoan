@@ -23,6 +23,11 @@ var GoldMine = Resource.extend({
         return data;
     },
 
+    getBuildingName : function(){
+        this.name = "Gold Mine";
+        return this.name;
+    },
+
     setImage: function(){
 
         this._super("gui/Art/Buildings/gold mine/RES_1_"+ this.currentLevel + "/idle/image0000.png",
