@@ -2,6 +2,7 @@
  * Created by CPU11630_LOCAL on 12/28/2018.
  */
 
+// touch statuses used to determine if the state is none, or clicked an area, or they are trying new building, or start moving map, or moving map, ot moving object, ..
 TOUCH_STATUSES = {
     NONE :0,
     AREA_CLICKED : 1,
@@ -18,18 +19,20 @@ var MapLayer2 = cc.Layer.extend({
     SZ : SIZE_AREA+1,
     areaNodes : null,
     bgSize : null,
+    // vt is the vectorto tranform 2 coordinate
     vt : {
         x:0.795433172,
         y:0.6060432
     },
+    // scale for area
     scArea : 0.58,
     areaVsBg:{
         x : 0.45,
         y: 0.57
     },
     touch_status : null,
+    // temporary data of a touch state
     data_touched : null,
-    elixirMine: null,
     ctor:function() {
         this._super();
         this.areaNodes = new cc.Node();
@@ -47,6 +50,7 @@ var MapLayer2 = cc.Layer.extend({
 
 
         this.addChild(this.areaNodes);
+        // tempNewBuilding is used when creating new building
         this.tempNewBuilding = new cc.Node();
         this.areaNodes.addChild(this.tempNewBuilding);
         this.tempNewBuilding.setVisible(false);
@@ -57,6 +61,7 @@ var MapLayer2 = cc.Layer.extend({
         this.scheduleUpdate();
 
     },
+    // display an Area to Map
     addArea: function (area) {
         aSize = area.size;
         aP = {
@@ -79,6 +84,7 @@ var MapLayer2 = cc.Layer.extend({
         this.areaNodes.addChild(area);
         area.setZOrder(-(area.position.x + area.position.y))
     },
+    // get an area by position touched
     getAreaClicked  : function(touchPos){
         area = null;
         logicP = this.convertTouchPointToLogic(touchPos);
@@ -90,6 +96,7 @@ var MapLayer2 = cc.Layer.extend({
         }
         return area;
     },
+    //UserMap call tryNewBuilding, and MapLayer2 create tempNewBuilding and change  touch_status to TRY_NEW_BUILDING
     tryNewBuilding:function (building){
         if(this.touch_status == TOUCH_STATUSES.AREA_CLICKED){
             UserMap.getInstance().showAreaInGrid(this.data_touched.area);
@@ -99,6 +106,7 @@ var MapLayer2 = cc.Layer.extend({
         this.tempNewBuilding = building
         this.addArea(this.tempNewBuilding)
     },
+    // touch event : too complicate, too messy :((, sorry for this, i draw a figure show all touch flows, but i was really bored with this dump
     addTouchListener:function(){
         var self = this;
         cc.eventManager.addListener({
@@ -336,11 +344,13 @@ var MapLayer2 = cc.Layer.extend({
             }
         },this);
     },
+    // used in touch event
     displayOnChoosing:function(area,isOn){
         if(area!=null){
             area.isOnChossing = isOn
         }
     },
+    // you can press 'A' to zoom in, 'S' top zoom out, or 2 touches to zoom in, zoom out like the real game
     addKeyboardListener:function(){
         //Add code here
         if(cc.sys.capabilities.hasOwnProperty('keyboard'))
@@ -386,6 +396,7 @@ var MapLayer2 = cc.Layer.extend({
         if(ind.x<0 && ind.y < 0 && pos.y < 0) return true
         return false;
     },
+    //update display position for area
     showAreaInLayerMap:function(area){
         displayPos =    {
             x : area.position.x + area.size.width * 0.5,

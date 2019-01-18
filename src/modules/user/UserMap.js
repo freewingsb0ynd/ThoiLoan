@@ -1,11 +1,8 @@
 /**
  * Created by CPU11630_LOCAL on 12/27/2018.
  */
+// 2 util functions , need to be moved to another file
 var convertNumberToStrType = function(type1,type2){
-    // TODO : convert Type
-
-    //
-    //return null;
     switch (type1){
         case gv.BUILDING.OBSTACLE:
             return "OBS_"+type2;
@@ -40,7 +37,6 @@ var convertNumberToStrType = function(type1,type2){
 }
 
 var convertStrToNumberType = function(strType){
-    // TODO : convert Type
     switch(strType){
         case "AMC_1":
             return {type1:gv.BUILDING.ARMY_CAMP,type2:0};
@@ -83,8 +79,10 @@ var convertStrToNumberType = function(strType){
     }
     return null;
 }
+// usermap : where i control all data
 var UserMap = cc.Class.extend({
     id:null,
+    // some attribute and collection useful like coding in server
     mapIdToArea:null,
     mapTypeToIds:null,
     mapIdToServerPos : null,
@@ -94,7 +92,7 @@ var UserMap = cc.Class.extend({
     mapSize : null,
     townHall : null,
     buildingWaiting:null,
-    // --- for hoang
+    // --- for lobby
     numberWorkingBuilder : 0,
     totalNumberBuilder:0,
     goldCapacity : 0,
@@ -113,7 +111,7 @@ var UserMap = cc.Class.extend({
         }
     },
     // API to  lobby & shop
-
+    // shop notify a signal tryNewBuilding, UserMap find a valid position and create a prototype of building and send notification to MapLayer2
     tryNewBuilding:function(strType){
         fr.getCurrentScreen().layerLobby.onSelectShopBack()
         // TODO: notify to MapLayer, can be call directly to MapLayer
@@ -130,6 +128,7 @@ var UserMap = cc.Class.extend({
             }
         }
     },
+    // get current number of building by type
     getCurrentNumberByType:function(strType){
         type = convertStrToNumberType(strType);
         typeConvert = this.hashType(type.type1,type.type2);
@@ -139,11 +138,13 @@ var UserMap = cc.Class.extend({
         }
         return ids.size;
     },
+    // get maximum number of building by type
     getMaxNumberByType:function(strType){
         if(strType == 'BDH_1')
             return _.keys(TL.CONFIG[strType]).length;
         return TL.CONFIG["TOW_1"][townHall.currentLevel][strType];
     },
+    // get cost to buy new building with strType
     getCostToBuyNew:function(strType){
         level = 1;
         if(strType == "BDH_1") level = Math.min(this.getTotalBuilder() + 1,5);
@@ -154,10 +155,12 @@ var UserMap = cc.Class.extend({
             coin:TL.CONFIG[strType][level]["coin"]||0,
         }
     },
+    // get number of working builder
     getWorkingBuilder : function(){
         cc.log("workingbuilder :" + this.builderWorkingAreas.size);
         return this.numberWorkingBuilder = this.builderWorkingAreas.size;
     },
+    // get total number of builder = number of builder hut
     getTotalBuilder : function(){
         typeConvert = this.hashType(gv.BUILDING.BUILDER_HUT,0);
         listIds = this.mapTypeToIds.get(typeConvert);
@@ -166,6 +169,7 @@ var UserMap = cc.Class.extend({
         }
         return this.totalNumberBuilder = listIds.size;
     },
+    //get capacity by type : 1,2,3 ~ gold, elixir, dark elixir
     getCapacity : function(type2){
         capacity  = 0 ;
         typeConvert = this.hashType(gv.BUILDING.STORAGE,type2);
@@ -198,7 +202,7 @@ var UserMap = cc.Class.extend({
 
     // API to MapLayer (MapLayer request to UserMap)
 
-    // need a Userdata.getInstance().checkIfEnough(resourceRequired)
+    // MapLayer2: after get an OK option, send to UserMap, UserMap check all conditions, and save temp data of building creating (buildingWaiting)
     addNewBuilding:function(strType, newPos){
         //newPos{x,y}
         // check resources
@@ -235,6 +239,7 @@ var UserMap = cc.Class.extend({
         testnetwork.connector.sendBuildRq(newPos.x, newPos.y, type.type1, type.type2);
 
     },
+    // when client receive an OK status of building new, client create and add building
     buildOK : function(id){
         // will be called from onReceivedPacket build OK with id = id
         // create new building with data from buildingWaiting and id
@@ -250,6 +255,7 @@ var UserMap = cc.Class.extend({
         this.buildingWaiting = null;
 
     },
+    // check conditions for move a building
     moveBuilding:function(id, newPos){
         // check valid position, let LayerMap do this
         // send request move building to server
@@ -264,7 +270,7 @@ var UserMap = cc.Class.extend({
         testnetwork.connector.sendMoveConsRq(id, newPos.x, newPos.y);
         return true;
     },
-
+    // check conditions for upgrade a building
     upgradeBuilding:function(id){
         building = this.mapIdToArea.get(id);
         if(building == null) {
@@ -311,6 +317,7 @@ var UserMap = cc.Class.extend({
         this.checkUpdateAttribute(building);
     },
 
+    // check conditions for quick finish upgrade a building
     upgradeBuildingNow:function(id){
         cc.log("finish now building id " + id);
         building = this.mapIdToArea.get(id);
@@ -330,6 +337,7 @@ var UserMap = cc.Class.extend({
         return true;
     },
 
+    // check conditions for stop upgrading a building
     stopBuilding:function(id){
         cc.log("stop building id " + id);
         building = this.mapIdToArea.get(id);
@@ -380,12 +388,14 @@ var UserMap = cc.Class.extend({
     },
     // end API to MapLayer
 
+    // create init collections before add areas
     prepareGetMap: function(){
         this.mapIdToArea = new Map();
         this.mapTypeToIds = new Map();
         this.mapIdToServerPos = new Map();
         this.builderWorkingAreas = new Set();
     },
+    // add an area to data
     addObject: function(area){
         area.updateData()
         id = area.id;
@@ -428,10 +438,12 @@ var UserMap = cc.Class.extend({
         this.showMapGrid();
         this.checkUpdateAttribute(this.townHall);
     },
+    // hash 2 type into 1
     hashType: function(type1, type2){
         return type1*100 + type2;
     },
 
+    // check a builder is released every frame
     update:function(){
         self = this;
         function logMapElements(area, area2, set) {
@@ -452,6 +464,7 @@ var UserMap = cc.Class.extend({
             this.builderWorkingAreas.forEach(logMapElements);
         }
     },
+    // check update some attribute when an area is created, finish upgraded, stop upgrade ..
     checkUpdateAttribute:function(area){
         area.refreshInfo()
         this.getWorkingBuilder();
@@ -486,6 +499,7 @@ var UserMap = cc.Class.extend({
             cc.log(s);
         }
     },
+    // hide area when user touching and moving area (put area up)
     hideAreaFromGrid:function(area){
         if(area==null) return;
         for(i=0;i<area.size.width;i++){
@@ -494,6 +508,7 @@ var UserMap = cc.Class.extend({
             }
         }
     },
+    // show area when user "put area down"
     showAreaInGrid:function(area){
         posInServer = this.mapIdToServerPos.get(area.id);
         for(i=0;i<area.size.width;i++){
@@ -506,6 +521,7 @@ var UserMap = cc.Class.extend({
             this.mapIdToServerPos.set(area.id,area.position)
         }
     },
+    // check valid position in map
     checkValidPosition:function(newPos,size){
         if(newPos.x<0 || newPos.x + size.width > SIZE_AREA) return false;
         if(newPos.y<0 || newPos.y + size.height> SIZE_AREA) return false;
