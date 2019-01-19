@@ -29,7 +29,7 @@ var ArmyCamp = Building.extend({
         //    "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
 
         this._super("gui/Art/Buildings/army camp/AMC_1_"+ this.currentLevel + "/idle/image0000.png",
-            "res/gui/Art/Effects/armycam_1/0", 5, 10,
+            "res/gui/Art/Effects/armycam_1/0", 5, 10,                                   //spr num = 10, spr rate = 5fr/ updates
             "gui/Art/Map/map_obj_bg/BG_0/5.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove5.png",
             null

@@ -68,8 +68,8 @@ var Area = cc.Node.extend({
 
         this.addChild(this._jsonRes);
 
-        this._jsonRes.okBuild_btn.addClickEventListener(this.buildOK.bind(this))
-        this._jsonRes.cancelBuild_btn.addClickEventListener(this.cancelBuild.bind(this))
+        this._jsonRes.okBuild_btn.addClickEventListener(this.buildOK.bind(this));
+        this._jsonRes.cancelBuild_btn.addClickEventListener(this.cancelBuild.bind(this));
         this.scheduleUpdate();
     },
     showInfo: function () {
@@ -85,9 +85,11 @@ var Area = cc.Node.extend({
     },
 
     update: function () {
+        //set visible component regarding bool vars
+
         this._jsonRes.buildingName_lbl.setVisible(this.isOnChossing);
         this._jsonRes.buildingLevel_lbl.setVisible(this.isOnChossing);
-        this._jsonRes.buildingName_lbl.setString(this.getBuildingName())
+        this._jsonRes.buildingName_lbl.setString(this.getBuildingName());
         if(this.type1 != gv.BUILDING.OBSTACLE){
             this._jsonRes.buildingLevel_lbl.setString("Cấp " + this.currentLevel)
         }
@@ -111,7 +113,7 @@ var Area = cc.Node.extend({
 
 
         if(this.isUpgrading) {
-            this._jsonRes.upgradeProcess_spr.setScaleX(this.getRemainingTime() / this.currentBuildTime * 0.5);
+            this._jsonRes.upgradeProcess_spr.setScaleX(this.getRemainingTime() / this.currentBuildTime * 0.5);              //NATIVE_SCALE = 0.5
             this._jsonRes.timeUpgrade_lbl.setString(convertToTimeString(Math.floor(this.getRemainingTime())));
 
         }
@@ -137,30 +139,28 @@ var Area = cc.Node.extend({
             this._jsonRes.harvestRes_spr.setVisible(true);
         }
 
-        if (this._jsonRes.animSprNum != 0) {
+        if (this._jsonRes.animSprNum != 0) {                                                           //play animation by sprNum and updatesPerSprRate
             if (this._jsonRes.currentUpdateSpr == (this._jsonRes.updatesPerSprRate - 1)) {
-                //cc.log("bbbbbbb:   " + JSON.stringify(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]));
-                //this._jsonRes.anim_spr.setTexture(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]);
                 this._jsonRes.anim_spr.setTexture(this._jsonRes.idleAnimArray[this._jsonRes.currentSprNum]);
                 this._jsonRes.currentSprNum = (this._jsonRes.currentSprNum + 1) % this._jsonRes.animSprNum;
             }
             this._jsonRes.currentUpdateSpr = (this._jsonRes.currentUpdateSpr + 1) % this._jsonRes.updatesPerSprRate;
         }
-        //else this._jsonRes.anim_spr.setTexture(
+
     },
 
     buildOK:function(){
-        cc.log("build OK id " + this.id + " type " + this.typeStrCode + "pos : " + this.position.x + ", " + this.position.y)
+        cc.log("build OK id " + this.id + " type " + this.typeStrCode + "pos : " + this.position.x + ", " + this.position.y);
         if(UserMap.getInstance().checkValidPosition(this.position, this.size)){
-            UserMap.getInstance().addNewBuilding(this.typeStrCode, this.position)
-            fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE
+            UserMap.getInstance().addNewBuilding(this.typeStrCode, this.position);
+            fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE;
             this.removeFromParent()
         }
 
     },
     cancelBuild:function(){
-        cc.log("cancel Build")
-        fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE
+        cc.log("cancel Build");
+        fr.getCurrentScreen().layerMap.touch_status = TOUCH_STATUSES.NONE;
         this.removeFromParent()
     },
     getSize: function () {
@@ -168,15 +168,12 @@ var Area = cc.Node.extend({
     getDescription: function () {
     },
     setImage: function (_resLinkIdle, _resLinkAnimBase, _animSprNum, _updatesPerSprRate, _grass_spr, _arrow_spr, _shadow_spr) {
-        // set texture or animation for this.image
-        //this.image.setTexture("res/gui/Art/Map/map_obj_bg/BG/RED_" + this.size.width + ".png");
+        // set texture or animation for this._jsonRes
 
         if (_resLinkIdle != null) {
             this._jsonRes.idle_spr.setTexture(_resLinkIdle);
         }
         if (_resLinkAnimBase != null) {
-            //cc.log("upgrade building: " + this.getDescription());
-
             this._jsonRes.idleAnimArray = [];
             this._jsonRes.animSprNum = _animSprNum;
             if (_animSprNum < 11) {
@@ -194,21 +191,19 @@ var Area = cc.Node.extend({
                     }
                 }
             }
-
-            //cc.log("upgrade bbbbbbbb  " + JSON.stringify(this._jsonRes.idleAnimArray))
         }
         else this._jsonRes.anim_spr.setVisible(false);
 
         if (_updatesPerSprRate != null) this._jsonRes.updatesPerSprRate = _updatesPerSprRate;
-        if (_grass_spr != null) this._jsonRes.grass_spr.setTexture(_grass_spr); else this._jsonRes.grass_spr.setVisible(false)
-        if (_arrow_spr != null) this._jsonRes.arrow_spr.setTexture(_arrow_spr); else this._jsonRes.arrow_spr.setVisible(false)
+        if (_grass_spr != null) this._jsonRes.grass_spr.setTexture(_grass_spr); else this._jsonRes.grass_spr.setVisible(false);
+        if (_arrow_spr != null) this._jsonRes.arrow_spr.setTexture(_arrow_spr); else this._jsonRes.arrow_spr.setVisible(false);
         if (_shadow_spr != null) this._jsonRes.shadow_spr.setTexture(_shadow_spr); else this._jsonRes.shadow_spr.setVisible(false)
 
 
     },
     refreshInfo: function () {
-        this.isUpgrading = this.updateData()
-        cc.log("refresh info " + this.typeStrCode + " isUpgrading : " + this.isUpgrading)
+        this.isUpgrading = this.updateData();
+        cc.log("refresh info " + this.typeStrCode + " isUpgrading : " + this.isUpgrading);
         this.getSize();
         this.getDescription();
         this.setImage();
@@ -242,4 +237,4 @@ var Area = cc.Node.extend({
 
 
 
-})
+});

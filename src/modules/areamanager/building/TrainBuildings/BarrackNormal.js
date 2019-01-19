@@ -31,7 +31,7 @@ var BarrackNormal = Barrack.extend({
     setImage: function(){
         //this._super("res/"+this.currentLevel+"/idle/image0000.png");
         this._super("res/gui/Art/Buildings/barrack/BAR_1_"+ this.currentLevel + "/idle/image0000.png",
-            null, null, null,
+            null, null, null,                                       //no idle anim
             "gui/Art/Map/map_obj_bg/BG_0/3.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
             "gui/Art/Map/map_obj_bg/GRASS_3_Shadow.png"

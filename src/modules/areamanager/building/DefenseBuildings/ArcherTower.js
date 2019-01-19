@@ -29,14 +29,14 @@ var ArcherTower = Defense.extend({
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/defense_base/DEF_2_"+ gv.LOAD_IMAGE_INDEX.ARCHER_TOWER[this.currentLevel] + "_Shadow.png",
-            "res/gui/Art/Buildings/AcherTower/DEF_2_"+ this.currentLevel + "/DEF_2_"+ this.currentLevel + "/idle/image000", 5, 300,
+            "res/gui/Art/Buildings/AcherTower/DEF_2_"+ this.currentLevel + "/DEF_2_"+ this.currentLevel + "/idle/image000", 5, 300,     //spr num = 5, spr rate = 300fr/ updates
             "gui/Art/Map/map_obj_bg/BG_0/3.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
             null
 
         );
-        this._jsonRes.idle_spr.setPosition({x: 0, y: 30});
-        this._jsonRes.anim_spr.setPosition({x: 5, y: -5});
+        this._jsonRes.idle_spr.setPosition({x: 0, y: 30});                  //defense base skin width
+        this._jsonRes.anim_spr.setPosition({x: 5, y: -5});                  //defense anim skin width
 
     }
 });

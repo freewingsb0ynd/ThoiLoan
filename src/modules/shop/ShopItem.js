@@ -49,6 +49,7 @@ var ShopItem = cc.Node.extend({
         this.amountTopup_spr = this._jsonRes.getChildByName('amountTopup_spr');
         this.itemInfo_btn = this._jsonRes.getChildByName('itemInfo_btn');
 
+        //init SHOP ITEM by args
 
         this.TOPUP_RESOURCE_SPR_VISIBLE = shopItemArgs.TOPUP_RESOURCE_SPR_VISIBLE;
         if(this.TOPUP_RESOURCE_SPR_VISIBLE) this.TOPUP_RESOURCE = shopItemArgs.TOPUP_RESOURCE;
@@ -125,11 +126,10 @@ var ShopItem = cc.Node.extend({
 
         //if(UserData.getInstance().checkIfEnough({this.ITEM_PRICE_TYPE: this.ITEM_PRICE}))
 
-        //UserData.getInstance().()
         this.itemPrice_lbl.setString(this.ITEM_PRICE);
 
         cc.log("price:    "  + this.ITEM_PRICE + ", type: " + this.ITEM_PRICE_TYPE);
-        if(!this.checkEnoughResource()) this.itemPrice_lbl.setColor(new cc.Color(255,00,00));
+        if(!this.checkEnoughResource()) this.itemPrice_lbl.setColor(new cc.Color(255,00,00));                           //warning color: RED
 
         if (ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE] != null) this.itemPrice_spr.setTexture(ACTION_BUTTON.RES_LINK.RESOURCE_TYPE[this.ITEM_PRICE_TYPE]);
         else this.itemPrice_spr.setVisible(false);
@@ -138,29 +138,22 @@ var ShopItem = cc.Node.extend({
 
 
     checkEnoughResource: function(){
-        cc.log("resource:  gold: " + UserData.getInstance().gold + " elix: " + UserData.getInstance().elixir + " dElix: " + UserData.getInstance().darkElixir);
-        //cc.log()
+        //cc.log("resource:  gold: " + UserData.getInstance().gold + " elix: " + UserData.getInstance().elixir + " dElix: " + UserData.getInstance().darkElixir);
+
         switch (this.ITEM_PRICE_TYPE){
-
-
-            case 1:
-                cc.log("check gold");
+            case 1:                 // item required gold
                 if (UserData.getInstance().gold > this.ITEM_PRICE) return true;
                 break;
-            case 2:
-                cc.log("check elixir");
+            case 2:                 // item required elixir
                 if (UserData.getInstance().elixir > this.ITEM_PRICE) return true;
                 break;
-            case 3:
-                cc.log("check dark E");12
+            case 3:                 // item required dark elixir
                 if (UserData.getInstance().darkElixir > this.ITEM_PRICE) return true;
                 break;
-            case 4:
-                cc.log("check dark E");
+            case 4:                 // item required coin
                 if (UserData.getInstance().gCoin > this.ITEM_PRICE) return true;
                 break;
             default:
-                cc.log("deo check gi");
                 break;
         }
         return false;

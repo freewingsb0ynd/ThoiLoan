@@ -35,7 +35,7 @@ var ElixirMine = Resource.extend({
         //            "gui/Art/Effects/RES_2_"+ this.currentLevel+"_effect/0", 10);
 
         this._super("gui/Art/Buildings/elixir collector/RES_2_"+ this.currentLevel + "/idle/image0000.png",
-            "gui/Art/Effects/RES_2_"+ this.currentLevel + "_effect/0", 10, 5,
+            "gui/Art/Effects/RES_2_"+ this.currentLevel + "_effect/0", 10, 5,                                           //spr num = 10, spr rate = 5fr/ updates
             "gui/Art/Map/map_obj_bg/BG_0/3.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
             "gui/Art/Map/map_obj_bg/GRASS_3_Shadow.png"

@@ -48,7 +48,7 @@ var BuilderHut = Building.extend({
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/builder hut/idle/image0000.png",
-            null, null, null,
+            null, null, null,                                                //no idle anim
             "gui/Art/Map/map_obj_bg/BG_0/2.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove2.png",
             "gui/Art/Map/map_obj_bg/GRASS_2_Shadow.png"

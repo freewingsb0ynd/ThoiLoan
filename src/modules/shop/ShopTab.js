@@ -102,13 +102,12 @@ var ShopTab = cc.Node.extend({
     loadConfigByTownHallLevel: function(townHallLevel, shopTab) {
 
         //var tabs = [SHOP.TABS.RESOURCE,SHOP.TABS.ARMY,SHOP.TABS.DEFENSE];
-        switch (shopTab){
+        switch (shopTab){                                           //updates certain tabs
             case SHOP.TABS.RESOURCE:
             case SHOP.TABS.ARMY:
             case SHOP.TABS.DEFENSE:
                 for (i = 0; i < SHOP_ITEMS[shopTab].ITEMS.length; i++) {
-                    if (i >= this.loadLimitElementsByTab(shopTab)) {
-
+                    if (i >= this.loadLimitElementsByTab(shopTab)) {            // if item out of limit range for ARMY or DEFENSE tab
 
                         SHOP_ITEMS[shopTab].ITEMS[i].BUTTON_ENABLED = false;
                         SHOP_ITEMS[shopTab].ITEMS[i].ITEM_PRICE = "Miễn phí";
@@ -117,7 +116,7 @@ var ShopTab = cc.Node.extend({
                         SHOP_ITEMS[shopTab].ITEMS[i].TIME_VISIBLE = false;
 
                     }
-                    else{
+                    else{                                                       // update items in limit range for ARMY or DEFENSE tab
                         tempBuilding = Building.newBuildingByType(SHOP_ITEMS[shopTab].ITEMS[i].BUILDING_TYPE_CODE, 0, 0, 0, 1, 1, 0);
 
 
@@ -194,7 +193,7 @@ gv.SHOP_TAB.ELEMENT_LIMIT = {
     "DEFENSE_TAB": 4
 };
 
-var convertToTimeString = function(timeInSeconds){
+var convertToTimeString = function(timeInSeconds){                  //TimeString prototype: ...d...h...m...s (truncate at two significant units)
     var secs;
     var mins;
     var hours;

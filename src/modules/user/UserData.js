@@ -25,6 +25,7 @@ var UserData = cc.Class.extend({
     loadInitData: function(){
         this.userName = "Fresher " + testnetwork.connector._id;
 
+        //init dummy data
         this.trophy = 8888;
 
         this.gold = 100;

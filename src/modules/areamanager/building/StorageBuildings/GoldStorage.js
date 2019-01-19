@@ -31,7 +31,7 @@ var GoldStorage = Storage.extend({
     setImage: function(){
 
         this._super("res/gui/Art/Buildings/gold storage/STO_1_"+ this.currentLevel + "/idle/image0001.png",
-            null, null, null,
+            null, null, null,                                           //no idle anim
             "gui/Art/Map/map_obj_bg/BG_0/3.png",
             "gui/Art/Map/map_obj_bg/BG/arrowmove3.png",
             "gui/Art/Map/map_obj_bg/GRASS_5_Shadow.png"
